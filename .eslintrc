@@ -1,0 +1,54 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "__DEV__": true,
+    "ReactClass": true
+  },
+  "rules": {
+    "strict": 0,
+
+    "arrow-body-style": 0,
+    "arrow-parens": 0,
+    "class-methods-use-this": 0,
+    "default-case": 0,
+    "generator-star-spacing": 0,
+    "global-require": 0,
+    "new-cap": 0,
+    "no-alert": 0,
+    "no-confusing-arrow": 0,
+    "no-console": 0,
+    "no-constant-condition": 0,
+    "no-duplicate-imports": 0,
+    "no-plusplus": 0,
+    "no-restricted-syntax": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+
+    "import/no-duplicates": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+
+    "react/jsx-no-bind": 0,
+    "react/jsx-filename-extension": 0,
+    "react/forbid-prop-types": 0,
+    "react/prefer-stateless-function": 0,
+    "react/sort-comp": 0,
+    "react/prop-types": 0 // We use babel-plugin-flow-react-proptypes to generate them
+  }
+}

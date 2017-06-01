@@ -1,0 +1,12 @@
+{
+  "name": "RNiOSKitExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ios": "node ../node_modules/react-native/local-cli/cli.js run-ios",
+    "test": "../node_modules/.bin/jest"
+  },
+  "dependencies": {
+    "moment": "^2.17.1"
+  }
+}
