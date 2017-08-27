@@ -1,8 +1,10 @@
-# Contributing Guidelines
-
-1. Assign yourself to component(s) from the issues.
+## Contributing Guidelines
+1. Assign yourself to component(s) from the issues
 2. Every component (issue) needs to have a link to its section in the [iOS design docs](https://developer.apple.com/ios/human-interface-guidelines/overview/design-principles/). You can also check their design here [iOS 10 GUI](http://ios10.greatsimple.io/). Make sure to read the documentation thoroughly before start implementing them.
-3. Make sure to write a brief description of every prop when defining `propTypes`.
-4. Always make sure that your code passes `eslint`, `flow`, and `jest` before opening a PR.
-5. Make sure you test your component. We use [Jest Snapshots](https://facebook.github.io/jest/docs/tutorial-react-native.html#snapshot-test) so we can quickly test them depending on the props we pass.
-6. Have different usages of your component in the `example` app.
+3. Default colors will be provided my the theme you, if you find that there's something missing from the theme that might be beneficial for other components
+don't hesitate to add it to the theme.
+4. For any Text usage, use our components provided in the Typography folder.
+5. If your app depends on the theme always wrap you component with `withTheme` to get the theme as a prop instead of the context refer to `TouchableRipple`.
+6. Make sure to write a brief description of every prop when defining `propTypes`.
+7. Always make sure that your code passes `eslint` before opening a PR
+8. Have different usages of your component in the example app.  
