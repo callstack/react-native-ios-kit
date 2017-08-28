@@ -8,7 +8,7 @@ import {
   Text,
 } from 'react-native';
 
-import Test from './scenes/Test';
+import Buttons from './scenes/Buttons';
 
 type Route = {
   /* eslint-disable react/no-unused-prop-types */
@@ -19,8 +19,8 @@ type Route = {
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 const dataSource: Array<Route> = ds.cloneWithRows([
   {
-    component: Test,
-    title: 'Test',
+    component: Buttons,
+    title: 'Buttons',
   },
 ]);
 
@@ -29,10 +29,6 @@ type Props = {
 }
 
 export default class ExampleList extends Component<void, Props, void> {
-  static propTypes = {
-    navigator: React.PropTypes.object.isRequired,
-  }
-
   _onPressRow = (route) => {
     this.props.navigator.push(route);
   };
