@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import Buttons from './scenes/Buttons';
+import Typography from './scenes/Typography';
 
 type Route = {
   /* eslint-disable react/no-unused-prop-types */
@@ -21,6 +22,10 @@ const dataSource: Array<Route> = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
+  },
+  {
+    component: Typography,
+    title: 'Typography',
   },
 ]);
 
