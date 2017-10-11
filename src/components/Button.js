@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
-import type { Theme } from '../types';
+import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
 
 class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.styles = getStyles(this.props.theme || {});
+  }
+
   props: {
     /**
      * Set custom font color
@@ -57,12 +62,7 @@ class Button extends Component {
      */
     disabledStyle?: any,
     children: React.Element<*> | [React.Element<*>],
-  }
-
-  constructor(props) {
-    super(props);
-    this.styles = getStyles(this.props.theme || {});
-  }
+  };
 
   _styleFromProps() {
     const { centered, rounded, inverted, color, disabled } = this.props;
@@ -116,17 +116,16 @@ class Button extends Component {
   render() {
     const { inner, container } = this._styleFromProps();
 
-    const children = (typeof this.props.children === 'string') ? (
-      <Text
-        style={[
-          this.styles.default.inner,
-          ...inner,
-          this.props.innerStyle,
-        ]}
-      >
-        {this.props.children}
-      </Text>
-    ) : this.props.children;
+    const children =
+      typeof this.props.children === 'string' ? (
+        <Text
+          style={[this.styles.default.inner, ...inner, this.props.innerStyle]}
+        >
+          {this.props.children}
+        </Text>
+      ) : (
+        this.props.children
+      );
 
     return this._renderButton(
       <TouchableOpacity
@@ -145,7 +144,7 @@ class Button extends Component {
         ]}
       >
         {children}
-      </TouchableOpacity>,
+      </TouchableOpacity>
     );
   }
 }
