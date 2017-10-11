@@ -11,13 +11,13 @@
     "ios": "react-native-scripts ios"
   },
   "dependencies": {
-    "expo": "^20.0.0",
-    "react": "16.0.0-alpha.12",
+    "expo": "^21.0.2",
+    "react": "^16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-20.0.0.tar.gz"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^2.7.1",
-    "babel-preset-expo": "^3.0.0",
-    "react-native-scripts": "1.1.0"
+    "babel-preset-expo": "^4.0.0",
+    "react-native-scripts": "^1.5.0"
   }
 }

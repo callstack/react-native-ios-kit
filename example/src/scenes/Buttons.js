@@ -10,42 +10,25 @@ export default class Buttons extends Component {
     return (
       <ThemeProvider>
         <View style={styles.container}>
-          <Button inline style={styles.button}>Button (inline)</Button>
-          <Button disabled style={styles.button}>Button disabled</Button>
-          <Button
-            inline
-            centered
-            color={customColor}
-            style={styles.button}
-          >
+          <Button inline style={styles.button}>
+            Button (inline)
+          </Button>
+          <Button disabled style={styles.button}>
+            Button disabled
+          </Button>
+          <Button inline centered color={customColor} style={styles.button}>
             Button (inline/centered)
           </Button>
-          <Button
-            disabled
-            centered
-            color={customColor}
-            style={styles.button}
-          >
+          <Button disabled centered color={customColor} style={styles.button}>
             Button (centered/disabled)
           </Button>
-          <Button
-            style={styles.button}
-            inline
-            rounded
-          >
+          <Button style={styles.button} inline rounded>
             Button (inline/rounded)
           </Button>
-          <Button
-            style={styles.button}
-            rounded
-          >
+          <Button style={styles.button} rounded>
             Button (rounded)
           </Button>
-          <Button
-            style={styles.button}
-            rounded
-            disabled
-          >
+          <Button style={styles.button} rounded disabled>
             Button (rounded/disabled)
           </Button>
           <View style={styles.combineButtonsContainer}>
