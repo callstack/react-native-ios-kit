@@ -10,7 +10,6 @@ type Props = {
    * Icon name, one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json
    */
   name: string,
-
   /**
    * Custom color for icon, default to iosBlue
    */
@@ -19,7 +18,13 @@ type Props = {
    * Optional icon size, defaults to 50
    */
   size?: number,
+  /**
+   * Custom styles to apply to the Icon
+   */
   style?: any,
+  /**
+   * Provided by the ThemeProvider
+   */
   theme?: Theme,
 };
 
