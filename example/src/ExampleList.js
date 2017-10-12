@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { ListView, TouchableHighlight, StyleSheet, Text } from 'react-native';
 
 import Buttons from './scenes/Buttons';
+import Icon from './scenes/Icon';
 
 type Route = {
   /* eslint-disable react/no-unused-prop-types */
@@ -16,6 +17,10 @@ const dataSource: Array<Route> = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
+  },
+  {
+    component: Icon,
+    title: 'Icon',
   },
 ]);
 
