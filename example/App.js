@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, NavigatorIOS, Text } from 'react-native';
+import { StyleSheet, NavigatorIOS } from 'react-native';
 import { ThemeProvider } from 'react-native-ios-kit';
 
 import ExampleList from './src/ExampleList';

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-commonjs */
 
 const path = require('path');
@@ -9,11 +10,7 @@ module.exports = {
     return [__dirname, path.resolve(__dirname, '..')];
   },
   getProvidesModuleNodeModules() {
-    return [
-      'react-native',
-      'react',
-      'prop-types',
-    ];
+    return ['react-native', 'react', 'prop-types'];
   },
   getBlacklistRE() {
     return blacklist([
