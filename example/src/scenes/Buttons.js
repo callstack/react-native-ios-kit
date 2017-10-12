@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { Button, ThemeProvider } from 'react-native-ios-kit';
 
-export default class Buttons extends Component {
+export default class Buttons extends Component<void> {
   render() {
     return (
       <ThemeProvider>

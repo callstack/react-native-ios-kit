@@ -12,12 +12,7 @@ export type TConfig = {
 };
 
 const createText = (config: TConfig) => {
-  return (props: Object) => (
-    <StyledText
-      {...props}
-      config={config}
-    />
-  );
+  return (props: Object) => <StyledText {...props} config={config} />;
 };
 
 export default createText;

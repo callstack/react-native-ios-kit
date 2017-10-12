@@ -1,10 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import {
   Title1,
@@ -17,9 +14,9 @@ import {
   Footnote,
   Caption1,
   Caption2,
- } from '../../../src';
+} from '../../../src';
 
-export default class TypographyExample extends Component {
+export default class TypographyExample extends Component<void> {
   render() {
     return (
       <View style={styles.container}>

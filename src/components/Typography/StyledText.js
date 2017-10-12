@@ -3,10 +3,12 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-const trackingToSpacing =
-  (fontSize: number, tracking: number): number => (fontSize * tracking) / 1000;
+const trackingToSpacing = (fontSize: number, tracking: number): number =>
+  fontSize * tracking / 1000;
 
-const resolveFontSizeFromStyle = (style?: Object | number | Array<Object | number>) => {
+const resolveFontSizeFromStyle = (
+  style?: Object | number | Array<Object | number>
+) => {
   if (!style) {
     return 0;
   }
@@ -14,33 +16,25 @@ const resolveFontSizeFromStyle = (style?: Object | number | Array<Object | numbe
   if (Array.isArray(style)) {
     return style.reduce(
       (acc, elem) => resolveFontSizeFromStyle(elem) || acc,
-      0,
+      0
     );
   }
 
-  const realStyle = typeof style === 'number'
-    ? StyleSheet.flatten(style)
-    : style;
+  const realStyle =
+    typeof style === 'number' ? StyleSheet.flatten(style) : style;
 
-
-  return realStyle.fontSize;
+  return realStyle ? realStyle.fontSize : null;
 };
 
 type Props = {
-  style?: any;
-  children?: any;
-  config: Object;
+  style?: any,
+  children?: any,
+  config: Object,
 };
 
-class StyledText extends Component<void, Props, void> {
-  
+class StyledText extends Component<Props> {
   render() {
-    const {
-      style,
-      children,
-      config,
-      ...rest
-    } = this.props;
+    const { style, children, config, ...rest } = this.props;
     const fontSize = resolveFontSizeFromStyle(style) || config.fontSize;
     const letterSpacing = trackingToSpacing(fontSize, config.tracking);
 
@@ -52,10 +46,7 @@ class StyledText extends Component<void, Props, void> {
     };
 
     return (
-      <Text
-        style={[calculatedStyle, style]}
-        {...rest}
-      >
+      <Text style={[calculatedStyle, style]} {...rest}>
         {children}
       </Text>
     );

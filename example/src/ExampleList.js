@@ -13,7 +13,7 @@ type Route = {
 };
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-const dataSource: Array<Route> = ds.cloneWithRows([
+const dataSource = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
@@ -28,7 +28,7 @@ type Props = {
   navigator: Object,
 };
 
-export default class ExampleList extends Component<void, Props, void> {
+export default class ExampleList extends Component<Props> {
   _onPressRow = route => {
     this.props.navigator.push(route);
   };
