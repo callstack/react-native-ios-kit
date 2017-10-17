@@ -4,11 +4,20 @@ aliases:
       - dependencies-{{ checksum "package.json" }}
       # Fallback in case checksum fails
       - dependencies-
+  #- &restore-cache-example
+  #  keys:
+  #    - dependencies-{{ checksum "example/package.json" }}
+  #    # Fallback in case checksum fails
+  #    - dependencies-
 
   - &save-cache
     paths:
       - node_modules
     key: dependencies-{{ checksum "package.json" }}
+  #- &save-cache-example
+  #  paths:
+  #    - example/node_modules
+  #  key: dependencies-{{ checksum "example/package.json" }}
 
 version: 2
 jobs:
@@ -22,6 +31,6 @@ jobs:
       - save-cache: *save-cache
       - run: yarn run lint
       - run: yarn run flow
-      - run: yarn test -- --coverage
+      - run: yarn test -- --coverage -i
       - store_artifacts:
           path: coverage
