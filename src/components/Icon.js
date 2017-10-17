@@ -25,7 +25,7 @@ type Props = {
   /**
    * Provided by the ThemeProvider
    */
-  theme?: Theme,
+  theme: Theme,
 };
 
 class Icon extends Component<Props> {

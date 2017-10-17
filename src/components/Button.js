@@ -44,7 +44,7 @@ type Props = {
   /**
    * Global theme to use
    */
-  theme?: Theme,
+  theme: Theme,
   /**
    * Custom styles to apply to the button
    */
@@ -154,8 +154,8 @@ class Button extends React.Component<Props> {
   }
 }
 
-const getStyles = (theme?: Theme) => {
-  const { buttonColor, buttonDisabledColor } = theme || {};
+const getStyles = (theme: Theme) => {
+  const { buttonColor, buttonDisabledColor } = theme;
 
   return {
     default: StyleSheet.create({
