@@ -5,7 +5,18 @@ import { StyleSheet, View } from 'react-native';
 
 import { Button, ThemeProvider } from 'react-native-ios-kit';
 
-export default class Buttons extends Component {
+type Props = {
+  inline?: boolean,
+  style?: any,
+  disabled?: boolean,
+  centered?: boolean,
+  rounded?: boolean,
+  inverted?: boolean,
+  disabledStyle?: any,
+  color?: string,
+};
+
+export default class Buttons extends Component<Props> {
   render() {
     return (
       <ThemeProvider>

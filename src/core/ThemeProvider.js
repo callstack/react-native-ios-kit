@@ -5,22 +5,14 @@ import PropTypes from 'prop-types';
 import DefaultTheme from '../styles/DefaultTheme';
 import type { Theme } from '../types/Theme';
 
-type DefaultProps = {
-  theme: Theme,
-};
-
 type Props = {
   children?: any,
-  theme?: Theme,
+  theme: Theme,
 };
 
 export const channel = 'react-native-ios-kit$theme';
 
-export default class ThemeProvider extends PureComponent<
-  DefaultProps,
-  Props,
-  void
-> {
+export default class ThemeProvider extends PureComponent<Props> {
   static propTypes = {
     children: PropTypes.element.isRequired,
     theme: PropTypes.object,
