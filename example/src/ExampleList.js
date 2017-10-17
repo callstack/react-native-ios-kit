@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { ListView, TouchableHighlight, StyleSheet, Text } from 'react-native';
 
 import Buttons from './scenes/Buttons';
+import Typography from './scenes/Typography';
 
 type Route = {
   /* eslint-disable react/no-unused-prop-types */
@@ -12,10 +13,14 @@ type Route = {
 };
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-const dataSource: Array<Route> = ds.cloneWithRows([
+const dataSource = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
+  },
+  {
+    component: Typography,
+    title: 'Typography',
   },
 ]);
 
@@ -23,7 +28,7 @@ type Props = {
   navigator: Object,
 };
 
-export default class ExampleList extends Component<void, Props, void> {
+export default class ExampleList extends Component<Props> {
   _onPressRow = route => {
     this.props.navigator.push(route);
   };

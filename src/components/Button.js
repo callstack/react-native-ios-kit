@@ -1,72 +1,76 @@
-import React, { Component } from 'react';
+/* @flow */
+
+import * as React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
 
-class Button extends Component {
+type Props = {
+  /**
+   * Set custom font color
+   */
+  color?: string,
+  /**
+   * Disable the button
+   */
+  disabled?: boolean,
+  /**
+   * Disable automatic horizontal resize
+   * The button will only occupy width it needs, instead of 100%
+   */
+  inline?: boolean,
+  /**
+   * Center text inside the button
+   * Applies only if rounded prop is not true
+   */
+  centered?: boolean,
+  /**
+   * Set rounded border corners
+   */
+  rounded?: boolean,
+  /**
+   * Invert font color with background color
+   * Applies only if rounded prop is true
+   */
+  inverted?: boolean,
+  /**
+   * Function to call when the touch is released
+   */
+  onPress?: Function,
+  onPressIn?: Function,
+  onPressOut?: Function,
+  onLongPress?: Function,
+  /**
+   * Global theme to use
+   */
+  theme?: Theme,
+  /**
+   * Custom styles to apply to the button
+   */
+  style?: any,
+  /**
+   * Custom styles to apply to text inside the button
+   */
+  innerStyle?: any,
+  /**
+   * Custom styles to apply to the button
+   */
+  disabledStyle?: any,
+  children: React.Element<*> | React.Element<*>[] | string,
+};
+
+class Button extends React.Component<Props> {
   constructor(props) {
     super(props);
-    this.styles = getStyles(this.props.theme || {});
+    this.styles = getStyles(this.props.theme);
   }
 
-  props: {
-    /**
-     * Set custom font color
-     */
-    color?: string,
-    /**
-     * Disable the button
-     */
-    disabled?: boolean,
-    /**
-     * Disable automatic horizontal resize
-     * The button will only occupy width it needs, instead of 100%
-     */
-    inline?: boolean,
-    /**
-     * Center text inside the button
-     * Applies only if rounded prop is not true
-     */
-    centered?: boolean,
-    /**
-     * Set rounded border corners
-     */
-    rounded?: boolean,
-    /**
-     * Invert font color with background color
-     * Applies only if rounded prop is true
-     */
-    inverted?: boolean,
-    /**
-     * Function to call when the touch is released
-     */
-    onPress?: Function,
-    onPressIn?: Function,
-    onPressOut?: Function,
-    onLongPress?: Function,
-    /**
-     * Global theme to use
-     */
-    theme?: Theme,
-    /**
-     * Custom styles to apply to the button
-     */
-    style?: any,
-    /**
-     * Custom styles to apply to text inside the button
-     */
-    innerStyle?: any,
-    /**
-     * Custom styles to apply to the button
-     */
-    disabledStyle?: any,
-    children: React.Element<*> | [React.Element<*>],
-  };
+  styles: Object;
 
   _styleFromProps() {
     const { centered, rounded, inverted, color, disabled } = this.props;
-    const styleFromProps = [];
+    const styleFromProps: Object[] = [];
 
     const appliedStyleProps = {
       centered,
@@ -106,6 +110,7 @@ class Button extends Component {
         flexDirection: 'row',
       };
       if (this.props.centered) {
+        //$FlowFixMe
         wrapperStyle.justifyContent = 'center';
       }
       return <View style={wrapperStyle}>{markup}</View>;
@@ -149,8 +154,8 @@ class Button extends Component {
   }
 }
 
-const getStyles = (theme: Theme) => {
-  const { buttonColor, buttonDisabledColor } = theme;
+const getStyles = (theme?: Theme) => {
+  const { buttonColor, buttonDisabledColor } = theme || {};
 
   return {
     default: StyleSheet.create({
