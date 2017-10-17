@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { PureComponent } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import { channel } from './ThemeProvider';
 import type { Theme } from '../types/Theme';
@@ -9,8 +9,11 @@ type State = {
   theme: Theme,
 };
 
-export default function withTheme<T: *>(Comp: ReactClass<T>): ReactClass<T> {
-  class ThemedComponent extends PureComponent<void, *, State> {
+export default function withTheme<T: *>(
+  Comp: React.ComponentType<T>
+): React.ComponentType<T> {
+  class ThemedComponent extends React.PureComponent<*, State> {
+    // $FlowFixMe
     static displayName = `withTheme(${Comp.displayName || Comp.name})`;
 
     static propTypes = {
@@ -98,8 +101,8 @@ export default function withTheme<T: *>(Comp: ReactClass<T>): ReactClass<T> {
     if (prop !== 'displayName' && prop !== 'contextTypes') {
       if (prop === 'propTypes') {
         // Only the underlying component will receive the theme prop
-        // eslint-disable-next-line no-shadow, no-unused-vars
-        const { theme, ...propTypes } = Comp[prop];
+        // $FlowFixMe
+        const { theme, ...propTypes } = Comp[prop]; // eslint-disable-line no-unused-vars
         /* $FlowFixMe */
         ThemedComponent[prop] = propTypes;
       } else {

@@ -2,13 +2,13 @@
  * @flow
  */
 
-import type { Theme } from '../types';
+import type { Theme } from '../types/Theme';
 
 /**
  * Default Apple Theme
  */
 const defaultTheme: Theme = {
-  iosBlue: 'rgb(0, 122, 255)',
+  iosBlue: '#007AFF',
   phoneFieldBackground: '#FFFFFF',
   barColor: '#F9F9F9',
   borderColor: '#C8C7CC',

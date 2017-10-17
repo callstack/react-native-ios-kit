@@ -5,7 +5,8 @@
   "plugins": [
     ["module-resolver", {
       "alias": {
-        "react-native-ios-kit": ".."
+        "react-native-ios-kit": "..",
+        "react-native-vector-icons": "@expo-vector-icons"
       }
     }]
   ]

@@ -14,11 +14,7 @@
     }
   },
 
-  "extends": [
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react"
-  ],
+  "extends": ["prettier", "prettier/flowtype", "prettier/react"],
 
   "plugins": [
     "babel",
@@ -26,7 +22,7 @@
     "import",
     "react",
     "react-native",
-    "prettier",
+    "prettier"
   ],
 
   "rules": {
@@ -142,6 +138,11 @@
     "react-native/no-unused-styles": "error",
     "react-native/split-platform-components": "off",
 
-    "prettier/prettier": ["error", {"trailingComma": "es5", "singleQuote": true}]
+    "prettier/prettier": [
+      "error",
+      { "trailingComma": "es5", "singleQuote": true }
+    ],
+
+    "jsx-a11y/href-no-hash": "off"
   }
 }
