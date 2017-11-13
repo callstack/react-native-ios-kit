@@ -7,7 +7,7 @@ import type { Theme } from '../types/Theme';
 
 type Props = {
   children?: any,
-  theme: Theme,
+  theme?: Theme,
 };
 
 export const channel = 'react-native-ios-kit$theme';
