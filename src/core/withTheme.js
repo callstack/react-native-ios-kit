@@ -9,9 +9,10 @@ type State = {
   theme: Theme,
 };
 
-export default function withTheme<T: *>(
-  Comp: React.ComponentType<T>
-): React.ComponentType<T> {
+export default function withTheme<Props: {}>(
+  // TODO: this should be React.ComponentType<{ theme: Theme } & Props>
+  Comp: React.ComponentType<any>
+): React.ComponentType<Props> {
   class ThemedComponent extends React.PureComponent<*, State> {
     // $FlowFixMe
     static displayName = `withTheme(${Comp.displayName || Comp.name})`;
