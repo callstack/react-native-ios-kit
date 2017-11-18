@@ -5,6 +5,7 @@ import { ListView, TouchableHighlight, StyleSheet, Text } from 'react-native';
 
 import Buttons from './scenes/Buttons';
 import Typography from './scenes/Typography';
+import TabBar from './scenes/TabBar';
 
 type Route = {
   /* eslint-disable react/no-unused-prop-types */
@@ -21,6 +22,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Typography,
     title: 'Typography',
+  },
+  {
+    component: TabBar,
+    title: 'TabBar',
   },
 ]);
 

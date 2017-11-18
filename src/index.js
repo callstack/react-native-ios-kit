@@ -5,4 +5,5 @@ export { default as ThemeProvider } from './core/ThemeProvider';
 
 export { default as Button } from './components/Button';
 export { default as Icon } from './components/Icon';
+export { default as TabBar } from './components/TabBar';
 export * from './components/Typography';
