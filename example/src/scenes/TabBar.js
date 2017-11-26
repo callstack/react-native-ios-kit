@@ -1,14 +1,18 @@
 /* @flow */
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
-import { TabBar, ThemeProvider } from 'react-native-ios-kit';
+import { TabBar, withTheme, Headline } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit';
 
+type Props = {
+  theme: Theme,
+};
 type State = {
   activeTab: number,
 };
 
-export default class TabBarExample extends Component<void, State> {
+class TabBarExample extends Component<Props, State> {
   state = {
     activeTab: 0,
   };
@@ -16,46 +20,49 @@ export default class TabBarExample extends Component<void, State> {
   selectTab = (tabIndex: number) => this.setState({ activeTab: tabIndex });
 
   render() {
+    const { theme } = this.props;
     return (
-      <ThemeProvider>
-        <View style={styles.screen}>
-          <View>
-            <Text>{`Active Tab: ${this.state.activeTab}`}</Text>
-          </View>
-          <TabBar
-            tabs={[
-              {
-                icon: 'ios-paper-outline',
-                title: 'News',
-                onPress: this.selectTab,
-                active: this.state.activeTab === 0,
-              },
-              {
-                icon: 'ios-podium',
-                title: 'Scores',
-                onPress: this.selectTab,
-                active: this.state.activeTab === 1,
-              },
-              {
-                icon: 'ios-star-outline',
-                title: 'Favourites',
-                onPress: this.selectTab,
-                active: this.state.activeTab === 2,
-              },
-              {
-                icon: 'ios-people',
-                title: 'Disabled',
-                onPress: this.selectTab,
-                active: this.state.activeTab === 3,
-                disabled: true,
-              },
-            ]}
-          />
+      <View style={styles.screen}>
+        <View>
+          <Headline style={{ color: theme.text }}>
+            {`Active Tab: ${this.state.activeTab}`}
+          </Headline>
         </View>
-      </ThemeProvider>
+        <TabBar
+          tabs={[
+            {
+              icon: 'ios-paper-outline',
+              title: 'News',
+              onPress: this.selectTab,
+              active: this.state.activeTab === 0,
+            },
+            {
+              icon: 'ios-podium',
+              title: 'Scores',
+              onPress: this.selectTab,
+              active: this.state.activeTab === 1,
+            },
+            {
+              icon: 'ios-star-outline',
+              title: 'Favourites',
+              onPress: this.selectTab,
+              active: this.state.activeTab === 2,
+            },
+            {
+              icon: 'ios-people',
+              title: 'Disabled',
+              onPress: this.selectTab,
+              active: this.state.activeTab === 3,
+              disabled: true,
+            },
+          ]}
+        />
+      </View>
     );
   }
 }
+
+export default withTheme(TabBarExample);
 
 const styles = StyleSheet.create({
   screen: {
