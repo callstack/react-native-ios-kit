@@ -20,13 +20,10 @@ class TabBarExample extends Component<Props, State> {
   selectTab = (tabIndex: number) => this.setState({ activeTab: tabIndex });
 
   render() {
-    const { theme } = this.props;
     return (
       <View style={styles.screen}>
         <View>
-          <Headline style={{ color: theme.text }}>
-            {`Active Tab: ${this.state.activeTab}`}
-          </Headline>
+          <Headline>{`Active Tab: ${this.state.activeTab}`}</Headline>
         </View>
         <TabBar
           tabs={[
