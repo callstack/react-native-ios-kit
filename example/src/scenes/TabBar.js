@@ -41,11 +41,10 @@ export default class TabBarExample extends Component<void, State> {
                 title: 'Favourites',
                 onPress: this.selectTab,
                 active: this.state.activeTab === 2,
-                badge: true,
               },
               {
                 icon: 'ios-people',
-                title: 'Account',
+                title: 'Disabled',
                 onPress: this.selectTab,
                 active: this.state.activeTab === 3,
                 disabled: true,

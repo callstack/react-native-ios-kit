@@ -12,7 +12,6 @@ type TabItem = {
   title: string,
   onPress: (tabIndex: number) => void,
   active: boolean,
-  badge?: boolean,
   disabled?: boolean,
 };
 
@@ -23,7 +22,6 @@ type Props = {
    * title: string,
    * onPress: function to be called when Tab is tapped
    * active: boolean, indicating wheter Tab is active
-   * badge?: boolean, (optional), indicationg if Tab have badge
    * disabled?: boolean, (optional), diasables a Tab
    */
   tabs: Array<TabItem>,
@@ -66,7 +64,6 @@ class TabBar extends PureComponent<Props> {
               >
                 {tab.title}
               </Caption2>
-              {tab.badge && <View style={styles.badge} />}
             </View>
           </TouchableWithoutFeedback>
         ))}
@@ -91,14 +88,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 4,
-  },
-  badge: {
-    position: 'absolute',
-    top: 8,
-    right: 8,
-    width: 8,
-    height: 8,
-    borderRadius: 8,
-    backgroundColor: 'red',
   },
 });
