@@ -35,13 +35,11 @@ class TabBar extends PureComponent<Props> {
   render() {
     const { theme, tabs } = this.props;
     const tabBarStyle = {
-      backgroundColor: theme.phoneFieldBackground,
+      backgroundColor: theme.barColor,
       borderTopColor: theme.borderColor,
     };
     const activeColor = theme.buttonColor;
-    // FIXME:
-    // const inactiveColor = theme.buttonDisabledColor;
-    const inactiveColor = '#929292';
+    const inactiveColor = theme.buttonDisabledColor;
     return (
       <View style={[styles.wrapper, tabBarStyle]}>
         {tabs.map((tab, idx) => (
