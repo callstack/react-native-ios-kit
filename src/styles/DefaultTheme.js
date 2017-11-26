@@ -21,6 +21,7 @@ const defaultTheme: Theme = {
   avatarBackground: '#CDCED2',
   underlayColor: '#E5E6EA',
   arrowIcon: '#CDCED2',
+  text: '#000000',
   textField: {
     subtitleColor: '#8C8C8C',
     iconColor: '#CDCED2',

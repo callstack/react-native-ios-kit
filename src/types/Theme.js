@@ -14,6 +14,7 @@ export type Theme = {
   arrowIcon: string,
   newMessageIndicator: string,
   avatarBackground: string,
+  text: string,
   textField: {
     subtitleColor: string,
     iconColor: string,
