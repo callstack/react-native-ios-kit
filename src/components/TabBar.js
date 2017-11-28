@@ -11,7 +11,7 @@ type TabItem = {
   icon: string,
   title: string,
   onPress: (tabIndex: number) => void,
-  active: boolean,
+  isActive: boolean,
   disabled?: boolean,
 };
 
@@ -21,7 +21,7 @@ type Props = {
    * icon: Icon name, one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json
    * title: string,
    * onPress: function to be called when Tab is tapped
-   * active: boolean, indicating wheter Tab is active
+   * isActive: boolean, indicating wheter Tab is active
    * disabled?: boolean, (optional), diasables a Tab
    */
   tabs: Array<TabItem>,
@@ -46,18 +46,17 @@ class TabBar extends PureComponent<Props> {
           <TouchableWithoutFeedback
             key={`tabItem_${idx}`}
             onPress={() => tab.onPress(idx)}
-            disabled={tab.disabled || tab.active}
+            disabled={tab.disabled || tab.isActive}
           >
             <View style={styles.tabItem}>
               <Icon
                 name={tab.icon}
-                theme={theme}
                 size={30}
-                color={tab.active ? activeColor : inactiveColor}
+                color={tab.isActive ? activeColor : inactiveColor}
               />
               <Caption2
                 style={{
-                  color: tab.active ? activeColor : inactiveColor,
+                  color: tab.isActive ? activeColor : inactiveColor,
                 }}
               >
                 {tab.title}
