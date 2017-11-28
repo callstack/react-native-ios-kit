@@ -8,6 +8,14 @@ import type { Theme } from '../types/Theme';
  * Default Apple Theme
  */
 const defaultTheme: Theme = {
+  red: '#ff3b30',
+  orange: '#ff9500',
+  yellow: '#fc0',
+  green: '#4cd964',
+  purple: '#5856d6',
+  pink: '#ff2d55',
+  blue: '#007aff',
+  tealBlue: '#5ac8fa',
   iosBlue: '#007AFF',
   phoneFieldBackground: '#FFFFFF',
   barColor: '#F9F9F9',
