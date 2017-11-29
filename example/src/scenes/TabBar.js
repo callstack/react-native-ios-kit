@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import { TabBar, withTheme, Headline } from 'react-native-ios-kit';
-import type { Theme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
   theme: Theme,
