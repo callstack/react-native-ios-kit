@@ -20,12 +20,12 @@ type Props = {
    * The lowest possible numeric value for the stepper.
    * Default value is 0.
    */
-  minValue?: number,
+  minValue: number,
   /**
    * The highest possible numeric value for the stepper.
    * The default value of this property is 100.
    */
-  maxValue?: number,
+  maxValue: number,
   /**
    * The numeric value of the stepper.
    */
@@ -34,16 +34,7 @@ type Props = {
    * The step, or increment, value for the stepper.
    * The default value for this property is 1.
    */
-  stepValue?: number,
-  /**
-   * The automatic vs. nonautomatic repeat state of the stepper.
-   * The default value for this property is true.
-   */
-  autorepeat?: boolean, // TODO
-  /**
-   * The wrap vs. no-wrap state of the stepper.
-   */
-  wraps?: boolean, //TODO
+  stepValue: number,
 };
 
 type State = {
@@ -163,8 +154,7 @@ class Stepper extends React.Component<Props, State> {
                 backgroundColor:
                   isMinimum || !isDecrementing
                     ? 'transparent'
-                    : // : color(buttonColor).lighten(0.5),
-                      buttonColor,
+                    : color(buttonColor).lighten(0.5),
               },
               styles.stepperIcon,
               styles.stepperMinus,
@@ -189,7 +179,9 @@ class Stepper extends React.Component<Props, State> {
               { borderColor: buttonColor },
               {
                 backgroundColor:
-                  isMaximum || !isIncrementing ? 'transparent' : buttonColor,
+                  isMaximum || !isIncrementing
+                    ? 'transparent'
+                    : color(buttonColor).lighten(0.5),
               },
               styles.stepperIcon,
               styles.stepperPlus,
