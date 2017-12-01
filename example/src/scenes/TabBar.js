@@ -22,9 +22,7 @@ class TabBarExample extends Component<Props, State> {
   render() {
     return (
       <View style={styles.screen}>
-        <View>
-          <Headline>{`Active Tab: ${this.state.activeTab}`}</Headline>
-        </View>
+        <Headline>{`Active Tab: ${this.state.activeTab}`}</Headline>
         <TabBar
           tabs={[
             {

@@ -5,10 +5,11 @@ import { ListView } from 'react-native';
 import { withTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit';
 
+import ExampleListItem from './ExampleListItem';
 import Buttons from './scenes/Buttons';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
-import ExampleListItem from './ExampleListItem';
+import Stepper from './scenes/Stepper';
 
 type Route = {
   /* eslint-disable react/no-unused-prop-types */
@@ -29,6 +30,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: TabBar,
     title: 'TabBar',
+  },
+  {
+    component: Stepper,
+    title: 'Stepper',
   },
 ]);
 
