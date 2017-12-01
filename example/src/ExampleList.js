@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import { withTheme } from 'react-native-ios-kit';
-import type { Theme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
 import ExampleListItem from './ExampleListItem';
 import Buttons from './scenes/Buttons';

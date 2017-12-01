@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, StatusBar } from 'react-native';
 import { Button } from 'react-native-ios-kit';
-import type { Theme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
   navigator: Object,
