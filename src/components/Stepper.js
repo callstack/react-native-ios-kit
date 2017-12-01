@@ -135,11 +135,16 @@ class Stepper extends React.Component<Props, State> {
 
   render() {
     const { theme, value, minValue, maxValue } = this.props;
-    const { buttonColor, buttonDisabledColor } = theme;
+    const { buttonColor } = theme;
     const { isIncrementing, isDecrementing } = this.state;
     const isMinimum = value === minValue;
     const isMaximum = value === maxValue;
-
+    const disabledColor = color(buttonColor)
+      .lighten(0.5)
+      .string();
+    const pressedColor = color(buttonColor)
+      .lighten(0.8)
+      .string();
     return (
       <View style={[styles.container, { borderColor: buttonColor }]}>
         <TouchableWithoutFeedback
@@ -149,12 +154,10 @@ class Stepper extends React.Component<Props, State> {
         >
           <View
             style={[
-              { borderColor: buttonColor },
               {
+                borderColor: buttonColor,
                 backgroundColor:
-                  isMinimum || !isDecrementing
-                    ? 'transparent'
-                    : color(buttonColor).lighten(0.5),
+                  isMinimum || !isDecrementing ? 'transparent' : pressedColor,
               },
               styles.stepperIcon,
               styles.stepperMinus,
@@ -163,7 +166,7 @@ class Stepper extends React.Component<Props, State> {
             <Icon
               name="md-remove"
               size={20}
-              color={isMinimum ? buttonDisabledColor : buttonColor}
+              color={isMinimum ? disabledColor : buttonColor}
               style={{ marginTop: 2 }}
             />
           </View>
@@ -176,12 +179,10 @@ class Stepper extends React.Component<Props, State> {
         >
           <View
             style={[
-              { borderColor: buttonColor },
               {
+                borderColor: buttonColor,
                 backgroundColor:
-                  isMaximum || !isIncrementing
-                    ? 'transparent'
-                    : color(buttonColor).lighten(0.5),
+                  isMaximum || !isIncrementing ? 'transparent' : pressedColor,
               },
               styles.stepperIcon,
               styles.stepperPlus,
@@ -190,7 +191,7 @@ class Stepper extends React.Component<Props, State> {
             <Icon
               name="md-add"
               size={20}
-              color={isMaximum ? buttonDisabledColor : buttonColor}
+              color={isMaximum ? disabledColor : buttonColor}
               style={{ marginTop: 2 }}
             />
           </View>
