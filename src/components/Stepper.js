@@ -43,8 +43,8 @@ type State = {
 };
 /**
  * A control used to increment or decrement a value.
- * 
- * **Usage:**    
+ *
+ * **Usage:**
  * ```js
  * <Stepper
  *    value={this.state.value}

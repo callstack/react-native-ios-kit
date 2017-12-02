@@ -23,15 +23,15 @@ type TabItem = {
 type Props = {
   /**
    * Array of Tabs. Each TabItem needs to have below shape:
-   * 
+   *
    * icon: Icon name, one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json
-   * 
+   *
    * title: string,
-   * 
+   *
    * onPress: function to be called when Tab is tapped
-   * 
+   *
    * isActive: boolean, indicating wheter Tab is active
-   * 
+   *
    * disabled?: boolean, (optional), disables a Tab
    */
   tabs: Array<TabItem>,
@@ -42,7 +42,7 @@ type Props = {
 };
 /**
  * A control that displays one or more buttons in a tab bar for selecting between different subtasks, views, or modes in an app.
- * 
+ *
  * Usage:
  * ```js
  * <TabBar
