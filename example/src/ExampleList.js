@@ -1,14 +1,17 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { ListView, TouchableHighlight, StyleSheet, Text } from 'react-native';
+import { ListView } from 'react-native';
+import { withTheme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
+import ExampleListItem from './ExampleListItem';
 import Buttons from './scenes/Buttons';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
+import Stepper from './scenes/Stepper';
 
 type Route = {
-  /* eslint-disable react/no-unused-prop-types */
   component: any,
   title: string,
 };
@@ -27,14 +30,19 @@ const dataSource = ds.cloneWithRows([
     component: TabBar,
     title: 'TabBar',
   },
+  {
+    component: Stepper,
+    title: 'Stepper',
+  },
 ]);
 
 type Props = {
   navigator: Object,
+  theme: Theme,
 };
 
-export default class ExampleList extends Component<Props> {
-  _onPressRow = route => {
+class ExampleList extends Component<Props> {
+  _onPressRow = (route: Route) => {
     this.props.navigator.push(route);
   };
 
@@ -44,39 +52,11 @@ export default class ExampleList extends Component<Props> {
         automaticallyAdjustContentInsets={false}
         dataSource={dataSource}
         renderRow={rowData => (
-          <ListItem onPressRow={this._onPressRow} rowData={rowData} />
+          <ExampleListItem onPressRow={this._onPressRow} rowData={rowData} />
         )}
       />
     );
   }
 }
 
-type ListItemProps = {
-  onPressRow: (rowData: Route) => void,
-  rowData: Route,
-};
-
-const ListItem = (props: ListItemProps) => {
-  const { onPressRow, rowData } = props;
-  const _onPressRow = () => {
-    onPressRow(rowData);
-  };
-  return (
-    <TouchableHighlight
-      onPress={_onPressRow}
-      style={styles.row}
-      underlayColor="#C8C7CC"
-    >
-      <Text style={styles.text}>{rowData.title}</Text>
-    </TouchableHighlight>
-  );
-};
-
-const styles = StyleSheet.create({
-  row: {
-    padding: 15,
-  },
-  text: {
-    fontSize: 17,
-  },
-});
+export default withTheme(ExampleList);

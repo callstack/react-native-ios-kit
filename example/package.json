@@ -11,10 +11,12 @@
     "ios": "react-native-scripts ios"
   },
   "dependencies": {
+    "color": "^2.0.1",
     "expo": "^23.0.0",
+    "glob-to-regexp": "^0.3.0",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0-alpha.12",
-    "react-native":
-      "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^2.7.1",

@@ -64,7 +64,9 @@
     ]
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "color": "^2.0.1",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.6.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

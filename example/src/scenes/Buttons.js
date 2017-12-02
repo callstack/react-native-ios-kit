@@ -3,97 +3,91 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { Button, ThemeProvider } from 'react-native-ios-kit';
+import { Button, withTheme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
-  inline?: boolean,
-  style?: any,
-  disabled?: boolean,
-  centered?: boolean,
-  rounded?: boolean,
-  inverted?: boolean,
-  disabledStyle?: any,
-  color?: string,
+  theme: Theme,
 };
 
-export default class Buttons extends Component<Props> {
+class Buttons extends Component<Props> {
   render() {
     return (
-      <ThemeProvider>
-        <View style={styles.container}>
-          <Button inline style={styles.button}>
-            Button (inline)
-          </Button>
-          <Button disabled style={styles.button}>
-            Button disabled
-          </Button>
-          <Button inline centered color={customColor} style={styles.button}>
-            Button (inline/centered)
-          </Button>
-          <Button disabled centered color={customColor} style={styles.button}>
-            Button (centered/disabled)
-          </Button>
-          <Button style={styles.button} inline rounded>
-            Button (inline/rounded)
-          </Button>
-          <Button style={styles.button} rounded>
+      <View style={styles.container}>
+        <Button inline style={styles.button}>
+          Button (inline)
+        </Button>
+        <Button disabled style={styles.button}>
+          Button disabled
+        </Button>
+        <Button inline centered color={customColor} style={styles.button}>
+          Button (inline/centered)
+        </Button>
+        <Button disabled centered color={customColor} style={styles.button}>
+          Button (centered/disabled)
+        </Button>
+        <Button style={styles.button} inline rounded>
+          Button (inline/rounded)
+        </Button>
+        <Button style={styles.button} rounded>
+          Button (rounded)
+        </Button>
+        <Button style={styles.button} rounded disabled>
+          Button (rounded/disabled)
+        </Button>
+        <View style={styles.combineButtonsContainer}>
+          <Button
+            rounded
+            style={[styles.roundedButton, styles.roundedButtonLeft]}
+          >
             Button (rounded)
           </Button>
-          <Button style={styles.button} rounded disabled>
-            Button (rounded/disabled)
-          </Button>
-          <View style={styles.combineButtonsContainer}>
-            <Button
-              rounded
-              style={[styles.roundedButton, styles.roundedButtonLeft]}
-            >
-              Button (rounded)
-            </Button>
-            <Button
-              rounded
-              inverted
-              style={[styles.roundedButton, styles.roundedButtonRight]}
-            >
-              Button (rounded/inverted)
-            </Button>
-          </View>
-          <View style={styles.combineButtonsContainer}>
-            <Button
-              rounded
-              style={[styles.roundedButton, styles.roundedButtonLeft]}
-            >
-              Button (rounded)
-            </Button>
-            <Button
-              rounded
-              inverted
-              disabled
-              style={[styles.roundedButton, styles.roundedButtonRight]}
-            >
-              Button (rounded/disabled)
-            </Button>
-          </View>
           <Button
-            centered
-            color={customColor}
-            style={[styles.button, styles.customBorder]}
+            rounded
+            inverted
+            style={[styles.roundedButton, styles.roundedButtonRight]}
           >
-            Custom button + centered
-          </Button>
-          <Button
-            centered
-            disabled
-            color={customColor}
-            style={[styles.button, styles.customBorder]}
-            disabledStyle={styles.customDisabledBorder}
-          >
-            Custom button (centered/disabled)
+            Button (rounded/inverted)
           </Button>
         </View>
-      </ThemeProvider>
+        <View style={styles.combineButtonsContainer}>
+          <Button
+            rounded
+            style={[styles.roundedButton, styles.roundedButtonLeft]}
+          >
+            Button (rounded)
+          </Button>
+          <Button
+            rounded
+            inverted
+            disabled
+            style={[styles.roundedButton, styles.roundedButtonRight]}
+          >
+            Button (rounded/disabled)
+          </Button>
+        </View>
+        <Button
+          centered
+          color={customColor}
+          style={[styles.button, styles.customBorder]}
+        >
+          Custom button + centered
+        </Button>
+        <Button
+          centered
+          disabled
+          color={customColor}
+          style={[styles.button, styles.customBorder]}
+          disabledStyle={styles.customDisabledBorder}
+        >
+          Custom button (centered/disabled)
+        </Button>
+      </View>
     );
   }
 }
+
+export default withTheme(Buttons);
 
 const customColor = '#FF3A30';
 const styles = StyleSheet.create({

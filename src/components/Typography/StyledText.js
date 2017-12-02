@@ -3,6 +3,9 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet } from 'react-native';
 
+import { withTheme } from '../../';
+import type { Theme } from '../../types/Theme';
+
 const trackingToSpacing = (fontSize: number, tracking: number): number =>
   fontSize * tracking / 1000;
 
@@ -30,11 +33,12 @@ type Props = {
   style?: any,
   children?: any,
   config: Object,
+  theme: Theme,
 };
 
 class StyledText extends Component<Props> {
   render() {
-    const { style, children, config, ...rest } = this.props;
+    const { style, children, config, theme, ...rest } = this.props;
     const fontSize = resolveFontSizeFromStyle(style) || config.fontSize;
     const letterSpacing = trackingToSpacing(fontSize, config.tracking);
 
@@ -43,8 +47,8 @@ class StyledText extends Component<Props> {
       fontWeight: config.fontWeight,
       letterSpacing,
       lineHeight: config.leading,
+      color: theme.text,
     };
-
     return (
       <Text style={[calculatedStyle, style]} {...rest}>
         {children}
@@ -53,4 +57,4 @@ class StyledText extends Component<Props> {
   }
 }
 
-export default StyledText;
+export default withTheme(StyledText);
