@@ -1,0 +1,23 @@
+{
+  "name": "react-native-ios-kit-docs",
+  "version": "0.0.1",
+  "description": "Documentation for react-native-ios-kit",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev": "babel-node index",
+    "build": "babel-node index build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "del-cli": "^1.1.0"
+  },
+  "dependencies": {
+    "component-docs": "^0.6.3",
+    "linaria": "^0.4.1"
+  }
+}
