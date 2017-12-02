@@ -1,7 +1,7 @@
 /* @flow */
 import * as React from 'react';
 import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
-import color from 'color'; //TODO
+import color from 'color';
 
 import Icon from './Icon';
 import withTheme from '../core/withTheme';
@@ -20,12 +20,12 @@ type Props = {
    * The lowest possible numeric value for the stepper.
    * Default value is 0.
    */
-  minValue: number,
+  minValue?: number,
   /**
    * The highest possible numeric value for the stepper.
    * The default value of this property is 100.
    */
-  maxValue: number,
+  maxValue?: number,
   /**
    * The numeric value of the stepper.
    */
@@ -34,7 +34,7 @@ type Props = {
    * The step, or increment, value for the stepper.
    * The default value for this property is 1.
    */
-  stepValue: number,
+  stepValue?: number,
 };
 
 type State = {
@@ -42,16 +42,24 @@ type State = {
   isIncrementing: boolean,
 };
 /**
- * Stepper component
+ * A control used to increment or decrement a value.
+ * 
+ * **Usage:**    
+ * ```js
+ * <Stepper
+ *    value={this.state.value}
+ *    onChangeCounter={value => this.setState({ value })}
+ *    minValue={0}
+ *    maxValue={10}
+ *    stepValue={2}
+ * />
+ * ```
  */
 class Stepper extends React.Component<Props, State> {
   static defaultProps = {
     minValue: 0,
     maxValue: 100,
     stepValue: 1,
-    isContinous: true,
-    autorepeat: true,
-    wraps: false,
   };
   constructor(props: Props) {
     super(props);

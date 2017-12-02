@@ -12,7 +12,6 @@ import TabBar from './scenes/TabBar';
 import Stepper from './scenes/Stepper';
 
 type Route = {
-  /* eslint-disable react/no-unused-prop-types */
   component: any,
   title: string,
 };
