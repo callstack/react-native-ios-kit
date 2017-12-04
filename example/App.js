@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleSheet, NavigatorIOS } from 'react-native';
 import { ThemeProvider, DefaultTheme } from 'react-native-ios-kit';
-import type { Theme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
 import ExampleList from './src/ExampleList';
 import ThemeSelector from './src/ThemeSelector';

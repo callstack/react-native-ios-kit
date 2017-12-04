@@ -15,7 +15,7 @@ import {
   Caption2,
   withTheme,
 } from 'react-native-ios-kit';
-import type { Theme } from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
   theme: Theme,
