@@ -49,9 +49,6 @@ class Stepper extends React.Component<Props, State> {
     minValue: 0,
     maxValue: 100,
     stepValue: 1,
-    isContinous: true,
-    autorepeat: true,
-    wraps: false,
   };
   constructor(props: Props) {
     super(props);
