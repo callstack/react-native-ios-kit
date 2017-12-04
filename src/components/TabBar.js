@@ -1,6 +1,11 @@
 /* @flow */
 import React, { PureComponent } from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Dimensions,
+} from 'react-native';
 
 import Icon from './Icon';
 import { Caption2 } from './Typography';
@@ -40,6 +45,7 @@ class TabBar extends PureComponent<Props> {
     };
     const activeColor = theme.buttonColor;
     const inactiveColor = theme.buttonDisabledColor;
+    const { width } = Dimensions.get('window');
     return (
       <View style={[styles.wrapper, tabBarStyle]}>
         {tabs.map((tab, idx) => (
@@ -48,7 +54,7 @@ class TabBar extends PureComponent<Props> {
             onPress={() => tab.onPress(idx)}
             disabled={tab.disabled || tab.isActive}
           >
-            <View style={styles.tabItem}>
+            <View style={[styles.tabItem, { width: width / tabs.length }]}>
               <Icon
                 name={tab.icon}
                 size={30}
@@ -81,7 +87,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
   },
   tabItem: {
-    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 4,

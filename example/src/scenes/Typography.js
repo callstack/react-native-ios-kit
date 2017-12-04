@@ -1,5 +1,4 @@
 /* @flow */
-
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -14,9 +13,15 @@ import {
   Footnote,
   Caption1,
   Caption2,
-} from '../../../src';
+  withTheme,
+} from 'react-native-ios-kit';
+import type { Theme } from 'react-native-ios-kit';
 
-export default class TypographyExample extends Component<void> {
+type Props = {
+  theme: Theme,
+};
+
+class TypographyExample extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
@@ -34,6 +39,8 @@ export default class TypographyExample extends Component<void> {
     );
   }
 }
+
+export default withTheme(TypographyExample);
 
 const styles = StyleSheet.create({
   container: {

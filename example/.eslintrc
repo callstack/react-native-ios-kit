@@ -2,7 +2,10 @@
   "extends": "../.eslintrc",
 
   "settings": {
-    "import/core-modules": ["react-native-ios-kit"]
+    "import/core-modules": [
+      "react-native-ios-kit",
+      "react-native-ios-kit/types"
+    ]
   },
 
   "rules": {
