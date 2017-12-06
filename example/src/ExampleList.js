@@ -10,9 +10,9 @@ import Buttons from './scenes/Buttons';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
 import Stepper from './scenes/Stepper';
+import SearchBar from './scenes/SearchBar';
 
 type Route = {
-  /* eslint-disable react/no-unused-prop-types */
   component: any,
   title: string,
 };
@@ -34,6 +34,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Stepper,
     title: 'Stepper',
+  },
+  {
+    component: SearchBar,
+    title: 'SearchBar',
   },
 ]);
 
