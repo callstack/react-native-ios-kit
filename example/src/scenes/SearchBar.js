@@ -23,6 +23,7 @@ class SearchBarExample extends Component<Props, State> {
           value={this.state.text}
           onChangeText={text => this.setState({ text })}
           withCancel
+          animated={false}
         />
       </View>
     );
@@ -34,6 +35,5 @@ export default withTheme(SearchBarExample);
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingTop: 100,
   },
 });

@@ -1,12 +1,15 @@
 /* @flow */
 import * as React from 'react';
 import {
+  Animated,
+  Dimensions,
+  Easing,
   StyleSheet,
-  Text,
   TextInput,
   TouchableHighlight,
   TouchableOpacity,
   View,
+  LayoutAnimation,
 } from 'react-native';
 
 import Icon from './Icon';
@@ -36,69 +39,163 @@ type Props = {
    */
   withCancel: boolean,
   /**
+   * Text of Cancel Button. Defaults to "Cancel"
+   */
+  cancelText: string,
+  /**
    * Indicates if Cancel button and TextInput should animate on focus/blur. Defaults to false
    */
   animated: boolean,
   /**
-   * Animation duration. Default 400ms
+   * Animation duration. Default 200ms
    */
   animationTime: number,
+  /**
+   * Callback invoked on text input focus
+   */
+  onFocus: () => void,
+  /**
+   * Callback invoked on text input blur
+   */
+  onBlur: () => void,
 };
 
-class SearchBar extends React.Component<Props> {
+type State = {
+  anim: *,
+};
+
+class SearchBar extends React.Component<Props, State> {
   static defaultProps = {
     placeholder: 'Search',
     withCancel: false,
+    cancelText: 'Cancel',
     animated: false,
-    animationTime: 400,
+    animationTime: 200,
   };
+  state = {
+    anim: new Animated.Value(0),
+  };
+  componentWillUpdate() {
+    LayoutAnimation.easeInEaseOut();
+  }
+
   _input = undefined;
+
+  clearInput = (): void => this.props.onChangeText('');
   cancelInput = (): void => {
     this.props.onChangeText('');
-    if (this._input) {
-      this._input.blur();
-    }
+    if (this._input) this._input.blur();
   };
   focusInput = (): void => {
-    if (this._input) {
-      this._input.focus();
-    }
+    if (this._input) this._input.focus();
+  };
+  handleInputFocus = (): void => {
+    this.animateTo(1);
+    if (typeof this.props.onFocus === 'function') this.props.onFocus();
+  };
+  handleInputBlur = (): void => {
+    this.animateTo(0);
+    if (typeof this.props.onBlur === 'function') this.props.onBlur();
+  };
+  animateTo = (toValue: 1 | 0): void => {
+    Animated.timing(this.state.anim, {
+      toValue,
+      easing: Easing.linear,
+      duration: this.props.animationTime,
+    }).start();
   };
   render() {
-    const { value, placeholder, onChangeText, theme, withCancel } = this.props;
+    const {
+      value,
+      placeholder,
+      onChangeText,
+      theme,
+      withCancel,
+      cancelText,
+      animated,
+    } = this.props;
+    const { anim } = this.state;
+    const { width } = Dimensions.get('window');
     return (
       <View style={[{ backgroundColor: theme.barColor }, styles.container]}>
         <TouchableHighlight
-          underlayColor="rgb(161,161,161)"
+          underlayColor={theme.underlayColor}
           onPress={this.focusInput}
           onLongPress={this.focusInput}
           style={styles.inputTouchWrapper}
         >
-          <View style={styles.inputWrapper}>
+          <Animated.View
+            style={[
+              styles.inputWrapper,
+              {
+                backgroundColor: theme.underlayColor,
+                width: animated
+                  ? anim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [width - 20, width - 80],
+                    })
+                  : width - 80,
+              },
+            ]}
+          >
             <Icon
               name="ios-search"
-              color="rgb(142,142,147)"
+              color={theme.placeholder}
               style={styles.searchIcon}
               size={18}
             />
             <TextInput
               ref={ref => (this._input = ref)}
-              style={styles.input}
+              style={[{ color: theme.text }, styles.input]}
               value={value}
               onChangeText={onChangeText}
               placeholder={placeholder}
-              clearButtonMode="always"
-              placeholderTextColor="rgb(142,142,147)"
-              selectionColor={theme.buttonColor} //FIXME: shoul be primaryColor!
+              placeholderTextColor={theme.placeholder}
+              selectionColor={theme.buttonColor}
+              onFocus={this.handleInputFocus}
+              onBlur={this.handleInputBlur}
               {...this.props}
             />
-          </View>
+            {value ? (
+              <TouchableOpacity onPress={this.clearInput}>
+                <Icon
+                  name="ios-close-circle"
+                  color={theme.placeholder}
+                  style={styles.clearIcon}
+                  size={20}
+                />
+              </TouchableOpacity>
+            ) : null}
+          </Animated.View>
         </TouchableHighlight>
         {withCancel && (
           <TouchableOpacity onPress={this.cancelInput}>
-            <Text style={[{ color: theme.buttonColor }, styles.cancelText]}>
-              Cancel
-            </Text>
+            <Animated.Text
+              style={[
+                styles.cancelText,
+                {
+                  color: theme.buttonColor,
+                  transform: [
+                    {
+                      translateX: animated
+                        ? anim.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [60, 0],
+                          })
+                        : 0,
+                    },
+                  ],
+                  opacity: animated
+                    ? anim.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0, 1],
+                      })
+                    : 1,
+                },
+              ]}
+            >
+              {cancelText}
+            </Animated.Text>
           </TouchableOpacity>
         )}
       </View>
@@ -121,19 +218,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     marginTop: 2,
   },
+  clearIcon: {
+    paddingRight: 9,
+    backgroundColor: 'transparent',
+    marginTop: 2,
+  },
   inputTouchWrapper: {
     flexGrow: 1,
     borderRadius: 10,
   },
   inputWrapper: {
     flexDirection: 'row',
-    backgroundColor: 'rgb(236,236,237)',
     paddingBottom: 5,
     paddingTop: 3,
     borderRadius: 10,
     flexGrow: 1,
     height: 36,
     alignItems: 'center',
+    overflow: 'hidden',
   },
   input: {
     backgroundColor: 'transparent',
