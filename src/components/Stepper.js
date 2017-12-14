@@ -131,7 +131,7 @@ class Stepper extends React.Component<Props, State> {
 
   render() {
     const { theme, value, minValue, maxValue } = this.props;
-    const { primary, primaryLight, disabled } = theme;
+    const { primary, primaryLight } = theme;
     const { isIncrementing, isDecrementing } = this.state;
     const isMinimum = value === minValue;
     const isMaximum = value === maxValue;
