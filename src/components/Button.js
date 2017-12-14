@@ -155,7 +155,7 @@ class Button extends React.Component<Props> {
 }
 
 const getStyles = (theme: Theme) => {
-  const { buttonColor, buttonDisabledColor } = theme;
+  const { primary, disabled } = theme;
 
   return {
     default: StyleSheet.create({
@@ -163,12 +163,12 @@ const getStyles = (theme: Theme) => {
         textAlign: 'left',
         fontWeight: 'normal',
         fontSize: 17,
-        color: buttonColor,
+        color: primary,
       },
     }),
     disabled: {
       inner: {
-        color: buttonDisabledColor,
+        color: disabled,
       },
     },
     centered: StyleSheet.create({
@@ -183,7 +183,7 @@ const getStyles = (theme: Theme) => {
       },
       container: {
         borderWidth: 1,
-        borderColor: buttonColor,
+        borderColor: primary,
         borderRadius: 8,
         justifyContent: 'center',
         padding: 10,
@@ -191,7 +191,7 @@ const getStyles = (theme: Theme) => {
     }),
     roundedDisabled: StyleSheet.create({
       container: {
-        borderColor: buttonDisabledColor,
+        borderColor: disabled,
       },
     }),
     inverted: StyleSheet.create({
@@ -199,13 +199,13 @@ const getStyles = (theme: Theme) => {
         color: '#ffffff',
       },
       container: {
-        backgroundColor: buttonColor,
+        backgroundColor: primary,
       },
     }),
     invertedDisabled: StyleSheet.create({
       container: {
-        backgroundColor: buttonDisabledColor,
-        borderColor: buttonDisabledColor,
+        backgroundColor: disabled,
+        borderColor: disabled,
       },
     }),
   };

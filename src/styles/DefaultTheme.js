@@ -1,39 +1,24 @@
-/**
- * @flow
- */
-
+/* @flow */
+import color from 'color';
+import * as colors from './colors';
 import type { Theme } from '../types/Theme';
 
 /**
- * Default Apple Theme
+ * Default Theme
  */
-const defaultTheme: Theme = {
-  red: '#ff3b30',
-  orange: '#ff9500',
-  yellow: '#fc0',
-  green: '#4cd964',
-  purple: '#5856d6',
-  pink: '#ff2d55',
-  blue: '#007aff',
-  tealBlue: '#5ac8fa',
-  iosBlue: '#007AFF',
-  phoneFieldBackground: '#FFFFFF',
-  barColor: '#F9F9F9',
-  borderColor: '#C8C7CC',
-  footNoteColor: '#8A8A8F',
-  highlightColor: '#D9D9D9',
-  buttonColor: '#007AFF',
-  buttonDisabledColor: '#cdcdcd',
-  newMessageIndicator: '#007AFF',
-  messageColor: '#8C8C8C',
-  avatarBackground: '#CDCED2',
-  underlayColor: '#E5E6EA',
-  arrowIcon: '#CDCED2',
-  text: '#000000',
-  textField: {
-    subtitleColor: '#8C8C8C',
-    iconColor: '#CDCED2',
-  },
+const DefaultTheme: Theme = {
+  primary: colors.blue,
+  primaryLight: color(colors.blue)
+    .lighten(0.5)
+    .string(),
+  disabled: color(colors.blue)
+    .lighten(0.8)
+    .string(),
+  background: colors.darkGrey,
+  barColor: colors.lightestGrey,
+  dividerColor: colors.grey,
+  text: colors.black,
+  placeholder: colors.greyD1,
 };
 
-export default defaultTheme;
+export default DefaultTheme;

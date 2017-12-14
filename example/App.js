@@ -33,11 +33,11 @@ export default class App extends React.Component<Props, State> {
     }
   };
 
-  selectTheme = (theme: Object) => this.setState({ selectedTheme: theme });
+  selectTheme = (theme: Theme) => this.setState({ selectedTheme: theme });
 
   render() {
     const { selectedTheme } = this.state;
-    const { barColor, buttonColor, text, phoneFieldBackground } = selectedTheme;
+    const { barColor, primary, text, background } = selectedTheme;
     return (
       <ThemeProvider theme={selectedTheme}>
         <NavigatorIOS
@@ -50,12 +50,9 @@ export default class App extends React.Component<Props, State> {
             passProps: { theme: selectedTheme },
           }}
           style={styles.container}
-          itemWrapperStyle={[
-            styles.scene,
-            { backgroundColor: phoneFieldBackground },
-          ]}
+          itemWrapperStyle={[styles.scene, { backgroundColor: background }]}
           barTintColor={barColor}
-          tintColor={buttonColor}
+          tintColor={primary}
           titleTextColor={text}
         />
       </ThemeProvider>

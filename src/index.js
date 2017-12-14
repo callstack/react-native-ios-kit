@@ -3,6 +3,7 @@
 export { default as withTheme } from './core/withTheme';
 export { default as ThemeProvider } from './core/ThemeProvider';
 export { default as DefaultTheme } from './styles/DefaultTheme';
+export { default as DarkTheme } from './styles/DarkTheme';
 
 export { default as Button } from './components/Button';
 export { default as Icon } from './components/Icon';
