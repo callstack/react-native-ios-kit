@@ -9,7 +9,6 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
-  LayoutAnimation,
 } from 'react-native';
 
 import Icon from './Icon';
@@ -62,6 +61,7 @@ type Props = {
 
 type State = {
   anim: *,
+  cancelWidth: number,
 };
 
 class SearchBar extends React.Component<Props, State> {
@@ -74,10 +74,8 @@ class SearchBar extends React.Component<Props, State> {
   };
   state = {
     anim: new Animated.Value(0),
+    cancelWidth: 0,
   };
-  componentWillUpdate() {
-    LayoutAnimation.easeInEaseOut();
-  }
 
   _input = undefined;
 
@@ -97,6 +95,11 @@ class SearchBar extends React.Component<Props, State> {
     this.animateTo(0);
     if (typeof this.props.onBlur === 'function') this.props.onBlur();
   };
+
+  _layoutHanlder = ({ nativeEvent: { layout: { width } } }) => {
+    this.setState({ cancelWidth: width });
+  };
+
   animateTo = (toValue: 1 | 0): void => {
     Animated.timing(this.state.anim, {
       toValue,
@@ -114,7 +117,7 @@ class SearchBar extends React.Component<Props, State> {
       cancelText,
       animated,
     } = this.props;
-    const { anim } = this.state;
+    const { anim, cancelWidth } = this.state;
     const { width } = Dimensions.get('window');
     return (
       <View style={[{ backgroundColor: theme.barColor }, styles.container]}>
@@ -132,9 +135,9 @@ class SearchBar extends React.Component<Props, State> {
                 width: animated
                   ? anim.interpolate({
                       inputRange: [0, 1],
-                      outputRange: [width - 20, width - 80],
+                      outputRange: [width - 20, width - 20 - cancelWidth],
                     })
-                  : width - 80,
+                  : width - 20 - cancelWidth,
               },
             ]}
           >
@@ -169,34 +172,31 @@ class SearchBar extends React.Component<Props, State> {
           </Animated.View>
         </TouchableHighlight>
         {withCancel && (
-          <TouchableOpacity onPress={this.cancelInput}>
-            <Animated.Text
-              style={[
-                styles.cancelText,
-                {
-                  color: theme.buttonColor,
-                  transform: [
-                    {
-                      translateX: animated
-                        ? anim.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [60, 0],
-                          })
-                        : 0,
-                    },
-                  ],
-                  opacity: animated
-                    ? anim.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [0, 1],
-                      })
-                    : 1,
-                },
-              ]}
-            >
-              {cancelText}
-            </Animated.Text>
-          </TouchableOpacity>
+          <View onLayout={this._layoutHanlder}>
+            <TouchableOpacity onPress={this.cancelInput}>
+              <Animated.Text
+                style={[
+                  styles.cancelText,
+                  {
+                    color: theme.buttonColor,
+                    opacity: animated ? anim : 1,
+                    transform: [
+                      {
+                        translateX: animated
+                          ? anim.interpolate({
+                              inputRange: [0, 1],
+                              outputRange: [cancelWidth - 20, 0],
+                            })
+                          : 0,
+                      },
+                    ],
+                  },
+                ]}
+              >
+                {cancelText}
+              </Animated.Text>
+            </TouchableOpacity>
+          </View>
         )}
       </View>
     );
