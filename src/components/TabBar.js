@@ -39,7 +39,13 @@ type Props = {
 class TabBar extends PureComponent<Props> {
   render() {
     const {
-      theme: { barColor, dividerColor, primary, disabled, primaryLight },
+      theme: {
+        barColor,
+        dividerColor,
+        primaryColor,
+        disabledColor,
+        primaryLightColor,
+      },
       tabs,
     } = this.props;
     const tabBarStyle = {
@@ -61,15 +67,15 @@ class TabBar extends PureComponent<Props> {
                 size={30}
                 color={
                   tab.isActive
-                    ? primary
-                    : tab.disabled ? disabled : primaryLight
+                    ? primaryColor
+                    : tab.disabled ? disabledColor : primaryLightColor
                 }
               />
               <Caption2
                 style={{
                   color: tab.isActive
-                    ? primary
-                    : tab.disabled ? disabled : primaryLight,
+                    ? primaryColor
+                    : tab.disabled ? disabledColor : primaryLightColor,
                 }}
               >
                 {tab.title}

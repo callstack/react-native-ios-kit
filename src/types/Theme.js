@@ -1,12 +1,12 @@
 /* @flow */
 
 export type Theme = {
-  primary: string,
-  primaryLight: string,
-  disabled: string,
-  background: string,
+  primaryColor: string,
+  primaryLightColor: string,
+  disabledColor: string,
+  backgroundColor: string,
   barColor: string,
   dividerColor: string,
-  text: string,
-  placeholder: string,
+  textColor: string,
+  placeholderColor: string,
 };

@@ -131,12 +131,12 @@ class Stepper extends React.Component<Props, State> {
 
   render() {
     const { theme, value, minValue, maxValue } = this.props;
-    const { primary, primaryLight } = theme;
+    const { primaryColor, primaryLightColor } = theme;
     const { isIncrementing, isDecrementing } = this.state;
     const isMinimum = value === minValue;
     const isMaximum = value === maxValue;
     return (
-      <View style={[styles.container, { borderColor: primary }]}>
+      <View style={[styles.container, { borderColor: primaryColor }]}>
         <TouchableWithoutFeedback
           onPressIn={this.handleDecrementPressIn}
           onPressOut={this.handlePressOut}
@@ -145,9 +145,11 @@ class Stepper extends React.Component<Props, State> {
           <View
             style={[
               {
-                borderColor: primary,
+                borderColor: primaryColor,
                 backgroundColor:
-                  isMinimum || !isDecrementing ? 'transparent' : primaryLight,
+                  isMinimum || !isDecrementing
+                    ? 'transparent'
+                    : primaryLightColor,
               },
               styles.stepperIcon,
               styles.stepperMinus,
@@ -156,7 +158,7 @@ class Stepper extends React.Component<Props, State> {
             <Icon
               name="md-remove"
               size={20}
-              color={isMinimum ? primaryLight : primary}
+              color={isMinimum ? primaryLightColor : primaryColor}
               style={{ marginTop: 2 }}
             />
           </View>
@@ -170,9 +172,11 @@ class Stepper extends React.Component<Props, State> {
           <View
             style={[
               {
-                borderColor: primary,
+                borderColor: primaryColor,
                 backgroundColor:
-                  isMaximum || !isIncrementing ? 'transparent' : primaryLight,
+                  isMaximum || !isIncrementing
+                    ? 'transparent'
+                    : primaryLightColor,
               },
               styles.stepperIcon,
               styles.stepperPlus,
@@ -181,7 +185,7 @@ class Stepper extends React.Component<Props, State> {
             <Icon
               name="md-add"
               size={20}
-              color={isMaximum ? primaryLight : primary}
+              color={isMaximum ? primaryLightColor : primaryColor}
               style={{ marginTop: 2 }}
             />
           </View>

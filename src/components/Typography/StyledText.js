@@ -47,7 +47,7 @@ class StyledText extends Component<Props> {
       fontWeight: config.fontWeight,
       letterSpacing,
       lineHeight: config.leading,
-      color: theme.text,
+      color: theme.textColor,
     };
     return (
       <Text style={[calculatedStyle, style]} {...rest}>

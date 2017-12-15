@@ -26,7 +26,7 @@ export default class ThemeSelector extends Component<Props> {
       <View style={styles.container}>
         <Button
           disabled={!darkSelected}
-          color={selectedTheme.text}
+          color={selectedTheme.textColor}
           inline
           style={styles.button}
           onPress={() => this.selectTheme(DefaultTheme)}
