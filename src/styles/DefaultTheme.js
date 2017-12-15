@@ -14,11 +14,11 @@ const DefaultTheme: Theme = {
   disabledColor: color(colors.blue)
     .lighten(0.8)
     .string(),
-  backgroundColor: colors.darkGrey,
-  barColor: colors.lightestGrey,
+  backgroundColor: colors.greyL1,
+  barColor: colors.greyL2,
   dividerColor: colors.grey,
   textColor: colors.black,
-  placeholderColor: colors.greyD1,
+  placeholderColor: colors.greyD2,
 };
 
 export default DefaultTheme;

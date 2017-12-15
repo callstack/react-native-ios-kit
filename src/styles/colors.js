@@ -15,7 +15,7 @@ export const tealBlue = '#5ac8fa';
  */
 export const greyD2 = '#666666'; // Secondary text, links
 export const greyD1 = '#8A8A8F'; // Footnote and captions
-export const grey = '#C8C7CC'; // Contanet and sections dividers, lines
+export const grey = '#C8C7CC'; // Content and sections dividers, lines
 export const greyL1 = '#EFEFF4'; // Screens background
 export const greyL2 = '#F9F9F9'; // Top bar, tool bars background
 

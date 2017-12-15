@@ -11,10 +11,8 @@ const DarkTheme: Theme = {
   disabledColor: color(colors.orange)
     .lighten(0.8)
     .string(),
-  backgroundColor: colors.black,
-  barColor: color(colors.black)
-    .lighten(0.9)
-    .string(),
+  backgroundColor: 'rgb(17,29,33)',
+  barColor: 'rgb(29,58,63)',
   dividerColor: colors.greyD2,
   textColor: colors.white,
   placeholderColor: colors.greyD1,
