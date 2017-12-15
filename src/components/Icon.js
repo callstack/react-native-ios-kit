@@ -33,7 +33,7 @@ class Icon extends Component<Props> {
     const { name, color, size, theme, style } = this.props;
     return (
       <Ionicons
-        color={color || theme.primary}
+        color={color || theme.primaryColor}
         name={name}
         size={size || 50}
         style={style}
