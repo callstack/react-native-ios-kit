@@ -65,9 +65,10 @@ const darkTheme = {
   newMessageIndicator: '#FF9500',
   messageColor: '#8C8C8C',
   avatarBackground: '#CDCED2',
-  underlayColor: '#E5E6EA',
+  underlayColor: '#1d3a3c',
   arrowIcon: '#CDCED2',
   text: '#fff',
+  placeholder: '#D9D9D9',
   textField: {
     subtitleColor: '#8C8C8C',
     iconColor: '#CDCED2',
@@ -88,6 +89,7 @@ const lightTheme = {
   underlayColor: '#E5E6EA',
   arrowIcon: '#CDCED2',
   text: '#000',
+  placeholder: '#8C8C8C',
   textField: {
     subtitleColor: '#8C8C8C',
     iconColor: '#CDCED2',

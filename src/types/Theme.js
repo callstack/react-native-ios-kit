@@ -15,6 +15,7 @@ export type Theme = {
   newMessageIndicator: string,
   avatarBackground: string,
   text: string,
+  placeholder: string,
   textField: {
     subtitleColor: string,
     iconColor: string,
