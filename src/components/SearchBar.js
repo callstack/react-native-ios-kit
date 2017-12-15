@@ -96,7 +96,7 @@ class SearchBar extends React.Component<Props, State> {
     if (typeof this.props.onBlur === 'function') this.props.onBlur();
   };
 
-  _layoutHanlder = ({ nativeEvent: { layout: { width } } }) => {
+  handleLayout = ({ nativeEvent: { layout: { width } } }) => {
     this.setState({ cancelWidth: width });
   };
 
@@ -172,7 +172,7 @@ class SearchBar extends React.Component<Props, State> {
           </Animated.View>
         </TouchableHighlight>
         {withCancel && (
-          <View onLayout={this._layoutHanlder}>
+          <View onLayout={this.handleLayout}>
             <TouchableOpacity onPress={this.cancelInput}>
               <Animated.Text
                 style={[
