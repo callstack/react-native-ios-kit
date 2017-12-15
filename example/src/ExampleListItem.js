@@ -12,7 +12,7 @@ type Props = {
 
 class ExampleLitItem extends React.PureComponent<Props> {
   render() {
-    const { onPressRow, rowData, theme: { text } } = this.props;
+    const { onPressRow, rowData, theme: { textColor } } = this.props;
 
     return (
       <TouchableHighlight
@@ -20,7 +20,7 @@ class ExampleLitItem extends React.PureComponent<Props> {
         style={styles.row}
         underlayColor="#C8C7CC"
       >
-        <Text style={[styles.text, { color: text }]}>{rowData.title}</Text>
+        <Text style={[styles.text, { color: textColor }]}>{rowData.title}</Text>
       </TouchableHighlight>
     );
   }

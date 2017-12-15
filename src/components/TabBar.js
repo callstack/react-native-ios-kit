@@ -38,13 +38,20 @@ type Props = {
 
 class TabBar extends PureComponent<Props> {
   render() {
-    const { theme, tabs } = this.props;
+    const {
+      theme: {
+        barColor,
+        dividerColor,
+        primaryColor,
+        disabledColor,
+        primaryLightColor,
+      },
+      tabs,
+    } = this.props;
     const tabBarStyle = {
-      backgroundColor: theme.barColor,
-      borderTopColor: theme.borderColor,
+      backgroundColor: barColor,
+      borderTopColor: dividerColor,
     };
-    const activeColor = theme.buttonColor;
-    const inactiveColor = theme.buttonDisabledColor;
     const { width } = Dimensions.get('window');
     return (
       <View style={[styles.wrapper, tabBarStyle]}>
@@ -58,11 +65,17 @@ class TabBar extends PureComponent<Props> {
               <Icon
                 name={tab.icon}
                 size={30}
-                color={tab.isActive ? activeColor : inactiveColor}
+                color={
+                  tab.isActive
+                    ? primaryColor
+                    : tab.disabled ? disabledColor : primaryLightColor
+                }
               />
               <Caption2
                 style={{
-                  color: tab.isActive ? activeColor : inactiveColor,
+                  color: tab.isActive
+                    ? primaryColor
+                    : tab.disabled ? disabledColor : primaryLightColor,
                 }}
               >
                 {tab.title}

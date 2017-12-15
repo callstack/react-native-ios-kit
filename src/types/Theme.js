@@ -1,23 +1,12 @@
 /* @flow */
 
 export type Theme = {
-  iosBlue: string,
-  phoneFieldBackground: string,
-  highlightColor: string,
+  primaryColor: string,
+  primaryLightColor: string,
+  disabledColor: string,
+  backgroundColor: string,
   barColor: string,
-  borderColor: string,
-  footNoteColor: string,
-  buttonColor: string,
-  buttonDisabledColor: string,
-  underlayColor: string,
-  messageColor: string,
-  arrowIcon: string,
-  newMessageIndicator: string,
-  avatarBackground: string,
-  text: string,
-  placeholder: string,
-  textField: {
-    subtitleColor: string,
-    iconColor: string,
-  },
+  dividerColor: string,
+  textColor: string,
+  placeholderColor: string,
 };

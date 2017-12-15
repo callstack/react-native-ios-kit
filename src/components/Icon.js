@@ -11,7 +11,7 @@ type Props = {
    */
   name: string,
   /**
-   * Custom color for icon, default to iosBlue
+   * Custom color for icon, default to primary
    */
   color?: string,
   /**
@@ -33,7 +33,7 @@ class Icon extends Component<Props> {
     const { name, color, size, theme, style } = this.props;
     return (
       <Ionicons
-        color={color || theme.iosBlue}
+        color={color || theme.primaryColor}
         name={name}
         size={size || 50}
         style={style}

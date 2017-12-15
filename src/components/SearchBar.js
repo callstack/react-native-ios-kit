@@ -112,7 +112,13 @@ class SearchBar extends React.Component<Props, State> {
       value,
       placeholder,
       onChangeText,
-      theme,
+      theme: {
+        barColor,
+        backgroundColor,
+        placeholderColor,
+        textColor,
+        primaryColor,
+      },
       withCancel,
       cancelText,
       animated,
@@ -120,9 +126,9 @@ class SearchBar extends React.Component<Props, State> {
     const { anim, cancelWidth } = this.state;
     const { width } = Dimensions.get('window');
     return (
-      <View style={[{ backgroundColor: theme.barColor }, styles.container]}>
+      <View style={[{ backgroundColor }, styles.container]}>
         <TouchableHighlight
-          underlayColor={theme.underlayColor}
+          underlayColor={backgroundColor}
           onPress={this.focusInput}
           onLongPress={this.focusInput}
           style={styles.inputTouchWrapper}
@@ -131,7 +137,7 @@ class SearchBar extends React.Component<Props, State> {
             style={[
               styles.inputWrapper,
               {
-                backgroundColor: theme.underlayColor,
+                backgroundColor: barColor,
                 width: animated
                   ? anim.interpolate({
                       inputRange: [0, 1],
@@ -143,18 +149,18 @@ class SearchBar extends React.Component<Props, State> {
           >
             <Icon
               name="ios-search"
-              color={theme.placeholder}
+              color={placeholderColor}
               style={styles.searchIcon}
               size={18}
             />
             <TextInput
               ref={ref => (this._input = ref)}
-              style={[{ color: theme.text }, styles.input]}
+              style={[{ color: textColor }, styles.input]}
               value={value}
               onChangeText={onChangeText}
               placeholder={placeholder}
-              placeholderTextColor={theme.placeholder}
-              selectionColor={theme.buttonColor}
+              placeholderTextColor={placeholderColor}
+              selectionColor={primaryColor}
               onFocus={this.handleInputFocus}
               onBlur={this.handleInputBlur}
               {...this.props}
@@ -163,7 +169,7 @@ class SearchBar extends React.Component<Props, State> {
               <TouchableOpacity onPress={this.clearInput}>
                 <Icon
                   name="ios-close-circle"
-                  color={theme.placeholder}
+                  color={placeholderColor}
                   style={styles.clearIcon}
                   size={20}
                 />
@@ -178,7 +184,7 @@ class SearchBar extends React.Component<Props, State> {
                 style={[
                   styles.cancelText,
                   {
-                    color: theme.buttonColor,
+                    color: primaryColor,
                     opacity: animated ? anim : 1,
                     transform: [
                       {
