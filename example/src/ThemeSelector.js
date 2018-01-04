@@ -14,9 +14,9 @@ type Props = {
 export default class ThemeSelector extends Component<Props> {
   selectTheme = (theme: Theme): void => {
     this.props.selectTheme(theme);
-    StatusBar.setBarStyle(
-      theme === DefaultTheme ? 'dark-content' : 'light-content'
-    );
+    // StatusBar.setBarStyle(
+    //   theme === DefaultTheme ? 'dark-content' : 'light-content'
+    // );
     this.props.navigator.pop();
   };
   render() {
