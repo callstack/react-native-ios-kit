@@ -11,6 +11,7 @@ import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
 import Stepper from './scenes/Stepper';
 import SearchBar from './scenes/SearchBar';
+import SegmentedControl from './scenes/SegmentedControl';
 
 type Route = {
   component: any,
@@ -38,6 +39,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: SearchBar,
     title: 'SearchBar',
+  },
+  {
+    component: SegmentedControl,
+    title: 'SegmentedControl',
   },
 ]);
 
