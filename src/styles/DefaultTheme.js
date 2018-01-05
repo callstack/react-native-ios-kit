@@ -19,6 +19,8 @@ const DefaultTheme: Theme = {
   dividerColor: colors.grey,
   textColor: colors.black,
   placeholderColor: colors.greyD2,
+  footnoteColor: colors.greyD1,
+  footnoteBackgroundColor: colors.greyL1,
 };
 
 export default DefaultTheme;
