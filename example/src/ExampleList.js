@@ -12,6 +12,7 @@ import TabBar from './scenes/TabBar';
 import Stepper from './scenes/Stepper';
 import SearchBar from './scenes/SearchBar';
 import SegmentedControl from './scenes/SegmentedControl';
+import TableView from './scenes/TableView';
 
 type Route = {
   component: any,
@@ -43,6 +44,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: SegmentedControl,
     title: 'SegmentedControl',
+  },
+  {
+    component: TableView,
+    title: 'TableView',
   },
 ]);
 
