@@ -4,7 +4,7 @@ title: Customization
 ---
 
 You can provide a custom theme to customize the colors, fonts etc. with the **Provider** component.
-Check the [Theme Type](theme) to see what customization options are supported.
+Check the [Theme Type](theme.html) to see what customization options are supported.
 
 Example:
 
