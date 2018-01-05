@@ -16,15 +16,16 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'React Native ios-kit' /* title for your website */,
+  companyName: 'Callstack',
+  title: 'react native ios-kit' /* title for your website */,
   tagline: 'The missing React Native UI Kit for iOS.',
   url:
     'https://callstack.github.io/react-native-ios-kit/' /* your website url */,
   baseUrl: '' /* base url for your project */,
   projectName: 'rn-ios-kit',
   headerLinks: [
-    { doc: 'doc1', label: 'Docs' },
-    { doc: 'doc4', label: 'API' },
+    { doc: 'getting-started', label: 'Docs' },
+    { doc: 'api', label: 'API' },
     { page: 'help', label: 'Help' },
   ],
   users,

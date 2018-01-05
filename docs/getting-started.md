@@ -1,6 +1,7 @@
 ---
-id: doc2
-title: document number 2
+id: getting-started
+title: Getting started
+sidebar_label: Getting started
 ---
 
 This is a link to [another document.](/docs/en/doc3.md)  
