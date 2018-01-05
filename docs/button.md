@@ -1,7 +1,6 @@
 ---
-id: getting-started
-title: Getting started
-sidebar_label: Getting started
+id: button
+title: Button
 ---
 
 This is a link to [another document.](/docs/en/doc3.md)  

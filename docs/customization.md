@@ -1,5 +1,5 @@
 ---
-id: doc5
+id: customization
 title: Fifth Document
 ---
 

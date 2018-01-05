@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/* List of projects/orgs using your project for the users page */
 const users = [
   {
     caption: 'User1',
@@ -17,26 +9,25 @@ const users = [
 
 const siteConfig = {
   companyName: 'Callstack',
-  title: 'react native ios-kit' /* title for your website */,
+  title: 'react native ios-kit',
   tagline: 'The missing React Native UI Kit for iOS.',
-  url:
-    'https://callstack.github.io/react-native-ios-kit/' /* your website url */,
-  baseUrl: '' /* base url for your project */,
-  projectName: 'rn-ios-kit',
+  url: 'https://callstack.github.io/react-native-ios-kit',
+  baseUrl: '/',
+  projectName: 'react-native-ios-kit',
   headerLinks: [
-    { doc: 'getting-started', label: 'Docs' },
-    { doc: 'api', label: 'API' },
+    { doc: 'installation', label: 'Docs' },
+    { doc: 'button', label: 'API' },
     { page: 'help', label: 'Help' },
   ],
   users,
   /* path to images for header/footer */
-  headerIcon: '',
+  headerIcon: 'img/docusaurus.svg',
   footerIcon: '',
   favicon: 'img/favicon.png',
   /* colors for website */
   colors: {
-    primaryColor: '#007aff',
-    secondaryColor: '#416BAF',
+    primaryColor: '#416BAF',
+    secondaryColor: '#007aff',
   },
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright: 'Copyright © 2018 Callstack',

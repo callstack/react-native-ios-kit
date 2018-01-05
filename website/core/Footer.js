@@ -8,14 +8,14 @@
 const React = require('react');
 
 class Footer extends React.Component {
-  docUrl(doc, language) {
+  docUrl(doc) {
     const baseUrl = this.props.config.baseUrl;
-    return baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+    return `${baseUrl}docs/${doc}`;
   }
 
-  pageUrl(doc, language) {
+  pageUrl(doc) {
     const baseUrl = this.props.config.baseUrl;
-    return baseUrl + (language ? language + '/' : '') + doc;
+    return `${baseUrl}/${doc}`;
   }
 
   render() {
@@ -35,19 +35,13 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('getting-started.html', this.props.language)}>
-              Getting Started
-            </a>
-            <a href={this.docUrl('guides.html', this.props.language)}>Guides</a>
-            <a href={this.docUrl('components.html', this.props.language)}>
-              API Reference
-            </a>
+            <a href={this.docUrl('installation.html')}>Getting Started</a>
+            <a href={this.docUrl('button.html')}>Guides</a>
+            <a href={this.docUrl('api.html')}>API Reference</a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
+            <a href={this.pageUrl('users.html')}>User Showcase</a>
             <a
               href="http://stackoverflow.com/questions/tagged/"
               target="_blank"

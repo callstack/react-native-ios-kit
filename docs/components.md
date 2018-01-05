@@ -1,7 +1,6 @@
 ---
 id: api
 title: Api Reference
-sidebar_label: Api Reference
 ---
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
