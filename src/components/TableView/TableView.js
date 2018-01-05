@@ -71,7 +71,6 @@ class TableView extends React.Component<Props> {
         )}
         {React.Children.map(children, (child, idx) =>
           React.cloneElement(child, {
-            hideSeparator: idx === React.Children.count(children) - 1,
             first: idx === 0,
             last: idx === React.Children.count(children) - 1,
           })

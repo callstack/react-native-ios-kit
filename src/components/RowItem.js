@@ -35,14 +35,12 @@ type Props = {
   /**
    * Internal props
    */
-  hideSeparator: boolean,
   first: boolean,
   last: boolean,
 };
 
 class RowItem extends React.Component<Props> {
   static defaulProps = {
-    hideSeparator: false,
     rightComponent: null,
   };
 
@@ -91,11 +89,11 @@ class RowItem extends React.Component<Props> {
   };
 
   render() {
-    const { hideSeparator, onPress, theme, icon } = this.props;
+    const { last, onPress, theme, icon } = this.props;
     return (
       <View style={{ backgroundColor: theme.barColor }}>
         {onPress ? this.renderTouchableRow() : this.renderRow()}
-        {!hideSeparator && (
+        {!last && (
           <View
             style={[
               styles.separator,
