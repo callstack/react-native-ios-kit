@@ -24,7 +24,7 @@ type Props = {
    */
   selectedIndex: number,
   /**
-   * Optional color of selected control. Defaultys to theme's primary color
+   * Optional color of selected control. Defaults to theme's primary color
    */
   tintColor?: string,
 };
