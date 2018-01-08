@@ -5,7 +5,7 @@ title: Installation
 
 Open a Terminal in your project's folder and run,
 
-`yarn add react-native-ios-kit react-native-vector-icons`
+`yarn add react-native-ios-kit react-native-vector-icons`, or
 
 `npm install --save react-native-ios-kit react-native-vector-icons`
 
