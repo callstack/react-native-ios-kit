@@ -86,5 +86,5 @@ function Main() {
 
 ### Components
 
-Check all the components and its usage in our [docs page](https://callstack.github.io/react-native-ios-kit/button.html).
+Check all the components and its usage in our [docs page](https://callstack.github.io/react-native-ios-kit/docs/button.html).
 
