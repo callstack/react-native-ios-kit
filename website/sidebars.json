@@ -1,6 +1,6 @@
 {
   "docs": {
     "Getting Started": ["installation", "usage", "customization", "theme"],
-    "API": ["button", "toggle-button", "tab_bar", "icon"]
+    "API": ["button", "toggle-button", "tab_bar", "icon", "typography"]
   }  
 }
