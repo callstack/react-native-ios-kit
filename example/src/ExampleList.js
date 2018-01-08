@@ -11,6 +11,7 @@ import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
 import Stepper from './scenes/Stepper';
 import SearchBar from './scenes/SearchBar';
+import ToggleButton from './scenes/ToggleButton';
 import SegmentedControl from './scenes/SegmentedControl';
 import TableView from './scenes/TableView';
 
@@ -40,6 +41,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: SearchBar,
     title: 'SearchBar',
+  },
+  {
+    component: ToggleButton,
+    title: 'ToggleButton',
   },
   {
     component: SegmentedControl,
