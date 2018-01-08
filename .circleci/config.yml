@@ -4,25 +4,17 @@ aliases:
       - dependencies-{{ checksum "package.json" }}
       # Fallback in case checksum fails
       - dependencies-
-  #- &restore-cache-example
-  #  keys:
-  #    - dependencies-{{ checksum "example/package.json" }}
-  #    # Fallback in case checksum fails
-  #    - dependencies-
 
   - &save-cache
     paths:
       - node_modules
     key: dependencies-{{ checksum "package.json" }}
-  #- &save-cache-example
-  #  paths:
-  #    - example/node_modules
-  #  key: dependencies-{{ checksum "example/package.json" }}
 
-  defaults: &defaults
-    working-directory: ~/react-native-ios-kit
-    docker: 
-      - image: circleci/node:6
+
+defaults: &defaults
+  working-directory: ~/react-native-ios-kit
+  docker: 
+    - image: circleci/node:6
 
 version: 2
 jobs:
