@@ -4,26 +4,22 @@ aliases:
       - dependencies-{{ checksum "package.json" }}
       # Fallback in case checksum fails
       - dependencies-
-  #- &restore-cache-example
-  #  keys:
-  #    - dependencies-{{ checksum "example/package.json" }}
-  #    # Fallback in case checksum fails
-  #    - dependencies-
 
   - &save-cache
     paths:
       - node_modules
     key: dependencies-{{ checksum "package.json" }}
-  #- &save-cache-example
-  #  paths:
-  #    - example/node_modules
-  #  key: dependencies-{{ checksum "example/package.json" }}
+
+
+defaults: &defaults
+  working-directory: ~/react-native-ios-kit
+  docker: 
+    - image: circleci/node:6
 
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:6.10.3
+  tests:
+    <<: *defaults
     steps:
       - checkout
       - restore-cache: *restore-cache
@@ -34,3 +30,34 @@ jobs:
       - run: yarn test -- --coverage -i
       - store_artifacts:
           path: coverage
+  deploy-website:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore-cache: *restore-cache
+      - run: yarn install
+      - save-cache: *save-cache
+      - add_ssh_keys:
+          fingerprints:
+           - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
+      - run:
+          name: Deploy Website
+          command: |
+            echo "Deploying website..."          
+            cd website && yarn && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run docusaurus-publish
+  
+workflows:
+  version: 2
+
+  website: 
+    jobs:
+      - tests:
+          filters: 
+            branches:
+              ignore: gh-pages
+      - deploy-website:
+          requires:
+            - tests
+          filters:
+            branches:
+              only: master  
