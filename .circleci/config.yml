@@ -42,7 +42,7 @@ jobs:
            - "83:32:d9:cc:14:f0:ec:9a:ea:c7:4d:0b:31:74:53:06"
       - run:
         name: Deploy Website
-        # Skip the deploy if we don't have the right org (facebook), or if this is just a pull request
+        # Skip the deploy if this is just a pull request
         command: |
           if [[ -z $CI_PULL_REQUEST && -z $CIRCLE_PR_USERNAME ]]; then
             echo "Deploying website..."
@@ -63,6 +63,3 @@ workflows:
       - deploy-website:
           requires:
             - tests
-          filters:
-            branches:
-              only: master  
