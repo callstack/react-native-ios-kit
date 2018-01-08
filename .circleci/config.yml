@@ -44,12 +44,8 @@ jobs:
         name: Deploy Website
         # Skip the deploy if this is just a pull request
         command: |
-          if [[ -z $CI_PULL_REQUEST && -z $CIRCLE_PR_USERNAME ]]; then
-            echo "Deploying website..."
-            cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
-          else
-            echo "Skipping deploy."
-          fi
+          echo "Deploying website..."
+          cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
   
 workflows:
   version: 2
