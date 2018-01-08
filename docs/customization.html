@@ -1,0 +1,34 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Customization · react-native-ios-kit</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Customization · react-native-ios-kit"/><meta property="og:type" content="website"/><meta property="og:url" content="https://callstack.github.io/react-native-ios-kit/index.html"/><meta property="og:description" content="You can provide a custom theme to customize the colors, fonts etc. with the **Provider** component."/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg"/><h2 class="headerTitle">react-native-ios-kit</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/installation.html" target="_self">Docs</a></li><li><a href="/docs/button.html" target="_self">API</a></li><li><a href="/en/help.html" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Getting Started</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/usage.html">Usage</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/customization.html">Customization</a></li><li class="navListItem"><a class="navItem" href="/docs/theme.html">Theme</a></li></ul></div><div class="navGroup navGroupActive"><h3>API</h3><ul><li class="navListItem"><a class="navItem" href="/docs/button.html">Button</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Customization</h1></header><article><div><span><p>You can provide a custom theme to customize the colors, fonts etc. with the <strong>Provider</strong> component.
+Check the <a href="theme.html">Theme Type</a> to see what customization options are supported.</p>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { AppRegistry } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> { DefaultTheme, ThemeProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-ios-kit'</span>;
+<span class="hljs-keyword">import</span> color <span class="hljs-keyword">from</span> <span class="hljs-string">'color'</span>;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./src/App'</span>;
+
+<span class="hljs-keyword">const</span> theme = {
+  ...DefaultTheme,
+  <span class="hljs-attr">colors</span>: {
+    ...DefaultTheme.colors,
+    <span class="hljs-attr">primaryColor</span>: <span class="hljs-string">'tomato'</span>,
+    <span class="hljs-attr">primaryLightColor</span>: color(<span class="hljs-string">'tomato'</span>).lighten(<span class="hljs-number">0.2</span>).rgb().string(),
+    <span class="hljs-attr">textColor</span>: <span class="hljs-string">'yellow'</span>,
+  },
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ThemeProvider</span> <span class="hljs-attr">theme</span>=<span class="hljs-string">{theme}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ThemeProvider</span>&gt;</span></span>
+  );
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="usage.html">← Usage</a><a class="docs-next button" href="theme.html">Theme →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/installation.html">Getting Started</a><a href="/docs/button.html">Guides</a><a href="/docs/button.html">API Reference</a></div><div><h5>Community</h5><a href="https://twitter.com/callstackio" target="_blank">Twitter</a></div><div><h5>More</h5><a href="https://github.com/callstack/react-native-ios-kit">GitHub</a><a class="github-button" href="https://github.com/callstack/react-native-ios-kit" data-icon="octicon-star" data-count-href="/callstack/react-native-ios-kit/stargazers" data-count-api="/repos/callstack/react-native-ios-kit#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://callstack.com" target="_blank" class="fbOpenSource"><img src="/img/callstack-logo.svg" alt="Callstack Engineers" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Callstack</section></footer></div></body></html>
