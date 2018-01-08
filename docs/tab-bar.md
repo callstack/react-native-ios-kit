@@ -1,5 +1,5 @@
 ---
-id: tab_bar
+id: tab-bar
 title: TabBar
 ---
 
