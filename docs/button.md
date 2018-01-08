@@ -1,6 +1,6 @@
 ---
-id: toggle-button
-title: ToggleButton
+id: button
+title: Button
 ---
 
 A basic Button component.
