@@ -44,7 +44,7 @@ jobs:
           name: Deploy Website
           command: |
             echo "Deploying website..."          
-            cd website && yarn && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
+            cd website && yarn && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run docusaurus-publish
   
 workflows:
   version: 2
