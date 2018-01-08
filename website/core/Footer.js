@@ -1,11 +1,24 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 const React = require('react');
+
+const GithubButton = props => (
+  <a
+    className="github-button" // part of the https://buttons.github.io/buttons.js script in siteConfig.js
+    href={`https://github.com/${props.config.organizationName}/${
+      props.config.projectName
+    }`}
+    data-icon="octicon-star"
+    data-count-href={`/${props.config.organizationName}/${
+      props.config.projectName
+    }/stargazers`}
+    data-count-api={`/repos/${props.config.organizationName}/${
+      props.config.projectName
+    }#stargazers_count`}
+    data-count-aria-label="# stargazers on GitHub"
+    aria-label="Star this project on GitHub"
+  >
+    Star
+  </a>
+);
 
 class Footer extends React.Component {
   docUrl(doc) {
@@ -41,13 +54,6 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html')}>User Showcase</a>
-            <a
-              href="http://stackoverflow.com/questions/tagged/"
-              target="_blank"
-            >
-              Stack Overflow
-            </a>
             <a href="https://twitter.com/callstackio" target="_blank">
               Twitter
             </a>
@@ -55,17 +61,7 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href={this.props.config.repoUrl}>GitHub</a>
-            <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/callstack/react-native-ios-kit/stargazers"
-              data-show-count
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub"
-            >
-              Star
-            </a>
+            <GithubButton config={this.props.config} />
           </div>
         </section>
 

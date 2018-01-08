@@ -58,3 +58,6 @@ workflows:
       - deploy-website:
           requires:
             - tests
+          filters:
+            branches:
+              only: master  
