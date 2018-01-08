@@ -1,11 +1,4 @@
-const users = [
-  {
-    caption: 'User1',
-    image: '/test-site/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
-];
+const users = [{}];
 
 const siteConfig = {
   companyName: 'Callstack',
