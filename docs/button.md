@@ -16,6 +16,15 @@ Example usage:
 
 ## Props
 
+### `centered` (optional)
+type: `boolean`  
+
+If true, center text inside the button.
+Applies only if rounded prop is not true.
+
+### `children` (optional)
+type: `React.Element<*> | React.Element<*>[] | string`
+
 ### `color` (optional)
 type: `string`  
 
@@ -26,22 +35,21 @@ type: `boolean`
 
 If true, disable all interactions for this component.
 
+### `disabledStyle` (optional)
+type: `Object`  
+
+Custom styles to apply to the button.
+
 ### `inline` (optional)
 type: `boolean`  
 
 If true, disable automatic horizontal resize.
 The button will only occupy width it needs, instead of 100%.
 
-### `centered` (optional)
-type: `boolean`  
+### `innerStyle` (optional)
+type: `Object`  
 
-If true, center text inside the button.
-Applies only if rounded prop is not true.
-
-### `rounded` (optional)
-type: `boolean`  
-
-If true, make border corners rounded.
+Custom styles to apply to text inside the button.
 
 ### `inverted` (optional)
 type: `boolean`  
@@ -69,17 +77,12 @@ type: `Function`
 
 Called on a long press.
 
+### `rounded` (optional)
+type: `boolean`  
+
+If true, make border corners rounded.
+
 ### `style` (optional)
-type: `Object`  
-
-Custom styles to apply to the button.
-
-### `innerStyle` (optional)
-type: `Object`  
-
-Custom styles to apply to text inside the button.
-
-### `disabledStyle` (optional)
 type: `Object`  
 
 Custom styles to apply to the button.
@@ -88,9 +91,3 @@ Custom styles to apply to the button.
 type: [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
-
-### `children` (optional)
-type: `React.Element<*> | React.Element<*>[] | string`
-
-
-
