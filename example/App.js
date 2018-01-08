@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { StyleSheet, NavigatorIOS } from 'react-native';
+import { StyleSheet, NavigatorIOS, StatusBar } from 'react-native';
 import { ThemeProvider, DefaultTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
@@ -33,7 +33,12 @@ export default class App extends React.Component<Props, State> {
     }
   };
 
-  selectTheme = (theme: Theme) => this.setState({ selectedTheme: theme });
+  selectTheme = (theme: Theme) => {
+    this.setState({ selectedTheme: theme });
+    StatusBar.setBarStyle(
+      theme === DefaultTheme ? 'dark-content' : 'light-content'
+    );
+  };
 
   render() {
     const { selectedTheme } = this.state;
@@ -68,7 +73,6 @@ export default class App extends React.Component<Props, State> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
   },
   scene: {
     paddingTop: 64,

@@ -16,6 +16,8 @@ const DarkTheme: Theme = {
   dividerColor: colors.greyD2,
   textColor: colors.white,
   placeholderColor: colors.greyD1,
+  footnoteColor: colors.greyL2,
+  footnoteBackgroundColor: 'rgb(17, 29, 33)',
 };
 
 export default DarkTheme;

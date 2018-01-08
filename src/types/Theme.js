@@ -9,4 +9,6 @@ export type Theme = {
   dividerColor: string,
   textColor: string,
   placeholderColor: string,
+  footnoteColor: string,
+  footnoteBackgroundColor: string,
 };
