@@ -19,11 +19,15 @@ aliases:
   #    - example/node_modules
   #  key: dependencies-{{ checksum "example/package.json" }}
 
+  defaults: &defaults
+    working-directory: ~/react-native-ios-kit
+    docker: 
+      - image: circleci/node:6
+
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:6.10.3
+  tests:
+    <<: *defaults
     steps:
       - checkout
       - restore-cache: *restore-cache
@@ -54,7 +58,19 @@ jobs:
           else
             echo "Skipping deploy."
           fi
-        filters:
-          branches:
-            only: master
   
+workflows:
+  version: 2
+
+  website: 
+    jobs:
+      - tests:
+          filters: 
+            branches:
+              ignore: gh-pages
+      - deploy-website:
+          requires:
+            - tests
+          filters:
+            branches:
+              only: master  
