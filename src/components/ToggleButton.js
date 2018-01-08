@@ -32,7 +32,7 @@ class ToggleButton extends Component<Props> {
       <Switch
         {...rest}
         onValueChange={onValueChange}
-        onTintColor={onTintColor || theme.primaryColor}
+        onTintColor={onTintColor || theme.positiveColor}
       />
     );
   }
