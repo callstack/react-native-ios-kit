@@ -4,6 +4,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { withTheme, SearchBar } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
+import withSafeArea from '../withSafeArea';
 
 type Props = {
   theme: Theme,
@@ -30,7 +31,7 @@ class SearchBarExample extends Component<Props, State> {
   }
 }
 
-export default withTheme(SearchBarExample);
+export default withTheme(withSafeArea(SearchBarExample));
 
 const styles = StyleSheet.create({
   screen: {

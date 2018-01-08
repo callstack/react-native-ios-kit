@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Button, DarkTheme, DefaultTheme } from 'react-native-ios-kit';
+import withSafeArea from './withSafeArea';
 
 import type { Theme } from 'react-native-ios-kit/types';
 
@@ -11,7 +12,7 @@ type Props = {
   selectedTheme: Theme,
 };
 
-export default class ThemeSelector extends Component<Props> {
+class ThemeSelector extends Component<Props> {
   selectTheme = (theme: Theme): void => {
     this.props.selectTheme(theme);
     this.props.navigator.pop();
@@ -42,6 +43,8 @@ export default class ThemeSelector extends Component<Props> {
     );
   }
 }
+
+export default withSafeArea(ThemeSelector);
 
 const styles = StyleSheet.create({
   container: {

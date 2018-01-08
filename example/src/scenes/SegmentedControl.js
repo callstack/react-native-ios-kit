@@ -5,6 +5,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { SegmentedControl, withTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
+import withSafeArea from '../withSafeArea';
 
 type Props = {
   theme: Theme,
@@ -37,7 +38,7 @@ class SegmentedExample extends Component<Props, State> {
   }
 }
 
-export default withTheme(SegmentedExample);
+export default withTheme(withSafeArea(SegmentedExample));
 
 const styles = StyleSheet.create({
   container: {

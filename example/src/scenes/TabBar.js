@@ -5,6 +5,8 @@ import { View, StyleSheet } from 'react-native';
 import { TabBar, withTheme, Headline } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
+import withSafeArea from '../withSafeArea';
+
 type Props = {
   theme: Theme,
 };
@@ -57,7 +59,7 @@ class TabBarExample extends Component<Props, State> {
   }
 }
 
-export default withTheme(TabBarExample);
+export default withTheme(withSafeArea(TabBarExample));
 
 const styles = StyleSheet.create({
   screen: {

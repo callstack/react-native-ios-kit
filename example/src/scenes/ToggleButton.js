@@ -4,6 +4,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { withTheme, Subhead, ToggleButton } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
+import withSafeArea from '../withSafeArea';
 
 type Props = {
   theme: Theme,
@@ -35,7 +36,7 @@ class ToggleButtonExample extends Component<Props, State> {
   }
 }
 
-export default withTheme(ToggleButtonExample);
+export default withTheme(withSafeArea(ToggleButtonExample));
 
 const styles = StyleSheet.create({
   screen: {
