@@ -18,15 +18,15 @@ Example usage:
 
 ## Props
 
-### `name`
-type: `string`
-
-Icon name, one of [Ionicons](https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json)
-
 ### `color` (optional)
 type: `string`
 
 Custom color for icon, default to Theme's `primaryColor`
+
+### `name`
+type: `string`
+
+Icon name, one of [Ionicons](https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json)
 
 ### `size` (optional)
 type: `number`
