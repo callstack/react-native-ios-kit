@@ -11,4 +11,5 @@ export type Theme = {
   placeholderColor: string,
   footnoteColor: string,
   footnoteBackgroundColor: string,
+  positiveColor: string,
 };

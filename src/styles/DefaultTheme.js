@@ -21,6 +21,7 @@ const DefaultTheme: Theme = {
   placeholderColor: colors.greyD2,
   footnoteColor: colors.greyD1,
   footnoteBackgroundColor: colors.greyL1,
+  positiveColor: colors.green,
 };
 
 export default DefaultTheme;

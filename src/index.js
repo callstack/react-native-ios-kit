@@ -10,6 +10,7 @@ export { default as Icon } from './components/Icon';
 export { default as TabBar } from './components/TabBar';
 export { default as Stepper } from './components/Stepper';
 export { default as SearchBar } from './components/SearchBar';
+export { default as ToggleButton } from './components/ToggleButton';
 export { default as SegmentedControl } from './components/SegmentedControl';
 export { default as TableView } from './components/TableView';
 export { default as RowItem } from './components/RowItem';

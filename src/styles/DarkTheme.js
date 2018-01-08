@@ -18,6 +18,7 @@ const DarkTheme: Theme = {
   placeholderColor: colors.greyD1,
   footnoteColor: colors.greyL2,
   footnoteBackgroundColor: 'rgb(17, 29, 33)',
+  positiveColor: colors.green,
 };
 
 export default DarkTheme;
