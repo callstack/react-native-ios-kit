@@ -1,4 +1,4 @@
-# react-native-ios-kit &middot; [![Build Status][build-badge]][build] [![MIT License][license-badge]][license] [![Chat][chat-badge]][chat]
+# react-native-ios-kit
 
 ![](https://circleci.com/gh/callstack-io/react-native-ios-kit/tree/master.svg?style=shield&circle-token=fbd52d6f78729e0e92ad5d03f95ec445fffbd070)
 
@@ -54,7 +54,7 @@ The **ThemeProvider** component provides the theme to all the components in the 
 ### Customization
 
 You can provide a custom theme to customize the colors, fonts etc. with the **Provider** component.
-Check the [Theme Type](theme.html) to see what customization options are supported.
+Check the [Theme Type](https://callstack.github.io/react-native-ios-kit/docs/theme.html) to see what customization options are supported.
 
 Example:
 
@@ -88,13 +88,3 @@ function Main() {
 
 Check all the components and its usage in our [docs page](https://callstack.github.io/react-native-ios-kit/button.html).
 
-
-
-
-<!-- badges -->
-[build-badge]: https://img.shields.io/travis/callstack/react-native-ios-kit/master.svg?style=flat-square
-[build]: https://circleci.com/gh/callstack/react-native-ios-kit
-[license-badge]: https://img.shields.io/npm/l/react-native-ios-kit.svg?style=flat-square
-[license]: https://opensource.org/licenses/MIT
-[chat-badge]: https://img.shields.io/badge/chat-slack-brightgreen.svg?style=flat-square&colorB=E01563
-[chat]: https://callstackoss.slack.com/
