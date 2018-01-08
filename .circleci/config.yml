@@ -34,3 +34,27 @@ jobs:
       - run: yarn test -- --coverage -i
       - store_artifacts:
           path: coverage
+  deploy-website:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore-cache: *restore-cache
+      - run: yarn install
+      - save-cache: *save-cache
+      - add_ssh_keys:
+          fingerprints:
+           - "83:32:d9:cc:14:f0:ec:9a:ea:c7:4d:0b:31:74:53:06"
+      - run:
+        name: Deploy Website
+        # Skip the deploy if we don't have the right org (facebook), or if this is just a pull request
+        command: |
+          if [[ -z $CI_PULL_REQUEST && -z $CIRCLE_PR_USERNAME ]]; then
+            echo "Deploying website..."
+            cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
+          else
+            echo "Skipping deploy."
+          fi
+        filters:
+          branches:
+            only: master
+  
