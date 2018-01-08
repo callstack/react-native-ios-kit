@@ -5,7 +5,7 @@ const siteConfig = {
   title: 'react-native-ios-kit',
   tagline: 'The missing React Native UI Kit for iOS.',
   url: 'https://callstack.github.io/react-native-ios-kit',
-  baseUrl: '/',
+  baseUrl: '/react-native-ios-kit/',
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
     { doc: 'button', label: 'API' },
