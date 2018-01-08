@@ -12,12 +12,12 @@ const siteConfig = {
     { page: 'help', label: 'Help' },
   ],
   users,
-  headerIcon: 'img/docusaurus.svg',
+  headerIcon: '',
   footerIcon: '',
   favicon: 'img/favicon.png',
   colors: {
     primaryColor: '#416BAF',
-    secondaryColor: '#007aff',
+    secondaryColor: '#416BAF',
   },
   copyright: 'Copyright © 2018 Callstack',
   organizationName: 'callstack', // or set an env variable ORGANIZATION_NAME
