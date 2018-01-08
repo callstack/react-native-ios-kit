@@ -39,12 +39,12 @@ jobs:
       - save-cache: *save-cache
       - add_ssh_keys:
           fingerprints:
-           - "83:32:d9:cc:14:f0:ec:9a:ea:c7:4d:0b:31:74:53:06"
+           - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
       - run:
           name: Deploy Website
-          commands: 
-            - echo "Deploying website..."          
-            - cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
+          command: |
+            echo "Deploying website..."          
+            cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
   
 workflows:
   version: 2
