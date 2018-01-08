@@ -41,10 +41,10 @@ jobs:
           fingerprints:
            - "83:32:d9:cc:14:f0:ec:9a:ea:c7:4d:0b:31:74:53:06"
       - run:
-        name: Deploy Website
-        commands: 
-          - echo "Deploying website..."          
-          - cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
+          name: Deploy Website
+          commands: 
+            - echo "Deploying website..."          
+            - cd website && GIT_USER="$COMMIT_AUTHOR_NAME" USE_SSH=true yarn run publish-gh-pages
   
 workflows:
   version: 2
