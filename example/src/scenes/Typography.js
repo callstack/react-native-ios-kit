@@ -17,6 +17,8 @@ import {
 } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
+import withSafeArea from '../withSafeArea';
+
 type Props = {
   theme: Theme,
 };
@@ -40,7 +42,7 @@ class TypographyExample extends Component<Props> {
   }
 }
 
-export default withTheme(TypographyExample);
+export default withTheme(withSafeArea(TypographyExample));
 
 const styles = StyleSheet.create({
   container: {

@@ -5,6 +5,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { Button, withTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
+import withSafeArea from '../withSafeArea';
 
 type Props = {
   theme: Theme,
@@ -87,7 +88,7 @@ class Buttons extends Component<Props> {
   }
 }
 
-export default withTheme(Buttons);
+export default withTheme(withSafeArea(Buttons));
 
 const customColor = '#FF3A30';
 const styles = StyleSheet.create({

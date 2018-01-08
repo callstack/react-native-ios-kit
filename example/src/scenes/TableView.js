@@ -10,6 +10,7 @@ import {
   Button,
 } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
+import withSafeArea from '../withSafeArea';
 
 type Props = {
   theme: Theme,
@@ -54,7 +55,7 @@ class TableViewExample extends React.Component<Props> {
   }
 }
 
-export default withTheme(TableViewExample);
+export default withTheme(withSafeArea(TableViewExample));
 
 const ArrowRight = <Icon name="ios-arrow-dropright" size={30} />;
 const RightButton = (

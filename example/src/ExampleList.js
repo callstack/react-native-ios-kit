@@ -5,6 +5,7 @@ import { ListView } from 'react-native';
 import { withTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
+import withSafeArea from './withSafeArea';
 import ExampleListItem from './ExampleListItem';
 import Buttons from './scenes/Buttons';
 import Typography from './scenes/Typography';
@@ -79,4 +80,4 @@ class ExampleList extends Component<Props> {
   }
 }
 
-export default withTheme(ExampleList);
+export default withTheme(withSafeArea(ExampleList));
