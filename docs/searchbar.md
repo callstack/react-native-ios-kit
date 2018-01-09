@@ -14,7 +14,16 @@ Example usage:
   animated
 />
 ```
- 
+
+## Theme
+
+Uses following `theme` properties:
+ - `barColor` - input background color
+ - `backgroundColor` - page background color
+ - `placeholderColor` - placeholder color and clear icon color
+ - `textColor` - input text color
+ - `primaryColor` - text input selection color and Cancel button text color
+
 ## Props
 
 ### `animated` (optional) 
