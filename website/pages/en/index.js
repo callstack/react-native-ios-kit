@@ -74,7 +74,7 @@ class Preview extends React.Component {
         src={siteConfig.baseUrl + 'img/all-components.png'}
         alt="components example"
       />
-    )
+    );
   }
 }
 
