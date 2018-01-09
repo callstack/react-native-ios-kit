@@ -30,10 +30,11 @@
 .*/example/node_modules/react-navigation
 .*/example/node_modules/react-native-fbads
 .*/example/node_modules/react-native-gesture-handler
+.*/example/node_modules/metro-bundler
 
-; Ignore duplicate modules under docs/
-.*/docs/node_modules/fbjs/.*
-.*/docs/node_modules/react/.*
+; Ignore duplicate modules under website/
+.*/website/node_modules/fbjs/.*
+.*/website/node_modules/react/.*
 
 ; Ignore some modules we don't need to parse
 .*/node_modules/prettier/.*
