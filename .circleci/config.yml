@@ -10,6 +10,16 @@ aliases:
       - node_modules
     key: dependencies-{{ checksum "package.json" }}
 
+  - &filter-only-master
+    branches:
+      only:
+        - master
+
+  - &filter-ignore-gh-pages
+    branches:
+      ignore: 
+        - gh-pages
+
 
 defaults: &defaults
   working-directory: ~/react-native-ios-kit
@@ -52,12 +62,8 @@ workflows:
   website: 
     jobs:
       - tests:
-          filters: 
-            branches:
-              ignore: gh-pages
+          filters: *filter-ignore-gh-pages
       - deploy-website:
           requires:
             - tests
-          filters:
-            branches:
-              only: master  
+          filters: *filter-only-master
