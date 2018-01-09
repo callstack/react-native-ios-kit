@@ -10,7 +10,7 @@
     "installation": "Installation",
     "row-item": "RowItem",
     "search-bar": "SearchBar",
-    "segmented-control": "Segmented Control",
+    "segmented-control": "SegmentedControl",
     "stepper": "Stepper",
     "tab-bar": "TabBar",
     "table-view": "TableView",
