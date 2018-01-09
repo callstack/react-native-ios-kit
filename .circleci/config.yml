@@ -101,6 +101,7 @@ workflows:
 
   website: 
     jobs:
+      - install-dependencies
       - tests:
           requires:
             - install-dependencies
