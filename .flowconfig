@@ -31,6 +31,8 @@
 .*/example/node_modules/react-native-fbads
 .*/example/node_modules/react-native-gesture-handler
 .*/example/node_modules/metro-bundler
+.*/example/node_modules/exp
+.*/example/node_modules/@expo
 
 ; Ignore duplicate modules under website/
 .*/website/node_modules/fbjs/.*
