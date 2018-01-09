@@ -82,6 +82,7 @@ jobs:
     <<: *defaults
     steps:
       - run: |
+          yarn add global exp
           cd example
           exp login -u $EXP_USERNAME -p $EXP_PASSWORD
           exp publish --non-interactive
