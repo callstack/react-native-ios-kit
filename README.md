@@ -11,6 +11,8 @@ You can find documentation [here](https://callstack.github.io/react-native-ios-k
 ```sh
 cd example && npm run ios
 ```
+or run the [example app](https://expo.io/@mobile-dev/react-native-ios-kit) with [Expo](https://expo.io/) to see it in action.
+
 
 ## Getting Started
 

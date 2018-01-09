@@ -1,30 +1,72 @@
 aliases:
+
   - &restore-cache
     keys:
       - dependencies-{{ checksum "package.json" }}
-      # Fallback in case checksum fails
       - dependencies-
 
-  - &save-cache
-    paths:
-      - node_modules
-    key: dependencies-{{ checksum "package.json" }}
+  - &restore-example-cache
+    keys:
+      - dependencies-example-{{ checksum "example/package.json" }}
+      - dependencies-example
 
+  - &restore-website-cache
+    keys:
+      - dependencies-website-{{ checksum "website/package.json" }}
+      - dependencies-website
+
+  - &save-cache
+    key: dependencies-{{ checksum "package.json" }}
+    paths: node_modules
+
+  - &save-example-cache
+    key: dependencies-example-{{ checksum "example/package.json" }}
+    paths: example/node_modules
+
+  - &save-website-cache
+    key: dependencies-website-{{ checksum "website/package.json" }}
+    paths: website/node_modules
+
+  - &filter-only-master
+    branches:
+      only:
+        - master
+
+  - &filter-ignore-gh-pages
+    branches:
+      ignore: gh-pages
 
 defaults: &defaults
-  working-directory: ~/react-native-ios-kit
+  working_directory: ~/react-native-ios-kit
   docker: 
     - image: circleci/node:6
 
 version: 2
 jobs:
-  tests:
+  install-dependencies:
     <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - restore-cache: *restore-cache
-      - run: yarn install
+      - restore-cache: *restore-example-cache
+      - restore-cache: *restore-website-cache
+      - run: |
+          yarn install
+          cd example && yarn install && cd ..
+          cd website && yarn install && cd ..
       - save-cache: *save-cache
+      - save-cache: *save-example-cache
+      - save-cache: *save-website-cache
+      - persist_to_workspace:
+          root: .
+          paths: .
+  tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - run: yarn run lint
       - run: yarn run flow
       - run: yarn test -- --coverage -i
@@ -33,10 +75,8 @@ jobs:
   deploy-website:
     <<: *defaults
     steps:
-      - checkout
-      - restore-cache: *restore-cache
-      - run: yarn install
-      - save-cache: *save-cache
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - add_ssh_keys:
           fingerprints:
            - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
@@ -44,20 +84,32 @@ jobs:
           echo "Deploying website..."            
           git config --global user.name "$CIRCLE_USERNAME"
           git config --global user.email "oss@callstack.com"
-          cd website && yarn && GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish
-  
+          GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish  
+  publish-expo:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
+      - run: |
+          cd example
+          yarn exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
+          yarn exp publish --non-interactive
+
 workflows:
   version: 2
 
   website: 
     jobs:
+      - install-dependencies
       - tests:
-          filters: 
-            branches:
-              ignore: gh-pages
+          requires:
+            - install-dependencies
+          filters: *filter-ignore-gh-pages
       - deploy-website:
           requires:
             - tests
-          filters:
-            branches:
-              only: master  
+          filters: *filter-only-master
+      - publish-expo:
+          requires:
+            - tests
+          filters: *filter-only-master

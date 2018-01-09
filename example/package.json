@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "color": "^2.0.1",
+    "exp": "^47.3.17",
     "expo": "^23.0.0",
     "glob-to-regexp": "^0.3.0",
     "prop-types": "^15.6.0",
