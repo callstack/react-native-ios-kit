@@ -82,9 +82,9 @@ jobs:
     <<: *defaults
     steps:
       - run: |
-        cd example
-        exp login -u $EXP_USERNAME -p $EXP_PASSWORD
-        exp publish --non-interactive
+          cd example
+          exp login -u $EXP_USERNAME -p $EXP_PASSWORD
+          exp publish --non-interactive
 
 workflows:
   version: 2
