@@ -29,6 +29,7 @@
 .*/example/node_modules/react-native-tab-view
 .*/example/node_modules/react-navigation
 .*/example/node_modules/react-native-fbads
+.*/example/node_modules/react-native-gesture-handler
 
 ; Ignore duplicate modules under docs/
 .*/docs/node_modules/fbjs/.*
