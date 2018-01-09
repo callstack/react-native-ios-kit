@@ -5,7 +5,7 @@ title: Button
 
 A basic Button component.
 
-![ToggleButton component](assets/buttons.png)
+![Button component](assets/buttons.png)
 
 Example usage:
 ```javascript

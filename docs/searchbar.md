@@ -40,7 +40,6 @@ Text of Cancel Button.
 
 Invoked with the new value when the value of text input changes.
 
-
 ### `onFocus` (optional) 
 **type:** `() => void`  
 
