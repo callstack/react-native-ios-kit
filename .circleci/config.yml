@@ -34,8 +34,7 @@ aliases:
 
   - &filter-ignore-gh-pages
     branches:
-      ignore: 
-        - gh-pages
+      ignore: gh-pages
 
 defaults: &defaults
   working-directory: ~/react-native-ios-kit
@@ -84,7 +83,7 @@ jobs:
       - run: |
           yarn add global exp
           cd example
-          exp login -u $EXP_USERNAME -p $EXP_PASSWORD
+          exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
           exp publish --non-interactive
 
 workflows:
