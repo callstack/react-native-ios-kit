@@ -40,7 +40,7 @@ Example usage:
  
 ## Props
 
-### theme: Theme,
+### `theme` (optional)
 type: [`Theme`](theme.html)
  
 Custom theme for component. By default provided by the ThemeProvider.
