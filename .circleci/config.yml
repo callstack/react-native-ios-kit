@@ -20,11 +20,11 @@ aliases:
     paths: node_modules
 
   - &save-example-cache
-    key: dependencies-example-{{ checksum "package.json" }}
+    key: dependencies-example-{{ checksum "example/package.json" }}
     paths: example/node_modules
 
   - &save-website-cache
-    key: dependencies-website-{{ checksum "package.json" }}
+    key: dependencies-website-{{ checksum "website/package.json" }}
     paths: website/node_modules
 
   - &filter-only-master
