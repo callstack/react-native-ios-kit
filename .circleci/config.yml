@@ -37,7 +37,7 @@ aliases:
       ignore: gh-pages
 
 defaults: &defaults
-  working-directory: ~/react-native-ios-kit
+  working_directory: ~/react-native-ios-kit
   docker: 
     - image: circleci/node:6
 
