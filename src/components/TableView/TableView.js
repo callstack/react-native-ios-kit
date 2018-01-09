@@ -16,7 +16,7 @@ type Props = {
   /**
    * Header of TableView
    */
-  header: string,
+  header?: string,
   /**
    * Indicates whether render empty header or not
    */
@@ -28,7 +28,7 @@ type Props = {
   /**
    * Footer of TableView
    */
-  footer: string,
+  footer?: string,
   /**
    * Whether render empty footer or not
    */
