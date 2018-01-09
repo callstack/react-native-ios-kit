@@ -91,10 +91,10 @@ jobs:
       - attach_workspace:
           at: ~/react-native-ios-kit
       - run: |
-          yarn add global exp
+          yarn add exp
           cd example
-          exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
-          exp publish --non-interactive
+          yarn exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
+          yarn exp publish --non-interactive
 
 workflows:
   version: 2
