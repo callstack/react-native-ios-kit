@@ -4,7 +4,7 @@
 
 The missing React Native UI Kit for iOS.
 
-You can find documentation [here](localhost:3000/react-native-ios-kit)
+You can find documentation [here](https://callstack.github.io/react-native-ios-kit)
 
 ## Try it out
 
