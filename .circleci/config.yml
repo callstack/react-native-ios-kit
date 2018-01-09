@@ -47,6 +47,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - restore-cache: *restore-cache
       - restore-cache: *restore-example-cache
       - restore-cache: *restore-website-cache
@@ -57,9 +59,14 @@ jobs:
       - save-cache: *save-cache
       - save-cache: *save-example-cache
       - save-cache: *save-website-cache
+      - persist_to_workspace:
+          root: .
+          paths: .
   tests:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - run: yarn run lint
       - run: yarn run flow
       - run: yarn test -- --coverage -i
@@ -68,6 +75,8 @@ jobs:
   deploy-website:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - add_ssh_keys:
           fingerprints:
            - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
@@ -75,11 +84,12 @@ jobs:
           echo "Deploying website..."            
           git config --global user.name "$CIRCLE_USERNAME"
           git config --global user.email "oss@callstack.com"
-          GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish
-  
+          GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish  
   publish-expo:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
       - run: |
           yarn add global exp
           cd example
