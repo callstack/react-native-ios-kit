@@ -3,6 +3,7 @@ id: row-item
 title: RowItem
 ---
 
+A component you can use as a children for [`TableView`](table-view.html).
 
 ![RowItem component](assets/row-item.png)
 
