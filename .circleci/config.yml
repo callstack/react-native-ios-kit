@@ -5,27 +5,27 @@ aliases:
       - dependencies-{{ checksum "package.json" }}
       - dependencies-
 
-  - &save-cache
-    paths: node_modules
-    key: dependencies-{{ checksum "package.json" }}
-
   - &restore-example-cache
     keys:
       - dependencies-example-{{ checksum "example/package.json" }}
       - dependencies-example
 
-  - &save-example-cache
-    paths: example/node_modules
-    key: example/dependencies-{{ checksum "package.json" }}
-
   - &restore-website-cache
     keys:
-      - dependencies-example-{{ checksum "website/package.json" }}
+      - dependencies-website-{{ checksum "website/package.json" }}
       - dependencies-website
 
+  - &save-cache
+    key: dependencies-{{ checksum "package.json" }}
+    paths: node_modules
+
+  - &save-example-cache
+    key: dependencies-example-{{ checksum "package.json" }}
+    paths: example/node_modules
+
   - &save-website-cache
+    key: dependencies-website-{{ checksum "package.json" }}
     paths: website/node_modules
-    key: website/dependencies-{{ checksum "package.json" }}
 
   - &filter-only-master
     branches:
