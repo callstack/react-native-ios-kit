@@ -1,14 +1,31 @@
 aliases:
+
   - &restore-cache
     keys:
       - dependencies-{{ checksum "package.json" }}
-      # Fallback in case checksum fails
       - dependencies-
 
   - &save-cache
-    paths:
-      - node_modules
+    paths: node_modules
     key: dependencies-{{ checksum "package.json" }}
+
+  - &restore-example-cache
+    keys:
+      - dependencies-example-{{ checksum "example/package.json" }}
+      - dependencies-example
+
+  - &save-example-cache
+    paths: example/node_modules
+    key: example/dependencies-{{ checksum "package.json" }}
+
+  - &restore-website-cache
+    keys:
+      - dependencies-example-{{ checksum "website/package.json" }}
+      - dependencies-website
+
+  - &save-website-cache
+    paths: website/node_modules
+    key: website/dependencies-{{ checksum "package.json" }}
 
   - &filter-only-master
     branches:
@@ -20,7 +37,6 @@ aliases:
       ignore: 
         - gh-pages
 
-
 defaults: &defaults
   working-directory: ~/react-native-ios-kit
   docker: 
@@ -28,13 +44,23 @@ defaults: &defaults
 
 version: 2
 jobs:
-  tests:
+  instal-dependencies:
     <<: *defaults
     steps:
       - checkout
       - restore-cache: *restore-cache
-      - run: yarn install
+      - restore-cache: *restore-example-cache
+      - restore-cache: *restore-website-cache
+      - run: |
+        yarn install
+        cd example && yarn install && cd ..
+        cd website && yarn install && cd ..
       - save-cache: *save-cache
+      - save-cache: *save-example-cache
+      - save-cache: *save-website-cache
+  tests:
+    <<: *defaults
+    steps:
       - run: yarn run lint
       - run: yarn run flow
       - run: yarn test -- --coverage -i
@@ -43,10 +69,6 @@ jobs:
   deploy-website:
     <<: *defaults
     steps:
-      - checkout
-      - restore-cache: *restore-cache
-      - run: yarn install
-      - save-cache: *save-cache
       - add_ssh_keys:
           fingerprints:
            - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
@@ -54,16 +76,30 @@ jobs:
           echo "Deploying website..."            
           git config --global user.name "$CIRCLE_USERNAME"
           git config --global user.email "oss@callstack.com"
-          cd website && yarn && GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish
+          GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish
   
+  publish-expo:
+    <<: *defaults
+    steps:
+      - run: |
+        cd example
+        exp login -u $EXP_USERNAME -p $EXP_PASSWORD
+        exp publish --non-interactive
+
 workflows:
   version: 2
 
   website: 
     jobs:
       - tests:
+          requires:
+            - instal-dependencies
           filters: *filter-ignore-gh-pages
       - deploy-website:
           requires:
             - tests
           filters: *filter-only-master
+      - publish-expo:
+          requires:
+            - tests
+          # filters: *filter-only-master
