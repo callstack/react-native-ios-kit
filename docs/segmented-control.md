@@ -1,6 +1,6 @@
 ---
 id: segmented-control
-title: Segmented Control
+title: SegmentedControl
 ---
 
 Linear set of two or more segments, each of which functions as a mutually exclusive button. 
@@ -30,7 +30,8 @@ Uses following `theme` properties:
 ### `onChange`
 **type:** `(index: number) => void`
 
-Callback that is called when the user taps a segment; passes the event as an argument
+Callback that is called when the user taps a segment.
+Passes segments index as an argument
 
 ## `onValueChange`
 **type:** `(value: string) => void`
@@ -41,7 +42,7 @@ Passes the segment's value as an argument.
 ### `selectedIndex`
 **type:** `number`
 
-Index of currently selected `value`
+Index of currently selected `value`.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
@@ -52,7 +53,7 @@ Custom theme for component. By default provided by the ThemeProvider.
 **type:** `string`  
 **default value:** `theme.primaryColor`
 
-Accent color of Segmented Control
+Accent color of SegmentedControl.
 
 ### `values`
 **type:** `Array<string>`
