@@ -8,6 +8,7 @@
 const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
+const { Container, GridBlock, MarkdownBlock } = CompLibrary;
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
 class Button extends React.Component {
@@ -41,6 +42,39 @@ const ProjectTitle = props => (
   </h2>
 );
 
+const ExampleApp = () => (
+  <Container padding={['bottom', 'top']} background="light">
+    <GridBlock
+      contents={[
+        {
+          content: `View our components at Expo.`,
+          imageAlign: 'left',
+          image: `${siteConfig.baseUrl}img/qrcode.png`,
+          title: 'Example App',
+          imageLink: 'https://expo.io/@mobile-dev/react-native-ios-kit',
+        },
+      ]}
+      layout="twoColumn"
+    />
+  </Container>
+);
+
+const EasySetup = () => (
+  <Container padding={['bottom', 'top']}>
+    <GridBlock
+      contents={[
+        {
+          content: `Just couple of lines to get you up and running.`,
+          imageAlign: 'right',
+          image: `${siteConfig.baseUrl}img/setup.png`,
+          title: 'Easy setup',
+        },
+      ]}
+      layout="twoColumn"
+    />
+  </Container>
+);
+
 class HomeSplash extends React.Component {
   render() {
     return (
@@ -61,6 +95,8 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer" />
+        <EasySetup />
+        <ExampleApp />
       </div>
     );
   }

@@ -112,4 +112,4 @@ workflows:
       - publish-expo:
           requires:
             - tests
-          # filters: *filter-only-master
+          filters: *filter-only-master
