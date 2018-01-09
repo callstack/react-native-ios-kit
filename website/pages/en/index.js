@@ -81,6 +81,7 @@ class HomeSplash extends React.Component {
       <SplashContainer>
         <div className="inner">
           <ProjectTitle />
+          <Preview />
         </div>
       </SplashContainer>
     );
@@ -98,6 +99,17 @@ class Index extends React.Component {
         <EasySetup />
         <ExampleApp />
       </div>
+    );
+  }
+}
+
+class Preview extends React.Component {
+  render() {
+    return (
+      <img
+        src={siteConfig.baseUrl + 'img/all-components.png'}
+        alt="components example"
+      />
     );
   }
 }
