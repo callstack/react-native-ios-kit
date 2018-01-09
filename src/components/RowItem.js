@@ -15,7 +15,7 @@ type Props = {
   /**
    * Icon name
    */
-  icon: string,
+  icon?: string,
   /**
    * Title string to be displayed
    */
@@ -66,7 +66,7 @@ class RowItem extends React.Component<Props> {
           },
         ]}
       >
-        {icon && <Icon name={icon} size={30} />}
+        {icon && <Icon name={icon} size={30} color={theme.primaryColor} />}
         <View style={[styles.titleWrapper, { marginLeft: icon ? 15 : 0 }]}>
           <Body>{title}</Body>
           {subtitle && <Caption1>{subtitle}</Caption1>}
