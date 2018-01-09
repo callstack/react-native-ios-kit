@@ -1,10 +1,10 @@
 ---
 id: table-view
-title: TabeView
+title: TableView
 ---
 
 A basic TableView component that can render ios table view.
-It renders header, footer and children which can be `RowItem` components  
+It renders header, footer and children which can be [`RowItem`](row-item.html) components.  
 
 
 ![TableView component](assets/table-view.png)
