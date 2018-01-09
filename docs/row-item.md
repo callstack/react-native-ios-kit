@@ -25,32 +25,32 @@ Uses following theme properties:
 
 ## Props
 
-### `theme` (optional)
-**type:** [`Theme`](theme.html)
-
-Custom theme for component. By default provided by the ThemeProvider.
-
 ### `icon` (optional)
 **type:** `string`
 
 Icon name. See ['Icon`](icon.html)
 
-### `title` (optional)
-**type:** `string`
+### `onPress` (optional)
+**type:** `() => void`
 
-Title text to be displayed.
-
-### `subtitle` (optional)
-**type:** `string`
-
-Subtitle text to be displayed.
+Inveked on RowItem's onPress event.
 
 ### `rightComponent` (optional)
 **type:** `React.Element<*>`
 
 Component to be displayed on the right side of row.
 
-### `onPress` (optional)
-**type:** `() => void`
+### `subtitle` (optional)
+**type:** `string`
 
-Inveked on RowItem's onPress event.
+Subtitle text to be displayed.
+
+### `theme` (optional)
+**type:** [`Theme`](theme.html)
+
+Custom theme for component. By default provided by the ThemeProvider.
+
+### `title` (optional)
+**type:** `string`
+
+Title text to be displayed.

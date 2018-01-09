@@ -36,48 +36,47 @@ Uses following theme properties:
 
 ## Props
 
-### `theme` (optional)
-**type:** [`Theme`](theme.html)
+### `children`
+**type:** `React.ChildrenArray<*>`
 
-Custom theme for component. By default provided by the ThemeProvider.
-
-### `header` (optional)
-**type:** `string`
-
-Header text of TableView.
-
-### `withoutHeader` (optional)
-**type:** `boolean`
-
-Indicates whether render empty header or not. If `true` it won`t render header.
-
-### `headerStyle` (optional)
-**type:** `Object`
-
-Custom styles for header.
+Cildren of TableView. Could be [`RowItem`](row-item.html) components.
 
 ### `footer` (optional)
 **type:** `string`
 
 Footer text of TableView
 
-### `withoutFooter` (optional)
-**type:** `boolean`
-
-Whether render empty footer or not. If `true` it won't render footer.
-
 ### `footerStyle` (optional)
 **type:** `Object`
 
 Custom footer style.
+
+### `header` (optional)
+**type:** `string`
+
+Header text of TableView.
+
+### `headerStyle` (optional)
+**type:** `Object`
+
+Custom styles for header.
 
 ### `onFooterPress` (optional)
 **type:** `() => void`
 
 Invoked on footer press. 
 
-### `children`
-**type:** `React.ChildrenArray<*>`
+### `theme` (optional)
+**type:** [`Theme`](theme.html)
 
-Cildren of TableView. Could be [`RowItem`](row-item.html) components.
+Custom theme for component. By default provided by the ThemeProvider.
 
+### `withoutHeader` (optional)
+**type:** `boolean`
+
+Indicates whether render empty header or not. If `true` it won`t render header.
+
+### `withoutFooter` (optional)
+**type:** `boolean`
+
+Whether render empty footer or not. If `true` it won't render footer.
