@@ -42,6 +42,21 @@ const ProjectTitle = props => (
   </h2>
 );
 
+const Buttons = () => (
+  <div className="section promoSection">
+    <div className="promoRow">
+      <div className="pluginRowBlock">
+        <Button href={`${siteConfig.baseUrl}docs/installation.html`}>
+          Get Started
+        </Button>
+        <Button href="https://github.com/callstack/react-native-ios-kit">
+          GitHub
+        </Button>
+      </div>
+    </div>
+  </div>
+);
+
 const ExampleApp = () => (
   <Container padding={['bottom', 'top']} background="light">
     <GridBlock
@@ -81,6 +96,7 @@ class HomeSplash extends React.Component {
       <SplashContainer>
         <div className="inner">
           <ProjectTitle />
+          <Buttons />
           <Preview />
         </div>
       </SplashContainer>
