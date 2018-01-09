@@ -31,7 +31,7 @@ Example usage:
 ## Theme
 Uses following theme properties:
 - `footnoteBackgroundColor` - background color of header and footer
-- `footnoteColor` - text color of heaader and footer
+- `footnoteColor` - text color of header and footer
 - `primaryColor` - text color of footer if there is `onFooterPress` prop
 
 ## Props

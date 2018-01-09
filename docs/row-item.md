@@ -34,7 +34,7 @@ Icon name. See ['Icon`](icon.html)
 ### `onPress` (optional)
 **type:** `() => void`
 
-Inveked on RowItem's onPress event.
+Invoked on RowItem's onPress event.
 
 ### `rightComponent` (optional)
 **type:** `React.Element<*>`
