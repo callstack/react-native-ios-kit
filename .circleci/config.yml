@@ -44,7 +44,7 @@ defaults: &defaults
 
 version: 2
 jobs:
-  instal-dependencies:
+  install-dependencies:
     <<: *defaults
     steps:
       - checkout
@@ -52,9 +52,9 @@ jobs:
       - restore-cache: *restore-example-cache
       - restore-cache: *restore-website-cache
       - run: |
-        yarn install
-        cd example && yarn install && cd ..
-        cd website && yarn install && cd ..
+          yarn install
+          cd example && yarn install && cd ..
+          cd website && yarn install && cd ..
       - save-cache: *save-cache
       - save-cache: *save-example-cache
       - save-cache: *save-website-cache
@@ -93,7 +93,7 @@ workflows:
     jobs:
       - tests:
           requires:
-            - instal-dependencies
+            - install-dependencies
           filters: *filter-ignore-gh-pages
       - deploy-website:
           requires:
