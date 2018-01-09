@@ -28,7 +28,7 @@ type Props = {
   /**
    * Placeholder of text input. Defaults to "Search"
    */
-  placeholder: string,
+  placeholder?: string,
   /**
    * Value of text input
    */
@@ -36,27 +36,27 @@ type Props = {
   /**
    * Indicates presence of Cancel button. Defaults to false
    */
-  withCancel: boolean,
+  withCancel?: boolean,
   /**
    * Text of Cancel Button. Defaults to "Cancel"
    */
-  cancelText: string,
+  cancelText?: string,
   /**
    * Indicates if Cancel button and TextInput should animate on focus/blur. Defaults to false
    */
-  animated: boolean,
+  animated?: boolean,
   /**
    * Animation duration. Default 200ms
    */
-  animationTime: number,
+  animationTime?: number,
   /**
    * Callback invoked on text input focus
    */
-  onFocus: () => void,
+  onFocus?: () => void,
   /**
    * Callback invoked on text input blur
    */
-  onBlur: () => void,
+  onBlur?: () => void,
 };
 
 type State = {
