@@ -44,6 +44,11 @@ Animation duration in milliseconds.
 
 Text of Cancel Button.
 
+### `onBlur` (optional)
+**type:** `() => void`  
+
+Callback invoked on text input blur
+
 ### `onChangeText` 
 **type:** `(text: string) => void`  
 
@@ -53,11 +58,6 @@ Invoked with the new value when the value of text input changes.
 **type:** `() => void`  
 
 Callback invoked on text input focus
-
-### `onBlur` (optional)
-**type:** `() => void`  
-
-Callback invoked on text input blur
 
 ### `placeholder` (optional) 
 **type:** `string`  
