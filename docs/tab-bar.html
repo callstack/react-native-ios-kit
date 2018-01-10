@@ -29,19 +29,28 @@
     {
       <span class="hljs-attr">icon</span>: <span class="hljs-string">'ios-people'</span>,
       <span class="hljs-attr">title</span>: <span class="hljs-string">'Disabled'</span>,
-      <span class="hljs-attr">onPress</span>: <span class="hljs-keyword">this</span>.selectTab,
-      <span class="hljs-attr">isActive</span>: <span class="hljs-keyword">this</span>.state.activeTab === <span class="hljs-number">3</span>,
+      <span class="hljs-attr">onPress</span>: <span class="hljs-keyword">this</span>.selectTab,s
+      isActive: <span class="hljs-keyword">this</span>.state.activeTab === <span class="hljs-number">3</span>,
       <span class="hljs-attr">disabled</span>: <span class="hljs-literal">true</span>,
     },
   ]}
 /&gt;
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" name="theme"></a><a href="#theme" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Theme</h2>
+<p>Uses following <code>theme</code> properties:</p>
+<ul>
+<li><code>barColor</code> - background color</li>
+<li><code>dividerColor</code> - top border color</li>
+<li><code>primaryColor</code> - icon color and caption color for active tab</li>
+<li><code>disabledColor</code> - icon color and caption color for disabled tab</li>
+<li><code>primaryLightColor</code> - icon color and caption color for non active tab</li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" name="props"></a><a href="#props" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Props</h2>
 <h3><a class="anchor" aria-hidden="true" name="theme-optional"></a><a href="#theme-optional" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>theme</code> (optional)</h3>
-<p>type: <a href="theme.html"><code>Theme</code></a></p>
+<p><strong>type:</strong> <a href="theme.html"><code>Theme</code></a></p>
 <p>Custom theme for component. By default provided by the ThemeProvider.</p>
 <h3><a class="anchor" aria-hidden="true" name="tabs"></a><a href="#tabs" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>tabs</code></h3>
-<p>type: <code>Array&lt;TabItem&gt;</code></p>
+<p><strong>type:</strong> <code>Array&lt;TabItem&gt;</code></p>
 <p>Array of Tabs. Each <code>TabItem</code> needs to have below shape:</p>
 <ul>
 <li><code>icon</code>: <a href="icon.html">Icon name</a></li>
