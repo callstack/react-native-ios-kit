@@ -1,7 +1,7 @@
 /* flow */
 import * as React from 'react';
-import { TouchableHighlight, StyleSheet, Text } from 'react-native';
-import { withTheme } from 'react-native-ios-kit';
+
+import { withTheme, RowItem, Icon } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
@@ -12,27 +12,18 @@ type Props = {
 
 class ExampleLitItem extends React.PureComponent<Props> {
   render() {
-    const { onPressRow, rowData, theme: { textColor } } = this.props;
+    const { onPressRow, rowData } = this.props;
 
     return (
-      <TouchableHighlight
+      <RowItem
+        title={rowData.title}
         onPress={() => onPressRow(rowData)}
-        style={styles.row}
-        underlayColor="#C8C7CC"
-      >
-        <Text style={[styles.text, { color: textColor }]}>{rowData.title}</Text>
-      </TouchableHighlight>
+        withoutHeader
+        withoutFooter
+        rightComponent={<Icon name="ios-arrow-dropright" size={30} />}
+      />
     );
   }
 }
 
 export default withTheme(ExampleLitItem);
-
-const styles = StyleSheet.create({
-  row: {
-    padding: 15,
-  },
-  text: {
-    fontSize: 17,
-  },
-});

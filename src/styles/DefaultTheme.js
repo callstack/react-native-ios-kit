@@ -14,7 +14,7 @@ const DefaultTheme: Theme = {
   disabledColor: color(colors.blue)
     .lighten(0.8)
     .string(),
-  backgroundColor: colors.greyL1,
+  backgroundColor: colors.white,
   barColor: colors.greyL2,
   dividerColor: colors.grey,
   textColor: colors.black,

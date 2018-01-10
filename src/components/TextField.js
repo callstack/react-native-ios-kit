@@ -25,7 +25,13 @@ class TextField extends React.Component<Props> {
       value,
       placeholder,
       onChangeText,
-      theme: { backgroundColor, dividerColor, placeholderColor, primaryColor },
+      theme: {
+        backgroundColor,
+        dividerColor,
+        placeholderColor,
+        primaryColor,
+        textColor,
+      },
       containerStyle,
       inputStyle,
       ...rest
@@ -44,7 +50,7 @@ class TextField extends React.Component<Props> {
           placeholder={placeholder}
           placeholderTextColor={placeholderColor}
           onChangeText={onChangeText}
-          style={[styles.input, inputStyle]}
+          style={[styles.input, { color: textColor }, inputStyle]}
           selectionColor={primaryColor}
         />
         {value ? (
