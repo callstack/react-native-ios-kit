@@ -30,23 +30,31 @@ Example usage:
     {
       icon: 'ios-people',
       title: 'Disabled',
-      onPress: this.selectTab,
+      onPress: this.selectTab,s
       isActive: this.state.activeTab === 3,
       disabled: true,
     },
   ]}
 />
 ```
+
+## Theme
+Uses following `theme` properties:
+- `barColor` - background color
+- `dividerColor` - top border color
+- `primaryColor` - icon color and caption color for active tab
+- `disabledColor` - icon color and caption color for disabled tab
+- `primaryLightColor` - icon color and caption color for non active tab
  
 ## Props
 
 ### `theme` (optional)
-type: [`Theme`](theme.html)
+**type:** [`Theme`](theme.html)
  
 Custom theme for component. By default provided by the ThemeProvider.
 
 ### `tabs` 
-type: `Array<TabItem>`  
+**type:** `Array<TabItem>`  
 
 Array of Tabs. Each `TabItem` needs to have below shape:
 * `icon`: [Icon name](icon.html)
