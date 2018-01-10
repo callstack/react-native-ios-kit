@@ -10,19 +10,26 @@ type Props = {
   theme: Theme,
 };
 type State = {
-  value: string,
+  phone: string,
+  email: string,
 };
 class TextFieldExample extends React.Component<Props, State> {
   state = {
-    value: '',
+    phone: '',
+    email: '',
   };
   render() {
     return (
       <View>
         <TextField
-          placeholder={'Bananas'}
-          value={this.state.value}
-          onChangeText={text => this.setState({ value: text })}
+          placeholder={'Phone number'}
+          value={this.state.phone}
+          onChangeText={text => this.setState({ phone: text })}
+        />
+        <TextField
+          placeholder={'Email'}
+          value={this.state.email}
+          onChangeText={text => this.setState({ email: text })}
         />
       </View>
     );
