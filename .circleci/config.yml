@@ -75,6 +75,7 @@ jobs:
   deploy-website:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/react-native-ios-kit
       - add_ssh_keys:
