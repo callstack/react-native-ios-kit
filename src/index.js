@@ -14,5 +14,6 @@ export { default as ToggleButton } from './components/ToggleButton';
 export { default as SegmentedControl } from './components/SegmentedControl';
 export { default as TableView } from './components/TableView';
 export { default as RowItem } from './components/RowItem';
+export { default as Slider } from './components/Slider';
 
 export * from './components/Typography';
