@@ -40,12 +40,12 @@ Uses following `theme` properties:
 ## Props of every typography component
 
 ### `style` (optional)
-type: `Object`  
+**type:** `Object`  
 
 Custom styles to apply to the typography component.
 
 ### `theme` (optional)
-type: [`Theme`](theme.html)
+**type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

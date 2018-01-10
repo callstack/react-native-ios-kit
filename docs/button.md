@@ -14,80 +14,85 @@ Example usage:
 </Button>
 ```
 
+## Theme
+Uses following `theme` properties:
+ - `primaryColor` - text color, border color and backgroud color if inverted
+ - `disabledColor` - for disabled button text color, border color and backgroud color if inverted
+
 ## Props
 
 ### `centered` (optional)
-type: `boolean`  
+**type:** `boolean`  
 
 If true, center text inside the button.
 Applies only if rounded prop is not true.
 
 ### `children` (optional)
-type: `React.Element<*> | React.Element<*>[] | string`
+**type:** `React.Element<*> | React.Element<*>[] | string`
 
 ### `color` (optional)
-type: `string`  
+**type:** `string`  
 
 Custom font color.
 
 ### `disabled` (optional)
-type: `boolean`  
+**type:** `boolean`  
 
 If true, disable all interactions for this component.
 
 ### `disabledStyle` (optional)
-type: `Object`  
+**type:** `Object`  
 
 Custom styles to apply to the button.
 
 ### `inline` (optional)
-type: `boolean`  
+**type:** `boolean`  
 
 If true, disable automatic horizontal resize.
 The button will only occupy width it needs, instead of 100%.
 
 ### `innerStyle` (optional)
-type: `Object`  
+**type:** `Object`  
 
 Custom styles to apply to text inside the button.
 
 ### `inverted` (optional)
-type: `boolean`  
+**type:** `boolean`  
 
 If true, invert font color with background color.
 Applies only if rounded prop is true.
 
 ### `onPress` (optional)
-type: `Function`  
+**type:** `() => void`  
 
 Handler to be called when the user taps the button.
 
 ### `onPressIn` (optional)
-type: `Function`  
+**type:** `() => void`  
 
 Called as soon as the touchable element is pressed and invoked even before onPress.
 
 ### `onPressOut` (optional)
-type: `Function`  
+**type:** `() => void`  
 
 Called as soon as the touch is released even before onPress.
 
 ### `onLongPress` (optional)
-type: `Function`  
+**type:** `() => void`  
 
 Called on a long press.
 
 ### `rounded` (optional)
-type: `boolean`  
+**type:** `boolean`  
 
 If true, make border corners rounded.
 
 ### `style` (optional)
-type: `Object`  
+**type:** `Object`  
 
 Custom styles to apply to the button.
 
 ### `theme` (optional)
-type: [`Theme`](theme.html)
+**type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
