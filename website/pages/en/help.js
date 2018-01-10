@@ -18,7 +18,7 @@ class Help extends React.Component {
     const supportLinks = [
       {
         content:
-          'Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)',
+          'Learn more using the [documentation on this site.](/react-native-ios-kit/docs/installation.html)',
         title: 'Browse Docs',
       },
       {
