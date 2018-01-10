@@ -20,7 +20,7 @@ class ExampleLitItem extends React.PureComponent<Props> {
         onPress={() => onPressRow(rowData)}
         withoutHeader
         withoutFooter
-        rightComponent={<Icon name="ios-arrow-dropright" size={30} />}
+        rightComponent={<Icon name="ios-arrow-forward" size={22} />}
       />
     );
   }
