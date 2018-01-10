@@ -15,6 +15,7 @@ import SearchBar from './scenes/SearchBar';
 import ToggleButton from './scenes/ToggleButton';
 import SegmentedControl from './scenes/SegmentedControl';
 import TableView from './scenes/TableView';
+import TextField from './scenes/TextField';
 
 type Route = {
   component: any,
@@ -54,6 +55,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: TableView,
     title: 'TableView',
+  },
+  {
+    component: TextField,
+    title: 'TextField',
   },
 ]);
 

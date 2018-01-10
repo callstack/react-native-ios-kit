@@ -18,7 +18,7 @@ const DefaultTheme: Theme = {
   barColor: colors.greyL2,
   dividerColor: colors.grey,
   textColor: colors.black,
-  placeholderColor: colors.greyD2,
+  placeholderColor: colors.greyD1,
   footnoteColor: colors.greyD1,
   footnoteBackgroundColor: colors.greyL1,
   positiveColor: colors.green,
