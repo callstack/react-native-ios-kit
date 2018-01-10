@@ -26,7 +26,7 @@ Uses following `theme` properties:
 **type:** `string`  
 **default value:** `primaryColor` from [`theme`](theme.html)
 
-Custom color for icon, default to Theme's `primaryColor`.
+Custom color for icon.
 
 ### `name`
 **type:** `string`

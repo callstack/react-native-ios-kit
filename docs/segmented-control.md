@@ -25,6 +25,7 @@ Example usage:
 ## Theme
 Uses following `theme` properties:
 - `primaryColor` - SegmentedControl's `tintColor` 
+
 ## Props
 
 ### `onChange`
@@ -51,7 +52,7 @@ Custom theme for component. By default provided by the ThemeProvider.
 
 ### `tintColor` (optional)
 **type:** `string`  
-**default value:** `theme.primaryColor`
+**default value:** `primaryColor` from [`theme`](theme.html)
 
 Accent color of SegmentedControl.
 
