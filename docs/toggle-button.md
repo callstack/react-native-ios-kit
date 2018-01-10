@@ -17,7 +17,7 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected tobble button background color (`onTintColor`) 
+- `positiveColor` - selected toggle button background color (`onTintColor`) 
 
 ## Props
 
