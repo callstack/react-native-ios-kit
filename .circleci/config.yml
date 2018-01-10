@@ -75,17 +75,17 @@ jobs:
   deploy-website:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: ~/react-native-ios-kit
       - add_ssh_keys:
           fingerprints:
             - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
       - run: |
-          cd website
           echo "Deploying website..."            
           git config --global user.name "$CIRCLE_USERNAME"
           git config --global user.email "oss@callstack.com"
-          GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish  
+          cd website && GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish  
   publish-expo:
     <<: *defaults
     steps:
