@@ -20,9 +20,11 @@ Example usage:
 />
 ```
 
-## Theme
+## Theme  
 Uses following `theme` properties:
-- 
+- `placeholderColor` - icons color
+- `primaryColor` - minimum track tint color
+- `dividerColor` - maximum track tint color
 
 ## Props
 

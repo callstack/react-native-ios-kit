@@ -22,7 +22,6 @@ type Props = {
   onSlidingComplete: (value: number) => void,
   minTrackTintColor?: string,
   maxTrackTintColor?: string,
-  thumbTintColor?: string,
 };
 
 class IosSlider extends Component<Props> {
