@@ -49,7 +49,7 @@ class IconsExample extends Component<Props> {
             info="<View />"
           />
           <InfoRow
-            icon={<Text style={{ color: primaryColor }}>Hello</Text>}
+            icon={<Text style={{ color: primaryColor }}>Hi</Text>}
             info="<Text />"
           />
         </TableView>

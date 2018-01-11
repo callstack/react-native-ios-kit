@@ -57,7 +57,7 @@ Custom theme for component. By default provided by the ThemeProvider.
 **type:** `Array<TabItem>`  
 
 Array of Tabs. Each `TabItem` needs to have below shape:
-* `icon`: [Icon name](icon.html)
+* `icon`: [Icon name](icon.html#name)
 * `title: string`,
 * `onPress: function` to be called when Tab is tapped
 * `isActive: boolean`, indicating wheter Tab is active
