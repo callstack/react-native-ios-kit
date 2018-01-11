@@ -2,11 +2,10 @@
 
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
-import { withTheme } from 'react-native-ios-kit';
+import { withTheme, NavigationRow } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from './withSafeArea';
-import ExampleListItem from './ExampleListItem';
 import Buttons from './scenes/Buttons';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
@@ -78,7 +77,10 @@ class ExampleList extends Component<Props> {
         automaticallyAdjustContentInsets={false}
         dataSource={dataSource}
         renderRow={rowData => (
-          <ExampleListItem onPressRow={this._onPressRow} rowData={rowData} />
+          <NavigationRow
+            title={rowData.title}
+            onPress={() => this._onPressRow(rowData)}
+          />
         )}
       />
     );
