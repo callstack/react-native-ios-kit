@@ -11,6 +11,7 @@
     "row-item": "RowItem",
     "search-bar": "SearchBar",
     "segmented-control": "SegmentedControl",
+    "slider": "slider",
     "stepper": "Stepper",
     "tab-bar": "TabBar",
     "table-view": "TableView",
