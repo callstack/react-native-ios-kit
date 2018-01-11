@@ -49,7 +49,7 @@ Size of the maximum track icon (on the right side).
 **type:** `string`
 **default value:** `dividerColor` from [theme](./theme.html)
 
-The color used for the track to the right of the button
+The color used for the track to the right of the button.
 
 ### `maxValue` (optional)
 **type:** `number`   
@@ -78,7 +78,7 @@ Size of the minimum track icon (on the left side).
 **type:** `string`
 **default value:** `primaryColor` from [theme](./theme.html)
 
-The color used for the track to the left of the button
+The color used for the track to the left of the button.
 
 ### `minValue` (optional)
 **type:** `number`   
