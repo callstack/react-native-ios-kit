@@ -17,6 +17,10 @@ Example usage:
 />
 ```
 
+## Theme
+Uses following `theme` properties:
+- `positiveColor` - selected toggle button background color (`onTintColor`) 
+
 ## Props
 
 ### [RowItem props...](row-item.html#props)
