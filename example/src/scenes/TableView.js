@@ -11,6 +11,7 @@ import {
   RowItem,
   SwitchRow,
   TableView,
+  TextFieldRow,
   withTheme,
 } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
@@ -22,11 +23,13 @@ type Props = {
 type State = {
   checkboxSelected: boolean,
   switchSelected: boolean,
+  textFieldValue: string,
 };
 class TableViewExample extends React.Component<Props, State> {
   state = {
     checkboxSelected: true,
     switchSelected: true,
+    textFieldValue: '',
   };
   render() {
     return (
@@ -86,6 +89,11 @@ class TableViewExample extends React.Component<Props, State> {
             title="NavigationRow"
             onPress={() => alert('NavigationRow pressed')}
             info="navigation"
+          />
+          <TextFieldRow
+            title="TextFieldRow"
+            value={this.state.textFieldValue}
+            onChangeText={text => this.setState({ textFieldValue: text })}
           />
         </TableView>
       </ScrollView>

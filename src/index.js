@@ -18,6 +18,7 @@ export { default as SwitchRow } from './components/SwitchRow';
 export { default as TabBar } from './components/TabBar';
 export { default as TableView } from './components/TableView';
 export { default as TextField } from './components/TextField';
+export { default as TextFieldRow } from './components/TextFieldRow';
 export { default as ToggleButton } from './components/ToggleButton';
 
 export * from './components/Typography';
