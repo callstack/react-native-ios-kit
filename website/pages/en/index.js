@@ -57,7 +57,7 @@ const Buttons = () => (
   </div>
 );
 
-const ExampleApp = () => (
+const ExampleAppSection = () => (
   <Container padding={['bottom', 'top']}>
     <GridBlock
       contents={[
@@ -74,7 +74,7 @@ const ExampleApp = () => (
   </Container>
 );
 
-const EasySetup = () => (
+const EasySetupSection = () => (
   <Container padding={['bottom', 'top']} background="light">
     <GridBlock
       contents={[
@@ -131,22 +131,11 @@ class Index extends React.Component {
         <HomeSplash language={language} />
         <div className="mainContainer" />
         <PreviewSection />
-        <EasySetup />
-        <ExampleApp />
+        <EasySetupSection />
+        <ExampleAppSection />
       </div>
     );
   }
 }
-
-// class Preview extends React.Component {
-//   render() {
-//     return (
-//       <img
-//         src={siteConfig.baseUrl + 'img/all-components.png'}
-//         alt="components example"
-//       />
-//     );
-//   }
-// }
 
 module.exports = Index;
