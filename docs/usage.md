@@ -3,9 +3,9 @@ id: usage
 title: Usage
 ---
 
-Wrap your root component in **ThemeProvider** from **react-native-ios-kit**.
+Wrap your root component in [`ThemeProvider`](customization.html#main-theme-for-application) from **react-native-ios-kit**.
 
-It's a good idea to wrap the component which is passed to **AppRegistry.registerComponent**.
+It's a good idea to wrap the component which is passed to `AppRegistry.registerComponent`.
 
 Example:
 
@@ -26,7 +26,7 @@ function Main() {
 AppRegistry.registerComponent('main', () => Main);
 ```
 
-The **ThemeProvider** component provides the theme to all the components in the framework. It also acts as a portal to components which need to be rendered at the top level.
+The `ThemeProvider` component provides the theme to all the components in the framework. It also acts as a portal to components which need to be rendered at the top level.
 
 
 
