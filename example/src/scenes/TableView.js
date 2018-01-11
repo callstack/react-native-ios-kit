@@ -79,11 +79,7 @@ class TableViewExample extends React.Component<Props, State> {
           <SwitchRow
             title="SwitchRow"
             value={this.state.switchSelected}
-            onValueChange={() =>
-              this.setState(state => ({
-                switchSelected: !state.switchSelected,
-              }))
-            }
+            onValueChange={value => this.setState({ switchSelected: value })}
           />
           <NavigationRow
             title="NavigationRow"

@@ -9,16 +9,15 @@ import type { Theme } from '../types/Theme';
 type Props = {
   theme: Theme,
   info: string,
-  onPress: void => void,
 };
 
 class InfoRow extends React.Component<Props> {
   render() {
-    const { info, theme: { placeholderColor } } = this.props;
+    const { info, theme: { placeholderColor }, ...rest } = this.props;
     return (
       <RowItem
         rightComponent={<Body style={{ color: placeholderColor }}>{info}</Body>}
-        {...this.props}
+        {...rest}
       />
     );
   }

@@ -27,6 +27,10 @@ Uses following `theme` properties:
 
 ## Props
 
+### [TextInput props...](https://facebook.github.io/react-native/docs/textinput.html#props)
+
+Other props accepted by `TextInput` component.
+
 ### `containerStyle` (optional)
 **type:** `StyleObj`  
 
@@ -52,3 +56,7 @@ Placeholder value
  
 Custom theme for component. By default provided by the ThemeProvider.
   
+### `value`
+**type:** `string`
+
+Value of TextInput

@@ -10,7 +10,7 @@ import type { Theme } from '../types/Theme';
 
 type Props = {
   theme: Theme,
-  onPress?: void => void,
+  onPress: void => void,
   info?: string,
 };
 
