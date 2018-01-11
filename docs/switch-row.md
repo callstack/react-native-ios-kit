@@ -21,7 +21,7 @@ Example usage:
 
 ### [RowItem props...](row-item.html#props)
 
-Other props accepted by `RowItem` component
+Other props accepted by `RowItem` component.
 
 ### `onValueChange`
 **type:** `(value: boolean) => *`
@@ -36,4 +36,4 @@ Custom theme for component. By default provided by the ThemeProvider.
 ### `value`
 **type** `boolean`
 
-Value of [ToggleButton](toggle-button.html)
+Value of [ToggleButton](toggle-button.html).

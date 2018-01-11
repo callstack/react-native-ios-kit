@@ -16,6 +16,10 @@ Example usage:
 />
 ```
 
+## Theme
+Uses following theme properties:
+- `placeholderColor` - color of info text and Icon
+
 ## Props
 
 ### [RowItem props...](row-item.html#props)

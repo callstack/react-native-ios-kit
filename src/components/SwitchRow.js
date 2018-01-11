@@ -14,11 +14,15 @@ type Props = {
 
 class SwitchRow extends React.Component<Props> {
   render() {
-    const { value, onValueChange } = this.props;
+    const { value, onValueChange, theme } = this.props;
     return (
       <RowItem
         rightComponent={
-          <ToggleButton onValueChange={onValueChange} value={value} />
+          <ToggleButton
+            onValueChange={onValueChange}
+            theme={theme}
+            value={value}
+          />
         }
         {...this.props}
       />

@@ -37,8 +37,7 @@ Invoked with the new value when the value of text input changes.
 ### `placeholder`  
 **type** `string`  
 
-Placeholder value
-
+Placeholder value.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
@@ -53,4 +52,4 @@ String displayed as a title of TextFieldRow.
 ### `value`
 **type:** `string`
 
-Value of TextInput
+Value of TextInput.

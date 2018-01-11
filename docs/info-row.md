@@ -15,18 +15,18 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `placeholderColor` - color of info string
+- `placeholderColor` - color of info string.
  
 ## Props
 
 ### [RowItem props...](row-item.html#props)
 
-Other props accepted by `RowItem` component
+Other props accepted by `RowItem` component.
 
 ### `info`
 **type** `string`
 
-Information to be displayed at right side of row
+Information to be displayed at right side of row.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
