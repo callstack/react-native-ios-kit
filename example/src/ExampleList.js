@@ -16,6 +16,7 @@ import SegmentedControl from './scenes/SegmentedControl';
 import TableView from './scenes/TableView';
 import Slider from './scenes/Slider';
 import TextField from './scenes/TextField';
+import Icons from './scenes/Icons';
 
 type Route = {
   component: any,
@@ -63,6 +64,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: TextField,
     title: 'TextField',
+  },
+  {
+    component: Icons,
+    title: 'Icons',
   },
 ]);
 
