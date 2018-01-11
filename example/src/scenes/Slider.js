@@ -19,7 +19,7 @@ class SliderExample extends Component<Props, State> {
   state = {
     value: 5,
     value2: 0,
-    value3: 50,
+    value3: 25,
   };
   render() {
     return (
@@ -48,6 +48,8 @@ class SliderExample extends Component<Props, State> {
           maximumTrackTintColor="red"
           minIconColor="blue"
           maxIconColor="red"
+          minimumValue={10}
+          maximumValue={40}
         />
       </View>
     );
