@@ -58,7 +58,7 @@ const Buttons = () => (
 );
 
 const ExampleApp = () => (
-  <Container padding={['bottom', 'top']} background="light">
+  <Container padding={['bottom', 'top']}>
     <GridBlock
       contents={[
         {
@@ -75,7 +75,7 @@ const ExampleApp = () => (
 );
 
 const EasySetup = () => (
-  <Container padding={['bottom', 'top']}>
+  <Container padding={['bottom', 'top']} background="light">
     <GridBlock
       contents={[
         {
@@ -90,14 +90,32 @@ const EasySetup = () => (
   </Container>
 );
 
+const PreviewSection = () => (
+  <Container padding={['bottom', 'top']}>
+    <GridBlock
+      contents={[
+        {
+          imageAlign: 'left',
+          image: `${siteConfig.baseUrl}img/all-components.png`,
+          title: 'Overview',
+          content: 'Support for basic iOS components like `SegmentedControl`, `SearchBar`, `TabBar`, `Slider`, `TableView` and many more.'
+        },
+      ]}
+      layout="oneColumn"
+    />
+  </Container>
+);
+
 class HomeSplash extends React.Component {
   render() {
     return (
       <SplashContainer>
         <div className="inner">
+          <div className="projectLogo">
+            <img src={`${siteConfig.baseUrl}img/ios-kit.svg`} />
+          </div>
           <ProjectTitle />
           <Buttons />
-          <Preview />
         </div>
       </SplashContainer>
     );
@@ -112,6 +130,7 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer" />
+        <PreviewSection />
         <EasySetup />
         <ExampleApp />
       </div>
@@ -119,15 +138,15 @@ class Index extends React.Component {
   }
 }
 
-class Preview extends React.Component {
-  render() {
-    return (
-      <img
-        src={siteConfig.baseUrl + 'img/all-components.png'}
-        alt="components example"
-      />
-    );
-  }
-}
+// class Preview extends React.Component {
+//   render() {
+//     return (
+//       <img
+//         src={siteConfig.baseUrl + 'img/all-components.png'}
+//         alt="components example"
+//       />
+//     );
+//   }
+// }
 
 module.exports = Index;
