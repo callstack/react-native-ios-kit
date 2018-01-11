@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 15,
-    paddingVertical: 10,
-    minHeight: 43,
+    paddingVertical: 4,
+    minHeight: 51,
   },
   titleWrapper: {
     flexDirection: 'column',

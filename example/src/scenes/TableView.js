@@ -3,11 +3,15 @@ import * as React from 'react';
 import { ScrollView } from 'react-native';
 
 import {
+  Button,
+  CheckboxRow,
+  Icon,
+  InfoRow,
+  NavigationRow,
+  RowItem,
+  SwitchRow,
   TableView,
   withTheme,
-  RowItem,
-  Icon,
-  Button,
 } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 import withSafeArea from '../withSafeArea';
@@ -15,12 +19,19 @@ import withSafeArea from '../withSafeArea';
 type Props = {
   theme: Theme,
 };
-
-class TableViewExample extends React.Component<Props> {
+type State = {
+  checkboxSelected: boolean,
+  switchSelected: boolean,
+};
+class TableViewExample extends React.Component<Props, State> {
+  state = {
+    checkboxSelected: true,
+    switchSelected: true,
+  };
   render() {
     return (
       <ScrollView>
-        <TableView header="Header" footer="footer...">
+        <TableView header="RowItems" footer="footer">
           <RowItem
             icon="ios-map-outline"
             title="Navigation"
@@ -34,7 +45,7 @@ class TableViewExample extends React.Component<Props> {
             onPress={() => alert('Hello')}
           />
         </TableView>
-        <TableView footer="PrivacyPolicy" onFooterPress={() => alert('Hello')}>
+        <TableView footer="Footer link" onFooterPress={() => alert('Hello')}>
           <RowItem title="No Icon" />
           <RowItem
             icon="ios-heart-outline"
@@ -48,6 +59,33 @@ class TableViewExample extends React.Component<Props> {
             title="No header, no footer"
             rightComponent={RightButton}
             onPress={() => alert('Hello')}
+          />
+        </TableView>
+        <TableView header="Rows">
+          <CheckboxRow
+            selected={this.state.checkboxSelected}
+            onPress={() =>
+              this.setState(state => ({
+                checkboxSelected: !state.checkboxSelected,
+              }))
+            }
+            title="CheckobxRow"
+            subtitle="Selectable row"
+          />
+          <InfoRow title="InfoRow" info="1" />
+          <SwitchRow
+            title="SwitchRow"
+            value={this.state.switchSelected}
+            onValueChange={() =>
+              this.setState(state => ({
+                switchSelected: !state.switchSelected,
+              }))
+            }
+          />
+          <NavigationRow
+            title="NavigationRow"
+            onPress={() => alert('NavigationRow pressed')}
+            info="navigation"
           />
         </TableView>
       </ScrollView>
