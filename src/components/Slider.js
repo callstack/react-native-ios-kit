@@ -1,8 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
-import { Slider } from 'react-native';
+import { Slider, View, StyleSheet } from 'react-native';
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
+import Icon from './Icon';
 
 type Props = {
   value: number,
@@ -13,16 +14,24 @@ type Props = {
   maxIconName: string,
   minIconColor?: string,
   maxIconColor?: string,
+  minIconSize?: number,
+  maxIconSize?: number,
   style?: any,
   theme: Theme,
   onValueChange: (value: number) => void,
+  onSlidingComplete: () => void,
+  minimumTrackTintColor?: string,
+  maximumTrackTintColor?: string,
+  thumbTintColor?: string,
 };
 
-class Icon extends Component<Props> {
+class IosSlider extends Component<Props> {
   static defaultProps = {
     minValue: 0,
     maxValue: 100,
     stepValue: 1,
+    minIconSize: 28,
+    maxIconSize: 35,
   };
 
   render() {
@@ -35,20 +44,59 @@ class Icon extends Component<Props> {
       maxIconName,
       minIconColor,
       maxIconColor,
+      minIconSize,
+      maxIconSize,
       theme,
       style,
       onValueChange,
+      minimumTrackTintColor,
+      maximumTrackTintColor,
+      ...rest
     } = this.props;
     return (
-      <Slider
-        value={value}
-        minimumValue={minValue}
-        maximumValue={maxValue}
-        step={stepValue}
-        onValueChange={onValueChange}
-      />
+      <View style={[styles.container, style]}>
+        <Icon
+          style={styles.icon}
+          name={minIconName}
+          size={minIconSize}
+          color={minIconColor || theme.placeholderColor}
+        />
+        <Slider
+          style={styles.slider}
+          value={value}
+          minimumValue={minValue}
+          maximumValue={maxValue}
+          step={stepValue}
+          onValueChange={onValueChange}
+          minimumTrackTintColor={minimumTrackTintColor || theme.primaryColor}
+          maximumTrackTintColor={maximumTrackTintColor || theme.dividerColor}
+          {...rest}
+        />
+        <Icon
+          style={styles.icon}
+          name={maxIconName}
+          size={maxIconSize}
+          color={maxIconColor || theme.placeholderColor}
+        />
+      </View>
     );
   }
 }
 
-export default withTheme(Icon);
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 10,
+  },
+  slider: {
+    flex: 1,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  icon: {
+    marginTop: 2,
+  },
+});
+
+export default withTheme(IosSlider);

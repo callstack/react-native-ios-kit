@@ -11,11 +11,15 @@ type Props = {
 };
 type State = {
   value: number,
+  value2: number,
+  value3: number,
 };
 
 class SliderExample extends Component<Props, State> {
   state = {
     value: 5,
+    value2: 0,
+    value3: 50,
   };
   render() {
     return (
@@ -23,6 +27,27 @@ class SliderExample extends Component<Props, State> {
         <Slider
           value={this.state.value}
           onValueChange={value => this.setState({ value })}
+          minIconName="ios-volume-mute-outline"
+          maxIconName="ios-volume-up"
+        />
+        <Slider
+          value={this.state.value2}
+          onValueChange={value => this.setState({ value2: value })}
+          stepValue={5}
+          minIconName="ios-thumbs-down"
+          maxIconName="ios-thumbs-up"
+          minIconSize={20}
+          maxIconSize={20}
+        />
+        <Slider
+          value={this.state.value3}
+          onValueChange={value => this.setState({ value3: value })}
+          minIconName="ios-sunny"
+          maxIconName="ios-sunny"
+          minimumTrackTintColor="blue"
+          maximumTrackTintColor="red"
+          minIconColor="blue"
+          maxIconColor="red"
         />
       </View>
     );
