@@ -10,8 +10,8 @@ type Props = {
   stepValue: number,
   minValue?: number,
   maxValue?: number,
-  minIconName: string,
-  maxIconName: string,
+  minIconName?: string,
+  maxIconName?: string,
   minIconColor?: string,
   maxIconColor?: string,
   minIconSize?: number,
@@ -20,8 +20,8 @@ type Props = {
   theme: Theme,
   onValueChange: (value: number) => void,
   onSlidingComplete: () => void,
-  minimumTrackTintColor?: string,
-  maximumTrackTintColor?: string,
+  minTrackTintColor?: string,
+  maxTrackTintColor?: string,
   thumbTintColor?: string,
 };
 
@@ -49,18 +49,20 @@ class IosSlider extends Component<Props> {
       theme,
       style,
       onValueChange,
-      minimumTrackTintColor,
-      maximumTrackTintColor,
+      minTrackTintColor,
+      maxTrackTintColor,
       ...rest
     } = this.props;
     return (
       <View style={[styles.container, style]}>
-        <Icon
-          style={styles.icon}
-          name={minIconName}
-          size={minIconSize}
-          color={minIconColor || theme.placeholderColor}
-        />
+        {minIconName && (
+          <Icon
+            style={styles.icon}
+            name={minIconName}
+            size={minIconSize}
+            color={minIconColor || theme.placeholderColor}
+          />
+        )}
         <Slider
           style={styles.slider}
           value={value}
@@ -68,16 +70,18 @@ class IosSlider extends Component<Props> {
           maximumValue={maxValue}
           step={stepValue}
           onValueChange={onValueChange}
-          minimumTrackTintColor={minimumTrackTintColor || theme.primaryColor}
-          maximumTrackTintColor={maximumTrackTintColor || theme.dividerColor}
+          minimumTrackTintColor={minTrackTintColor || theme.primaryColor}
+          maximumTrackTintColor={maxTrackTintColor || theme.dividerColor}
           {...rest}
         />
-        <Icon
-          style={styles.icon}
-          name={maxIconName}
-          size={maxIconSize}
-          color={maxIconColor || theme.placeholderColor}
-        />
+        {maxIconName && (
+          <Icon
+            style={styles.icon}
+            name={maxIconName}
+            size={maxIconSize}
+            color={maxIconColor || theme.placeholderColor}
+          />
+        )}
       </View>
     );
   }

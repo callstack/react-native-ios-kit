@@ -13,6 +13,7 @@ type State = {
   value: number,
   value2: number,
   value3: number,
+  value4: number,
 };
 
 class SliderExample extends Component<Props, State> {
@@ -20,6 +21,7 @@ class SliderExample extends Component<Props, State> {
     value: 5,
     value2: 0,
     value3: 25,
+    value4: 25,
   };
   render() {
     return (
@@ -42,12 +44,17 @@ class SliderExample extends Component<Props, State> {
         <Slider
           value={this.state.value3}
           onValueChange={value => this.setState({ value3: value })}
+          stepValue={5}
+        />
+        <Slider
+          value={this.state.value4}
+          onValueChange={value => this.setState({ value4: value })}
           minIconName="ios-sunny"
           maxIconName="ios-sunny"
-          minimumTrackTintColor="blue"
-          maximumTrackTintColor="red"
-          minIconColor="blue"
-          maxIconColor="red"
+          minTrackTintColor={this.props.theme.positiveColor}
+          maxTrackTintColor={this.props.theme.primaryColor}
+          minIconColor={this.props.theme.positiveColor}
+          maxIconColor={this.props.theme.primaryColor}
           minimumValue={10}
           maximumValue={40}
         />
