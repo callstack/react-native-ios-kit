@@ -28,56 +28,16 @@ Uses following `theme` properties:
 
 ## Props
 
-### `value`
-**type:**  `number`
-
-Value of the slider.
-
-### `stepValue` (optional)
-**type:** `number`  
-**default value:** 1
-
-Step value of the slider. The value should be between 0 and (maximumValue - minimumValue).
-
-### `minValue` (optional)
-**type:** `number`   
-**default value:** 0
-
-Minimum value of the slider. 
-
-### `maxValue` (optional)
-**type:** `number`   
-**default value:** 100
-
-Maximum value of the slider. 
-
-### `minIconName` (optional)
-**type:** `string` 
-
-Name of the minimum track icon (on the left side).
-
-### `maxIconName` (optional)
-**type:** `string`   
-
-Name of the maximum track icon (on the right side).
-
-### `minIconColor` (optional)
-**type:** `string`
-**default value:** `placeholderColor` from [theme](./theme.html)
-
-Color of the minimum track icon (on the left side).
-
 ### `maxIconColor` (optional)
 **type:** `string`
 **default value:** `placeholderColor` from [theme](./theme.html)
 
 Color of the maximum track icon (on the right side).
 
-### `minIconSize` (optional)
-**type:** `number`
-**default value:** 28
+### `maxIconName` (optional)
+**type:** `string`   
 
-Size of the minimum track icon (on the left side).
+Name of the maximum track icon (on the right side).
 
 ### `maxIconSize` (optional)
 **type:** `number`
@@ -85,16 +45,34 @@ Size of the minimum track icon (on the left side).
 
 Size of the maximum track icon (on the right side).
 
-### `onValueChange` (optional)
-**type:** `(value: number) => void`
+### `maxTrackTintColor` (optional)
+**type:** `string`
+**default value:** `dividerColor` from [theme](./theme.html)
 
-Invoked with the new value when the value changes.
+The color used for the track to the right of the button
 
-### `onSlidingComplete` (optional)
-**type:** `(value: number) => void`
+### `maxValue` (optional)
+**type:** `number`   
+**default value:** 100
 
-Callback that is called when the user releases the slider, regardless if the value has changed.
-The current value is passed as an argument to the callback handler.
+Maximum value of the slider. 
+
+### `minIconColor` (optional)
+**type:** `string`
+**default value:** `placeholderColor` from [theme](./theme.html)
+
+Color of the minimum track icon (on the left side).
+
+### `minIconName` (optional)
+**type:** `string` 
+
+Name of the minimum track icon (on the left side).
+
+### `minIconSize` (optional)
+**type:** `number`
+**default value:** 28
+
+Size of the minimum track icon (on the left side).
 
 ### `minTrackTintColor` (optional)
 **type:** `string`
@@ -102,11 +80,28 @@ The current value is passed as an argument to the callback handler.
 
 The color used for the track to the left of the button
 
-### `maxTrackTintColor` (optional)
-**type:** `string`
-**default value:** `dividerColor` from [theme](./theme.html)
+### `minValue` (optional)
+**type:** `number`   
+**default value:** 0
 
-The color used for the track to the right of the button
+Minimum value of the slider. 
+
+### `onSlidingComplete` (optional)
+**type:** `(value: number) => void`
+
+Callback that is called when the user releases the slider, regardless if the value has changed.
+The current value is passed as an argument to the callback handler.
+
+### `onValueChange` (optional)
+**type:** `(value: number) => void`
+
+Invoked with the new value when the value changes.
+
+### `stepValue` (optional)
+**type:** `number`  
+**default value:** 1
+
+Step value of the slider. The value should be between 0 and (maximumValue - minimumValue).
 
 ### `style` (optional)
 **type:** `Object`
@@ -118,3 +113,7 @@ Custom styles to apply to the Icon.
 
 Custom theme for component. By default provided by the ThemeProvider.
 
+### `value`
+**type:**  `number`
+
+Value of the slider.
