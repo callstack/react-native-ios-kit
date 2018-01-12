@@ -65,6 +65,11 @@ class TableViewExample extends React.Component<Props, State> {
           />
         </TableView>
         <TableView header="Rows">
+          <TextFieldRow
+            title="TextFieldRow"
+            value={this.state.textFieldValue}
+            onValueChange={text => this.setState({ textFieldValue: text })}
+          />
           <CheckboxRow
             selected={this.state.checkboxSelected}
             onPress={() =>
@@ -85,11 +90,6 @@ class TableViewExample extends React.Component<Props, State> {
             title="NavigationRow"
             onPress={() => alert('NavigationRow pressed')}
             info="navigation"
-          />
-          <TextFieldRow
-            title="TextFieldRow"
-            value={this.state.textFieldValue}
-            onValueChange={text => this.setState({ textFieldValue: text })}
           />
         </TableView>
       </ScrollView>
