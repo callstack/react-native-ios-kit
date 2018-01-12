@@ -10,7 +10,7 @@ type Props = {
   theme: Theme,
   title: string,
   value: string,
-  placeholder: string,
+  placeholder?: string,
   onChangeText: (text: string) => void,
 };
 

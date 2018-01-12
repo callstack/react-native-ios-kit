@@ -1,7 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import { Switch } from 'react-native';
+import { Switch as ReactNativeSwitch } from 'react-native';
 
 import withTheme from '../core/withTheme';
 import type { Theme } from '../types/Theme';
@@ -25,11 +25,11 @@ type Props = {
   tintColor?: string,
 };
 
-class ToggleButton extends Component<Props> {
+class Switch extends Component<Props> {
   render() {
     const { theme, onValueChange, onTintColor, ...rest } = this.props;
     return (
-      <Switch
+      <ReactNativeSwitch
         {...rest}
         onValueChange={onValueChange}
         onTintColor={onTintColor || theme.positiveColor}
@@ -38,4 +38,4 @@ class ToggleButton extends Component<Props> {
   }
 }
 
-export default withTheme(ToggleButton);
+export default withTheme(Switch);

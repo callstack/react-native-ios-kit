@@ -19,7 +19,7 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected toggle button background color (`onTintColor`) 
+- `positiveColor` - selected switch background color (`onTintColor`) 
 
 ## Props
 
@@ -40,4 +40,4 @@ Custom theme for component. By default provided by the ThemeProvider.
 ### `value`
 **type** `boolean`
 
-Value of [ToggleButton](toggle-button.html).
+Value of [Switch](switch.html).

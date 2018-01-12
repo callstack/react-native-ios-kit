@@ -20,6 +20,6 @@ export { default as RowItem } from './components/RowItem';
 export { default as Slider } from './components/Slider';
 export { default as TextField } from './components/TextField';
 export { default as TextFieldRow } from './components/TextFieldRow';
-export { default as ToggleButton } from './components/ToggleButton';
+export { default as Switch } from './components/Switch';
 
 export * from './components/Typography';

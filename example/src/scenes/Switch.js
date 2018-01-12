@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { withTheme, Subhead, ToggleButton } from 'react-native-ios-kit';
+import { withTheme, Subhead, Switch } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 import withSafeArea from '../withSafeArea';
 
@@ -10,12 +10,12 @@ type Props = {
   theme: Theme,
 };
 type State = {
-  toggleValue: boolean,
+  switchValue: boolean,
 };
 
-class ToggleButtonExample extends Component<Props, State> {
+class SwitchExample extends Component<Props, State> {
   state = {
-    toggleValue: false,
+    switchValue: false,
   };
   render() {
     return (
@@ -23,12 +23,12 @@ class ToggleButtonExample extends Component<Props, State> {
         <View style={styles.row}>
           <View>
             <Subhead>
-              Value: {this.state.toggleValue ? 'True' : 'False'}
+              Value: {this.state.switchValue ? 'True' : 'False'}
             </Subhead>
           </View>
-          <ToggleButton
-            value={this.state.toggleValue}
-            onValueChange={value => this.setState({ toggleValue: value })}
+          <Switch
+            value={this.state.switchValue}
+            onValueChange={value => this.setState({ switchValue: value })}
           />
         </View>
       </View>
@@ -36,7 +36,7 @@ class ToggleButtonExample extends Component<Props, State> {
   }
 }
 
-export default withTheme(withSafeArea(ToggleButtonExample));
+export default withTheme(withSafeArea(SwitchExample));
 
 const styles = StyleSheet.create({
   screen: {

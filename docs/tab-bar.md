@@ -3,7 +3,7 @@ id: tab-bar
 title: TabBar
 ---
 
-![ToggleButton component](assets/tab-bar.png)
+![TabBar component](assets/tab-bar.png)
  
 Example usage:
 ```jsx
