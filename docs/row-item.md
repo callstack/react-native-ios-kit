@@ -27,9 +27,9 @@ Uses following theme properties:
 ## Props
 
 ### `icon` (optional)
-**type:** `string`
+**type:** `IconSource`
 
-Icon name. See ['Icon`](icon.html)
+IconSource. See ['Icon`](icon.html#name)
 
 ### `onPress` (optional)
 **type:** `() => void`

@@ -13,11 +13,11 @@ type Props = {
 
 class InfoRow extends React.Component<Props> {
   render() {
-    const { info, theme: { placeholderColor }, ...rest } = this.props;
+    const { info, theme: { placeholderColor } } = this.props;
     return (
       <RowItem
         rightComponent={<Body style={{ color: placeholderColor }}>{info}</Body>}
-        {...rest}
+        {...this.props}
       />
     );
   }

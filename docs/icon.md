@@ -29,9 +29,13 @@ Uses following `theme` properties:
 Custom color for icon.
 
 ### `name`
-**type:** `string`
+**type:** `string | ImageSourcePropType | React.Node<*>`
 
-Icon name, one of [Ionicons](https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json).
+Icon name, can be:
+- one of [Ionicons](https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json),
+- [Image source](https://facebook.github.io/react-native/docs/image.html#source),
+- any valid `ReactNative` component
+
 
 ### `size` (optional)
 **type:** `number`  
