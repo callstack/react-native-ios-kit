@@ -67,10 +67,12 @@ class RowItem extends React.Component<Props> {
         ]}
       >
         {icon && <Icon name={icon} size={30} color={theme.primaryColor} />}
-        <View style={[styles.titleWrapper, { marginLeft: icon ? 15 : 0 }]}>
-          <Body>{title}</Body>
-          {subtitle && <Caption1>{subtitle}</Caption1>}
-        </View>
+        {title || subtitle ? (
+          <View style={[styles.titleWrapper, { marginLeft: icon ? 15 : 0 }]}>
+            {title && <Body>{title}</Body>}
+            {subtitle && <Caption1>{subtitle}</Caption1>}
+          </View>
+        ) : null}
         {rightComponent}
       </View>
     );
