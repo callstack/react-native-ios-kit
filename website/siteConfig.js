@@ -12,8 +12,8 @@ const siteConfig = {
     { page: 'help', label: 'Help' },
   ],
   users,
-  headerIcon: '',
-  footerIcon: '',
+  headerIcon: 'img/ios-kit-white.svg',
+  footerIcon: 'img/ios-kit.svg',
   favicon: 'img/favicon.png',
   colors: {
     primaryColor: '#416BAF',
@@ -28,6 +28,7 @@ const siteConfig = {
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/callstack/react-native-ios-kit',
+  ogImage: 'img/ios-kit.svg',
 };
 
 module.exports = siteConfig;

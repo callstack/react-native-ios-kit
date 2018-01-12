@@ -28,6 +28,16 @@ Example usage:
 </ScrollView>
 ```
 
+## TableView rows
+There are few ready for use row components:
+- [`RowItem`](row-item.html) - basic row item
+- [`InfoRow`](info-row.html) - row with simple text
+- [`CheckboxRow`](checkbox-row.html) - row with checkbox
+- [`NavigationRow`](navigation-row.html) - row for navigatig
+- [`SwitchRow`](switch-row.html) - row with shitch
+- [`TextFieldRow`](text-field-row.html) - row with text field
+
+
 ## Theme
 Uses following theme properties:
 - `footnoteBackgroundColor` - background color of header and footer
