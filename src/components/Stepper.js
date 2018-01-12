@@ -24,16 +24,16 @@ type Props = {
    * The highest possible numeric value for the stepper.
    * The default value of this property is 100.
    */
-  maxValue: number,
+  maxValue?: number,
   /**
    * The numeric value of the stepper.
    */
-  value: number,
+  value?: number,
   /**
    * The step, or increment, value for the stepper.
    * The default value for this property is 1.
    */
-  stepValue: number,
+  stepValue?: number,
 };
 
 type State = {
