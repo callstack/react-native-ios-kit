@@ -14,7 +14,7 @@ type Props = {
   /**
    * Callback function on changing counter result
    */
-  onChangeCounter: (counter: number) => void,
+  onValueChange: (counter: number) => void,
   /**
    * The lowest possible numeric value for the stepper.
    * Default value is 0.
@@ -24,16 +24,16 @@ type Props = {
    * The highest possible numeric value for the stepper.
    * The default value of this property is 100.
    */
-  maxValue?: number,
+  maxValue: number,
   /**
    * The numeric value of the stepper.
    */
-  value?: number,
+  value: number,
   /**
    * The step, or increment, value for the stepper.
    * The default value for this property is 1.
    */
-  stepValue?: number,
+  stepValue: number,
 };
 
 type State = {
@@ -77,14 +77,14 @@ class Stepper extends React.Component<Props, State> {
   decrementOnCounter = () => {
     const newValue = this.props.value - this.props.stepValue;
     if (newValue >= this.props.minValue) {
-      this.props.onChangeCounter(newValue);
+      this.props.onValueChange(newValue);
     }
   };
 
   incrementOnCounter = () => {
     const newValue = this.props.value + this.props.stepValue;
     if (newValue <= this.props.maxValue) {
-      this.props.onChangeCounter(newValue);
+      this.props.onValueChange(newValue);
     }
   };
 

@@ -11,7 +11,7 @@ Example usage:
 ```jsx
 <Stepper
   value={this.state.value}
-  onChangeCounter={value => this.setState({ value })}
+  onValueChange={value => this.setState({ value })}
   minValue={0}
   maxValue={10}
 />
@@ -35,7 +35,7 @@ The highest possible numeric value for the stepper.
 
 The lowest possible numeric value for the stepper.
 
-### `onChangeCounter`
+### `onValueChange`
 **type:** `(counter: number) => void`
 
 Callback function on changing counter result

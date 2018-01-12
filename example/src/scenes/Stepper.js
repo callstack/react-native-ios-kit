@@ -34,7 +34,7 @@ class StepperExample extends Component<Props, State> {
           <Headline>{this.state.value}</Headline>
           <Stepper
             value={this.state.value}
-            onChangeCounter={value => this.setState({ value })}
+            onValueChange={value => this.setState({ value })}
             minValue={0}
             maxValue={10}
           />
@@ -46,7 +46,7 @@ class StepperExample extends Component<Props, State> {
           <Headline>{this.state.value2}</Headline>
           <Stepper
             value={this.state.value2}
-            onChangeCounter={value2 => this.setState({ value2 })}
+            onValueChange={value2 => this.setState({ value2 })}
           />
         </View>
         <View style={styles.row}>
@@ -57,7 +57,7 @@ class StepperExample extends Component<Props, State> {
           <Headline>{this.state.value3}</Headline>
           <Stepper
             value={this.state.value3}
-            onChangeCounter={value3 => this.setState({ value3 })}
+            onValueChange={value3 => this.setState({ value3 })}
             stepValue={2}
           />
         </View>
