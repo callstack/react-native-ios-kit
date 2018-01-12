@@ -4,13 +4,15 @@
   "description": "The missing React Native UI Kit for iOS.",
   "main": "src/index.js",
   "scripts": {
+    "prepare": "yarn install --cwd ./website",
     "flow": "flow",
     "lint": "eslint src",
     "test": "jest",
     "ci": "npm run lint && npm run flow && npm test",
     "build-assets": "./bin/build_assets.sh",
     "precommit": "lint-staged",
-    "build-docs": "docusaurus-init"
+    "docs:build": "cd website && yarn run build",
+    "docs:watch": "cd website && yarn run start"
   },
   "files": [
     "src/",
@@ -66,7 +68,6 @@
   },
   "dependencies": {
     "color": "^2.0.1",
-    "docusaurus-init": "^1.0.1",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0"
   },
