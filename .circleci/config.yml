@@ -52,10 +52,7 @@ jobs:
       - restore-cache: *restore-cache
       - restore-cache: *restore-example-cache
       - restore-cache: *restore-website-cache
-      - run: |
-          yarn install
-          cd example && yarn install && cd ..
-          cd website && yarn install && cd ..
+      - run: yarn install
       - save-cache: *save-cache
       - save-cache: *save-example-cache
       - save-cache: *save-website-cache
