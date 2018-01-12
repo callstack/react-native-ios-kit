@@ -14,3 +14,12 @@
 
 @media only screen and (min-width: 1500px) {
 }
+
+.nav-footer {
+  box-shadow: none !important;
+}
+
+a.nav-home, a.fbOpenSource {
+  opacity: 1 !important;
+  transition: none !important;
+}
