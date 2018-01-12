@@ -8,7 +8,7 @@ import type { Theme } from '../types/Theme';
 
 type Props = {
   theme: Theme,
-  title: string,
+  title?: string,
   value: string,
   placeholder?: string,
   onChangeText: (text: string) => void,

@@ -10,15 +10,15 @@ import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes
 
 type Props = {
   theme: Theme,
-  placeholder: string,
+  placeholder?: string,
   value: string,
-  onChangeText: (text: string) => void,
+  onChangeText?: (text: string) => void,
   containerStyle?: StyleObj,
   inputStyle?: StyleObj,
 };
 
 class TextField extends React.Component<Props> {
-  clearInput = () => this.props.onChangeText('');
+  clearInput = () => this.props.onChangeText && this.props.onChangeText('');
 
   render() {
     const {
