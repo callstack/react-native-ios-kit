@@ -33,7 +33,7 @@ Custom color for icon.
 
 Icon name, can be:
 - one of [Ionicons](https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json),
-- image source,
+- [Image source](https://facebook.github.io/react-native/docs/image.html#source),
 - any valid `ReactNative` component
 
 

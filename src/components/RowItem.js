@@ -6,6 +6,7 @@ import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
 import withTheme from '../core/withTheme';
 import type { Theme } from '../types/Theme';
+import type { IconSource } from './Icon';
 
 type Props = {
   /**
@@ -15,7 +16,7 @@ type Props = {
   /**
    * Icon name
    */
-  icon?: string, //FIXME:
+  icon?: IconSource,
   /**
    * Title string to be displayed
    */
