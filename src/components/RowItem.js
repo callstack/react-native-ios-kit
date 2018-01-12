@@ -15,7 +15,7 @@ type Props = {
   /**
    * Icon name
    */
-  icon?: string,
+  icon?: string, //FIXME:
   /**
    * Title string to be displayed
    */

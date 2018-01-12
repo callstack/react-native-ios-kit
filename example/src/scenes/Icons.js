@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-import { withTheme, TableView, InfoRow } from 'react-native-ios-kit';
+import { withTheme, TableView, InfoRow, Icon } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from '../withSafeArea';
@@ -13,9 +13,20 @@ type Props = {
 
 class IconsExample extends Component<Props> {
   render() {
-    const { theme: { primaryColor } } = this.props;
+    const { theme: { primaryColor, positiveColor } } = this.props;
     return (
       <View style={styles.screen}>
+        <View style={styles.row}>
+          <Icon name="ios-chatbubbles-outline" />
+          <Icon name="ios-bonfire-outline" color="red" size={24} />
+          <Icon
+            name={{
+              uri:
+                'https://callstack.github.io/react-native-ios-kit/img/favicon.png',
+            }}
+          />
+          <Icon name="ios-checkmark-circle" color={positiveColor} />
+        </View>
         <TableView header="Ionicons">
           <InfoRow icon="ios-appstore-outline" info="Default" />
           <InfoRow
@@ -63,5 +74,11 @@ export default withTheme(withSafeArea(IconsExample));
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    paddingVertical: 10,
   },
 });
