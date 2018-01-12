@@ -14,7 +14,7 @@ type Props = {
   /**
    * Array of strings to display inside controls
    */
-  onChange: (index: number) => void,
+  onChange?: (index: number) => void,
   /**
    * onChange event handler
    */
@@ -31,14 +31,15 @@ type Props = {
 
 class SegmentedControl extends React.Component<Props> {
   handleChange = event =>
+    this.props.onChange &&
     this.props.onChange(event.nativeEvent.selectedSegmentIndex);
 
   render() {
-    const { theme, selectedIndex, onValueChange, values } = this.props;
+    const { theme, selectedIndex, onValueChange, values, ...rest } = this.props;
     return (
       <SegmentedControlIOS
         tintColor={theme.primaryColor}
-        {...this.props}
+        {...rest}
         values={values}
         selectedIndex={selectedIndex}
         onChange={this.handleChange}
