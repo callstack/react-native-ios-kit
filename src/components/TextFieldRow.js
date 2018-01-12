@@ -64,7 +64,8 @@ export default withTheme(TextFieldRow);
 
 const styles = StyleSheet.create({
   input: {
-    flexGrow: 10,
+    flexGrow: 1,
     fontSize: 18,
+    width: '100%',
   },
 });
