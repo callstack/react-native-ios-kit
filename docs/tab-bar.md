@@ -3,7 +3,7 @@ id: tab-bar
 title: TabBar
 ---
 
-![ToggleButton component](assets/tab-bar.png)
+![TabBar component](assets/tab-bar.png)
  
 Example usage:
 ```jsx
@@ -57,8 +57,8 @@ Custom theme for component. By default provided by the ThemeProvider.
 **type:** `Array<TabItem>`  
 
 Array of Tabs. Each `TabItem` needs to have below shape:
-* `icon`: [Icon name](icon.html#name)
-* `title: string`,
-* `onPress: function` to be called when Tab is tapped
-* `isActive: boolean`, indicating wheter Tab is active
-* `disabled?: boolean`, (optional), diasables a Tab
+* `icon`: [Icon name](icon.html#name) (optional)
+* `title: string` (optional)
+* `onPress: function` - to be called when Tab is tapped
+* `isActive: boolean` (optional) - indicating wheter Tab is active
+* `disabled?: boolean` (optional) - diasables a Tab

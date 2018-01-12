@@ -1,23 +1,23 @@
 ---
-id: toggle-button
-title: ToggleButton
+id: switch
+title: Switch
 ---
 
-A basic ToggleButton component that should render native ios toggle button.
+A basic Switch component that should render native ios switch.
 
-![ToggleButton component](assets/toggle-button.png)
+![Switch component](assets/toggle-button.png)
 
 Example usage:
 ```jsx
-<ToggleButton
-  value={this.state.toggleValue}
-  onValueChange={value => this.setState({ toggleValue: value })}
+<Switch
+  value={this.state.switchValue}
+  onValueChange={value => this.setState({ switchValue: value })}
 />
 ```
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected toggle button background color (`onTintColor`) 
+- `positiveColor` - selected switch background color (`onTintColor`) 
 
 ## Props
 

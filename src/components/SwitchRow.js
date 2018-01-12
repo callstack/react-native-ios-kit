@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import RowItem from './RowItem';
-import ToggleButton from './ToggleButton';
+import Switch from './Switch';
 import withTheme from '../core/withTheme';
 import type { Theme } from '../types/Theme';
 
@@ -18,11 +18,7 @@ class SwitchRow extends React.Component<Props> {
     return (
       <RowItem
         rightComponent={
-          <ToggleButton
-            onValueChange={onValueChange}
-            theme={theme}
-            value={value}
-          />
+          <Switch onValueChange={onValueChange} theme={theme} value={value} />
         }
         {...this.props}
       />

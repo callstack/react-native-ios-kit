@@ -9,7 +9,7 @@ Example usage:
 ```jsx
 <SearchBar
   value={this.state.text}
-  onChangeText={text => this.setState({ text })}
+  onValueChange={text => this.setState({ text })}
   withCancel
   animated
 />
@@ -49,7 +49,7 @@ Text of Cancel Button.
 
 Callback invoked on text input blur
 
-### `onChangeText` 
+### `onValueChange` 
 **type:** `(text: string) => void`  
 
 Invoked with the new value when the value of text input changes.

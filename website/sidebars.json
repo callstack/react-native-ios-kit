@@ -12,12 +12,12 @@
       "segmented-control",
       "slider",
       "stepper",
+      "switch",
       "switch-row",
       "tab-bar",
       "table-view",
       "text-field",
       "text-field-row",
-      "toggle-button",
       "typography"
     ]
   }  

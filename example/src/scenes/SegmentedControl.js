@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { SegmentedControl, withTheme } from 'react-native-ios-kit';
+import { SegmentedControl, Body, withTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 import withSafeArea from '../withSafeArea';
 
@@ -17,7 +17,7 @@ type State = {
 class SegmentedExample extends Component<Props, State> {
   state = {
     selectedIndex: 0,
-    selectedValue: '',
+    selectedValue: 'One',
   };
   render() {
     return (
@@ -25,14 +25,18 @@ class SegmentedExample extends Component<Props, State> {
         <SegmentedControl
           values={['One', 'Two', 'Three']}
           selectedIndex={this.state.selectedIndex}
-          onChange={index => this.setState({ selectedIndex: index })}
-          onValueChange={value =>
+          onValueChange={(value, index) =>
             this.setState({
               selectedValue: value,
+              selectedIndex: index,
             })
           }
           style={{ width: 222, alignSelf: 'center' }}
         />
+        <View style={styles.content}>
+          <Body>index: {this.state.selectedIndex}</Body>
+          <Body>value: {this.state.selectedValue}</Body>
+        </View>
       </View>
     );
   }
@@ -43,5 +47,8 @@ export default withTheme(withSafeArea(SegmentedExample));
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
+  },
+  content: {
+    padding: 10,
   },
 });

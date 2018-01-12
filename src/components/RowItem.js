@@ -68,13 +68,21 @@ class RowItem extends React.Component<Props> {
         ]}
       >
         {icon && <Icon name={icon} size={30} color={theme.primaryColor} />}
-        {title || subtitle ? (
-          <View style={[styles.titleWrapper, { marginLeft: icon ? 15 : 0 }]}>
-            {title && <Body>{title}</Body>}
-            {subtitle && <Caption1>{subtitle}</Caption1>}
-          </View>
-        ) : null}
-        {rightComponent}
+        <View
+          style={[
+            styles.titleWrapper,
+            {
+              marginLeft: icon ? 15 : 0,
+              marginRight: title || subtitle ? 15 : 0,
+            },
+          ]}
+        >
+          {title && <Body>{title}</Body>}
+          {subtitle && <Caption1>{subtitle}</Caption1>}
+        </View>
+        {rightComponent && (
+          <View style={styles.rightComponent}>{rightComponent}</View>
+        )}
       </View>
     );
   };
@@ -124,10 +132,13 @@ const styles = StyleSheet.create({
   },
   titleWrapper: {
     flexDirection: 'column',
-    flexGrow: 1,
     justifyContent: 'center',
   },
   separator: {
     height: StyleSheet.hairlineWidth,
+  },
+  rightComponent: {
+    flexGrow: 1,
+    alignItems: 'flex-end',
   },
 });

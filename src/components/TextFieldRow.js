@@ -8,10 +8,10 @@ import type { Theme } from '../types/Theme';
 
 type Props = {
   theme: Theme,
-  title: string,
+  title?: string,
   value: string,
-  placeholder: string,
-  onChangeText: (text: string) => void,
+  placeholder?: string,
+  onValueChange: (text: string) => void,
 };
 
 class TextFieldRow extends React.Component<Props> {
@@ -28,7 +28,7 @@ class TextFieldRow extends React.Component<Props> {
     const {
       value,
       placeholder,
-      onChangeText,
+      onValueChange,
       theme: { placeholderColor, primaryColor, textColor },
       ...rest
     } = this.props;
@@ -41,7 +41,7 @@ class TextFieldRow extends React.Component<Props> {
         value={value}
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}
-        onChangeText={onChangeText}
+        onChangeText={onValueChange}
         style={[styles.input, { color: textColor }]}
         selectionColor={primaryColor}
       />
@@ -64,7 +64,8 @@ export default withTheme(TextFieldRow);
 
 const styles = StyleSheet.create({
   input: {
-    flexGrow: 10,
+    flexGrow: 1,
     fontSize: 18,
+    width: '100%',
   },
 });

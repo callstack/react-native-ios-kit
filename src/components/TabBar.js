@@ -13,10 +13,10 @@ import { withTheme } from '../';
 import type { Theme } from '../types/Theme';
 
 type TabItem = {
-  icon: string,
-  title: string,
+  icon?: string,
+  title?: string,
   onPress: (tabIndex: number) => void,
-  isActive: boolean,
+  isActive?: boolean,
   disabled?: boolean,
 };
 

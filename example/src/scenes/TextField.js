@@ -24,12 +24,12 @@ class TextFieldExample extends React.Component<Props, State> {
         <TextField
           placeholder={'Phone number'}
           value={this.state.phone}
-          onChangeText={text => this.setState({ phone: text })}
+          onValueChange={text => this.setState({ phone: text })}
         />
         <TextField
           placeholder={'Email'}
           value={this.state.email}
-          onChangeText={text => this.setState({ email: text })}
+          onValueChange={text => this.setState({ email: text })}
         />
       </View>
     );
