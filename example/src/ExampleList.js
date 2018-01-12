@@ -7,6 +7,7 @@ import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from './withSafeArea';
 import Buttons from './scenes/Buttons';
+import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
 import Stepper from './scenes/Stepper';
@@ -26,48 +27,52 @@ type Route = {
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 const dataSource = ds.cloneWithRows([
   {
+    component: Avatars,
+    title: 'Avatars',
+  },
+  {
     component: Buttons,
     title: 'Buttons',
   },
   {
-    component: Typography,
-    title: 'Typography',
-  },
-  {
-    component: TabBar,
-    title: 'TabBar',
-  },
-  {
-    component: Stepper,
-    title: 'Stepper',
+    component: Icons,
+    title: 'Icons',
   },
   {
     component: SearchBar,
     title: 'SearchBar',
   },
   {
-    component: Switch,
-    title: 'Switch',
-  },
-  {
     component: SegmentedControl,
     title: 'SegmentedControl',
-  },
-  {
-    component: TableView,
-    title: 'TableView',
   },
   {
     component: Slider,
     title: 'Slider',
   },
   {
+    component: Stepper,
+    title: 'Stepper',
+  },
+  {
+    component: Switch,
+    title: 'Switch',
+  },
+  {
+    component: TabBar,
+    title: 'TabBar',
+  },
+  {
+    component: TableView,
+    title: 'TableView',
+  },
+  {
     component: TextField,
     title: 'TextField',
   },
   {
-    component: Icons,
-    title: 'Icons',
+    component: Typography,
+    title: 'Typography',
   },
 ]);
 

@@ -8,7 +8,7 @@ const siteConfig = {
   baseUrl: '/react-native-ios-kit/',
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
-    { doc: 'button', label: 'API' },
+    { doc: 'avatar', label: 'API' },
     { page: 'help', label: 'Help' },
   ],
   users,
