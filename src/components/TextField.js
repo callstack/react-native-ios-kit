@@ -12,19 +12,19 @@ type Props = {
   theme: Theme,
   placeholder?: string,
   value: string,
-  onChangeText?: (text: string) => void,
+  onValueChange?: (text: string) => void,
   containerStyle?: StyleObj,
   inputStyle?: StyleObj,
 };
 
 class TextField extends React.Component<Props> {
-  clearInput = () => this.props.onChangeText && this.props.onChangeText('');
+  clearInput = () => this.props.onValueChange && this.props.onValueChange('');
 
   render() {
     const {
       value,
       placeholder,
-      onChangeText,
+      onValueChange,
       theme: {
         backgroundColor,
         dividerColor,
@@ -49,7 +49,7 @@ class TextField extends React.Component<Props> {
           value={value}
           placeholder={placeholder}
           placeholderTextColor={placeholderColor}
-          onChangeText={onChangeText}
+          onChangeText={onValueChange}
           style={[styles.input, { color: textColor }, inputStyle]}
           selectionColor={primaryColor}
         />

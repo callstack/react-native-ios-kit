@@ -13,7 +13,7 @@ Example usage:
 <TextFieldRow
   title="TextFieldRow"
   value={this.state.textFieldValue}
-  onChangeText={text => this.setState({ textFieldValue: text })}
+  onValueChange={text => this.setState({ textFieldValue: text })}
 />
 ```
 
@@ -29,7 +29,7 @@ Uses following `theme` properties:
 
 Other props accepted by `RowItem` component.
 
-### `onChangeText`
+### `onValueChange`
 **type:** `(text: string) => void`  
 
 Invoked with the new value when the value of text input changes.

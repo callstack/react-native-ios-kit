@@ -89,7 +89,7 @@ class TableViewExample extends React.Component<Props, State> {
           <TextFieldRow
             title="TextFieldRow"
             value={this.state.textFieldValue}
-            onChangeText={text => this.setState({ textFieldValue: text })}
+            onValueChange={text => this.setState({ textFieldValue: text })}
           />
         </TableView>
       </ScrollView>

@@ -22,7 +22,7 @@ class SearchBarExample extends Component<Props, State> {
       <View style={styles.screen}>
         <SearchBar
           value={this.state.text}
-          onChangeText={text => this.setState({ text })}
+          onValueChange={text => this.setState({ text })}
           withCancel
           animated
         />

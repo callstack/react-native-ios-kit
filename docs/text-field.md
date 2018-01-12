@@ -13,7 +13,7 @@ Example usage:
 <TextField
   placeholder={'Phone number'}
   value={this.state.phone}
-  onChangeText={text => this.setState({ phone: text })}
+  onValueChange={text => this.setState({ phone: text })}
 />
 ```
 
@@ -41,7 +41,7 @@ Style of TextField's wrapper container
 
 Style od TextField's input
 
-### `onChangeText`
+### `onValueChange`
 **type:** `(text: string) => void`  
 
 Invoked with the new value when the value of text input changes.

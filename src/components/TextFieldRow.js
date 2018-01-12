@@ -11,7 +11,7 @@ type Props = {
   title?: string,
   value: string,
   placeholder?: string,
-  onChangeText: (text: string) => void,
+  onValueChange: (text: string) => void,
 };
 
 class TextFieldRow extends React.Component<Props> {
@@ -28,7 +28,7 @@ class TextFieldRow extends React.Component<Props> {
     const {
       value,
       placeholder,
-      onChangeText,
+      onValueChange,
       theme: { placeholderColor, primaryColor, textColor },
       ...rest
     } = this.props;
@@ -41,7 +41,7 @@ class TextFieldRow extends React.Component<Props> {
         value={value}
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}
-        onChangeText={onChangeText}
+        onChangeText={onValueChange}
         style={[styles.input, { color: textColor }]}
         selectionColor={primaryColor}
       />

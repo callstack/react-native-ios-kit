@@ -24,7 +24,7 @@ type Props = {
   /**
    * Callback that is called when the text input's text changes
    */
-  onChangeText: (text: string) => void,
+  onValueChange?: (text: string) => void,
   /**
    * Placeholder of text input. Defaults to "Search"
    */
@@ -79,9 +79,10 @@ class SearchBar extends React.Component<Props, State> {
 
   _input = undefined;
 
-  clearInput = (): void => this.props.onChangeText('');
+  clearInput = (): void =>
+    this.props.onValueChange && this.props.onValueChange('');
   cancelInput = (): void => {
-    this.props.onChangeText('');
+    this.props.onValueChange && this.props.onValueChange('');
     if (this._input) this._input.blur();
   };
   focusInput = (): void => {
@@ -111,7 +112,7 @@ class SearchBar extends React.Component<Props, State> {
     const {
       value,
       placeholder,
-      onChangeText,
+      onValueChange,
       theme: {
         barColor,
         backgroundColor,
@@ -157,7 +158,7 @@ class SearchBar extends React.Component<Props, State> {
               ref={ref => (this._input = ref)}
               style={[{ color: textColor }, styles.input]}
               value={value}
-              onChangeText={onChangeText}
+              onChangeText={onValueChange}
               placeholder={placeholder}
               placeholderTextColor={placeholderColor}
               selectionColor={primaryColor}
