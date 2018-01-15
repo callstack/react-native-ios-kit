@@ -15,9 +15,9 @@ import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes
 
 type Props = {
   theme: Theme,
-  initials?: string,
+  initials: string,
   url?: string,
-  size?: number,
+  size: number,
   style?: StyleObj,
   onPress?: void => void,
 };
@@ -87,20 +87,5 @@ const getStyles = (avatarSize: number) =>
       width: avatarSize,
       height: avatarSize,
       borderRadius: avatarSize / 2,
-    },
-    avatarWrapper: {
-      overflow: 'hidden',
-    },
-    avatarManWrapper: {
-      height: avatarSize,
-      width: avatarSize,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'transparent',
-    },
-    avatarMan: {
-      width: avatarSize - 6,
-      height: avatarSize - 6,
-      borderRadius: (avatarSize - 6) / 2,
     },
   });
