@@ -1,10 +1,11 @@
 <p align="center">
   <img alt="react-native-ios-kit" src="./assets/ios-kit-logo-name.png" width="496">
 </p>
-
+</br>
 <p align="center">
-The missing React Native UI Kit for iOS.
+  The missing React Native UI Kit for iOS.
 </p>
+</br>
 
 ---
 
