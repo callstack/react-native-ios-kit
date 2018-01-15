@@ -15,9 +15,6 @@ module.exports = {
     return ['react-native', 'react', ...dependencies];
   },
   getBlacklistRE() {
-    return blacklist([
-      glob(`${path.resolve(__dirname, '..')}/node_modules/*`),
-      glob(`${path.resolve(__dirname, '..')}/docs/node_modules/*`),
-    ]);
+    return blacklist([glob(`${path.resolve(__dirname, '..')}/node_modules/*`)]);
   },
 };
