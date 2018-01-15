@@ -18,9 +18,9 @@ export { default as TabBar } from './components/TabBar';
 export { default as TableView } from './components/TableView';
 export { default as RowItem } from './components/RowItem';
 export { default as Slider } from './components/Slider';
+export { default as SliderRow } from './components/SliderRow';
 export { default as TextField } from './components/TextField';
 export { default as TextFieldRow } from './components/TextFieldRow';
 export { default as Switch } from './components/Switch';
-export { default as SliderRow } from './components/SliderRow';
 
 export * from './components/Typography';
