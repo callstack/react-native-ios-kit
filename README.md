@@ -5,7 +5,6 @@
 <p align="center">
   The missing React Native UI Kit for iOS.
 </p>
-</br>
 
 ---
 
