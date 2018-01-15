@@ -18,7 +18,7 @@ Example usage:
 **type:** `string`  
 
 String to be displayed inside Avatar. 
-Defaults to empty string.
+**default value:** ''
 
 ### `onPress` (optional)
 **type:** `void => void`  
