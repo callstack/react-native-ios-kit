@@ -1,8 +1,16 @@
-# react-native-ios-kit
+<p align="center">
+  <img alt="react-native-ios-kit" src="./assets/ios-kit-logo-name.png" width="496">
+</p>
+
+<p align="center">
+The missing React Native UI Kit for iOS.
+</p>
+
+---
 
 ![](https://circleci.com/gh/callstack-io/react-native-ios-kit/tree/master.svg?style=shield&circle-token=fbd52d6f78729e0e92ad5d03f95ec445fffbd070)
 
-The missing React Native UI Kit for iOS.
+## Documentation
 
 You can find documentation [here](https://callstack.github.io/react-native-ios-kit)
 
