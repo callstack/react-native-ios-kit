@@ -20,7 +20,7 @@ class AvatarExample extends React.Component<Props> {
         </View>
         <View style={styles.row}>
           <Body>Url prop</Body>
-          <Avatar url="https://callstack.github.io/react-native-ios-kit/img/favicon.png" />
+          <Avatar url="https://callstack.com/static/favicon.png" />
         </View>
         <View style={styles.row}>
           <Body>Initials</Body>
