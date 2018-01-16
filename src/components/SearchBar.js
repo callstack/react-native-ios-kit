@@ -127,7 +127,7 @@ class SearchBar extends React.Component<Props, State> {
     const { anim, cancelWidth } = this.state;
     const { width } = Dimensions.get('window');
     return (
-      <View style={[{ backgroundColor }, styles.container]}>
+      <View style={[{ backgroundColor, width }, styles.container]}>
         <TouchableHighlight
           underlayColor={backgroundColor}
           onPress={this.focusInput}
