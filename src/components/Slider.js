@@ -1,17 +1,17 @@
 /* @flow */
 import React, { Component } from 'react';
-import { Slider, View, StyleSheet } from 'react-native';
+import { Slider as NativeSlider, View, StyleSheet } from 'react-native';
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
 import Icon from './Icon';
 
 type Props = {
   value: number,
-  stepValue: number,
+  stepValue?: number,
   minValue?: number,
   maxValue?: number,
-  minIconName?: string,
-  maxIconName?: string,
+  minIconName: string,
+  maxIconName: string,
   minIconColor?: string,
   maxIconColor?: string,
   minIconSize?: number,
@@ -24,7 +24,7 @@ type Props = {
   maxTrackTintColor?: string,
 };
 
-class IosSlider extends Component<Props> {
+class Slider extends Component<Props> {
   static defaultProps = {
     minValue: 0,
     maxValue: 100,
@@ -62,7 +62,7 @@ class IosSlider extends Component<Props> {
             color={minIconColor || theme.placeholderColor}
           />
         )}
-        <Slider
+        <NativeSlider
           style={styles.slider}
           value={value}
           minimumValue={minValue}
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(IosSlider);
+export default withTheme(Slider);
