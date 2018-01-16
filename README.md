@@ -102,7 +102,7 @@ function Main() {
 You can also customize theme per one component by using `theme` prop.
 
 Example:
-```
+```javascript
   <Icon
     name="ios-people"
     theme={{
