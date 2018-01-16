@@ -3,7 +3,7 @@ id: checkbox-row
 title: CheckboxRow
 ---
 
-RowItem with Chackmark Icon on right side.
+RowItem with Checkmark Icon on right side.
 
 ![CheckboxRow component](assets/checkbox-row.png)
  
@@ -16,7 +16,7 @@ Example usage:
       checkboxSelected: !state.checkboxSelected,
     }))
   }
-  title="CheckobxRow"
+  title="CheckboxRow"
   subtitle="Selectable row"
 />
 ```
