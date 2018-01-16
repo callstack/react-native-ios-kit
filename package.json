@@ -20,13 +20,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callstack-io/react-native-ios-kit.git"
+    "url": "git+https://github.com/callstack/react-native-ios-kit.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/callstack-io/react-native-ios-kit/issues"
+    "url": "https://github.com/callstack/react-native-ios-kit/issues"
   },
-  "homepage": "https://github.com/callstack-io/react-native-ios-kit#readme",
+  "homepage": "https://github.com/callstack/react-native-ios-kit#readme",
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
