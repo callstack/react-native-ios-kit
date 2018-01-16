@@ -12,10 +12,6 @@
 [![Version][version-badge]][package]
 [![MIT License][license-badge]][license]
 
-
-[![All Contributors][all-contributors-badge]](#contributors)
-[![PRs Welcome][prs-welcome-badge]][prs-welcome]
-
 [![Chat][chat-badge]][chat]
 [![tweet][tweet-badge]][tweet]
 
@@ -124,9 +120,6 @@ This code will change icon color to `green`
 [package]: https://www.npmjs.com/package/react-native-ios-kit
 [license-badge]: https://img.shields.io/npm/l/react-native-ios-kit.svg?style=flat-square
 [license]: https://opensource.org/licenses/MIT
-[prs-welcome-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
-[prs-welcome]: http://makeapullrequest.com
-[all-contributors-badge]: https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square
 [chat-badge]: https://img.shields.io/badge/chat-slack-brightgreen.svg?style=flat-square&colorB=E01563
 [chat]: https://slack.callstack.com/
 [tweet-badge]: https://img.shields.io/badge/tweet-%23react--native--ios--kit-blue.svg?style=flat-square&colorB=1DA1F2&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAAAXNSR0IArs4c6QAAAaRJREFUOBGtlM8rBGEYx3cWtRHJRaKcuMtBSitxkCQ3LtzkP9iUUu5ODspRHLhRLtq0FxeicEBC2cOivcge%2FMgan3fNM8bbzL4zm6c%2BPT%2Fe7%2FO8887svrFYBWbbtgWzsAt3sAcpqJFxxF1QV8oJFqFPFst5dLWQAT87oTgPB7DtziFRT1EA4yZolsFkhwjGYFRO8Op0KD8HVe7unoB6PRTBZG8IctAmG1xrHcfkQ2B55sfI%2ByGMXSBqV71xZ8CWdxBxN6ThFuECDEAL%2Bc9HIzDYumVZ966GZnX0SzCZvEqTbkaGywkyFE6hKAsBPhFQ18uPUqh2ggJ%2BUor%2F4M%2F%2FzOC8g6YzR1i%2F8g4vvSI%2ByD7FFNjexQrjHd8%2BnjABI3AU4Wl16TuF1qANGll81jsi5qu%2Bw6XIsCn4ijhU5FmCJpkV6BGNw410hfSf6JKBQ%2FUFxHGYBnWnmOwDwYQ%2BwzdHqO75HtiAMJfaC7ph32FSRJCENUhDHsLaJkL%2FX4wMF4%2BwA5bgAcrZE4sr0Cu9Jq9fxyrvBHWbNkMD5CEHWTjjT2m6r5D92jfmbbKJEWuMMAAAAABJRU5ErkJggg%3D%3D
