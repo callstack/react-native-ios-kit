@@ -33,7 +33,7 @@ class NavigationRow extends React.Component<Props> {
     return (
       <RowItem
         onPress={onPress}
-        rightComponent={this.renderRightComponent()}
+        renderRight={this.renderRightComponent}
         {...this.props}
       />
     );

@@ -4,6 +4,7 @@ import { View, StyleSheet } from 'react-native';
 
 import { Avatar, withTheme, Body } from 'react-native-ios-kit';
 
+import withSafeArea from '../withSafeArea';
 import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
@@ -38,7 +39,7 @@ class AvatarExample extends React.Component<Props> {
   }
 }
 
-export default withTheme(AvatarExample);
+export default withTheme(withSafeArea(AvatarExample));
 
 const styles = StyleSheet.create({
   row: {

@@ -65,6 +65,11 @@ class TableViewExample extends React.Component<Props, State> {
           />
         </TableView>
         <TableView header="Rows">
+          <TextFieldRow
+            title="TextFieldRow"
+            value={this.state.textFieldValue}
+            onValueChange={text => this.setState({ textFieldValue: text })}
+          />
           <CheckboxRow
             selected={this.state.checkboxSelected}
             onPress={() =>
@@ -86,11 +91,6 @@ class TableViewExample extends React.Component<Props, State> {
             onPress={() => alert('NavigationRow pressed')}
             info="navigation"
           />
-          <TextFieldRow
-            title="TextFieldRow"
-            value={this.state.textFieldValue}
-            onValueChange={text => this.setState({ textFieldValue: text })}
-          />
         </TableView>
       </ScrollView>
     );
@@ -99,7 +99,9 @@ class TableViewExample extends React.Component<Props, State> {
 
 export default withTheme(withSafeArea(TableViewExample));
 
-const ArrowRight = <Icon name="ios-arrow-forward" size={22} />;
-const RightButton = (
-  <Button onPress={() => alert('Hello world!')}>{ArrowRight}</Button>
+const ArrowRight = () => <Icon name="ios-arrow-forward" size={22} />;
+const RightButton = () => (
+  <Button onPress={() => alert('Hello world!')}>
+    <ArrowRight />
+  </Button>
 );
