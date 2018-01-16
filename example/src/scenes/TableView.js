@@ -101,5 +101,7 @@ export default withTheme(withSafeArea(TableViewExample));
 
 const ArrowRight = () => <Icon name="ios-arrow-forward" size={22} />;
 const RightButton = () => (
-  <Button onPress={() => alert('Hello world!')}>{ArrowRight}</Button>
+  <Button onPress={() => alert('Hello world!')}>
+    <ArrowRight />
+  </Button>
 );
