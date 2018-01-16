@@ -58,9 +58,9 @@ jobs:
       - restore-cache: *restore-example-cache
       - restore-cache: *restore-website-cache
       - run: |
-          yarn install --ignore-scripts --ignore-engines
-          yarn install --ignore-scripts --ignore-engines --cwd ./website
-          yarn install --ignore-scripts --ignore-engines --cwd ./example
+          yarn install --ignore-scripts --frozen-lockfile
+          yarn install --ignore-scripts --frozen-lockfile --cwd ./website
+          yarn install --ignore-scripts --frozen-lockfile --cwd ./example
       - save-cache: *save-cache
       - save-cache: *save-example-cache
       - save-cache: *save-website-cache
