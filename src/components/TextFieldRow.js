@@ -52,7 +52,7 @@ class TextFieldRow extends React.Component<Props> {
     return (
       <RowItem
         title={title}
-        rightComponent={this.renderRightComponent()}
+        renderRight={this.renderRightComponent}
         onPress={this.focusInput}
         {...this.props}
       />

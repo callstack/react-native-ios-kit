@@ -16,6 +16,13 @@ Example usage:
   rightComponent={ArrowRight}
   onPress={() => alert('Hello')}
 />
+<RowItem
+  icon="ios-map-outline"
+  title="Navigation"
+  subtitle="Get your directions"
+  renderRight={() => <ArrowRight />}
+  onPress={() => alert('Hello')}
+/>
 ```
 
 ## Theme
@@ -36,10 +43,16 @@ IconSource. See ['Icon`](icon.html#name)
 
 Invoked on RowItem's onPress event.
 
-### `rightComponent` (optional)
-**type:** `React.Element<*>`
+### `renderRight` (optional)
+**type:** `() => React.Element<*>`  
 
-Component to be displayed on the right side of row.
+Function which should return Element to be displayed on the right side of row.
+It can be use interchangeably with `rightComponent` prop.
+
+### `rightComponent` (optional)
+**type:** `React.ComponentType<*>`
+
+Component to be displayed on the right side of row. It can be use interchangeably with `renderRight` prop.
 
 ### `subtitle` (optional)
 **type:** `string`
