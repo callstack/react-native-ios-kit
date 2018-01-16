@@ -29,12 +29,17 @@ aliases:
 
   - &filter-only-master
     branches:
-      only:
-        - master
+      only: master
 
   - &filter-ignore-gh-pages
     branches:
       ignore: gh-pages
+
+  - &filter-master-tag
+    branches:
+      only: master
+    tags:
+      only: /v\d+\.\d+\.\d+.*/  
 
 defaults: &defaults
   working_directory: ~/react-native-ios-kit
@@ -92,6 +97,14 @@ jobs:
           cd example
           yarn exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
           yarn exp publish --non-interactive
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
+      - run: |
+          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          npm run publish
 
 workflows:
   version: 2
@@ -111,3 +124,7 @@ workflows:
           requires:
             - tests
           filters: *filter-only-master
+      - deploy:
+          requires: 
+            - tests
+          filters: *filter-master-tag  
