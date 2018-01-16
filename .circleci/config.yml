@@ -39,7 +39,7 @@ aliases:
     branches:
       only: master
     tags:
-      only: /v\d+\.\d+\.\d+.*/  
+      only: /v\d+\.\d+\.\d+.*/
 
 defaults: &defaults
   working_directory: ~/react-native-ios-kit
