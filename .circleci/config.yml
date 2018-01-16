@@ -35,11 +35,11 @@ aliases:
     branches:
       ignore: gh-pages
 
-  - &filter-master-tag
-    branches:
-      only: master
+  - &filter-tag
     tags:
       only: /v\d+\.\d+\.\d+.*/
+    branches:
+      ignore: /.*/
 
 defaults: &defaults
   working_directory: ~/react-native-ios-kit
@@ -119,7 +119,7 @@ workflows:
       - deploy:
           requires: 
             - tests
-          filters: *filter-master-tag  
+          filters: *filter-tag  
       - deploy-website:
           requires:
             - deploy
