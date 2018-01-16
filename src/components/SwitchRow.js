@@ -13,16 +13,13 @@ type Props = {
 };
 
 class SwitchRow extends React.Component<Props> {
-  render() {
+  renderRight = () => {
     const { value, onValueChange, theme } = this.props;
-    return (
-      <RowItem
-        rightComponent={
-          <Switch onValueChange={onValueChange} theme={theme} value={value} />
-        }
-        {...this.props}
-      />
-    );
+    return <Switch onValueChange={onValueChange} theme={theme} value={value} />;
+  };
+
+  render() {
+    return <RowItem renderRight={this.renderRight} {...this.props} />;
   }
 }
 

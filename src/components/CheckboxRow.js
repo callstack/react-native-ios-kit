@@ -13,18 +13,16 @@ type Props = {
 };
 
 class CheckboxRow extends React.Component<Props> {
-  render() {
+  renderRight = () => {
     const { selected, theme: { primaryColor } } = this.props;
-    return (
-      <RowItem
-        rightComponent={
-          selected ? (
-            <Icon name="ios-checkmark" size={34} color={primaryColor} />
-          ) : null
-        }
-        {...this.props}
-      />
-    );
+    if (selected) {
+      return <Icon name="ios-checkmark" size={34} color={primaryColor} />;
+    }
+    return null;
+  };
+
+  render() {
+    return <RowItem renderRight={this.renderRight} {...this.props} />;
   }
 }
 

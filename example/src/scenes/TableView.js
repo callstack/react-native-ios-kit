@@ -99,7 +99,7 @@ class TableViewExample extends React.Component<Props, State> {
 
 export default withTheme(withSafeArea(TableViewExample));
 
-const ArrowRight = <Icon name="ios-arrow-forward" size={22} />;
-const RightButton = (
+const ArrowRight = () => <Icon name="ios-arrow-forward" size={22} />;
+const RightButton = () => (
   <Button onPress={() => alert('Hello world!')}>{ArrowRight}</Button>
 );

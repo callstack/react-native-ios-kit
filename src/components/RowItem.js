@@ -28,7 +28,11 @@ type Props = {
   /**
    * Right Component
    */
-  rightComponent?: React.Element<*>,
+  rightComponent?: React.ComponentType<*>,
+  /**
+   * Function which should return Element to be rendered on the right side of row
+   */
+  renderRight?: () => React.Element<*>,
   /**
    * RowItem's onPress handler
    */
@@ -41,20 +45,27 @@ type Props = {
 };
 
 class RowItem extends React.Component<Props> {
-  static defaulProps = {
-    rightComponent: null,
+  renderRight = () => {
+    const { renderRight, rightComponent } = this.props;
+
+    if (renderRight) {
+      return <View style={styles.rightComponent}>{renderRight()}</View>;
+    }
+
+    if (rightComponent) {
+      return (
+        <View style={styles.rightComponent}>
+          {React.createElement(rightComponent)}
+        </View>
+      );
+    }
+
+    return null;
   };
 
   renderRow = () => {
-    const {
-      icon,
-      title,
-      subtitle,
-      theme,
-      rightComponent,
-      first,
-      last,
-    } = this.props;
+    const { icon, title, subtitle, theme, first, last } = this.props;
+
     return (
       <View
         style={[
@@ -80,9 +91,7 @@ class RowItem extends React.Component<Props> {
           {title && <Body>{title}</Body>}
           {subtitle && <Caption1>{subtitle}</Caption1>}
         </View>
-        {rightComponent && (
-          <View style={styles.rightComponent}>{rightComponent}</View>
-        )}
+        {this.renderRight()}
       </View>
     );
   };
