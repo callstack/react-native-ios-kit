@@ -17,7 +17,7 @@ Example usage:
 ### `initials` (optional)  
 **type:** `string`  
 
-String to be displayed inside Avatar. 
+String to be displayed inside Avatar.   
 **default value:** ''
 
 ### `onPress` (optional)
