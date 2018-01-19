@@ -12,6 +12,7 @@ import {
   SwitchRow,
   TableView,
   TextFieldRow,
+  SliderRow,
   withTheme,
 } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
@@ -24,12 +25,14 @@ type State = {
   checkboxSelected: boolean,
   switchSelected: boolean,
   textFieldValue: string,
+  sliderValue: number,
 };
 class TableViewExample extends React.Component<Props, State> {
   state = {
     checkboxSelected: true,
     switchSelected: true,
     textFieldValue: '',
+    sliderValue: 0,
   };
   render() {
     return (
@@ -90,6 +93,11 @@ class TableViewExample extends React.Component<Props, State> {
             title="NavigationRow"
             onPress={() => alert('NavigationRow pressed')}
             info="navigation"
+          />
+          <SliderRow
+            value={this.state.sliderValue}
+            minTrackTintColor={'red'}
+            onValueChange={sliderValue => this.setState({ sliderValue })}
           />
         </TableView>
       </ScrollView>
