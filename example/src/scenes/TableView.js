@@ -32,7 +32,7 @@ class TableViewExample extends React.Component<Props, State> {
     checkboxSelected: true,
     switchSelected: true,
     textFieldValue: '',
-    sliderValue: 0,
+    sliderValue: 5,
   };
   render() {
     return (
@@ -95,8 +95,8 @@ class TableViewExample extends React.Component<Props, State> {
             info="navigation"
           />
           <SliderRow
+            title="SliderRow"
             value={this.state.sliderValue}
-            minTrackTintColor={'red'}
             onValueChange={sliderValue => this.setState({ sliderValue })}
           />
         </TableView>
