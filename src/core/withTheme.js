@@ -2,24 +2,22 @@
 
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { channel } from './ThemeProvider';
-import type { Theme } from '../types/Theme';
+import merge from 'deepmerge';
+import ThemeProvider, { channel } from './ThemeProvider';
+import type { Theme } from '../types';
 
 type State = {
   theme: Theme,
 };
 
-export default function withTheme<Props: {}>(
-  // TODO: this should be React.ComponentType<{ theme: Theme } & Props>
-  Comp: React.ComponentType<any>
-): React.ComponentType<Props> {
-  class ThemedComponent extends React.PureComponent<*, State> {
-    // $FlowFixMe
-    static displayName = `withTheme(${Comp.displayName || Comp.name})`;
+const isClassComponent = (Component: Function) => !!Component.prototype.render;
 
-    static propTypes = {
-      theme: PropTypes.object,
-    };
+export default function withTheme<Props: {}>(
+  Comp: React.ComponentType<Props>
+): React.ComponentType<$Diff<Props, { theme: Theme }>> {
+  class ThemedComponent extends React.Component<*, State> {
+    /* $FlowFixMe */
+    static displayName = `withTheme(${Comp.displayName || Comp.name})`;
 
     static contextTypes = {
       [channel]: PropTypes.object,
@@ -38,17 +36,19 @@ export default function withTheme<Props: {}>(
       }
 
       this.state = {
-        theme: this._merge(theme, this.props.theme),
+        theme: this._merge(theme, props),
       };
     }
 
     state: State;
 
     componentDidMount() {
+      // Pure components could prevent propagation of context updates
+      // We setup a subscription so we always get notified about theme updates
       this._subscription =
         this.context[channel] &&
         this.context[channel].subscribe(theme =>
-          this.setState({ theme: this._merge(theme, this.props.theme) })
+          this.setState({ theme: this._merge(theme, this.props) })
         );
     }
 
@@ -57,7 +57,7 @@ export default function withTheme<Props: {}>(
         this.setState({
           theme: this._merge(
             this.context[channel] && this.context[channel].get(),
-            nextProps.theme
+            nextProps
           ),
         });
       }
@@ -67,33 +67,64 @@ export default function withTheme<Props: {}>(
       this._subscription && this._subscription.remove();
     }
 
-    getWrappedInstance() {
-      return this._root;
-    }
-
-    setNativeProps(...args) {
-      return this._root.setNativeProps(...args);
-    }
-
-    _merge = (a, b) => {
-      if (a && b) {
-        return { ...a, ...b };
-      } else {
-        return a || b;
-      }
+    _merge = (theme: Theme, props: *) => {
+      // Only merge if both theme from context and props are present
+      // Avoiding unnecessary merge allows us to check equality by reference
+      return theme && props.theme
+        ? merge(theme, props.theme)
+        : theme || props.theme;
     };
 
     _subscription: { remove: Function };
     _root: any;
 
     render() {
-      return (
-        <Comp
-          {...this.props}
-          ref={c => (this._root = c)}
-          theme={this.state.theme}
-        />
-      );
+      let element;
+
+      if (isClassComponent(Comp)) {
+        // Only add refs for class components as function components don't support them
+        // It's needed to support use cases which need access to the underlying node
+        element = (
+          <Comp
+            {...this.props}
+            ref={c => (this._root = c)}
+            theme={this.state.theme}
+          />
+        );
+      } else {
+        element = <Comp {...this.props} theme={this.state.theme} />;
+      }
+
+      if (this.state.theme !== this.props.theme) {
+        // If a theme prop was passed, expose it to the children
+        return (
+          <ThemeProvider theme={this.state.theme}>{element}</ThemeProvider>
+        );
+      }
+
+      return element;
+    }
+  }
+
+  if (isClassComponent(Comp)) {
+    // getWrappedInstance is exposed by some HOCs like react-redux's connect
+    // Use it to get the ref to the underlying element
+    // Also expose it to access the underlying element after wrapping
+    // $FlowFixMe
+    ThemedComponent.prototype.getWrappedInstance = function() {
+      return this._root.getWrappedInstance
+        ? this._root.getWrappedInstance()
+        : this._root;
+    };
+
+    // setNativeProps is used by Animated to set props on the native component
+    /* $FlowFixMe */
+    if (Comp.prototype.setNativeProps) {
+      // $FlowFixMe
+      ThemedComponent.prototype.setNativeProps = function(...args) {
+        const root = this.getWrappedInstance();
+        return root.setNativeProps(...args);
+      };
     }
   }
 
@@ -102,8 +133,8 @@ export default function withTheme<Props: {}>(
     if (prop !== 'displayName' && prop !== 'contextTypes') {
       if (prop === 'propTypes') {
         // Only the underlying component will receive the theme prop
-        // $FlowFixMe
-        const { theme, ...propTypes } = Comp[prop]; // eslint-disable-line no-unused-vars
+        /* $FlowFixMe */
+        const { theme, ...propTypes } = Comp[prop]; // eslint-disable-line no-shadow, no-unused-vars
         /* $FlowFixMe */
         ThemedComponent[prop] = propTypes;
       } else {
