@@ -10,6 +10,7 @@ import Buttons from './scenes/Buttons';
 import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
+import PageControl from './scenes/PageControl';
 import Stepper from './scenes/Stepper';
 import SearchBar from './scenes/SearchBar';
 import Switch from './scenes/Switch';
@@ -37,6 +38,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Icons,
     title: 'Icons',
+  },
+  {
+    component: PageControl,
+    title: 'PageControl',
   },
   {
     component: SearchBar,
