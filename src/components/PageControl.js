@@ -18,8 +18,7 @@ type Props = {
 
 class PageControl extends React.Component<Props> {
   makeDotStyles = () => {
-    const { theme } = this.props;
-    const size = this.props.size || 8;
+    const { theme, size = 8 } = this.props;
     const currentPageIndicatorTintColor =
       this.props.currentPageIndicatorTintColor || theme.barColor;
     const pageIndicatorTintColor =
