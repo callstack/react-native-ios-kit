@@ -20,7 +20,7 @@ type Props = {
   /**
    * Title string to be displayed
    */
-  title: string,
+  title?: string,
   /**
    * Optional subtitle string
    */
@@ -32,16 +32,16 @@ type Props = {
   /**
    * Function which should return Element to be rendered on the right side of row
    */
-  renderRight?: () => React.Element<*>,
+  renderRight?: () => *, //React.Element<*>,
   /**
    * RowItem's onPress handler
    */
-  onPress?: Function,
+  onPress?: void => void,
   /**
    * Internal props
    */
-  first: boolean,
-  last: boolean,
+  first?: boolean,
+  last?: boolean,
 };
 
 class RowItem extends React.Component<Props> {

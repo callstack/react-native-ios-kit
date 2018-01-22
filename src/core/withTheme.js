@@ -4,7 +4,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'deepmerge';
 import ThemeProvider, { channel } from './ThemeProvider';
-import type { Theme } from '../types';
+import type { Theme } from '../types/Theme';
 
 type State = {
   theme: Theme,
@@ -14,7 +14,9 @@ const isClassComponent = (Component: Function) => !!Component.prototype.render;
 
 export default function withTheme<Props: {}>(
   Comp: React.ComponentType<Props>
-): React.ComponentType<$Diff<Props, { theme: Theme }>> {
+): React.ComponentType<
+  React.ElementConfig<React.ComponentType<$Diff<Props, { theme: Theme }>>>
+> {
   class ThemedComponent extends React.Component<*, State> {
     /* $FlowFixMe */
     static displayName = `withTheme(${Comp.displayName || Comp.name})`;

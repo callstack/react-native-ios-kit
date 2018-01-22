@@ -5,6 +5,7 @@ import { TextInput, StyleSheet } from 'react-native';
 import RowItem from './RowItem';
 import withTheme from '../core/withTheme';
 import type { Theme } from '../types/Theme';
+import type { IconSource } from './Icon';
 
 type Props = {
   theme: Theme,
@@ -12,19 +13,25 @@ type Props = {
   value: string,
   placeholder?: string,
   onValueChange: (text: string) => void,
+
+  icon?: IconSource,
+  subtitle?: string,
+  first?: boolean,
+  last?: boolean,
 };
 
 class TextFieldRow extends React.Component<Props> {
   static defaultProps = {
     placeholder: '',
   };
+
   input = undefined;
 
   focusInput = () => {
     if (this.input) this.input.focus();
   };
 
-  renderRightComponent = () => {
+  renderRight = () => {
     const {
       value,
       placeholder,
@@ -48,13 +55,16 @@ class TextFieldRow extends React.Component<Props> {
     );
   };
   render() {
-    const { title } = this.props;
+    const { title, icon, subtitle, first, last } = this.props;
     return (
       <RowItem
         title={title}
-        renderRight={this.renderRightComponent}
+        renderRight={this.renderRight}
         onPress={this.focusInput}
-        {...this.props}
+        icon={icon}
+        subtitle={subtitle}
+        first={first}
+        last={last}
       />
     );
   }

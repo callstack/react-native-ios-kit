@@ -71,8 +71,8 @@ class Stepper extends React.Component<Props, State> {
     clearInterval(this._interval);
   }
 
-  _interval: number;
-  _timeout: number;
+  _interval: IntervalID;
+  _timeout: TimeoutID;
 
   decrementOnCounter = () => {
     const newValue = this.props.value - this.props.stepValue;

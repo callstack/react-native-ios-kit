@@ -7,7 +7,7 @@ import Icon from './Icon';
 
 type Props = {
   value: number,
-  stepValue: number,
+  stepValue?: number,
   minValue?: number,
   maxValue?: number,
   minIconName?: string,
@@ -18,8 +18,8 @@ type Props = {
   maxIconSize?: number,
   style?: any,
   theme: Theme,
-  onValueChange: (value: number) => void,
-  onSlidingComplete: (value: number) => void,
+  onValueChange?: (value: number) => void,
+  onSlidingComplete?: (value: number) => void,
   minTrackTintColor?: string,
   maxTrackTintColor?: string,
 };

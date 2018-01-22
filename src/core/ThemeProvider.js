@@ -3,7 +3,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import DefaultTheme from '../styles/DefaultTheme';
-import type { Theme } from '../types';
+import type { Theme } from '../types/Theme';
 
 type Props = {
   children: React.Node,
