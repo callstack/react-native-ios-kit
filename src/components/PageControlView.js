@@ -14,10 +14,10 @@ type Props = {
   children: React.Node,
   containerStyle: StyleObj,
   startPage?: number,
-  onPageChange: number => void,
-  currentPageIndicatorTintColor: string,
-  pageIndicatorTintColor: string,
-  pageIndicatorSize: number,
+  onPageChange?: number => void,
+  currentPageIndicatorTintColor?: string,
+  pageIndicatorTintColor?: string,
+  pageIndicatorSize?: number,
 };
 
 type State = {
