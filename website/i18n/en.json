@@ -12,6 +12,7 @@
     "info-row": "InfoRow",
     "installation": "Installation",
     "navigation-row": "NavigationRow",
+    "page-control-view": "PageControlView",
     "page-control": "PageControl",
     "row-item": "RowItem",
     "search-bar": "SearchBar",
