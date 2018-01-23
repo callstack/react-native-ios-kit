@@ -34,11 +34,30 @@ Example usage:
 
 Children of PageControlView, each one to be displayed as a separate page.
 
-
 ### `containerStyle` (optional)
 **type:** `StyleObj`
 
 Style of wrapper container.
+
+### `currentPageIndicatorTintColor` (optional),
+**type:** `string`  
+**default value:** `barColor` from [`theme`](theme.html)
+
+### `onPageChange` (optional)  
+**type:** `number => void`  
+
+Event handler called when current page changes
+
+
+### `pageIndicatorTintColor` (optional)  
+**type:** `string`  
+**default value:** `dividerColor` from [`theme`](theme.html)
+
+### `pageIndicatorSize` (optional)  
+**type:** `number`  
+**default value:** 8
+
+Size of the controls.
 
 ### `startPage` (optional)   
 **type:**: `number`  
@@ -48,4 +67,3 @@ Style of wrapper container.
 **type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
-

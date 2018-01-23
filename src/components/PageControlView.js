@@ -14,6 +14,10 @@ type Props = {
   children: React.Node,
   containerStyle: StyleObj,
   startPage?: number,
+  onPageChange: number => void,
+  currentPageIndicatorTintColor: string,
+  pageIndicatorTintColor: string,
+  pageIndicatorSize: number,
 };
 
 type State = {
@@ -37,12 +41,28 @@ class PageControlView extends React.Component<Props, State> {
     this.setState({ currentPage });
   };
 
+  handleScrollEnd = event => {
+    const { onPageChange } = this.props;
+    const xOffset = event.nativeEvent.contentOffset.x + 10;
+    const currentPage = Math.floor(xOffset / width);
+    if (this.state.currentPage === currentPage) {
+      if (onPageChange && typeof onPageChange === 'function')
+        onPageChange(this.state.currentPage);
+    }
+  };
+
   scrollToPage = (pageNumber: number): void => {
     if (this.scrollView) this.scrollView.scrollTo({ x: width * pageNumber });
   };
 
   render() {
-    const { containerStyle, children } = this.props;
+    const {
+      containerStyle,
+      children,
+      pageIndicatorSize,
+      pageIndicatorTintColor,
+      currentPageIndicatorTintColor,
+    } = this.props;
     const numberOfPages = React.Children.count(children);
     return (
       <View style={[styles.container, containerStyle]}>
@@ -59,6 +79,7 @@ class PageControlView extends React.Component<Props, State> {
           showsVerticalScrollIndicator={false}
           directionalLockEnabled
           onScroll={this.handleScroll}
+          onMomentumScrollEnd={this.handleScrollEnd}
         >
           {React.Children.map(children, child => (
             <View style={styles.pageStyle}>{child}</View>
@@ -69,6 +90,9 @@ class PageControlView extends React.Component<Props, State> {
             numberOfPages={numberOfPages}
             currentPage={this.state.currentPage}
             updateCurrentPageDisplay={this.scrollToPage}
+            currentPageIndicatorTintColor={currentPageIndicatorTintColor}
+            pageIndicatorTintColor={pageIndicatorTintColor}
+            size={pageIndicatorSize}
           />
         </View>
       </View>

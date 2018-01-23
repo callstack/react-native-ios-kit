@@ -15,7 +15,7 @@ const { height } = Dimensions.get('window');
 class PageControlViewExample extends React.Component<Props> {
   render() {
     return (
-      <PageControlView defaultPage={1}>
+      <PageControlView startPage={1} onPageChange={page => console.log(page)}>
         <View style={styles.firstContainer}>
           <Title1>First page.</Title1>
           <View style={styles.row}>
