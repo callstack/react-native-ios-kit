@@ -33,7 +33,7 @@ class TableViewExample extends React.Component<Props, State> {
   };
   render() {
     return (
-      <ScrollView>
+      <ScrollView automaticallyAdjustContentInsets={false}>
         <TableView header="RowItems" footer="footer">
           <RowItem
             icon="ios-map-outline"
