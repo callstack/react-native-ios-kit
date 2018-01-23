@@ -1,0 +1,95 @@
+/* @flow */
+import * as React from 'react';
+import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
+
+import PageControl from './PageControl';
+import withTheme from '../core/withTheme';
+import type { Theme } from '../types/Theme';
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+
+const { width } = Dimensions.get('window');
+
+type Props = {
+  theme: Theme,
+  children: React.Node,
+  containerStyle: StyleObj,
+  startPage?: number,
+};
+
+type State = {
+  currentPage: number,
+};
+
+class PageControlView extends React.Component<Props, State> {
+  state = {
+    currentPage: this.props.startPage || 0,
+  };
+
+  componentDidMount() {
+    if (this.props.startPage) this.scrollToPage(this.props.startPage);
+  }
+
+  scrollView = undefined;
+
+  handleScroll = event => {
+    const xOffset = event.nativeEvent.contentOffset.x + 10;
+    const currentPage = Math.floor(xOffset / width);
+    this.setState({ currentPage });
+  };
+
+  scrollToPage = (pageNumber: number): void => {
+    if (this.scrollView) this.scrollView.scrollTo({ x: width * pageNumber });
+  };
+
+  render() {
+    const { containerStyle, children } = this.props;
+    const numberOfPages = React.Children.count(children);
+    return (
+      <View style={[styles.container, containerStyle]}>
+        <ScrollView
+          ref={ref => {
+            this.scrollView = ref;
+          }}
+          automaticallyAdjustContentInsets={false}
+          horizontal
+          snapToInterval={width}
+          decelerationRate="fast"
+          scrollEventThrottle={16}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          directionalLockEnabled
+          onScroll={this.handleScroll}
+        >
+          {React.Children.map(children, child => (
+            <View style={styles.pageStyle}>{child}</View>
+          ))}
+        </ScrollView>
+        <View style={styles.controlsContainer}>
+          <PageControl
+            numberOfPages={numberOfPages}
+            currentPage={this.state.currentPage}
+            updateCurrentPageDisplay={this.scrollToPage}
+          />
+        </View>
+      </View>
+    );
+  }
+}
+
+export default withTheme(PageControlView);
+
+const styles = StyleSheet.create({
+  container: {
+    position: 'relative',
+  },
+  pageStyle: {
+    width,
+  },
+  controlsContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'transparent',
+  },
+});

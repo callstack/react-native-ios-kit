@@ -27,7 +27,7 @@ class TypographyExample extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Title1>Hello world</Title1>
+        <Title1>Title1</Title1>
         <Title2>Title2</Title2>
         <Title3>Title3</Title3>
         <Headline>Headline</Headline>
