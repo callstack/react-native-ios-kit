@@ -12,6 +12,7 @@ export { default as Icon } from './components/Icon';
 export { default as InfoRow } from './components/InfoRow';
 export { default as NavigationRow } from './components/NavigationRow';
 export { default as PageControl } from './components/PageControl';
+export { default as PageControlView } from './components/PageControlView';
 export { default as RowItem } from './components/RowItem';
 export { default as SearchBar } from './components/SearchBar';
 export { default as SegmentedControl } from './components/SegmentedControl';

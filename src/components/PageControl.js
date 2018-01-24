@@ -16,9 +16,11 @@ type Props = {
   size?: number,
 };
 
+const DEFAULT_SIZE = 8;
+
 class PageControl extends React.Component<Props> {
   makeDotStyles = () => {
-    const { theme, size = 8 } = this.props;
+    const { theme, size = DEFAULT_SIZE } = this.props;
     const currentPageIndicatorTintColor =
       this.props.currentPageIndicatorTintColor || theme.barColor;
     const pageIndicatorTintColor =
@@ -28,13 +30,19 @@ class PageControl extends React.Component<Props> {
         width: size,
         height: size,
         borderRadius: size,
-        marginHorizontal: size / 2,
+        margin: size / 2,
       },
       activeDot: {
         backgroundColor: currentPageIndicatorTintColor,
       },
       inactiveDot: {
         backgroundColor: pageIndicatorTintColor,
+      },
+      dotWrapper: {
+        width: size * 2,
+        height: size * 2,
+        justifyContent: 'center',
+        alignItems: 'center',
       },
     });
   };
@@ -55,7 +63,7 @@ class PageControl extends React.Component<Props> {
   render() {
     const { numberOfPages, currentPage, hidesForSinglePage } = this.props;
     if (hidesForSinglePage && numberOfPages === 1) return null;
-    const { dot, activeDot, inactiveDot } = this.makeDotStyles();
+    const { dot, activeDot, inactiveDot, dotWrapper } = this.makeDotStyles();
     return (
       <View style={styles.row}>
         {[...Array(numberOfPages).keys()].map(idx => (
@@ -63,11 +71,13 @@ class PageControl extends React.Component<Props> {
             key={`pageControlDot_${idx}`}
             onPress={() => this.updateCurrentPage(idx)}
           >
-            <View
-              style={
-                idx === currentPage ? [dot, activeDot] : [dot, inactiveDot]
-              }
-            />
+            <View style={dotWrapper}>
+              <View
+                style={
+                  idx === currentPage ? [dot, activeDot] : [dot, inactiveDot]
+                }
+              />
+            </View>
           </TouchableWithoutFeedback>
         ))}
       </View>
