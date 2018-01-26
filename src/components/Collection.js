@@ -69,6 +69,7 @@ class Collection extends React.Component<Props> {
       onRefresh,
       refreshing,
       stickySectionHeadersEnabled,
+      onEndReachedThreshold,
     } = this.props;
     const dataList = this.genListSection(data);
     return (
@@ -80,6 +81,7 @@ class Collection extends React.Component<Props> {
         automaticallyAdjustContentInsets={false}
         renderSectionFooter={renderSectionFooter}
         onEndReached={onEndReached}
+        onEndReachedThreshold={onEndReachedThreshold}
         onRefresh={onRefresh}
         refreshing={refreshing}
         stickySectionHeadersEnabled={stickySectionHeadersEnabled}
