@@ -8,6 +8,7 @@ export { default as DarkTheme } from './styles/DarkTheme';
 export { default as Avatar } from './components/Avatar';
 export { default as Button } from './components/Button';
 export { default as CheckboxRow } from './components/CheckboxRow';
+export { default as GroupedList } from './components/GroupedList';
 export { default as Icon } from './components/Icon';
 export { default as InfoRow } from './components/InfoRow';
 export { default as NavigationRow } from './components/NavigationRow';

@@ -19,6 +19,7 @@ import TableView from './scenes/TableView';
 import Slider from './scenes/Slider';
 import TextField from './scenes/TextField';
 import Icons from './scenes/Icons';
+import GroupedList from './scenes/GroupedList';
 
 type Route = {
   component: any,
@@ -34,6 +35,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
+  },
+  {
+    component: GroupedList,
+    title: 'GroupedList',
   },
   {
     component: Icons,
