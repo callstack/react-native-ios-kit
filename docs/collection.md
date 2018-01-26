@@ -20,6 +20,10 @@ Example usage:
 />
 ```
 
+## Theme
+Uses following `theme` properties:
+- `footnoteColor` - tintColor of RefreshControl component.
+
 ## Props
 
 ### `contentContainerStyle` (optional)

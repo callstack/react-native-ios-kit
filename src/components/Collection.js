@@ -1,6 +1,12 @@
 /* @flow */
 import * as React from 'react';
-import { Dimensions, SectionList, StyleSheet, FlatList } from 'react-native';
+import {
+  Dimensions,
+  SectionList,
+  StyleSheet,
+  FlatList,
+  RefreshControl, //TODO: Use our custom one here!!!
+} from 'react-native';
 
 import withTheme from '../core/withTheme';
 import type { Theme } from '../types/Theme';
@@ -19,7 +25,7 @@ type Props = {
   onEndReached: (info: { distanceFromEnd: number }) => void,
   onEndReachedThreshold?: number,
   onRefresh?: () => void,
-  refreshing?: boolean,
+  refreshing: boolean,
   stickySectionHeadersEnabled?: boolean,
   listStyle: StyleObj,
   contentContainerStyle: StyleObj,
@@ -29,6 +35,7 @@ class Collection extends React.Component<Props> {
   static defaultProps = {
     keyExtractor: (item, index) => `${item.key}` || `${index}`,
     numberOfColumns: 4,
+    refreshing: false,
   };
   constructor(props) {
     super(props);
@@ -38,7 +45,6 @@ class Collection extends React.Component<Props> {
   styles: StyleObj;
 
   renderCell = ({ item }) => {
-    // const styles = this.getStyles();
     const child = this.props.renderItem(item);
     return React.cloneElement(child, {
       //$FlowFixMe
@@ -47,7 +53,6 @@ class Collection extends React.Component<Props> {
   };
 
   renderRow = ({ item }) => {
-    // const styles = this.getStyles();
     return (
       <FlatList
         //$FlowFixMe
@@ -74,6 +79,7 @@ class Collection extends React.Component<Props> {
       onEndReachedThreshold,
       listStyle,
       contentContainerStyle,
+      theme,
     } = this.props;
     const dataList = this.genListSection(data);
     return (
@@ -86,12 +92,19 @@ class Collection extends React.Component<Props> {
         renderSectionFooter={renderSectionFooter}
         onEndReached={onEndReached}
         onEndReachedThreshold={onEndReachedThreshold}
-        onRefresh={onRefresh}
-        refreshing={refreshing}
         stickySectionHeadersEnabled={stickySectionHeadersEnabled}
         listStyle={listStyle}
         contentContainerStyle={contentContainerStyle}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          onRefresh ? (
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              tintColor={theme.footnoteColor}
+            />
+          ) : null
+        }
       />
     );
   }
