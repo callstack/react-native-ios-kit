@@ -8,56 +8,46 @@ import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes
 
 const { width } = Dimensions.get('window');
 
-type Item = *;
-
 type Props = {
   theme: Theme,
-  numberOfColumns: number,
+  numberOfColumns?: number,
   data: Array<*>,
-  renderItem: Item => React.Element<*>,
+  renderItem: (item: *) => React.Element<*>,
   renderSectionHeader?: (info: { section: * }) => React.Element<*>,
   renderSectionFooter?: (info: { section: * }) => React.Element<*>,
-  children: React.Node,
-  keyExtractor: (item: *, index: number) => string,
+  keyExtractor?: (item: *, index: number) => string,
   onEndReached: (info: { distanceFromEnd: number }) => void,
-  onEndReachedThreshold: number,
-  onRefresh: () => void,
-  refreshing: boolean,
+  onEndReachedThreshold?: number,
+  onRefresh?: () => void,
+  refreshing?: boolean,
   stickySectionHeadersEnabled?: boolean,
 };
 
 class Collection extends React.Component<Props> {
   static defaultProps = {
     keyExtractor: (item, index) => `${item.key}` || `${index}`,
+    numberOfColumns: 4,
   };
+  constructor(props) {
+    super(props);
+    this.styles = getStyles(props);
+  }
 
-  getStyles = (): StyleObj => {
-    const { numberOfColumns = 4 } = this.props;
-    return StyleSheet.create({
-      wrapper: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-      },
-      item: {
-        height: width / numberOfColumns,
-        width: width / numberOfColumns,
-      },
-    });
-  };
+  styles: StyleObj;
 
   renderCell = ({ item }) => {
-    const styles = this.getStyles();
+    // const styles = this.getStyles();
     const child = this.props.renderItem(item);
     return React.cloneElement(child, {
-      style: StyleSheet.flatten([child.props.style, styles.item]),
+      style: StyleSheet.flatten([child.props.style, this.styles.item]),
     });
   };
 
   renderRow = ({ item }) => {
-    const styles = this.getStyles();
+    // const styles = this.getStyles();
     return (
       <FlatList
-        style={styles.wrapper}
+        style={this.styles.wrapper}
         numColumns={this.props.numberOfColumns}
         renderItem={this.renderCell}
         data={item}
@@ -97,3 +87,17 @@ class Collection extends React.Component<Props> {
 }
 
 export default withTheme(Collection);
+
+const getStyles = (props: Props): StyleObj => {
+  const { numberOfColumns = 4 } = props;
+  return StyleSheet.create({
+    wrapper: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    },
+    item: {
+      height: width / numberOfColumns,
+      width: width / numberOfColumns,
+    },
+  });
+};
