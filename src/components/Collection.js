@@ -20,6 +20,7 @@ type Props = {
   children: React.Node,
   keyExtractor: (item: *, index: number) => string,
   onEndReached: (info: { distanceFromEnd: number }) => void,
+  onEndReachedThreshold: number,
   onRefresh: () => void,
   refreshing: boolean,
   stickySectionHeadersEnabled?: boolean,
