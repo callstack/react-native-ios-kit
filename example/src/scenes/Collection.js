@@ -6,10 +6,6 @@ import { Collection, withTheme, Title1 } from 'react-native-ios-kit';
 import withSafeArea from '../withSafeArea';
 import type { Theme } from 'react-native-ios-kit/types';
 
-type Props = {
-  theme: Theme,
-};
-
 const imagesPrefix = 'https://picsum.photos/';
 const months = [
   'January',
@@ -33,15 +29,33 @@ const data = months.map(month => ({
   title: month,
 }));
 
-class CollectionExample extends React.Component<Props> {
+type Props = {
+  theme: Theme,
+};
+
+type State = {
+  refreshing: boolean,
+};
+class CollectionExample extends React.Component<Props, State> {
+  state = {
+    refreshing: false,
+  };
+  refresh = () => {
+    this.setState({ refreshing: true }, () => {
+      setTimeout(() => this.setState({ refreshing: false }), 1000);
+    });
+  };
+
   render() {
     return (
       <Collection
         numberOfColumns={4}
         data={data}
-        renderItem={uri => <Image source={{ uri }} style={{}} />}
+        renderItem={item => <Image source={{ uri: item }} />}
         renderSectionHeader={({ section }) => <Title1>{section.title}</Title1>}
         keyExtractor={(item, index) => `${item}_${index}`}
+        refreshing={this.state.refreshing}
+        onRefresh={this.refresh}
       />
     );
   }
