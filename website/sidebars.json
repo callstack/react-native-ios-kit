@@ -4,6 +4,7 @@
     "API": [
       "avatar",
       "button",
+      "collection",
       "checkbox-row",
       "icon",
       "info-row",
