@@ -22,6 +22,10 @@ Example usage:
 
 ## Props
 
+### `contentContainerStyle` (optional)
+**type:** `StyleObj`
+
+Styles to be applied  to the section list view content container.
 ### `data`  
 **type:** `Array`
 
@@ -32,6 +36,11 @@ An array of items to be rendered.
 **default value:** ```(item, index) => `${item.key}` || `${index}` ```
 
 Function used to extract a unique key for eache item rendered.
+
+### `listStyle` (optional)  
+**type:** `StyleObj`  
+
+Styles of underlying SectionList container
 
 ### `numberOfColumns` (optional)  
 **type:** `number`  

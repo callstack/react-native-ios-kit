@@ -21,6 +21,8 @@ type Props = {
   onRefresh?: () => void,
   refreshing?: boolean,
   stickySectionHeadersEnabled?: boolean,
+  listStyle: StyleObj,
+  contentContainerStyle: StyleObj,
 };
 
 class Collection extends React.Component<Props> {
@@ -70,6 +72,8 @@ class Collection extends React.Component<Props> {
       refreshing,
       stickySectionHeadersEnabled,
       onEndReachedThreshold,
+      listStyle,
+      contentContainerStyle,
     } = this.props;
     const dataList = this.genListSection(data);
     return (
@@ -85,6 +89,8 @@ class Collection extends React.Component<Props> {
         onRefresh={onRefresh}
         refreshing={refreshing}
         stickySectionHeadersEnabled={stickySectionHeadersEnabled}
+        listStyle={listStyle}
+        contentContainerStyle={contentContainerStyle}
       />
     );
   }
