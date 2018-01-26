@@ -39,6 +39,7 @@ class Collection extends React.Component<Props> {
     // const styles = this.getStyles();
     const child = this.props.renderItem(item);
     return React.cloneElement(child, {
+      //$FlowFixMe
       style: StyleSheet.flatten([child.props.style, this.styles.item]),
     });
   };
@@ -47,6 +48,7 @@ class Collection extends React.Component<Props> {
     // const styles = this.getStyles();
     return (
       <FlatList
+        //$FlowFixMe
         style={this.styles.wrapper}
         numColumns={this.props.numberOfColumns}
         renderItem={this.renderCell}
