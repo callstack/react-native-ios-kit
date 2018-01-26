@@ -91,6 +91,7 @@ class Collection extends React.Component<Props> {
         stickySectionHeadersEnabled={stickySectionHeadersEnabled}
         listStyle={listStyle}
         contentContainerStyle={contentContainerStyle}
+        showsVerticalScrollIndicator={false}
       />
     );
   }
