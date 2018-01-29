@@ -1,12 +1,12 @@
 ---
-id: groupped-list
-title: GrouppedList
+id: grouped-list
+title: GroupedList
 ---
 
-Simple GrouppedList component with customizable section list on the right.
+Simple GroupedList component with customizable section list on the right.
 It simulates iOS contact list.
 
-![GrouppedList component](assets/groupped-list.png)
+![GroupedList component](assets/grouped-list.png)
 
 Example usage: 
 ```jsx
