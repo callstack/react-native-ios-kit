@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   StyleSheet,
   View,
@@ -29,7 +29,7 @@ type State = {
   sections: Array<?string>,
 };
 
-class Sections extends Component<Props, State> {
+class Sections extends PureComponent<Props, State> {
   state = {
     sections: [],
   };
@@ -49,6 +49,7 @@ class Sections extends Component<Props, State> {
   _sectionsY: ?number;
   _panResponder: Object;
   _sections: ?any;
+  currentSectionIdx: ?number;
 
   _handleContainerLayout = ({ nativeEvent: { layout: { height } } }) => {
     this.setState({ sections: this._prepareSections(height) });
@@ -69,12 +70,17 @@ class Sections extends Component<Props, State> {
       return;
     }
 
-    const letterIdx =
-      (pageY - this._sectionsY) *
-      this.props.items.length /
-      this._sectionsHeight;
-    if (letterIdx > 0 && letterIdx < this.props.items.length) {
-      this.props.onSectionSelct(Math.floor(letterIdx));
+    const sectionIdx = Math.floor(
+      (pageY - this._sectionsY) * this.props.items.length / this._sectionsHeight
+    );
+    if (
+      sectionIdx > 0 &&
+      sectionIdx < this.props.items.length &&
+      this.currentSectionIdx !== sectionIdx
+    ) {
+      console.log('!!!!!!@@@@@@###### section changed');
+      this.currentSectionIdx = sectionIdx;
+      this.props.onSectionSelct(sectionIdx);
     }
   };
 
@@ -148,6 +154,7 @@ class Sections extends Component<Props, State> {
         onLayout={this._handleContainerLayout}
       >
         <View
+          style={styles.sections}
           {...this._panResponder.panHandlers}
           onLayout={this._handleLayout}
           ref={view => (this._sections = view)}
@@ -167,6 +174,9 @@ const styles = StyleSheet.create({
     maxWidth: 20,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  sections: {
+    width: 45,
   },
   section: {
     fontSize: 14,

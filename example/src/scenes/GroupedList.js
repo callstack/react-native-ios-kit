@@ -26,7 +26,7 @@ type State = {
 class AvatarExample extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    const mockedData = [...new Array(300)].map((val, idx) => {
+    const mockedData = [...new Array(200)].map((val, idx) => {
       const group = `${idx % 40}`;
       const name = `${group} name`;
       return { key: idx, name, group };
