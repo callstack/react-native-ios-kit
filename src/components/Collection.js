@@ -42,12 +42,11 @@ class Collection extends React.Component<Props> {
     this.styles = getStyles(props);
   }
 
-  styles: StyleObj;
+  styles: Object;
 
   renderCell = ({ item }) => {
     const child = this.props.renderItem(item);
     return React.cloneElement(child, {
-      //$FlowFixMe
       style: StyleSheet.flatten([child.props.style, this.styles.item]),
     });
   };
@@ -55,7 +54,6 @@ class Collection extends React.Component<Props> {
   renderRow = ({ item }) => {
     return (
       <FlatList
-        //$FlowFixMe
         style={this.styles.wrapper}
         numColumns={this.props.numberOfColumns}
         renderItem={this.renderCell}
@@ -112,7 +110,7 @@ class Collection extends React.Component<Props> {
 
 export default withTheme(Collection);
 
-const getStyles = (props: Props): StyleObj => {
+const getStyles = (props: Props): Object => {
   const { numberOfColumns = 4 } = props;
   return StyleSheet.create({
     wrapper: {
