@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { withTheme, Spinner, ProgressView, Title1 } from 'react-native-ios-kit';
+import { withTheme, Spinner, ProgressBar, Title1 } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 import withSafeArea from '../withSafeArea';
 
@@ -52,8 +52,8 @@ class Spinners extends Component<Props, State> {
           </View>
         </View>
         <View style={styles.container}>
-          <Title1 style={{ marginBottom: 25 }}>ProgressView</Title1>
-          <ProgressView progress={this.state.progress} />
+          <Title1 style={{ marginBottom: 25 }}>ProgressBar</Title1>
+          <ProgressBar progress={this.state.progress} />
         </View>
       </View>
     );

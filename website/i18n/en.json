@@ -15,7 +15,7 @@
     "navigation-row": "NavigationRow",
     "page-control-view": "PageControlView",
     "page-control": "PageControl",
-    "progress-view": "ProgressView",
+    "progress-bar": "ProgressBar",
     "row-item": "RowItem",
     "search-bar": "SearchBar",
     "segmented-control": "SegmentedControl",

@@ -10,7 +10,7 @@ type Props = {
   progress: number,
 };
 
-class ProgressView extends Component<Props> {
+class ProgressBar extends Component<Props> {
   render() {
     const { progress, theme: { primaryColor } } = this.props;
     return (
@@ -19,4 +19,4 @@ class ProgressView extends Component<Props> {
   }
 }
 
-export default withTheme(ProgressView);
+export default withTheme(ProgressBar);

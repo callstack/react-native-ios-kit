@@ -1,15 +1,15 @@
 ---
-id: progress-view
-title: ProgressView
+id: progress-bar
+title: ProgressBar
 ---
 
 Displays horizontal progress bar.
 
-![ProgressView component](assets/progress-view.gif)
+![ProgressBar component](assets/progress-bar.gif)
 
 Example usage: 
 ```jsx
-<ProgressView progress={this.state.progress} />
+<ProgressBar progress={this.state.progress} />
 ```
 
 ## Theme  
