@@ -11,6 +11,7 @@ import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
 import PageControl from './scenes/PageControl';
+import PageControlView from './scenes/PageControlView';
 import Stepper from './scenes/Stepper';
 import SearchBar from './scenes/SearchBar';
 import Switch from './scenes/Switch';
@@ -20,6 +21,7 @@ import Slider from './scenes/Slider';
 import TextField from './scenes/TextField';
 import Icons from './scenes/Icons';
 import GroupedList from './scenes/GroupedList';
+import Collection from './scenes/Collection';
 
 type Route = {
   component: any,
@@ -41,12 +43,20 @@ const dataSource = ds.cloneWithRows([
     title: 'GroupedList',
   },
   {
+    component: Collection,
+    title: 'Collection',
+  },
+  {
     component: Icons,
     title: 'Icons',
   },
   {
     component: PageControl,
     title: 'PageControl',
+  },
+  {
+    component: PageControlView,
+    title: 'PageControlView',
   },
   {
     component: SearchBar,
