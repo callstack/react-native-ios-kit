@@ -23,7 +23,6 @@ type Props = {
   renderSectionFooter?: (data: {
     section: { title: string },
   }) => ?React.Element<*>,
-  renderFooter?: () => ?React.Element<*>,
   ItemSeparatorComponent?: React.ComponentType<*>,
   SectionSeparatorComponent: *,
   sections?: Array<string>,
@@ -109,7 +108,6 @@ class GroupedList extends React.PureComponent<Props, State> {
       SectionSeparatorComponent,
       items,
       renderItem,
-      renderFooter,
       renderSectionFooter,
       stickySectionHeadersEnabled,
     } = this.props;
@@ -131,7 +129,6 @@ class GroupedList extends React.PureComponent<Props, State> {
           getItemLayout={getItemLayout}
           stickySectionHeadersEnabled={stickySectionHeadersEnabled}
         />
-        {renderFooter && renderFooter()}
         <Sections
           onSectionSelct={this.handleSectionPress}
           items={sections || alphabet}

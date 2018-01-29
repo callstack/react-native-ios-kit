@@ -49,11 +49,6 @@ Data to be displayed in list.
 
 Rendered in between each item, but not at the top or bottom.
 
-### `renderFooter` (optional)
-**type:** `() => React.Element<*>`
-
-Rendered at the bottom of list.
-
 ### `renderItem`
 **type:** `(data: { item: *, index: number }) => ?React.Element<*>`
 
