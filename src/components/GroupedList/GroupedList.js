@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 
 import Sections from './Sections';
@@ -15,9 +15,11 @@ type Props = {
   theme: Theme,
   items: Array<any>,
   groupBy: Function,
-  renderItem: any, // FIXME: add better type
+  renderItem: (item: *) => React.Element<*>,
   renderSectionHeader?: Function,
   renderFooter?: Function,
+  ItemSeparatorComponent: *,
+  SectionSeparatorComponent: *,
   sections?: Array<string>,
   sectionsStyle?: any,
   sectionPrimaryColor?: string,
@@ -28,19 +30,15 @@ type State = {
   dataSource?: Object,
 };
 
-// const ItemSeparatorComponent = () => (
-//   <View style={this._styles.separator} />
-// );
-
-class GroupedList extends Component<Props, State> {
+class GroupedList extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this._styles = getStyles(this.props.theme);
+    this.styles = getStyles(this.props.theme);
   }
 
-  _styles: Object;
-  _sectionList = undefined;
+  styles: Object;
+  sectionList = undefined;
 
   groupItems(items: Array<Object>) {
     const groupped = items.reduce((acc, item) => {
@@ -70,8 +68,8 @@ class GroupedList extends Component<Props, State> {
       { delta: sections.length, index: 0 }
     );
 
-    if (this._sectionList) {
-      this._sectionList.scrollToLocation({
+    if (this.sectionList) {
+      this.sectionList.scrollToLocation({
         sectionIndex: index,
         itemIndex: 0,
         animated: false,
@@ -79,21 +77,17 @@ class GroupedList extends Component<Props, State> {
     }
   };
 
-  renderSectionHeader = data => {
+  renderSectionHeader = (data: { section: { title: string } }) => {
     if (this.props.renderSectionHeader) {
       return this.props.renderSectionHeader(data);
     }
 
     return (
-      <View style={this._styles.header}>
+      <View style={this.styles.header}>
         <Headline>{data.section.title}</Headline>
       </View>
     );
   };
-
-  // renderSeparator = (sectionId, rowId) => (
-  //   <View style={this._styles.separator} key={`${sectionId}-${rowId}`} />
-  // );
 
   render() {
     const {
@@ -101,18 +95,26 @@ class GroupedList extends Component<Props, State> {
       sectionsStyle,
       sectionPrimaryColor,
       getItemLayout,
+      ItemSeparatorComponent,
+      SectionSeparatorComponent,
+      items,
+      renderItem,
+      renderFooter,
     } = this.props;
+
+    const Separator = () => <View style={this.styles.separator} />;
+
     return (
-      <View style={this._styles.container}>
+      <View style={this.styles.container}>
         <SectionList
           initialNumToRender={getItemLayout ? 30 : Number.MAX_SAFE_INTEGER}
-          ref={sectionList => (this._sectionList = sectionList)}
-          renderItem={this.props.renderItem}
-          renderFooter={this.props.renderFooter}
+          ref={sectionList => (this.sectionList = sectionList)}
+          renderItem={renderItem}
+          renderFooter={renderFooter}
           renderSectionHeader={this.renderSectionHeader}
-          // renderSeparator={this.renderSeparator}
-          // ItemSeparatorComponent={ItemSeparatorComponent}
-          sections={this.groupItems(this.props.items)}
+          ItemSeparatorComponent={ItemSeparatorComponent || Separator}
+          SectionSeparatorComponent={SectionSeparatorComponent}
+          sections={this.groupItems(items)}
           stickySectionHeadersEnabled
           automaticallyAdjustContentInsets={false}
           getItemLayout={getItemLayout}
@@ -145,8 +147,6 @@ const getStyles = theme =>
       backgroundColor: theme.barColor,
       height: 1,
       marginLeft: 15,
-      flex: 1,
-      width: 200,
     },
   });
 

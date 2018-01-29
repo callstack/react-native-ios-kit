@@ -53,8 +53,6 @@ class AvatarExample extends React.Component<Props, State> {
     </View>
   );
 
-  // renderSectionHeader = (section) => <Title2>{section}</Title2>;
-
   render() {
     return (
       <View>
@@ -62,10 +60,7 @@ class AvatarExample extends React.Component<Props, State> {
           items={this.state.data}
           sections={this.state.sections}
           renderItem={this.renderItem}
-          // renderSectionHeader={this.renderSectionHeader}
           groupBy={this.groupBy}
-          // sectionsStyle={styles.sections}
-          // sectionPrimaryColor="white"
         />
       </View>
     );
