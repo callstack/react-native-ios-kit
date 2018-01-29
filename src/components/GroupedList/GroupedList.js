@@ -7,6 +7,7 @@ import Sections from './Sections';
 import withTheme from '../../core/withTheme';
 import { Headline } from '../Typography';
 
+import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import type { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
@@ -14,16 +15,25 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
 type Props = {
   theme: Theme,
   items: Array<any>,
-  groupBy: Function,
-  renderItem: (item: *) => React.Element<*>,
-  renderSectionHeader?: Function,
-  renderFooter?: Function,
-  ItemSeparatorComponent: *,
+  groupBy: (item: any) => string,
+  renderItem: (data: { item: *, index: number }) => ?React.Element<*>,
+  renderSectionHeader?: (data: {
+    section: { title: string },
+  }) => ?React.Element<*>,
+  renderSectionFooter?: (data: {
+    section: { title: string },
+  }) => ?React.Element<*>,
+  renderFooter?: () => ?React.Element<*>,
+  ItemSeparatorComponent?: React.ComponentType<*>,
   SectionSeparatorComponent: *,
   sections?: Array<string>,
-  sectionsStyle?: any,
+  sectionsStyle?: StyleObj,
   sectionPrimaryColor?: string,
-  getItemLayout?: Function,
+  getItemLayout?: (
+    data: any,
+    index: number
+  ) => { length: number, offset: number, index: number },
+  stickySectionHeadersEnabled?: boolean,
 };
 
 type State = {
@@ -100,6 +110,8 @@ class GroupedList extends React.PureComponent<Props, State> {
       items,
       renderItem,
       renderFooter,
+      renderSectionFooter,
+      stickySectionHeadersEnabled,
     } = this.props;
 
     const Separator = () => <View style={this.styles.separator} />;
@@ -110,15 +122,16 @@ class GroupedList extends React.PureComponent<Props, State> {
           initialNumToRender={getItemLayout ? 30 : Number.MAX_SAFE_INTEGER}
           ref={sectionList => (this.sectionList = sectionList)}
           renderItem={renderItem}
-          renderFooter={renderFooter}
+          renderSectionFooter={renderSectionFooter}
           renderSectionHeader={this.renderSectionHeader}
           ItemSeparatorComponent={ItemSeparatorComponent || Separator}
           SectionSeparatorComponent={SectionSeparatorComponent}
           sections={this.groupItems(items)}
-          stickySectionHeadersEnabled
           automaticallyAdjustContentInsets={false}
           getItemLayout={getItemLayout}
+          stickySectionHeadersEnabled={stickySectionHeadersEnabled}
         />
+        {renderFooter && renderFooter()}
         <Sections
           onSectionSelct={this.handleSectionPress}
           items={sections || alphabet}
