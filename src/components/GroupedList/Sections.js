@@ -13,6 +13,7 @@ import withTheme from '../../core/withTheme';
 
 import type { Theme } from '../../types/Theme';
 
+// eslint-disable-next-line
 const UIManager = require('NativeModules').UIManager;
 
 const SECTION_HEIGHT = 18;
@@ -35,56 +36,55 @@ class Sections extends PureComponent<Props, State> {
   };
 
   componentWillMount() {
-    this._panResponder = PanResponder.create({
+    this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderMove: this._handleMove,
-      onPanResponderGrant: this._handleMove,
+      onPanResponderMove: this.handleMove,
+      onPanResponderGrant: this.handleMove,
     });
   }
 
-  _sectionsHeight: ?number;
-  _sectionsY: ?number;
-  _panResponder: Object;
-  _sections: ?any;
+  sectionsHeight: ?number;
+  sectionsY: ?number;
+  panResponder: Object;
+  sections: ?any;
   currentSectionIdx: ?number;
 
-  _handleContainerLayout = ({ nativeEvent: { layout: { height } } }) => {
-    this.setState({ sections: this._prepareSections(height) });
+  handleContainerLayout = ({ nativeEvent: { layout: { height } } }) => {
+    this.setState({ sections: this.prepareSections(height) });
   };
 
-  _handleLayout = () => {
+  handleLayout = () => {
     UIManager.measure(
-      findNodeHandle(this._sections),
+      findNodeHandle(this.sections),
       (x, y, width, height, pageX, pageY) => {
-        this._sectionsHeight = height;
-        this._sectionsY = pageY;
+        this.sectionsHeight = height;
+        this.sectionsY = pageY;
       }
     );
   };
 
-  _handleMove = ({ nativeEvent: { pageY } }) => {
-    if (!this._sectionsHeight || !this._sectionsY) {
+  handleMove = ({ nativeEvent: { pageY } }) => {
+    if (!this.sectionsHeight || !this.sectionsY) {
       return;
     }
 
     const sectionIdx = Math.floor(
-      (pageY - this._sectionsY) * this.props.items.length / this._sectionsHeight
+      (pageY - this.sectionsY) * this.props.items.length / this.sectionsHeight
     );
     if (
       sectionIdx > 0 &&
       sectionIdx < this.props.items.length &&
       this.currentSectionIdx !== sectionIdx
     ) {
-      console.log('!!!!!!@@@@@@###### section changed');
       this.currentSectionIdx = sectionIdx;
       this.props.onSectionSelct(sectionIdx);
     }
   };
 
-  _prepareSections(parentHeight: number): Array<?string> {
+  prepareSections(parentHeight: number): Array<?string> {
     const { items } = this.props;
 
     let slots = (parentHeight - 50) / SECTION_HEIGHT;
@@ -113,7 +113,7 @@ class Sections extends PureComponent<Props, State> {
     return visibleSections;
   }
 
-  _renderSection = (item, index) => {
+  renderSection = (item, index) => {
     const { sectionPrimaryColor, theme } = this.props;
     if (item) {
       return (
@@ -151,15 +151,15 @@ class Sections extends PureComponent<Props, State> {
           styles.container,
           style && style,
         ]}
-        onLayout={this._handleContainerLayout}
+        onLayout={this.handleContainerLayout}
       >
         <View
           style={styles.sections}
-          {...this._panResponder.panHandlers}
-          onLayout={this._handleLayout}
-          ref={view => (this._sections = view)}
+          {...this.panResponder.panHandlers}
+          onLayout={this.handleLayout}
+          ref={view => (this.sections = view)}
         >
-          {sections.map(this._renderSection)}
+          {sections.map(this.renderSection)}
         </View>
       </View>
     );
