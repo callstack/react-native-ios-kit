@@ -22,6 +22,8 @@ Example usage:
 />
 ```
 
+>**Note:** To make it possible to scroll to every section this component will render all data at the beggining. To change that use `getItemLayout` prop!
+
 ## Theme
 Uses following `theme` properties:
 - `barColor` - separator color, default section header background color, sections background color
@@ -37,7 +39,7 @@ Uses following `theme` properties:
 ### `groupBy`
 **type:** `(item: any) => string`
 
-Using this function you can specify how to group yur data.
+Using this function you can specify how to group your data.
 
 ### `items`
 **type:** `Array<any>`
