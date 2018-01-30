@@ -13,7 +13,7 @@ type Props = {
 };
 
 type Item = {
-  id: number,
+  key: number,
   name: string,
   group: string,
 };

@@ -18,10 +18,10 @@ type Props = {
   groupBy: (item: any) => string,
   renderItem: (data: { item: *, index: number }) => ?React.Element<*>,
   renderSectionHeader?: (data: {
-    section: { title: string },
+    section: any,
   }) => ?React.Element<*>,
   renderSectionFooter?: (data: {
-    section: { title: string },
+    section: any,
   }) => ?React.Element<*>,
   ItemSeparatorComponent?: React.ComponentType<*>,
   SectionSeparatorComponent: *,
@@ -47,9 +47,9 @@ class GroupedList extends React.PureComponent<Props, State> {
   }
 
   styles: Object;
-  sectionList = undefined;
+  sectionList: ?Object = undefined;
 
-  groupItems(items: Array<Object>) {
+  groupItems(items: Array<Object>): any {
     const groupped = items.reduce((acc, item) => {
       const groupId = this.props.groupBy(item);
       if (Object.prototype.hasOwnProperty.call(acc, groupId)) {
@@ -86,14 +86,18 @@ class GroupedList extends React.PureComponent<Props, State> {
     }
   };
 
-  renderSectionHeader = (data: { section: { title: string } }) => {
+  renderSectionHeader = (data: { section: any }) => {
     if (this.props.renderSectionHeader) {
       return this.props.renderSectionHeader(data);
     }
 
     return (
       <View style={this.styles.header}>
-        <Headline>{data.section.title}</Headline>
+        <Headline>
+          {data.section &&
+            typeof data.section === 'object' &&
+            data.section.title}
+        </Headline>
       </View>
     );
   };
