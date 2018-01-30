@@ -71,11 +71,11 @@ class Sections extends PureComponent<Props, State> {
       return;
     }
 
-    const sectionIdx = Math.floor(
+    const sectionIdx = Math.round(
       (pageY - this.sectionsY) * this.props.items.length / this.sectionsHeight
     );
     if (
-      sectionIdx > 0 &&
+      sectionIdx >= 0 &&
       sectionIdx < this.props.items.length &&
       this.currentSectionIdx !== sectionIdx
     ) {
