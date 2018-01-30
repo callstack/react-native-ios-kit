@@ -20,7 +20,7 @@ const SECTION_HEIGHT = 18;
 
 type Props = {
   theme: Theme,
-  onSectionSelct: Function,
+  onSectionPress: Function,
   items: Array<string>,
   sectionPrimaryColor: ?string,
   style: ?any,
@@ -80,7 +80,7 @@ class Sections extends PureComponent<Props, State> {
       this.currentSectionIdx !== sectionIdx
     ) {
       this.currentSectionIdx = sectionIdx;
-      this.props.onSectionSelct(sectionIdx);
+      this.props.onSectionPress(sectionIdx);
     }
   };
 

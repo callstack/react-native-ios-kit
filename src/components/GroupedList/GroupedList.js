@@ -48,6 +48,7 @@ class GroupedList extends React.PureComponent<Props, State> {
 
   styles: Object;
   sectionList: ?Object = undefined;
+  sectionHeadersHeights: { [key: string]: number } = {};
 
   groupItems(items: Array<Object>): any {
     const groupped = items.reduce((acc, item) => {
@@ -79,6 +80,9 @@ class GroupedList extends React.PureComponent<Props, State> {
 
     if (this.sectionList) {
       this.sectionList.scrollToLocation({
+        viewOffset: this.props.stickySectionHeadersEnabled
+          ? this.sectionHeadersHeights[sections[index]]
+          : 0,
         sectionIndex: index,
         itemIndex: 0,
         animated: false,
@@ -88,11 +92,24 @@ class GroupedList extends React.PureComponent<Props, State> {
 
   renderSectionHeader = (data: { section: any }) => {
     if (this.props.renderSectionHeader) {
-      return this.props.renderSectionHeader(data);
+      return (
+        <View
+          onLayout={({ nativeEvent: { layout: { height } } }) =>
+            this.handleSectionHeaderLayout(height, data)
+          }
+        >
+          {this.props.renderSectionHeader(data)}
+        </View>
+      );
     }
 
     return (
-      <View style={this.styles.header}>
+      <View
+        style={this.styles.header}
+        onLayout={({ nativeEvent: { layout: { height } } }) =>
+          this.handleSectionHeaderLayout(height, data)
+        }
+      >
         <Headline>
           {data.section &&
             typeof data.section === 'object' &&
@@ -100,6 +117,10 @@ class GroupedList extends React.PureComponent<Props, State> {
         </Headline>
       </View>
     );
+  };
+
+  handleSectionHeaderLayout = (height: number, data: Object) => {
+    this.sectionHeadersHeights[data.section.title] = height;
   };
 
   render() {
@@ -134,7 +155,7 @@ class GroupedList extends React.PureComponent<Props, State> {
           stickySectionHeadersEnabled={stickySectionHeadersEnabled}
         />
         <Sections
-          onSectionSelct={this.handleSectionPress}
+          onSectionPress={this.handleSectionPress}
           items={sections || alphabet}
           style={sectionsStyle}
           sectionPrimaryColor={sectionPrimaryColor}
