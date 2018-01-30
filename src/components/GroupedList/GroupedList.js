@@ -80,9 +80,10 @@ class GroupedList extends React.PureComponent<Props, State> {
 
     if (this.sectionList) {
       this.sectionList.scrollToLocation({
-        viewOffset: this.props.stickySectionHeadersEnabled
-          ? this.sectionHeadersHeights[sections[index]]
-          : 0,
+        viewOffset:
+          this.props.stickySectionHeadersEnabled !== false
+            ? this.sectionHeadersHeights[sections[index]]
+            : 0,
         sectionIndex: index,
         itemIndex: 0,
         animated: false,
