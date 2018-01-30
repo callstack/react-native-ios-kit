@@ -20,6 +20,7 @@ import TableView from './scenes/TableView';
 import Slider from './scenes/Slider';
 import TextField from './scenes/TextField';
 import Icons from './scenes/Icons';
+import GroupedList from './scenes/GroupedList';
 import Collection from './scenes/Collection';
 import Spinners from './scenes/Spinners';
 
@@ -37,6 +38,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
+  },
+  {
+    component: GroupedList,
+    title: 'GroupedList',
   },
   {
     component: Collection,
