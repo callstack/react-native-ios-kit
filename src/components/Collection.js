@@ -5,7 +5,7 @@ import {
   SectionList,
   StyleSheet,
   FlatList,
-  RefreshControl, //TODO: Use our custom one here!!!
+  RefreshControl,
 } from 'react-native';
 
 import withTheme from '../core/withTheme';
