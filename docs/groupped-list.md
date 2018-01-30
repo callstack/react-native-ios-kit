@@ -22,7 +22,7 @@ Example usage:
 />
 ```
 
->**Note:** To make it possible to scroll to every section this component will render all data at the beggining. To change that use `getItemLayout` prop!
+>**Note:** To make it possible to scroll to every section this component will render all data at the beggining. It could increase initial load time. To change that use `getItemLayout` prop!
 
 ## Theme
 Uses following `theme` properties:
