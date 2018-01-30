@@ -22,6 +22,7 @@ import TextField from './scenes/TextField';
 import Icons from './scenes/Icons';
 import GroupedList from './scenes/GroupedList';
 import Collection from './scenes/Collection';
+import Spinners from './scenes/Spinners';
 
 type Route = {
   component: any,
@@ -69,6 +70,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Slider,
     title: 'Slider',
+  },
+  {
+    component: Spinners,
+    title: 'Spinners',
   },
   {
     component: Stepper,

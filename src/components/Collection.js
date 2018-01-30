@@ -5,7 +5,7 @@ import {
   SectionList,
   StyleSheet,
   FlatList,
-  RefreshControl, //TODO: Use our custom one here!!!
+  RefreshControl,
 } from 'react-native';
 
 import withTheme from '../core/withTheme';
@@ -18,9 +18,9 @@ type Props = {
   theme: Theme,
   numberOfColumns?: number,
   data: Array<*>,
-  renderItem: (item: *) => React.Element<*>,
-  renderSectionHeader?: (info: { section: * }) => React.Element<*>,
-  renderSectionFooter?: (info: { section: * }) => React.Element<*>,
+  renderItem: (item: *) => ?React.Element<*>,
+  renderSectionHeader?: (info: { section: * }) => ?React.Element<*>,
+  renderSectionFooter?: (info: { section: * }) => ?React.Element<*>,
   keyExtractor?: (item: *, index: number) => string,
   onEndReached: (info: { distanceFromEnd: number }) => void,
   onEndReachedThreshold?: number,
@@ -46,6 +46,7 @@ class Collection extends React.Component<Props> {
 
   renderCell = ({ item }) => {
     const child = this.props.renderItem(item);
+    if (!child) return null;
     return React.cloneElement(child, {
       style: StyleSheet.flatten([child.props.style, this.styles.item]),
     });
