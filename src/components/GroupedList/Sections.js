@@ -7,14 +7,12 @@ import {
   Text,
   PanResponder,
   findNodeHandle,
+  NativeModules,
 } from 'react-native';
 
 import withTheme from '../../core/withTheme';
 
 import type { Theme } from '../../types/Theme';
-
-// eslint-disable-next-line
-const UIManager = require('NativeModules').UIManager;
 
 const SECTION_HEIGHT = 18;
 
@@ -57,7 +55,7 @@ class Sections extends PureComponent<Props, State> {
   };
 
   handleLayout = () => {
-    UIManager.measure(
+    NativeModules.UIManager.measure(
       findNodeHandle(this.sections),
       (x, y, width, height, pageX, pageY) => {
         this.sectionsHeight = height;
