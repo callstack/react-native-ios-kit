@@ -39,7 +39,7 @@ Style of TextField's wrapper container
 ### `inputStyle` (optional)  
 **type:** `StyleObj`  
 
-Style od TextField's input
+Style of TextField's input
 
 ### `onValueChange`
 **type:** `(text: string) => void`  
@@ -50,12 +50,12 @@ Invoked with the new value when the value of text input changes.
 **type** `string`  
 
 Placeholder value
- 
+
 ### `theme`  
 **type:** [`Theme`](theme.html)
- 
+
 Custom theme for component. By default provided by the ThemeProvider.
-  
+
 ### `value`
 **type:** `string`
 

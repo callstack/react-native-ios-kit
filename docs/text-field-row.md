@@ -3,11 +3,11 @@ id: text-field-row
 title: TextFieldRow
 ---
 
-RowItem with TextInput on right side. Usefull for inputing small amounts of information.
+RowItem with TextInput on right side. Useful for inputing small amounts of information.
 TextInput focuses on Row press.
 
 ![TextFieldRow component](assets/text-field-row.png)
- 
+
 Example usage:
 ```jsx
 <TextFieldRow
@@ -41,7 +41,7 @@ Placeholder value.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
- 
+
 Custom theme for component. By default provided by the ThemeProvider.
 
 ### `title`

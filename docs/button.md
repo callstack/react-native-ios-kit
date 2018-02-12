@@ -16,8 +16,8 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
- - `primaryColor` - text color, border color and backgroud color if inverted
- - `disabledColor` - for disabled button text color, border color and backgroud color if inverted
+ - `primaryColor` - text color, border color and background color if inverted
+ - `disabledColor` - for disabled button text color, border color and background color if inverted
 
 ## Props
 
