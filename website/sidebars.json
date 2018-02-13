@@ -25,7 +25,8 @@
       "table-view",
       "text-field",
       "text-field-row",
+      "toolbar",
       "typography"
     ]
-  }  
+  }
 }

@@ -30,6 +30,7 @@
     "text-field-row": "TextFieldRow",
     "text-field": "TextField",
     "theme": "Theme",
+    "toolbar": "Toolbar",
     "typography": "Typography",
     "usage": "Usage",
     "Docs": "Docs",
