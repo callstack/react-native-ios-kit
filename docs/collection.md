@@ -7,7 +7,7 @@ A Collection manages an ordered set of content, such as a set of photos, and pre
 
 ![Collection component](assets/collection.gif)
 
-Example usage: 
+Example usage:
 ```jsx
 <Collection
   numberOfColumns={4}
@@ -39,7 +39,7 @@ An array of items to be rendered.
 **type:** `(item: *, index: number) => string`  
 **default value:** ```(item, index) => `${item.key}` || `${index}` ```
 
-Function used to extract a unique key for eache item rendered.
+Function used to extract a unique key for each item rendered.
 
 ### `listStyle` (optional)  
 **type:** `StyleObj`  
@@ -99,4 +99,3 @@ Makes section headers stick to the top of the screen until the next one pushes i
 **type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
-

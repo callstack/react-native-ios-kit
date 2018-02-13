@@ -8,7 +8,7 @@ It simulates iOS contact list.
 
 ![GroupedList component](assets/grouped-list.png)
 
-Example usage: 
+Example usage:
 ```jsx
 <GroupedList
   sections={['a','b','c','d','e']}
@@ -70,13 +70,13 @@ Rendered at the top of each section. These stick to the top of the ScrollView by
 **type:** `boolean`   
 **default value:** `true`
 
-Makes section headers stick to the top of the screen until the next one pushes it off. 
+Makes section headers stick to the top of the screen until the next one pushes it off.
 
 ### `sections` (optional)
 **type:** `Array<string>`   
 **default value:** `['A', 'B', 'C', 'D', 'E', ...]`
 
-Array with all sections. By default all letters of english aplphabet.
+Array with all sections. By default all letters of english alphabet.
 
 ### `sectionPrimaryColor` (optional)
 **type:** `string`   
@@ -98,4 +98,3 @@ Styles to apply on section list.
 **type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
-

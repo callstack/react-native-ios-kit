@@ -33,8 +33,8 @@ There are few ready for use row components:
 - [`RowItem`](row-item.html) - basic row item
 - [`InfoRow`](info-row.html) - row with simple text
 - [`CheckboxRow`](checkbox-row.html) - row with checkbox
-- [`NavigationRow`](navigation-row.html) - row for navigatig
-- [`SwitchRow`](switch-row.html) - row with shitch
+- [`NavigationRow`](navigation-row.html) - row for navigation
+- [`SwitchRow`](switch-row.html) - row with switch
 - [`TextFieldRow`](text-field-row.html) - row with text field
 
 
@@ -49,7 +49,7 @@ Uses following theme properties:
 ### `children`
 **type:** `React.ChildrenArray<*>`
 
-Cildren of TableView. Could be [`RowItem`](row-item.html) components.
+Children of TableView. Could be [`RowItem`](row-item.html) components.
 
 ### `footer` (optional)
 **type:** `string`
@@ -74,7 +74,7 @@ Custom styles for header.
 ### `onFooterPress` (optional)
 **type:** `() => void`
 
-Invoked on footer press. 
+Invoked on footer press.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
@@ -84,7 +84,7 @@ Custom theme for component. By default provided by the ThemeProvider.
 ### `withoutHeader` (optional)
 **type:** `boolean`
 
-Indicates whether render empty header or not. If `true` it won`t render header.
+Indicates whether render empty header or not. If `true` it won't render header.
 
 ### `withoutFooter` (optional)
 **type:** `boolean`
