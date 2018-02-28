@@ -8,7 +8,7 @@ Basic typography components.
 ![Typography components](assets/typography.png)
 
 Example usage:
-```javascript
+```jsx
 <Title1>Title 1</Title1>
 <Title2>Title2</Title2>
 <Title3>Title3</Title3>
@@ -48,6 +48,3 @@ Custom styles to apply to the typography component.
 **type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
-
-
-

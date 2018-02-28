@@ -51,7 +51,7 @@ class GroupedList extends React.PureComponent<Props, State> {
   sectionHeadersHeights: { [key: string]: number } = {};
 
   groupItems(items: Array<Object>): any {
-    const groupped = items.reduce((acc, item) => {
+    const grouped = items.reduce((acc, item) => {
       const groupId = this.props.groupBy(item);
       if (Object.prototype.hasOwnProperty.call(acc, groupId)) {
         acc[groupId].data.push(item);
@@ -61,7 +61,7 @@ class GroupedList extends React.PureComponent<Props, State> {
       return acc;
     }, {});
 
-    return Object.values(groupped);
+    return Object.values(grouped);
   }
 
   handleSectionPress = (sectionIdx: number) => {

@@ -4,9 +4,11 @@ title: SearchBar
 ---
 
 ![SearchBar component](assets/search-bar.gif)
- 
+
 Example usage:
 ```jsx
+import { SearchBar } from 'react-native-ios-kit';
+
 <SearchBar
   value={this.state.text}
   onValueChange={text => this.setState({ text })}
@@ -26,19 +28,19 @@ Uses following `theme` properties:
 
 ## Props
 
-### `animated` (optional) 
+### `animated` (optional)
 **type:** `boolean`  
 **default value:** `false`
 
 Indicates if Cancel button and TextInput should animate on focus/blur.
 
-### `animationTime` (optional) 
+### `animationTime` (optional)
 **type:** `number`  
 **default value:** `200`
 
-Animation duration in milliseconds. 
+Animation duration in milliseconds.
 
-### `cancelText` (optional) 
+### `cancelText` (optional)
 **type:** `string`  
 **default value:** `"Cancel"`
 
@@ -49,17 +51,17 @@ Text of Cancel Button.
 
 Callback invoked on text input blur
 
-### `onValueChange` 
+### `onValueChange`
 **type:** `(text: string) => void`  
 
 Invoked with the new value when the value of text input changes.
 
-### `onFocus` (optional) 
+### `onFocus` (optional)
 **type:** `() => void`  
 
 Callback invoked on text input focus
 
-### `placeholder` (optional) 
+### `placeholder` (optional)
 **type:** `string`  
 **default value:** `"Search"`
 
@@ -67,15 +69,15 @@ Placeholder of text input. Defaults to "Search".
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
- 
+
 Custom theme for component. By default provided by the ThemeProvider.
 
-### `value` 
+### `value`
 **type:** `string`  
 
 Value of text input.
 
-### `withCancel` (optional) 
+### `withCancel` (optional)
 **type:** `boolean`  
 **default value:** `false`
 

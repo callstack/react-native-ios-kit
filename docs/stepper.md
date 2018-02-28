@@ -9,6 +9,8 @@ Two-segment control used to increase or decrease an incremental value.
 
 Example usage:
 ```jsx
+import { Stepper } from 'react-native-ios-kit';
+
 <Stepper
   value={this.state.value}
   onValueChange={value => this.setState({ value })}
@@ -19,7 +21,7 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `primaryColor` - Stepper borders and Icon color 
+- `primaryColor` - Stepper borders and Icon color
 - `primaryLightColor` - pressed in background color, inactive color of Stepper button
 ## Props
 
@@ -50,9 +52,7 @@ The step, or increment, value for the stepper.
 
 Custom theme for component. By default provided by the ThemeProvider.
 
-
 ### `value`
 **type:** `number`
 
 The numeric value of the stepper.
-

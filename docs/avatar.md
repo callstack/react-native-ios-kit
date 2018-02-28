@@ -8,7 +8,9 @@ Avatar component.
 ![Avatar component](assets/avatar.png)
 
 Example usage:
-```javascript
+```jsx
+import { Avatar } from 'react-native-ios-kit';
+
 <Avatar initials="CK" size={30} />
 ```
 

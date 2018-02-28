@@ -9,6 +9,8 @@ A Collection manages an ordered set of content, such as a set of photos, and pre
 
 Example usage:
 ```jsx
+import { Collection } from 'react-native-ios-kit';
+
 <Collection
   numberOfColumns={4}
   data={data}
@@ -71,7 +73,7 @@ Function called once user pulls to refresh. Must be used in conjunction with `re
 ### `refreshing` (optional)
 **type:** `boolean`
 
-Bollean indicating if ActivityIndicator should be shown.
+Boolean indicating if ActivityIndicator should be shown.
 
 ### `renderItem`
 **type** `(item: *) => React.Element<*>`

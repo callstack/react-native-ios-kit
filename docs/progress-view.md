@@ -7,8 +7,10 @@ Displays horizontal progress bar.
 
 ![ProgressBar component](assets/progress-bar.gif)
 
-Example usage: 
+Example usage:
 ```jsx
+import { ProgressBar } from 'react-native-ios-kit';
+
 <ProgressBar progress={this.state.progress} />
 ```
 
