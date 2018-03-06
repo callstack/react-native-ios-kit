@@ -3,7 +3,7 @@ id: table-view
 title: TableView
 ---
 
-A basic TableView component that can render ios table view.
+A basic TableView component that can render iOS table view.
 It renders header, footer and children which can be [`RowItem`](row-item.html) components.  
 
 
@@ -11,6 +11,8 @@ It renders header, footer and children which can be [`RowItem`](row-item.html) c
 
 Example usage:
 ```jsx
+import { ScrollView } from 'react-native-ios-kit';
+
 <ScrollView>
   <TableView header="Header" footer="footer...">
     <RowItem

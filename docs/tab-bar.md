@@ -7,6 +7,8 @@ title: TabBar
 
 Example usage:
 ```jsx
+import { TabBar } from 'react-native-ios-kit';
+
 <TabBar
   tabs={[
     {

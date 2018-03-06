@@ -18,7 +18,7 @@ You can learn how from this *free* series [How to Contribute to an Open Source P
 1. Fork the repo and create your branch from `master` (a guide on [how to fork a repository](https://help.github.com/articles/fork-a-repo/)).
 1. We have a commit message convention:
     - `fix` - bug fixes
-    - `feature` -  new features, e.g. add GrouppedList component
+    - `feature` -  new features, e.g. add GroupedList component
     - `docs` - code/structure refactor, e.g. new structure folder for components
     - `refactor` - changes into documentation, e.g. add usage example for Button
     - `chore` - tooling changes, e.g. change circle ci config
