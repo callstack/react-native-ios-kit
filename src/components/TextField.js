@@ -72,7 +72,6 @@ export default withTheme(TextField);
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
     paddingVertical: 12,
     paddingHorizontal: 15,
     borderBottomWidth: StyleSheet.hairlineWidth,
