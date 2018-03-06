@@ -9,6 +9,8 @@ A component you can use as a children for [`TableView`](table-view.html).
 
 Example usage:
 ```jsx
+import { RowItem } from 'react-native-ios-kit';
+
 <RowItem
   icon="ios-map-outline"
   title="Navigation"

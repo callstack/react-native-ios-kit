@@ -10,6 +10,8 @@ TextInput focuses on Row press.
 
 Example usage:
 ```jsx
+import { TextFieldRow } from 'react-native-ios-kit';
+
 <TextFieldRow
   title="TextFieldRow"
   value={this.state.textFieldValue}

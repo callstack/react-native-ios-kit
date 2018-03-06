@@ -7,8 +7,10 @@ PageControlView swipeable view with PageControls at the bottom of the screen.
 
 ![PageControl component](assets/page-control-view.gif)
 
-Example usage: 
+Example usage:
 ```jsx
+import { PageControlView } from 'react-native-ios-kit';
+
 <PageControlView defaultPage={1}>
   <View style={styles.container}>
     <Title1>First page.</Title1>

@@ -7,8 +7,10 @@ Icon component.
 
 ![Icon component](assets/icon.png)
 
-Example usage: 
+Example usage:
 ```jsx
+import { Icon } from 'react-native-ios-kit';
+
 <Icon
   name={'ios-paper-outline'}
   size={30}
@@ -52,4 +54,3 @@ Custom styles to apply to the Icon.
 **type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
-

@@ -10,7 +10,7 @@ Check the [Theme Type](theme.html) to see what customization options are support
 
 Example:
 
-```javascript
+```jsx
 import * as React from 'react';
 import { AppRegistry } from 'react-native';
 import { DefaultTheme, ThemeProvider } from 'react-native-ios-kit';
@@ -38,13 +38,15 @@ function Main() {
 You can also customize theme per one component by using `theme` prop.
 
 Example:
-```
-  <Icon
-    name="ios-people"
-    theme={{
-      primaryColor: 'green'
-    }}
-  >
+```jsx
+import { Icon } from 'react-native-ios-kit';
+
+<Icon
+  name="ios-people"
+  theme={{
+    primaryColor: 'green'
+  }}
+>
 ```
 This code will change icon color to `green`
 
@@ -54,7 +56,9 @@ You can access theme in your own components using the `withTheme` HOC exported f
 Components wrapped with `withTheme` support the theme from the `ThemeProvider` as well as from the `theme` prop.
 
 Example:
-```
+```jsx
+import { Text } from 'react-native';
+
 const CustomComponent = ({ theme }) => (
   <Text style={{ color: theme.primaryColor }}>
     Morning!

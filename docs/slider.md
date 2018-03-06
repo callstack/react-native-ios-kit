@@ -7,8 +7,10 @@ Slider component.
 
 ![Slider component](assets/slider.png)
 
-Example usage: 
+Example usage:
 ```jsx
+import { Slider } from 'react-native-ios-kit';
+
 <Slider
   value={this.state.value2}
   onValueChange={value => this.setState({ value2: value })}
@@ -55,7 +57,7 @@ The color used for the track to the right of the button.
 **type:** `number`   
 **default value:** 100
 
-Maximum value of the slider. 
+Maximum value of the slider.
 
 ### `minIconColor` (optional)
 **type:** `string`
@@ -64,7 +66,7 @@ Maximum value of the slider.
 Color of the minimum track icon (on the left side).
 
 ### `minIconName` (optional)
-**type:** `string` 
+**type:** `string`
 
 Name of the minimum track icon (on the left side).
 
@@ -84,7 +86,7 @@ The color used for the track to the left of the button.
 **type:** `number`   
 **default value:** 0
 
-Minimum value of the slider. 
+Minimum value of the slider.
 
 ### `onSlidingComplete` (optional)
 **type:** `(value: number) => void`

@@ -7,8 +7,10 @@ PageControl component shows the position of the current page in a flat list of p
 
 ![PageControl component](assets/page-control.png)
 
-Example usage: 
+Example usage:
 ```jsx
+import { PageControl } from 'react-native-ios-kit';
+
 <PageControl
   currentPage={currentPage}
   numberOfPages={5}
@@ -25,7 +27,7 @@ Uses following `theme` properties:
 
 ## Props
 
-### `currentPage` 
+### `currentPage`
 **type:** `number`  
 
 Selected pages index.
@@ -60,7 +62,7 @@ Size of the controls.
 
 Custom theme for component. By default provided by the ThemeProvider.
 
-### `updateCurrentPageDisplay` 
+### `updateCurrentPageDisplay`
 **type:** `number => void`
 
 Callback function to be fired when user taps controls.

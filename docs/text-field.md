@@ -10,6 +10,8 @@ Used to request a small amount of information, such as an email address.
 
 Example usage:
 ```jsx
+import { TextField } from 'react-native-ios-kit';
+
 <TextField
   placeholder={'Phone number'}
   value={this.state.phone}
