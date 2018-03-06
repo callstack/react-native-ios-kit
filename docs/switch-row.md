@@ -6,10 +6,12 @@ title: SwitchRow
 RowItem with Switch button as RightComponent.
 
 ![SwitchRow component](assets/switch-row.png)
- 
+
 
 Example usage:
 ```jsx
+import { SwitchRow } from 'react-native-ios-kit';
+
 <SwitchRow
   title="SwitchRow"
   value={this.state.switchSelected}
@@ -19,7 +21,7 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected switch background color (`onTintColor`) 
+- `positiveColor` - selected switch background color (`onTintColor`)
 
 ## Props
 
@@ -34,7 +36,7 @@ Invoked with the new value when the value changes.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
- 
+
 Custom theme for component. By default provided by the ThemeProvider.
 
 ### `value`

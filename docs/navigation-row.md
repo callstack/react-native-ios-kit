@@ -6,9 +6,11 @@ title: NavigationRow
 RowItem with information and RightArrow Icon on right side.
 
 ![NavigationRow component](assets/navigation-row.png)
- 
+
 Example usage:
 ```jsx
+import { NavigationRow } from 'react-native-ios-kit';
+
 <NavigationRow
   title="NavigationRow"
   onPress={() => alert('NavigationRow pressed')}
@@ -38,5 +40,5 @@ Additional information to be displayed next to RightArrow Icon.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
- 
+
 Custom theme for component. By default provided by the ThemeProvider.

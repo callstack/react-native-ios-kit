@@ -10,6 +10,8 @@ It simulates iOS contact list.
 
 Example usage:
 ```jsx
+import { GroupedList } from 'react-native-ios-kit';
+
 <GroupedList
   sections={['a','b','c','d','e']}
   renderItem={({ item }) => (

@@ -3,12 +3,14 @@ id: segmented-control
 title: SegmentedControl
 ---
 
-Linear set of two or more segments, each of which functions as a mutually exclusive button. 
+Linear set of two or more segments, each of which functions as a mutually exclusive button.
 
 ![Segmented Control](assets/segmented-control.png)
 
 Example usage:
 ```jsx
+import { SegmentedControl } from 'react-native-ios-kit';
+
 <SegmentedControl
   values={['One', 'Two', 'Three']}
   selectedIndex={this.state.selectedIndex}
@@ -24,14 +26,14 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `primaryColor` - SegmentedControl's `tintColor` 
+- `primaryColor` - SegmentedControl's `tintColor`
 
 ## Props
 
 ## `onValueChange`
 **type:** `(value: string, index: number) => void`
 
-Callback that is called when the user taps a segment. 
+Callback that is called when the user taps a segment.
 Passes the segment's value and index as arguments.
 
 ### `selectedIndex`
@@ -54,4 +56,3 @@ Accent color of SegmentedControl.
 **type:** `Array<string>`
 
 Labels of the control's segment buttons.
-

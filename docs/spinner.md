@@ -7,8 +7,10 @@ Displays a circular loading indicator.
 
 ![Spinner component](assets/spinner.gif)
 
-Example usage: 
+Example usage:
 ```jsx
+import { Spinner } from 'react-native-ios-kit';
+
 <Spinner animating={this.state.loading} />
 ```
 

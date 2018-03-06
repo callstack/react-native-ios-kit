@@ -3,12 +3,14 @@ id: switch
 title: Switch
 ---
 
-A basic Switch component that should render native ios switch.
+A basic Switch component that should render native iOS switch.
 
 ![Switch component](assets/toggle-button.png)
 
 Example usage:
 ```jsx
+import { Switch } from 'react-native-ios-kit';
+
 <Switch
   value={this.state.switchValue}
   onValueChange={value => this.setState({ switchValue: value })}
@@ -17,7 +19,7 @@ Example usage:
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected switch background color (`onTintColor`) 
+- `positiveColor` - selected switch background color (`onTintColor`)
 
 ## Props
 

@@ -6,9 +6,11 @@ title: CheckboxRow
 RowItem with Checkmark Icon on right side.
 
 ![CheckboxRow component](assets/checkbox-row.png)
- 
+
 Example usage:
 ```jsx
+import { CheckboxRow } from 'react-native-ios-kit';
+
 <CheckboxRow
   selected={this.state.checkboxSelected}
   onPress={() =>
@@ -44,6 +46,5 @@ Indicates whether checkbox is selected or not.
 
 ### `theme` (optional)
 **type:** [`Theme`](theme.html)
- 
-Custom theme for component. By default provided by the ThemeProvider.
 
+Custom theme for component. By default provided by the ThemeProvider.

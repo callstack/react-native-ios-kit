@@ -8,7 +8,9 @@ A basic Button component.
 ![Button component](assets/buttons.png)
 
 Example usage:
-```javascript
+```jsx
+import { Button } from 'react-native-ios-kit';
+
 <Button style={styles.button} inline rounded>
   Button (inline/rounded)
 </Button>
