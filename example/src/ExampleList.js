@@ -10,6 +10,7 @@ import Buttons from './scenes/Buttons';
 import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
+import Toolbar from './scenes/Toolbar';
 import PageControl from './scenes/PageControl';
 import PageControlView from './scenes/PageControlView';
 import Stepper from './scenes/Stepper';
@@ -86,6 +87,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: TabBar,
     title: 'TabBar',
+  },
+  {
+    component: Toolbar,
+    title: 'Toolbar',
   },
   {
     component: TableView,
