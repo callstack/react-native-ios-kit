@@ -53,6 +53,12 @@ Data to be displayed in list.
 
 Rendered in between each item, but not at the top or bottom.
 
+### `keyExtractor`
+**type** `(item: any) => string`
+**default value:** `item => item.key || item.id`
+
+Function that extracts key for each rendered item.
+
 ### `renderItem`
 **type:** `(data: { item: *, index: number }) => ?React.Element<*>`
 

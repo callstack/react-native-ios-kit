@@ -33,6 +33,7 @@ type Props = {
     index: number
   ) => { length: number, offset: number, index: number },
   stickySectionHeadersEnabled?: boolean,
+  keyExtractor?: (item: *) => string,
 };
 
 type State = {
@@ -136,7 +137,10 @@ class GroupedList extends React.PureComponent<Props, State> {
       renderItem,
       renderSectionFooter,
       stickySectionHeadersEnabled,
+      keyExtractor,
     } = this.props;
+
+    const deafultKeyExtractor = item => item.key || item.id;
 
     const Separator = () => <View style={this.styles.separator} />;
 
@@ -154,6 +158,7 @@ class GroupedList extends React.PureComponent<Props, State> {
           automaticallyAdjustContentInsets={false}
           getItemLayout={getItemLayout}
           stickySectionHeadersEnabled={stickySectionHeadersEnabled}
+          keyExtractor={keyExtractor || deafultKeyExtractor}
         />
         <Sections
           onSectionPress={this.handleSectionPress}
@@ -170,6 +175,7 @@ const getStyles = theme =>
   StyleSheet.create({
     container: {
       flexDirection: 'row',
+      flexGrow: 1,
     },
     header: {
       paddingVertical: 5,
