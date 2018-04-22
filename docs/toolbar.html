@@ -7,28 +7,30 @@
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Toolbar</h1></header><article><div><span><p>Just like TabBar, the Toolbar component appears on the bottom of the application screen. Instead of switching between different views, it allows you to perform actions within the current view, e.g. share or refresh. The Toolbar displays a list of icons or text buttons.</p>
 <p><img src="/react-native-ios-kit/docs/assets/toolbar.png" alt="Toolbar component"></p>
 <p>Example usage:</p>
-<pre><code class="hljs css jsx">&lt;Toolbar
-  items={[
+<pre><code class="hljs css jsx"><span class="hljs-keyword">import</span> { Toolbar } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-ios-kit'</span>;
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Toolbar</span>
+  <span class="hljs-attr">items</span>=<span class="hljs-string">{[</span>
     {
-      <span class="hljs-attr">icon</span>: <span class="hljs-string">'ios-arrow-back'</span>,
-      <span class="hljs-attr">onPress</span>: <span class="hljs-keyword">this</span>.runAction,
+      <span class="hljs-attr">icon:</span> '<span class="hljs-attr">ios-arrow-back</span>',
+      <span class="hljs-attr">onPress:</span> <span class="hljs-attr">this.runAction</span>,
     },
     {
-      <span class="hljs-attr">icon</span>: <span class="hljs-string">'ios-arrow-forward'</span>,
-      <span class="hljs-attr">onPress</span>: <span class="hljs-keyword">this</span>.runAction,
+      <span class="hljs-attr">icon:</span> '<span class="hljs-attr">ios-arrow-forward</span>',
+      <span class="hljs-attr">onPress:</span> <span class="hljs-attr">this.runAction</span>,
     },
     {
-      <span class="hljs-attr">icon</span>: <span class="hljs-string">'ios-refresh'</span>,
-      <span class="hljs-attr">onPress</span>: <span class="hljs-keyword">this</span>.runAction,
+      <span class="hljs-attr">icon:</span> '<span class="hljs-attr">ios-refresh</span>',
+      <span class="hljs-attr">onPress:</span> <span class="hljs-attr">this.runAction</span>,
     },
     {
-      <span class="hljs-attr">icon</span>: <span class="hljs-string">'ios-share-outline'</span>,
-      <span class="hljs-attr">onPress</span>: <span class="hljs-keyword">this</span>.runAction,
-      <span class="hljs-attr">disabled</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">icon:</span> '<span class="hljs-attr">ios-share-outline</span>',
+      <span class="hljs-attr">onPress:</span> <span class="hljs-attr">this.runAction</span>,
+      <span class="hljs-attr">disabled:</span> <span class="hljs-attr">true</span>,
     },
   ]}
-/&gt;
-</code></pre>
+/&gt;</span>
+</span></code></pre>
 <h2><a class="anchor" aria-hidden="true" name="theme"></a><a href="#theme" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Theme</h2>
 <p>Uses following <code>theme</code> properties:</p>
 <ul>
