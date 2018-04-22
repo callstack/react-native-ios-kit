@@ -9,6 +9,8 @@ Just like TabBar, the Toolbar component appears on the bottom of the application
 
 Example usage:
 ```jsx
+import { Toolbar } from 'react-native-ios-kit';
+
 <Toolbar
   items={[
     {
