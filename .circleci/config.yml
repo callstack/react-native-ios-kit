@@ -120,8 +120,6 @@ workflows:
             - install-dependencies
           filters: *filter-ignore-gh-pages
       - deploy:
-          requires: 
-            - tests
           filters: *filter-tag  
       - deploy-website:
           requires:
