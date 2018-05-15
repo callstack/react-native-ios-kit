@@ -12,6 +12,8 @@ import type { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
 
+type GroupedItems = Array<{ title: string, data: Array<any> }>;
+
 type Props = {
   theme: Theme,
   items: Array<any>,
@@ -37,23 +39,37 @@ type Props = {
 };
 
 type State = {
-  dataSource?: Object,
+  groupedItems: GroupedItems,
 };
 
 class GroupedList extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.styles = getStyles(this.props.theme);
+    this.styles = getStyles(props.theme);
+    this.state = {
+      groupedItems: this.groupItems(props.items, props.groupBy),
+    };
+  }
+
+  componentWillReceiveProps(props, nextProps) {
+    if (props.items !== nextProps.items) {
+      this.setState({
+        groupedItems: this.groupItems(nextProps.items, nextProps.groupBy),
+      });
+    }
   }
 
   styles: Object;
   sectionList: ?Object = undefined;
   sectionHeadersHeights: { [key: string]: number } = {};
 
-  groupItems(items: Array<Object>): any {
+  groupItems(
+    items: Array<Object>,
+    groupBy: (item: any) => string
+  ): GroupedItems {
     const grouped = items.reduce((acc, item) => {
-      const groupId = this.props.groupBy(item);
+      const groupId = groupBy(item);
       if (Object.prototype.hasOwnProperty.call(acc, groupId)) {
         acc[groupId].data.push(item);
       } else {
@@ -68,9 +84,10 @@ class GroupedList extends React.PureComponent<Props, State> {
   handleSectionPress = (sectionIdx: number) => {
     const sections = this.props.sections || alphabet;
 
-    const { index } = sections.reduce(
+    const { index } = this.state.groupedItems.reduce(
       (acc, item, currendIndex) => {
-        const newDelta = Math.abs(sectionIdx - currendIndex);
+        const indexInSections = sections.indexOf(item.title);
+        const newDelta = Math.abs(sectionIdx - indexInSections);
         if (newDelta < acc.delta) {
           return { delta: newDelta, index: currendIndex };
         }
@@ -83,7 +100,7 @@ class GroupedList extends React.PureComponent<Props, State> {
       this.sectionList.scrollToLocation({
         viewOffset:
           this.props.stickySectionHeadersEnabled !== false
-            ? this.sectionHeadersHeights[sections[index]]
+            ? this.sectionHeadersHeights[this.state.groupedItems[index].title]
             : 0,
         sectionIndex: index,
         itemIndex: 0,
@@ -133,7 +150,6 @@ class GroupedList extends React.PureComponent<Props, State> {
       getItemLayout,
       ItemSeparatorComponent,
       SectionSeparatorComponent,
-      items,
       renderItem,
       renderSectionFooter,
       stickySectionHeadersEnabled,
@@ -154,7 +170,7 @@ class GroupedList extends React.PureComponent<Props, State> {
           renderSectionHeader={this.renderSectionHeader}
           ItemSeparatorComponent={ItemSeparatorComponent || Separator}
           SectionSeparatorComponent={SectionSeparatorComponent}
-          sections={this.groupItems(items)}
+          sections={this.state.groupedItems}
           automaticallyAdjustContentInsets={false}
           getItemLayout={getItemLayout}
           stickySectionHeadersEnabled={stickySectionHeadersEnabled}
@@ -176,6 +192,7 @@ const getStyles = theme =>
     container: {
       flexDirection: 'row',
       flexGrow: 1,
+      height: '100%',
     },
     header: {
       paddingVertical: 5,
