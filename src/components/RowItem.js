@@ -74,7 +74,7 @@ class RowItem extends React.Component<Props> {
             backgroundColor: theme.barColor,
             borderTopWidth: first ? StyleSheet.hairlineWidth : 0,
             borderBottomWidth: last ? StyleSheet.hairlineWidth : 0,
-            borderColor: theme.footnoteColor,
+            borderColor: theme.dividerColor,
           },
         ]}
       >
@@ -118,7 +118,7 @@ class RowItem extends React.Component<Props> {
             style={[
               styles.separator,
               {
-                backgroundColor: theme.footnoteColor,
+                backgroundColor: theme.dividerColor,
                 marginLeft: icon ? 54 : 15,
               },
             ]}
