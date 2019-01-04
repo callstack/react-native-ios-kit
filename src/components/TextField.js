@@ -12,6 +12,7 @@ type Props = {
   theme: Theme,
   placeholder?: string,
   value: string,
+  clearButton?: boolean,
   onValueChange?: (text: string) => void,
   containerStyle?: StyleObj,
   inputStyle?: StyleObj,
@@ -25,6 +26,7 @@ class TextField extends React.Component<Props> {
       value,
       placeholder,
       onValueChange,
+      clearButton,
       theme: {
         backgroundColor,
         dividerColor,
@@ -53,7 +55,7 @@ class TextField extends React.Component<Props> {
           style={[styles.input, { color: textColor }, inputStyle]}
           selectionColor={primaryColor}
         />
-        {value ? (
+        {value && clearButton !== false ? (
           <TouchableOpacity onPress={this.clearInput}>
             <Icon
               name="ios-close-circle"
