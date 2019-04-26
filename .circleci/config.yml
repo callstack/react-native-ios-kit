@@ -1,5 +1,4 @@
 aliases:
-
   - &restore-cache
     keys:
       - dependencies-{{ checksum "package.json" }}
@@ -43,8 +42,8 @@ aliases:
 
 defaults: &defaults
   working_directory: ~/react-native-ios-kit
-  docker: 
-    - image: circleci/node:6
+  docker:
+    - image: circleci/node:10
 
 version: 2
 jobs:
@@ -85,12 +84,12 @@ jobs:
           at: ~/react-native-ios-kit
       - add_ssh_keys:
           fingerprints:
-            - "11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d"
+            - '11:06:5b:a1:d0:c5:8a:49:cd:8d:05:7f:d9:7d:15:3d'
       - run: |
           echo "Deploying website..."            
           git config --global user.name "$CIRCLE_USERNAME"
           git config --global user.email "oss@callstack.com"
-          cd website && GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish  
+          cd website && GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run docusaurus-publish
   publish-expo:
     <<: *defaults
     steps:
@@ -112,7 +111,7 @@ jobs:
 workflows:
   version: 2
 
-  website: 
+  website:
     jobs:
       - install-dependencies
       - tests:
@@ -120,7 +119,7 @@ workflows:
             - install-dependencies
           filters: *filter-ignore-gh-pages
       - deploy:
-          filters: *filter-tag  
+          filters: *filter-tag
       - deploy-website:
           requires:
             - deploy
