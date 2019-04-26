@@ -18,21 +18,7 @@
 .*/Libraries/polyfills/.*
 
 ; Ignore duplicate modules under example/
-.*/example/node_modules/fbjs/.*
-.*/example/node_modules/fbemitter/.*
-.*/example/node_modules/react/.*
-.*/example/node_modules/react-native/.*
-.*/example/node_modules/expo/.*
-.*/example/node_modules/xdl
-.*/example/node_modules/reqwest
-.*/example/\.buckd/
-.*/example/node_modules/react-native-tab-view
-.*/example/node_modules/react-navigation
-.*/example/node_modules/react-native-fbads
-.*/example/node_modules/react-native-gesture-handler
-.*/example/node_modules/metro-bundler
-.*/example/node_modules/exp
-.*/example/node_modules/@expo
+<PROJECT_ROOT>/example/node_modules/*
 
 ; Ignore duplicate modules under website/
 .*/website/node_modules/fbjs/.*
