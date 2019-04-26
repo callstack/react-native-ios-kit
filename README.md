@@ -112,6 +112,19 @@ Example:
 ```
 This code will change icon color to `green`
 
+## Documentation
+
+Check the components and their usage in our [documentation](https://callstack.github.io/react-native-ios-kit).
+
+
+## Contributing
+
+Read the [contribution guidelines](/CONTRIBUTING.md) before contributing.
+
+## Made with ❤️ at Callstack
+
+`react-native-ios-kit` is an open source project and will always remain free to use. If you think it's cool, please star it 🌟. [Callstack][callstack-readme-with-love] is a group of React and React Native geeks, contact us at [hello@callstack.com](mailto:hello@callstack.com) if you need any help with these or just want to say hi!
+
 
 <!-- badges -->
 [build-badge]: https://img.shields.io/circleci/project/github/callstack/react-native-ios-kit/master.svg?style=flat-square
