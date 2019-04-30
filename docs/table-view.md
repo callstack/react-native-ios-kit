@@ -11,7 +11,7 @@ It renders header, footer and children which can be [`RowItem`](row-item.html) c
 
 Example usage:
 ```jsx
-import { ScrollView } from 'react-native-ios-kit';
+import { ScrollView, TableView } from 'react-native-ios-kit';
 
 <ScrollView>
   <TableView header="Header" footer="footer...">
