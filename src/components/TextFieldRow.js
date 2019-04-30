@@ -3,7 +3,7 @@ import * as React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
 import RowItem from './RowItem';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {

@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, NavigatorIOS, StatusBar } from 'react-native';
 import { ThemeProvider, DefaultTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
@@ -36,7 +36,7 @@ export default class App extends React.Component<Props, State> {
   selectTheme = (theme: Theme) => {
     this.setState({ selectedTheme: theme });
     StatusBar.setBarStyle(
-      theme === DefaultTheme ? 'dark-content' : 'light-content'
+      theme === DefaultTheme ? 'dark-content' : 'light-content',
     );
   };
 

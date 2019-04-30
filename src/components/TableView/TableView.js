@@ -6,7 +6,7 @@ import TableViewHeader from './TableViewHeader';
 import TableViewFooter from './TableViewFooter';
 import { withTheme } from '../../';
 import type { Theme } from '../../types/Theme';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 type Props = {
   /**
@@ -24,7 +24,7 @@ type Props = {
   /**
    * Optional styles of header
    */
-  headerStyle?: StyleObj,
+  headerStyle?: ViewStyleProp,
   /**
    * Footer of TableView
    */
@@ -36,7 +36,7 @@ type Props = {
   /**
    * Footer style
    */
-  footerStyle?: StyleObj,
+  footerStyle?: ViewStyleProp,
   /**
    * onPress handler of Footer component
    */
@@ -66,22 +66,22 @@ class TableView extends React.Component<Props> {
     } = this.props;
     return (
       <View>
-        {!withoutHeader && (
-          <TableViewHeader header={header} style={headerStyle} />
-        )}
+        {!withoutHeader &&
+          !!header && <TableViewHeader header={header} style={headerStyle} />}
         {React.Children.map(children, (child, idx) =>
           React.cloneElement(child, {
             first: idx === 0,
             last: idx === React.Children.count(children) - 1,
           })
         )}
-        {!withoutFooter && (
-          <TableViewFooter
-            footer={footer}
-            onPress={onFooterPress}
-            style={footerStyle}
-          />
-        )}
+        {!withoutFooter &&
+          !!footer && (
+            <TableViewFooter
+              footer={footer}
+              onPress={onFooterPress}
+              style={footerStyle}
+            />
+          )}
       </View>
     );
   }

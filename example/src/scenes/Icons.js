@@ -17,8 +17,8 @@ class IconsExample extends Component<Props> {
     return (
       <View style={styles.screen}>
         <View style={styles.row}>
-          <Icon name="ios-chatbubbles-outline" />
-          <Icon name="ios-bonfire-outline" color="red" size={24} />
+          <Icon name="ios-chatbubbles" />
+          <Icon name="ios-bonfire" color="red" size={24} />
           <Icon
             name={{
               uri:
@@ -28,9 +28,10 @@ class IconsExample extends Component<Props> {
           <Icon name="ios-checkmark-circle" color={positiveColor} />
         </View>
         <TableView header="Ionicons">
-          <InfoRow icon="ios-appstore-outline" info="Default" />
+          {/* $FlowFixMe */}
+          <InfoRow icon="ios-appstore" info="Default" />
           <InfoRow
-            icon="ios-beer-outline"
+            icon="ios-beer"
             info="CustomColor"
             theme={{ primaryColor: 'plum' }}
           />

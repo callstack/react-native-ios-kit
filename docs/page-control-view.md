@@ -37,7 +37,7 @@ import { PageControlView } from 'react-native-ios-kit';
 Children of PageControlView, each one to be displayed as a separate page.
 
 ### `containerStyle` (optional)
-**type:** `StyleObj`
+**type:** `ViewStyleProp`
 
 Style of wrapper container.
 

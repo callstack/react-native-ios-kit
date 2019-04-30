@@ -28,7 +28,7 @@ class TabBarExample extends Component<Props, State> {
         <TabBar
           tabs={[
             {
-              icon: 'ios-paper-outline',
+              icon: 'ios-paper',
               title: 'News',
               onPress: this.selectTab,
               isActive: this.state.activeTab === 0,

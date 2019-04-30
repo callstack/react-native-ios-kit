@@ -11,6 +11,7 @@
     "ios": "expo ios"
   },
   "dependencies": {
+    "@callstack/react-theme-provider": "^2.0.1",
     "color": "^2.0.1",
     "exp": "^47.3.17",
     "expo": "^32.0.0",

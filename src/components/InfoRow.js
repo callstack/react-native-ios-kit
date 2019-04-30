@@ -3,11 +3,11 @@ import * as React from 'react';
 
 import RowItem from './RowItem';
 import { Body } from './Typography';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
+import type { Props as RowProps } from './RowItem';
 
-type Props = {
-  theme: Theme,
+type Props = RowProps & {
   info: string,
 };
 

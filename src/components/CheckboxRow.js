@@ -3,10 +3,11 @@ import * as React from 'react';
 
 import RowItem from './RowItem';
 import Icon from './Icon';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
+import type { Props as RowProps } from './RowItem';
 
-type Props = {
+type Props = RowProps & {
   theme: Theme,
   selected: boolean,
   onPress: void => void,

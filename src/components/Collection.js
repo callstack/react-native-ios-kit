@@ -8,43 +8,47 @@ import {
   RefreshControl,
 } from 'react-native';
 
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 const { width } = Dimensions.get('window');
 
+type Data = Array<{
+  data: Array<*>,
+  title: string,
+}>;
 type Props = {
   theme: Theme,
   numberOfColumns?: number,
-  data: Array<*>,
+  data: Data,
   renderItem: (item: *) => ?React.Element<*>,
   renderSectionHeader?: (info: { section: * }) => ?React.Element<*>,
   renderSectionFooter?: (info: { section: * }) => ?React.Element<*>,
   keyExtractor?: (item: *, index: number) => string,
-  onEndReached: (info: { distanceFromEnd: number }) => void,
+  onEndReached?: (info: { distanceFromEnd: number }) => void,
   onEndReachedThreshold?: number,
   onRefresh?: () => void,
   refreshing: boolean,
   stickySectionHeadersEnabled?: boolean,
-  listStyle: StyleObj,
-  contentContainerStyle: StyleObj,
+  listStyle?: ViewStyleProp,
+  contentContainerStyle?: ViewStyleProp,
 };
 
 class Collection extends React.Component<Props> {
   static defaultProps = {
-    keyExtractor: (item, index) => `${item.key}` || `${index}`,
+    keyExtractor: (item: *, index: number) => `${item.key}` || `${index}`,
     numberOfColumns: 4,
     refreshing: false,
   };
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.styles = getStyles(props);
   }
 
   styles: Object;
 
-  renderCell = ({ item }) => {
+  renderCell = ({ item }: { item: * }) => {
     const child = this.props.renderItem(item);
     if (!child) return null;
     return React.cloneElement(child, {
@@ -52,7 +56,7 @@ class Collection extends React.Component<Props> {
     });
   };
 
-  renderRow = ({ item }) => {
+  renderRow = ({ item }: { item: * }) => {
     return (
       <FlatList
         style={this.styles.wrapper}
@@ -64,7 +68,8 @@ class Collection extends React.Component<Props> {
     );
   };
 
-  genListSection = data => data.map(item => ({ ...item, data: [item.data] }));
+  genListSection = (data: Data) =>
+    data.map(item => ({ ...item, data: [item.data] }));
 
   render() {
     const {

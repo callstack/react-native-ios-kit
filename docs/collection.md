@@ -29,7 +29,7 @@ Uses following `theme` properties:
 ## Props
 
 ### `contentContainerStyle` (optional)
-**type:** `StyleObj`
+**type:** `ViewStyleProp`
 
 Styles to be applied  to the section list view content container.
 ### `data`  
@@ -44,7 +44,7 @@ An array of items to be rendered.
 Function used to extract a unique key for each item rendered.
 
 ### `listStyle` (optional)  
-**type:** `StyleObj`  
+**type:** `ViewStyleProp`  
 
 Styles of underlying SectionList container
 

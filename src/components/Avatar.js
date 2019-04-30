@@ -11,14 +11,14 @@ import {
 
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 type Props = {
   theme: Theme,
   initials: string,
   url?: string,
   size: number,
-  style?: StyleObj,
+  style?: ViewStyleProp,
   onPress?: void => void,
 };
 

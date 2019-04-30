@@ -21,7 +21,7 @@ import { SwitchRow } from 'react-native-ios-kit';
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected switch background color (`onTintColor`)
+- `positiveColor` - selected switch background color (`trackColor`)
 
 ## Props
 

@@ -21,18 +21,15 @@ class PageControlViewExample extends React.Component<Props> {
           <View style={styles.row}>
             <Icon
               style={{ paddingHorizontal: 20 }}
-              name="ios-american-football-outline"
+              name="ios-american-football"
             />
-            <Icon style={{ paddingHorizontal: 20 }} name="ios-cash-outline" />
-            <Icon style={{ paddingHorizontal: 20 }} name="ios-bowtie-outline" />
+            <Icon style={{ paddingHorizontal: 20 }} name="ios-cash" />
+            <Icon style={{ paddingHorizontal: 20 }} name="ios-bowtie" />
             <Icon style={{ paddingHorizontal: 20 }} name="ios-cloudy-night" />
+            <Icon style={{ paddingHorizontal: 20 }} name="ios-construct" />
             <Icon
               style={{ paddingHorizontal: 20 }}
-              name="ios-construct-outline"
-            />
-            <Icon
-              style={{ paddingHorizontal: 20 }}
-              name="ios-game-controller-b-outline"
+              name="logo-game-controller-a"
             />
           </View>
         </View>

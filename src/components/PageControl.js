@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
   hidesForSinglePage?: boolean,
   pageIndicatorTintColor?: string,
   currentPageIndicatorTintColor?: string,
-  updateCurrentPageDisplay: number => void,
+  updateCurrentPageDisplay?: number => void,
   size?: number,
 };
 

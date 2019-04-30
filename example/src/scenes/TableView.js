@@ -36,7 +36,7 @@ class TableViewExample extends React.Component<Props, State> {
       <ScrollView automaticallyAdjustContentInsets={false}>
         <TableView header="RowItems" footer="footer">
           <RowItem
-            icon="ios-map-outline"
+            icon="ios-map"
             title="Navigation"
             subtitle="Get your directions"
             rightComponent={ArrowRight}
@@ -51,7 +51,7 @@ class TableViewExample extends React.Component<Props, State> {
         <TableView footer="Footer link" onFooterPress={() => alert('Hello')}>
           <RowItem title="No Icon" />
           <RowItem
-            icon="ios-heart-outline"
+            icon="ios-heart"
             title="Health"
             rightComponent={ArrowRight}
             onPress={() => alert('Hello')}

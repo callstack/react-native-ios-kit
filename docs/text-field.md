@@ -34,12 +34,12 @@ Uses following `theme` properties:
 Other props accepted by `TextInput` component.
 
 ### `containerStyle` (optional)
-**type:** `StyleObj`  
+**type:** `ViewStyleProp`  
 
 Style of TextField's wrapper container
 
 ### `inputStyle` (optional)  
-**type:** `StyleObj`  
+**type:** `ViewStyleProp`  
 
 Style of TextField's input
 

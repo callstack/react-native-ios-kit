@@ -3,16 +3,16 @@ import * as React from 'react';
 import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 
 import PageControl from './PageControl';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 const { width } = Dimensions.get('window');
 
 type Props = {
   theme: Theme,
   children: React.Node,
-  containerStyle: StyleObj,
+  containerStyle?: ViewStyleProp,
   startPage?: number,
   onPageChange?: number => void,
   currentPageIndicatorTintColor?: string,

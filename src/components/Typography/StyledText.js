@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
 import { withTheme } from '../../';
@@ -36,7 +36,7 @@ type Props = {
   theme: Theme,
 };
 
-class StyledText extends Component<Props> {
+class StyledText extends React.Component<Props> {
   render() {
     const { style, children, config, theme, ...rest } = this.props;
     const fontSize = resolveFontSizeFromStyle(style) || config.fontSize;

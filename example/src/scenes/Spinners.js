@@ -24,14 +24,14 @@ class Spinners extends Component<Props, State> {
     clearTimeout(this.animate);
   }
 
-  animate: number;
+  animate: TimeoutID;
 
   animateProgress = () => {
     this.animate = setTimeout(() => {
       if (this.state.progress < 1) {
         this.setState(
           state => ({ progress: state.progress + 0.1 }),
-          this.animateProgress
+          this.animateProgress,
         );
       } else {
         this.setState({ progress: 0 }, this.animateProgress);

@@ -2,15 +2,15 @@
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import withTheme from '../../core/withTheme';
+import { withTheme } from '../../core/theming';
 import { Footnote } from '../Typography';
 import type { Theme } from '../../types/Theme';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 type Props = {
   header: string,
   theme: Theme,
-  style?: StyleObj,
+  style?: TextStyleProp,
 };
 
 class TableViewHeader extends React.Component<Props> {

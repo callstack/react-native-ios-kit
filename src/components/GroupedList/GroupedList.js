@@ -4,10 +4,10 @@ import * as React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 
 import Sections from './Sections';
-import withTheme from '../../core/withTheme';
+import { withTheme } from '../../core/theming';
 import { Headline } from '../Typography';
 
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 import type { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
@@ -26,7 +26,7 @@ type Props = {
   ItemSeparatorComponent?: React.ComponentType<*>,
   SectionSeparatorComponent: *,
   sections?: Array<string>,
-  sectionsStyle?: StyleObj,
+  sectionsStyle?: ViewStyleProp,
   sectionPrimaryColor?: string,
   getItemLayout?: (
     data: any,

@@ -21,7 +21,7 @@ class AvatarExample extends React.Component<Props> {
         </View>
         <View style={styles.row}>
           <Body>Url prop</Body>
-          <Avatar url="https://callstack.com/static/favicon.png" />
+          <Avatar url="https://callstack.com/images/favicon/favicon-32x32.png" />
         </View>
         <View style={styles.row}>
           <Body>Initials</Body>

@@ -10,7 +10,7 @@ import {
   NativeModules,
 } from 'react-native';
 
-import withTheme from '../../core/withTheme';
+import { withTheme } from '../../core/theming';
 
 import type { Theme } from '../../types/Theme';
 

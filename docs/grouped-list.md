@@ -98,7 +98,7 @@ Sections text color.
 Rendered at the top and bottom of each section (note this is different from ItemSeparatorComponent which is only rendered between items). These are intended to separate sections from the headers above and below and typically have the same highlight response as ItemSeparatorComponent.
 
 ### `sectionsStyle` (optional)
-**type:** `StyleObj`
+**type:** `ViewStyleProp`
 
 Styles to apply on section list.
 

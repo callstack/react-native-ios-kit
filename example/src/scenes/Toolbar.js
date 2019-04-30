@@ -34,7 +34,7 @@ class ToolbarExample extends Component<Props> {
               onPress: this.runAction,
             },
             {
-              icon: 'ios-share-outline',
+              icon: 'ios-share',
               onPress: this.runAction,
               disabled: true,
             },
