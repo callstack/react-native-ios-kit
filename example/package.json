@@ -6,23 +6,35 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios"
+    "start": "expo start",
+    "android": "expo android",
+    "ios": "expo ios"
   },
   "dependencies": {
     "color": "^2.0.1",
     "exp": "^47.3.17",
-    "expo": "^23.0.0",
+    "expo": "^32.0.0",
     "glob-to-regexp": "^0.3.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0-alpha.12",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
+    "prop-types": "15.6.0",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-safe-area-view": "^0.2.0"
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^2.7.1",
-    "babel-preset-expo": "^4.0.0",
-    "react-native-scripts": "^1.5.0"
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-expo": "^5.0.0",
+    "expo-cli": "^2.3.8"
+  },
+  "resolutions": {
+    "**/react": "16.5.0",
+    "**/prop-types": "15.6.0",
+    "**/color": "2.0.1",
+    "**/lodash": "^4.17.4"
   }
 }

@@ -38,6 +38,7 @@
     "babel-jest": "^21.2.0",
     "babel-plugin-flow-react-proptypes": "^6.1.0",
     "babel-preset-react-native": "^4.0.0",
+    "escape-string-regexp": "^2.0.0",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^16.0.0",
     "eslint-config-prettier": "^2.6.0",
@@ -67,6 +68,7 @@
     ]
   },
   "dependencies": {
+    "babel-plugin-module-resolver": "^3.2.0",
     "color": "^2.0.1",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0"
