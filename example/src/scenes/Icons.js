@@ -2,7 +2,13 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-import { withTheme, TableView, InfoRow, Icon } from 'react-native-ios-kit';
+import {
+  withTheme,
+  TableView,
+  InfoRow,
+  Icon,
+  DefaultTheme,
+} from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from '../withSafeArea';
@@ -31,13 +37,15 @@ class IconsExample extends Component<Props> {
           {/* $FlowFixMe */}
           <InfoRow icon="ios-appstore" info="Default" />
           <InfoRow
+            title=""
             icon="ios-beer"
             info="CustomColor"
-            theme={{ primaryColor: 'plum' }}
+            theme={{ ...DefaultTheme, primaryColor: 'plum' }}
           />
         </TableView>
         <TableView header="Custom image">
           <InfoRow
+            title=""
             icon={{
               uri:
                 'https://callstack.github.io/react-native-ios-kit/img/favicon.png',
@@ -47,6 +55,7 @@ class IconsExample extends Component<Props> {
         </TableView>
         <TableView header="React component">
           <InfoRow
+            title=""
             icon={
               <View
                 style={{
@@ -61,6 +70,7 @@ class IconsExample extends Component<Props> {
             info="<View />"
           />
           <InfoRow
+            title=""
             icon={<Text style={{ color: primaryColor }}>Hi</Text>}
             info="<Text />"
           />

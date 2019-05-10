@@ -17,12 +17,10 @@ type Props = {
   theme: Theme,
   // onChange prop
   onValueChange?: (value: boolean) => *,
-  // Background color when the switch is turned on
+  // Border color when the switch is turned on
   trackColor?: string,
   // Color of the foreground switch grip
-  thumbTintColor?: string,
-  // Border color when the switch is turned off.
-  tintColor?: string,
+  thumbColor?: string,
 };
 
 class Switch extends Component<Props> {
@@ -32,6 +30,7 @@ class Switch extends Component<Props> {
       <ReactNativeSwitch
         {...rest}
         onValueChange={onValueChange}
+        // $FlowFixMe
         trackColor={trackColor || theme.positiveColor}
       />
     );

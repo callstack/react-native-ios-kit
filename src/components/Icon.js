@@ -13,7 +13,7 @@ type Props = {
   /**
    * IconSource name. Can be one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json or source of ReactNative's `image` or any valid React Component
    */
-  name: IconSource,
+  name?: IconSource,
   /**
    * Custom color for icon, default to primary
    */

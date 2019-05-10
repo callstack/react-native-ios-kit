@@ -69,6 +69,7 @@ class Collection extends React.Component<Props> {
   };
 
   genListSection = (data: Data) =>
+    // $FlowFixMe
     data.map(item => ({ ...item, data: [item.data] }));
 
   render() {

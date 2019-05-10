@@ -50,6 +50,7 @@ class Sections extends PureComponent<Props, State> {
   sections: ?any;
   currentSectionIdx: ?number;
 
+  // $FlowFixMe
   handleContainerLayout = ({ nativeEvent: { layout: { height } } }) => {
     this.setState({ sections: this.prepareSections(height) });
   };
@@ -63,7 +64,7 @@ class Sections extends PureComponent<Props, State> {
       }
     );
   };
-
+  // $FlowFixMe
   handleMove = ({ nativeEvent: { pageY } }) => {
     if (!this.sectionsHeight || !this.sectionsY) {
       return;
@@ -111,7 +112,7 @@ class Sections extends PureComponent<Props, State> {
     return visibleSections;
   }
 
-  renderSection = (item, index) => {
+  renderSection = (item: any, index: number) => {
     const { sectionPrimaryColor, theme } = this.props;
     if (item) {
       return (

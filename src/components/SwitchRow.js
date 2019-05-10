@@ -19,7 +19,7 @@ class SwitchRow extends React.Component<Props> {
   };
 
   render() {
-    return <RowItem renderRight={this.renderRight} {...this.props} />;
+    return <RowItem title="" renderRight={this.renderRight} {...this.props} />;
   }
 }
 

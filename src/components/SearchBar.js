@@ -97,6 +97,7 @@ class SearchBar extends React.Component<Props, State> {
     if (typeof this.props.onBlur === 'function') this.props.onBlur();
   };
 
+  // $FlowFixMe
   handleLayout = ({ nativeEvent: { layout: { width } } }) => {
     this.setState({ cancelWidth: width });
   };
@@ -164,7 +165,6 @@ class SearchBar extends React.Component<Props, State> {
               selectionColor={primaryColor}
               onFocus={this.handleInputFocus}
               onBlur={this.handleInputBlur}
-              {...this.props}
             />
             {value ? (
               <TouchableOpacity onPress={this.clearInput}>

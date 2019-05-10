@@ -19,7 +19,7 @@ type Props = {
   url?: string,
   size: number,
   style?: ViewStyleProp,
-  onPress?: void => void,
+  onPress?: (e: *) => void,
 };
 
 class Avatar extends React.Component<Props> {
