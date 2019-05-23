@@ -62,3 +62,8 @@ Custom theme for component. By default provided by the ThemeProvider.
 **type:** `string`
 
 Value of TextInput
+
+### `clearButton`
+**type** `boolean`
+
+Display the custom button to clear the input. By default the button is shown.
