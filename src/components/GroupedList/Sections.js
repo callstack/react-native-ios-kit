@@ -51,7 +51,11 @@ class Sections extends PureComponent<Props, State> {
   currentSectionIdx: ?number;
 
   // $FlowFixMe
-  handleContainerLayout = ({ nativeEvent: { layout: { height } } }) => {
+  handleContainerLayout = ({
+    nativeEvent: {
+      layout: { height },
+    },
+  }) => {
     this.setState({ sections: this.prepareSections(height) });
   };
 
@@ -71,7 +75,7 @@ class Sections extends PureComponent<Props, State> {
     }
 
     const sectionIdx = Math.round(
-      (pageY - this.sectionsY) * this.props.items.length / this.sectionsHeight
+      ((pageY - this.sectionsY) * this.props.items.length) / this.sectionsHeight
     );
     if (
       sectionIdx >= 0 &&
@@ -156,7 +160,9 @@ class Sections extends PureComponent<Props, State> {
           style={styles.sections}
           {...this.panResponder.panHandlers}
           onLayout={this.handleLayout}
-          ref={view => (this.sections = view)}
+          ref={view => {
+            this.sections = view;
+          }}
         >
           {sections.map(this.renderSection)}
         </View>

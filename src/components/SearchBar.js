@@ -98,7 +98,11 @@ class SearchBar extends React.Component<Props, State> {
   };
 
   // $FlowFixMe
-  handleLayout = ({ nativeEvent: { layout: { width } } }) => {
+  handleLayout = ({
+    nativeEvent: {
+      layout: { width },
+    },
+  }) => {
     this.setState({ cancelWidth: width });
   };
 
@@ -156,7 +160,9 @@ class SearchBar extends React.Component<Props, State> {
               size={18}
             />
             <TextInput
-              ref={ref => (this._input = ref)}
+              ref={ref => {
+                this._input = ref;
+              }}
               style={[{ color: textColor }, styles.input]}
               value={value}
               onChangeText={onValueChange}

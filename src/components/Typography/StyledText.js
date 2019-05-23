@@ -8,7 +8,7 @@ import type { Theme } from '../../types/Theme';
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 const trackingToSpacing = (fontSize: number, tracking: number): number =>
-  fontSize * tracking / 1000;
+  (fontSize * tracking) / 1000;
 
 const resolveFontSizeFromStyle = (style?: TextStyleProp) => {
   if (!style) {

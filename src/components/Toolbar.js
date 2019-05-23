@@ -49,6 +49,7 @@ class Toolbar extends PureComponent<Props> {
       <View style={[styles.wrapper, toolbarStyle]}>
         {items.map((item, idx) => (
           <TouchableWithoutFeedback
+            // eslint-disable-next-line
             key={`toolbarItem_${idx}`}
             onPress={() => item.onPress(idx)}
             disabled={item.disabled}

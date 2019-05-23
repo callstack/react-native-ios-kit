@@ -16,7 +16,6 @@
     "exp": "^47.3.17",
     "expo": "^32.0.0",
     "glob-to-regexp": "^0.3.0",
-    "prop-types": "15.6.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-safe-area-view": "^0.2.0"
@@ -34,7 +33,6 @@
   },
   "resolutions": {
     "**/react": "16.5.0",
-    "**/prop-types": "15.6.0",
     "**/color": "2.0.1",
     "**/lodash": "^4.17.4"
   }

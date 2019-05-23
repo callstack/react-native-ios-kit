@@ -110,7 +110,7 @@ class Button extends React.Component<Props> {
         flexDirection: 'row',
       };
       if (this.props.centered) {
-        //$FlowFixMe
+        // $FlowFixMe
         wrapperStyle.justifyContent = 'center';
       }
       return <View style={wrapperStyle}>{markup}</View>;

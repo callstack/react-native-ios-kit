@@ -56,17 +56,15 @@ class Collection extends React.Component<Props> {
     });
   };
 
-  renderRow = ({ item }: { item: * }) => {
-    return (
-      <FlatList
-        style={this.styles.wrapper}
-        numColumns={this.props.numberOfColumns}
-        renderItem={this.renderCell}
-        data={item}
-        keyExtractor={this.props.keyExtractor}
-      />
-    );
-  };
+  renderRow = ({ item }: { item: * }) => (
+    <FlatList
+      style={this.styles.wrapper}
+      numColumns={this.props.numberOfColumns}
+      renderItem={this.renderCell}
+      data={item}
+      keyExtractor={this.props.keyExtractor}
+    />
+  );
 
   genListSection = (data: Data) =>
     // $FlowFixMe

@@ -96,17 +96,15 @@ class RowItem extends React.Component<Props> {
     );
   };
 
-  renderTouchableRow = () => {
-    return (
-      <TouchableHighlight
-        onPress={this.props.onPress}
-        underlayColor={this.props.theme.footnoteColor}
-        style={{ backgroundColor: this.props.theme.barColor }}
-      >
-        {this.renderRow()}
-      </TouchableHighlight>
-    );
-  };
+  renderTouchableRow = () => (
+    <TouchableHighlight
+      onPress={this.props.onPress}
+      underlayColor={this.props.theme.footnoteColor}
+      style={{ backgroundColor: this.props.theme.barColor }}
+    >
+      {this.renderRow()}
+    </TouchableHighlight>
+  );
 
   render() {
     const { last, onPress, theme, icon } = this.props;

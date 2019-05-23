@@ -17,7 +17,10 @@ type Props = RowProps & {
 
 class NavigationRow extends React.Component<Props> {
   renderRightComponent = () => {
-    const { info, theme: { placeholderColor } } = this.props;
+    const {
+      info,
+      theme: { placeholderColor },
+    } = this.props;
     return (
       <View style={styles.row}>
         {info ? (
