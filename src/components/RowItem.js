@@ -88,7 +88,7 @@ class RowItem extends React.Component<Props> {
             },
           ]}
         >
-          {title && <Body>{title}</Body>}
+          {!!title && <Body>{title}</Body>}
           {subtitle && <Caption1>{subtitle}</Caption1>}
         </View>
         {this.renderRight()}
