@@ -24,7 +24,7 @@ const months = [
 
 const data = months.map(month => ({
   data: [...Array(Math.floor(Math.random() * 15) + 2)].map(
-    () => `${imagesPrefix}${Math.floor(Math.random() * 100) + 200}`,
+    () => `${imagesPrefix}${Math.floor(Math.random() * 100) + 200}`
   ),
   title: month,
 }));

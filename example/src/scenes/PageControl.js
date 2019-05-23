@@ -30,8 +30,8 @@ class PageControlExample extends React.Component<Props, State> {
           <PageControl
             currentPage={currentPage}
             numberOfPages={5}
-            updateCurrentPageDisplay={currentPage =>
-              this.setState({ currentPage })
+            updateCurrentPageDisplay={page =>
+              this.setState({ currentPage: page })
             }
           />
         </View>

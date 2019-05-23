@@ -36,7 +36,7 @@ export default class App extends React.Component<Props, State> {
   selectTheme = (theme: Theme) => {
     this.setState({ selectedTheme: theme });
     StatusBar.setBarStyle(
-      theme === DefaultTheme ? 'dark-content' : 'light-content',
+      theme === DefaultTheme ? 'dark-content' : 'light-content'
     );
   };
 
@@ -51,7 +51,9 @@ export default class App extends React.Component<Props, State> {
     return (
       <ThemeProvider theme={selectedTheme}>
         <NavigatorIOS
-          ref={ref => (this._nav = ref)}
+          ref={ref => {
+            this._nav = ref;
+          }}
           initialRoute={{
             component: ExampleList,
             title: 'Example',

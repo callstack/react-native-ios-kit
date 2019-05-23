@@ -19,7 +19,9 @@ type Props = {
 
 class IconsExample extends Component<Props> {
   render() {
-    const { theme: { primaryColor, positiveColor } } = this.props;
+    const {
+      theme: { primaryColor, positiveColor },
+    } = this.props;
     return (
       <View style={styles.screen}>
         <View style={styles.row}>

@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "yarn install --cwd ./website && yarn install --cwd ./example",
     "flow": "flow",
-    "lint": "eslint src --cache",
+    "lint": "eslint . --cache",
     "test": "jest",
     "ci": "npm run lint && npm run flow && npm test",
     "build-assets": "./bin/build_assets.sh",
