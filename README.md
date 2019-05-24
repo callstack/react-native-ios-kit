@@ -24,8 +24,8 @@ You can find documentation with all list of features and components [here](https
 ```sh
 cd example && npm run ios
 ```
-or run the [example app](https://expo.io/@mobile-dev/react-native-ios-kit) with [Expo](https://expo.io/) to see it in action.
 
+or run the [example app](https://expo.io/@mobile-dev/react-native-ios-kit) with [Expo](https://expo.io/) to see it in action.
 
 ## Getting Started
 
@@ -36,8 +36,8 @@ Open a Terminal in your project's folder and run
 ```sh
   yarn add react-native-ios-kit react-native-vector-icons
 ```
-After installation, you'll need to link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons).
 
+After installation, you'll need to link [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons).
 
 ### Usage
 
@@ -67,6 +67,7 @@ AppRegistry.registerComponent('main', () => Main);
 The **ThemeProvider** component provides the theme to all the components in the framework. It also acts as a portal to components which need to be rendered at the top level.
 
 ### Customization
+
 #### Main theme for application
 
 You can provide a custom theme to customize the colors, fonts etc. with the **ThemeProvider** component.
@@ -84,7 +85,10 @@ import App from './src/App';
 const theme = {
   ...DefaultTheme,
   primaryColor: 'tomato',
-  primaryLightColor: color('tomato').lighten(0.2).rgb().string(),
+  primaryLightColor: color('tomato')
+    .lighten(0.2)
+    .rgb()
+    .string(),
   disabledColor: 'yellow',
 };
 
@@ -102,6 +106,7 @@ function Main() {
 You can also customize theme per one component by using `theme` prop.
 
 Example:
+
 ```javascript
   <Icon
     name="ios-people"
@@ -110,12 +115,12 @@ Example:
     }}
   >
 ```
+
 This code will change icon color to `green`
 
 ## Documentation
 
 Check the components and their usage in our [documentation](https://callstack.github.io/react-native-ios-kit).
-
 
 ## Contributing
 
@@ -123,10 +128,10 @@ Read the [contribution guidelines](/CONTRIBUTING.md) before contributing.
 
 ## Made with ❤️ at Callstack
 
-`react-native-ios-kit` is an open source project and will always remain free to use. If you think it's cool, please star it 🌟. [Callstack][callstack-readme-with-love] is a group of React and React Native geeks, contact us at [hello@callstack.com](mailto:hello@callstack.com) if you need any help with these or just want to say hi!
-
+`react-native-ios-kit` is an open source project and will always remain free to use. If you think it's cool, please star it 🌟. [Callstack](callstack-readme-with-love) is a group of React and React Native geeks, contact us at [hello@callstack.com](mailto:hello@callstack.com) if you need any help with these or just want to say hi!
 
 <!-- badges -->
+
 [build-badge]: https://img.shields.io/circleci/project/github/callstack/react-native-ios-kit/master.svg?style=flat-square
 [build]: https://circleci.com/gh/callstack/react-native-ios-kit
 [version-badge]: https://img.shields.io/npm/v/react-native-ios-kit.svg?style=flat-square
