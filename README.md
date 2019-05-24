@@ -147,3 +147,5 @@ Read the [contribution guidelines](/CONTRIBUTING.md) before contributing.
 [callstack]: https://callstack.com/open-source/?utm_source=github.com&utm_medium=referral&utm_campaign=react-native-ios-kit&utm_term=readme-badge
 [callstack-readme-with-love]: https://callstack.com/?utm_source=github.com&utm_medium=referral&utm_campaign=react-native-ios-kit&utm_term=readme-with-love
 [callstack-badge]: https://callstack.com/images/callstack-badge.svg
+[prs-welcome-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[prs-welcome]: http://makeapullrequest.com
