@@ -4,10 +4,10 @@ import * as React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 
 import Sections from './Sections';
-import withTheme from '../../core/withTheme';
+import { withTheme } from '../../core/theming';
 import { Headline } from '../Typography';
 
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 import type { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
@@ -26,7 +26,7 @@ type Props = {
   ItemSeparatorComponent?: React.ComponentType<*>,
   SectionSeparatorComponent: *,
   sections?: Array<string>,
-  sectionsStyle?: StyleObj,
+  sectionsStyle?: ViewStyleProp,
   sectionPrimaryColor?: string,
   getItemLayout?: (
     data: any,
@@ -96,9 +96,11 @@ class GroupedList extends React.PureComponent<Props, State> {
     if (this.props.renderSectionHeader) {
       return (
         <View
-          onLayout={({ nativeEvent: { layout: { height } } }) =>
-            this.handleSectionHeaderLayout(height, data)
-          }
+          onLayout={({
+            nativeEvent: {
+              layout: { height },
+            },
+          }) => this.handleSectionHeaderLayout(height, data)}
         >
           {this.props.renderSectionHeader(data)}
         </View>
@@ -108,9 +110,11 @@ class GroupedList extends React.PureComponent<Props, State> {
     return (
       <View
         style={this.styles.header}
-        onLayout={({ nativeEvent: { layout: { height } } }) =>
-          this.handleSectionHeaderLayout(height, data)
-        }
+        onLayout={({
+          nativeEvent: {
+            layout: { height },
+          },
+        }) => this.handleSectionHeaderLayout(height, data)}
       >
         <Headline>
           {data.section &&
@@ -148,7 +152,9 @@ class GroupedList extends React.PureComponent<Props, State> {
       <View style={this.styles.container}>
         <SectionList
           initialNumToRender={getItemLayout ? 30 : Number.MAX_SAFE_INTEGER}
-          ref={sectionList => (this.sectionList = sectionList)}
+          ref={sectionList => {
+            this.sectionList = sectionList;
+          }}
           renderItem={renderItem}
           renderSectionFooter={renderSectionFooter}
           renderSectionHeader={this.renderSectionHeader}

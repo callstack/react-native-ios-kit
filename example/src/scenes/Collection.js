@@ -1,6 +1,6 @@
 /* @flow */
 import * as React from 'react';
-import { Image } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { Collection, withTheme, Title1 } from 'react-native-ios-kit';
 
 import withSafeArea from '../withSafeArea';
@@ -52,7 +52,9 @@ class CollectionExample extends React.Component<Props, State> {
         numberOfColumns={4}
         data={data}
         renderItem={item => <Image source={{ uri: item }} />}
-        renderSectionHeader={({ section }) => <Title1>{section.title}</Title1>}
+        renderSectionHeader={({ section }) => (
+          <Title1 style={styles.sectionHeader}>{section.title}</Title1>
+        )}
         keyExtractor={(item, index) => `${item}_${index}`}
         refreshing={this.state.refreshing}
         onRefresh={this.refresh}
@@ -62,3 +64,9 @@ class CollectionExample extends React.Component<Props, State> {
 }
 
 export default withTheme(withSafeArea(CollectionExample));
+
+const styles = StyleSheet.create({
+  sectionHeader: {
+    backgroundColor: 'rgba(255,255,255,0.5)',
+  },
+});

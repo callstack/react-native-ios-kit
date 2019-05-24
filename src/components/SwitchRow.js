@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import RowItem from './RowItem';
 import Switch from './Switch';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
@@ -19,7 +19,7 @@ class SwitchRow extends React.Component<Props> {
   };
 
   render() {
-    return <RowItem renderRight={this.renderRight} {...this.props} />;
+    return <RowItem title="" renderRight={this.renderRight} {...this.props} />;
   }
 }
 

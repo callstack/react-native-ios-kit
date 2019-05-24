@@ -1,17 +1,16 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
 import { withTheme } from '../../';
 import type { Theme } from '../../types/Theme';
+import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 const trackingToSpacing = (fontSize: number, tracking: number): number =>
-  fontSize * tracking / 1000;
+  (fontSize * tracking) / 1000;
 
-const resolveFontSizeFromStyle = (
-  style?: Object | number | Array<Object | number>
-) => {
+const resolveFontSizeFromStyle = (style?: TextStyleProp) => {
   if (!style) {
     return 0;
   }
@@ -36,7 +35,7 @@ type Props = {
   theme: Theme,
 };
 
-class StyledText extends Component<Props> {
+class StyledText extends React.Component<Props> {
   render() {
     const { style, children, config, theme, ...rest } = this.props;
     const fontSize = resolveFontSizeFromStyle(style) || config.fontSize;

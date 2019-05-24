@@ -3,12 +3,12 @@ import * as React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
 import RowItem from './RowItem';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
   theme: Theme,
-  title?: string,
+  title: string,
   value: string,
   placeholder?: string,
   onValueChange: (text: string) => void,
@@ -30,6 +30,7 @@ class TextFieldRow extends React.Component<Props> {
       placeholder,
       onValueChange,
       theme: { placeholderColor, primaryColor, textColor },
+      title,
       ...rest
     } = this.props;
     return (

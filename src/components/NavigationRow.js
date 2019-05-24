@@ -4,11 +4,12 @@ import { StyleSheet, View } from 'react-native';
 
 import RowItem from './RowItem';
 import Icon from './Icon';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import { Body } from './Typography';
 import type { Theme } from '../types/Theme';
+import type { Props as RowProps } from './RowItem';
 
-type Props = {
+type Props = RowProps & {
   theme: Theme,
   onPress: void => void,
   info?: string,
@@ -16,7 +17,10 @@ type Props = {
 
 class NavigationRow extends React.Component<Props> {
   renderRightComponent = () => {
-    const { info, theme: { placeholderColor } } = this.props;
+    const {
+      info,
+      theme: { placeholderColor },
+    } = this.props;
     return (
       <View style={styles.row}>
         {info ? (

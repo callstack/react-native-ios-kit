@@ -19,7 +19,7 @@ type Props = {
   style?: any,
   theme: Theme,
   onValueChange: (value: number) => void,
-  onSlidingComplete: (value: number) => void,
+  onSlidingComplete?: (value: number) => void,
   minTrackTintColor?: string,
   maxTrackTintColor?: string,
 };

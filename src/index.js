@@ -1,7 +1,6 @@
 /* @flow */
 
-export { default as withTheme } from './core/withTheme';
-export { default as ThemeProvider } from './core/ThemeProvider';
+export { withTheme, ThemeProvider } from './core/theming';
 export { default as DefaultTheme } from './styles/DefaultTheme';
 export { default as DarkTheme } from './styles/DarkTheme';
 

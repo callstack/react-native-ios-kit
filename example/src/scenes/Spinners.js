@@ -2,7 +2,13 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { withTheme, Spinner, ProgressBar, Title1 } from 'react-native-ios-kit';
+import {
+  withTheme,
+  Spinner,
+  ProgressBar,
+  Title1,
+  DefaultTheme,
+} from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 import withSafeArea from '../withSafeArea';
 
@@ -24,7 +30,7 @@ class Spinners extends Component<Props, State> {
     clearTimeout(this.animate);
   }
 
-  animate: number;
+  animate: TimeoutID;
 
   animateProgress = () => {
     this.animate = setTimeout(() => {
@@ -48,7 +54,10 @@ class Spinners extends Component<Props, State> {
             <Spinner />
           </View>
           <View style={styles.row}>
-            <Spinner theme={{ primaryColor: 'red' }} size="large" />
+            <Spinner
+              theme={{ ...DefaultTheme, primaryColor: 'red' }}
+              size="large"
+            />
           </View>
         </View>
         <View style={styles.container}>

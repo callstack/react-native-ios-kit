@@ -29,8 +29,8 @@ class SliderExample extends Component<Props, State> {
         <Slider
           value={this.state.value}
           onValueChange={value => this.setState({ value })}
-          minIconName="ios-volume-mute-outline"
-          maxIconName="ios-volume-up"
+          minIconName="ios-volume-mute"
+          maxIconName="ios-volume-high"
         />
         <Slider
           value={this.state.value2}

@@ -2,7 +2,13 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-import { withTheme, TableView, InfoRow, Icon } from 'react-native-ios-kit';
+import {
+  withTheme,
+  TableView,
+  InfoRow,
+  Icon,
+  DefaultTheme,
+} from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from '../withSafeArea';
@@ -13,12 +19,14 @@ type Props = {
 
 class IconsExample extends Component<Props> {
   render() {
-    const { theme: { primaryColor, positiveColor } } = this.props;
+    const {
+      theme: { primaryColor, positiveColor },
+    } = this.props;
     return (
       <View style={styles.screen}>
         <View style={styles.row}>
-          <Icon name="ios-chatbubbles-outline" />
-          <Icon name="ios-bonfire-outline" color="red" size={24} />
+          <Icon name="ios-chatbubbles" />
+          <Icon name="ios-bonfire" color="red" size={24} />
           <Icon
             name={{
               uri:
@@ -28,15 +36,18 @@ class IconsExample extends Component<Props> {
           <Icon name="ios-checkmark-circle" color={positiveColor} />
         </View>
         <TableView header="Ionicons">
-          <InfoRow icon="ios-appstore-outline" info="Default" />
+          {/* $FlowFixMe */}
+          <InfoRow icon="ios-appstore" info="Default" />
           <InfoRow
-            icon="ios-beer-outline"
+            title=""
+            icon="ios-beer"
             info="CustomColor"
-            theme={{ primaryColor: 'plum' }}
+            theme={{ ...DefaultTheme, primaryColor: 'plum' }}
           />
         </TableView>
         <TableView header="Custom image">
           <InfoRow
+            title=""
             icon={{
               uri:
                 'https://callstack.github.io/react-native-ios-kit/img/favicon.png',
@@ -46,6 +57,7 @@ class IconsExample extends Component<Props> {
         </TableView>
         <TableView header="React component">
           <InfoRow
+            title=""
             icon={
               <View
                 style={{
@@ -60,6 +72,7 @@ class IconsExample extends Component<Props> {
             info="<View />"
           />
           <InfoRow
+            title=""
             icon={<Text style={{ color: primaryColor }}>Hi</Text>}
             info="<Text />"
           />

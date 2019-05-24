@@ -26,7 +26,6 @@ module.exports = {
       'react',
       '@expo/vector-icons',
       '@babel/runtime',
-      'prop-types',
       ...dependencies,
     ],
   },

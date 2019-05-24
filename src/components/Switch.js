@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { Switch as ReactNativeSwitch } from 'react-native';
 
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
@@ -17,22 +17,21 @@ type Props = {
   theme: Theme,
   // onChange prop
   onValueChange?: (value: boolean) => *,
-  // Background color when the switch is turned on
-  onTintColor?: string,
+  // Border color when the switch is turned on
+  trackColor?: string,
   // Color of the foreground switch grip
-  thumbTintColor?: string,
-  // Border color when the switch is turned off.
-  tintColor?: string,
+  thumbColor?: string,
 };
 
 class Switch extends Component<Props> {
   render() {
-    const { theme, onValueChange, onTintColor, ...rest } = this.props;
+    const { theme, onValueChange, trackColor, ...rest } = this.props;
     return (
       <ReactNativeSwitch
         {...rest}
         onValueChange={onValueChange}
-        onTintColor={onTintColor || theme.positiveColor}
+        // $FlowFixMe
+        trackColor={trackColor || theme.positiveColor}
       />
     );
   }

@@ -19,7 +19,7 @@ import { Switch } from 'react-native-ios-kit';
 
 ## Theme
 Uses following `theme` properties:
-- `positiveColor` - selected switch background color (`onTintColor`)
+- `positiveColor` - selected switch background color (`trackColor`)
 
 ## Props
 
@@ -33,7 +33,7 @@ If true, disable all interactions for this component.
 
 Invoked with the new value when the value changes.
 
-### `onTintColor` (optional)
+### `trackColor` (optional)
 **type:** `string`
 **default value:** `positiveColor` from [`theme`](theme.html)
 

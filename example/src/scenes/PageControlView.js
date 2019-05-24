@@ -15,24 +15,21 @@ const { height } = Dimensions.get('window');
 class PageControlViewExample extends React.Component<Props> {
   render() {
     return (
-      <PageControlView startPage={1} onPageChange={page => console.log(page)}>
+      <PageControlView startPage={1} onPageChange={() => {}}>
         <View style={styles.firstContainer}>
           <Title1>First page.</Title1>
           <View style={styles.row}>
             <Icon
               style={{ paddingHorizontal: 20 }}
-              name="ios-american-football-outline"
+              name="ios-american-football"
             />
-            <Icon style={{ paddingHorizontal: 20 }} name="ios-cash-outline" />
-            <Icon style={{ paddingHorizontal: 20 }} name="ios-bowtie-outline" />
+            <Icon style={{ paddingHorizontal: 20 }} name="ios-cash" />
+            <Icon style={{ paddingHorizontal: 20 }} name="ios-bowtie" />
             <Icon style={{ paddingHorizontal: 20 }} name="ios-cloudy-night" />
+            <Icon style={{ paddingHorizontal: 20 }} name="ios-construct" />
             <Icon
               style={{ paddingHorizontal: 20 }}
-              name="ios-construct-outline"
-            />
-            <Icon
-              style={{ paddingHorizontal: 20 }}
-              name="ios-game-controller-b-outline"
+              name="logo-game-controller-a"
             />
           </View>
         </View>

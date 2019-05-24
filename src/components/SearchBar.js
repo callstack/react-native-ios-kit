@@ -13,7 +13,7 @@ import {
 
 import Icon from './Icon';
 
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
@@ -97,7 +97,12 @@ class SearchBar extends React.Component<Props, State> {
     if (typeof this.props.onBlur === 'function') this.props.onBlur();
   };
 
-  handleLayout = ({ nativeEvent: { layout: { width } } }) => {
+  // $FlowFixMe
+  handleLayout = ({
+    nativeEvent: {
+      layout: { width },
+    },
+  }) => {
     this.setState({ cancelWidth: width });
   };
 
@@ -155,7 +160,9 @@ class SearchBar extends React.Component<Props, State> {
               size={18}
             />
             <TextInput
-              ref={ref => (this._input = ref)}
+              ref={ref => {
+                this._input = ref;
+              }}
               style={[{ color: textColor }, styles.input]}
               value={value}
               onChangeText={onValueChange}
@@ -164,7 +171,6 @@ class SearchBar extends React.Component<Props, State> {
               selectionColor={primaryColor}
               onFocus={this.handleInputFocus}
               onBlur={this.handleInputBlur}
-              {...this.props}
             />
             {value ? (
               <TouchableOpacity onPress={this.clearInput}>

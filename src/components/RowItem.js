@@ -4,11 +4,11 @@ import { View, StyleSheet, TouchableHighlight } from 'react-native';
 
 import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 import type { IconSource } from './Icon';
 
-type Props = {
+export type Props = {
   /**
    * Provided by the ThemeProvider
    */
@@ -32,7 +32,7 @@ type Props = {
   /**
    * Function which should return Element to be rendered on the right side of row
    */
-  renderRight?: () => React.Element<*>,
+  renderRight?: () => ?React.Element<*>,
   /**
    * RowItem's onPress handler
    */
@@ -40,8 +40,8 @@ type Props = {
   /**
    * Internal props
    */
-  first: boolean,
-  last: boolean,
+  first?: boolean,
+  last?: boolean,
 };
 
 class RowItem extends React.Component<Props> {
@@ -88,7 +88,7 @@ class RowItem extends React.Component<Props> {
             },
           ]}
         >
-          {title && <Body>{title}</Body>}
+          {!!title && <Body>{title}</Body>}
           {subtitle && <Caption1>{subtitle}</Caption1>}
         </View>
         {this.renderRight()}
@@ -96,17 +96,15 @@ class RowItem extends React.Component<Props> {
     );
   };
 
-  renderTouchableRow = () => {
-    return (
-      <TouchableHighlight
-        onPress={this.props.onPress}
-        underlayColor={this.props.theme.footnoteColor}
-        style={{ backgroundColor: this.props.theme.barColor }}
-      >
-        {this.renderRow()}
-      </TouchableHighlight>
-    );
-  };
+  renderTouchableRow = () => (
+    <TouchableHighlight
+      onPress={this.props.onPress}
+      underlayColor={this.props.theme.footnoteColor}
+      style={{ backgroundColor: this.props.theme.barColor }}
+    >
+      {this.renderRow()}
+    </TouchableHighlight>
+  );
 
   render() {
     const { last, onPress, theme, icon } = this.props;

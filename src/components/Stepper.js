@@ -3,7 +3,7 @@ import * as React from 'react';
 import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
 
 import Icon from './Icon';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
@@ -71,8 +71,8 @@ class Stepper extends React.Component<Props, State> {
     clearInterval(this._interval);
   }
 
-  _interval: number;
-  _timeout: number;
+  _interval: IntervalID;
+  _timeout: TimeoutID;
 
   decrementOnCounter = () => {
     const newValue = this.props.value - this.props.stepValue;
@@ -117,7 +117,7 @@ class Stepper extends React.Component<Props, State> {
     });
   };
 
-  startInterval = (callback, speed = 300) => {
+  startInterval = (callback: Function, speed: number = 300) => {
     let i = 0;
     this._interval = setInterval(() => {
       callback();

@@ -1,6 +1,6 @@
 /* @flow */
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 
 import { Avatar, withTheme, Body } from 'react-native-ios-kit';
 
@@ -21,7 +21,7 @@ class AvatarExample extends React.Component<Props> {
         </View>
         <View style={styles.row}>
           <Body>Url prop</Body>
-          <Avatar url="https://callstack.com/static/favicon.png" />
+          <Avatar url="https://callstack.com/images/favicon/favicon-32x32.png" />
         </View>
         <View style={styles.row}>
           <Body>Initials</Body>
@@ -31,7 +31,7 @@ class AvatarExample extends React.Component<Props> {
           <Body>With onPress handler</Body>
           <Avatar
             url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCIl1UiHXVbyY2UVAWE6aflhrlA7CN8BGv4Ej7lkWp0wnJtody"
-            onPress={() => alert('Hello')}
+            onPress={() => Alert.alert('Hello')}
           />
         </View>
       </View>

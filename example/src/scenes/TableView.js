@@ -1,6 +1,6 @@
 /* @flow */
 import * as React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Alert } from 'react-native';
 
 import {
   Button,
@@ -36,32 +36,35 @@ class TableViewExample extends React.Component<Props, State> {
       <ScrollView automaticallyAdjustContentInsets={false}>
         <TableView header="RowItems" footer="footer">
           <RowItem
-            icon="ios-map-outline"
+            icon="ios-map"
             title="Navigation"
             subtitle="Get your directions"
             rightComponent={ArrowRight}
-            onPress={() => alert('Hello')}
+            onPress={() => Alert.alert('Hello')}
           />
           <RowItem
             icon="ios-settings"
             title="Settings"
-            onPress={() => alert('Hello')}
+            onPress={() => Alert.alert('Hello')}
           />
         </TableView>
-        <TableView footer="Footer link" onFooterPress={() => alert('Hello')}>
+        <TableView
+          footer="Footer link"
+          onFooterPress={() => Alert.alert('Hello')}
+        >
           <RowItem title="No Icon" />
           <RowItem
-            icon="ios-heart-outline"
+            icon="ios-heart"
             title="Health"
             rightComponent={ArrowRight}
-            onPress={() => alert('Hello')}
+            onPress={() => Alert.alert('Hello')}
           />
         </TableView>
         <TableView withoutHeader withoutFooter>
           <RowItem
             title="No header, no footer"
             rightComponent={RightButton}
-            onPress={() => alert('Hello')}
+            onPress={() => Alert.alert('Hello')}
           />
         </TableView>
         <TableView header="Rows">
@@ -88,7 +91,7 @@ class TableViewExample extends React.Component<Props, State> {
           />
           <NavigationRow
             title="NavigationRow"
-            onPress={() => alert('NavigationRow pressed')}
+            onPress={() => Alert.alert('NavigationRow pressed')}
             info="navigation"
           />
         </TableView>
@@ -101,7 +104,7 @@ export default withTheme(withSafeArea(TableViewExample));
 
 const ArrowRight = () => <Icon name="ios-arrow-forward" size={22} />;
 const RightButton = () => (
-  <Button onPress={() => alert('Hello world!')}>
+  <Button onPress={() => Alert.alert('Hello world!')}>
     <ArrowRight />
   </Button>
 );

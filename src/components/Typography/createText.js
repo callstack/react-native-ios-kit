@@ -11,8 +11,8 @@ type Config = {
   fontWeight: string,
 };
 
-const createText = (config: Config) => {
-  return (props: Object) => <StyledText {...props} config={config} />;
-};
+const createText = (config: Config) => (props: Object) => (
+  <StyledText {...props} config={config} />
+);
 
 export default createText;

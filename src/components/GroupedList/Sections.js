@@ -10,7 +10,7 @@ import {
   NativeModules,
 } from 'react-native';
 
-import withTheme from '../../core/withTheme';
+import { withTheme } from '../../core/theming';
 
 import type { Theme } from '../../types/Theme';
 
@@ -50,7 +50,12 @@ class Sections extends PureComponent<Props, State> {
   sections: ?any;
   currentSectionIdx: ?number;
 
-  handleContainerLayout = ({ nativeEvent: { layout: { height } } }) => {
+  // $FlowFixMe
+  handleContainerLayout = ({
+    nativeEvent: {
+      layout: { height },
+    },
+  }) => {
     this.setState({ sections: this.prepareSections(height) });
   };
 
@@ -63,14 +68,14 @@ class Sections extends PureComponent<Props, State> {
       }
     );
   };
-
+  // $FlowFixMe
   handleMove = ({ nativeEvent: { pageY } }) => {
     if (!this.sectionsHeight || !this.sectionsY) {
       return;
     }
 
     const sectionIdx = Math.round(
-      (pageY - this.sectionsY) * this.props.items.length / this.sectionsHeight
+      ((pageY - this.sectionsY) * this.props.items.length) / this.sectionsHeight
     );
     if (
       sectionIdx >= 0 &&
@@ -111,7 +116,7 @@ class Sections extends PureComponent<Props, State> {
     return visibleSections;
   }
 
-  renderSection = (item, index) => {
+  renderSection = (item: any, index: number) => {
     const { sectionPrimaryColor, theme } = this.props;
     if (item) {
       return (
@@ -155,7 +160,9 @@ class Sections extends PureComponent<Props, State> {
           style={styles.sections}
           {...this.panResponder.panHandlers}
           onLayout={this.handleLayout}
-          ref={view => (this.sections = view)}
+          ref={view => {
+            this.sections = view;
+          }}
         >
           {sections.map(this.renderSection)}
         </View>

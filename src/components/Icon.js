@@ -1,7 +1,6 @@
 /* @flow */
 import * as React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
-import PropTypes from 'prop-types';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';
@@ -13,7 +12,7 @@ type Props = {
   /**
    * IconSource name. Can be one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json or source of ReactNative's `image` or any valid React Component
    */
-  name: IconSource,
+  name?: IconSource,
   /**
    * Custom color for icon, default to primary
    */
@@ -50,6 +49,7 @@ class Icon extends React.Component<Props> {
     } else if (
       (typeof name === 'object' &&
         name !== null &&
+        // eslint-disable-next-line
         (name.hasOwnProperty('uri') && typeof name.uri === 'string')) ||
       typeof name === 'number'
     ) {
@@ -66,39 +66,26 @@ class Icon extends React.Component<Props> {
           ]}
         />
       );
-    } else {
-      return (
-        <View
-          {...rest}
-          style={[
-            {
-              width: size,
-              height: size,
-            },
-            styles.container,
-            style,
-          ]}
-        >
-          {(name: any)}
-        </View>
-      );
     }
+    return (
+      <View
+        {...rest}
+        style={[
+          {
+            width: size,
+            height: size,
+          },
+          styles.container,
+          style,
+        ]}
+      >
+        {(name: any)}
+      </View>
+    );
   }
 }
 
 export default withTheme(Icon);
-
-Icon.propTypes = {
-  name: PropTypes.oneOfType([
-    Ionicons.propTypes.name,
-    PropTypes.object,
-    PropTypes.number,
-  ]),
-  theme: PropTypes.object,
-  color: PropTypes.string,
-  style: PropTypes.any,
-  size: PropTypes.number,
-};
 
 const styles = StyleSheet.create({
   container: {

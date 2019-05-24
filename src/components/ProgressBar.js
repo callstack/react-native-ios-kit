@@ -12,7 +12,10 @@ type Props = {
 
 class ProgressBar extends Component<Props> {
   render() {
-    const { progress, theme: { primaryColor } } = this.props;
+    const {
+      progress,
+      theme: { primaryColor },
+    } = this.props;
     return (
       <ProgressViewIOS progress={progress} progressTintColor={primaryColor} />
     );

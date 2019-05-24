@@ -6,7 +6,10 @@ import { withTheme } from '../';
 import Icon from './Icon';
 
 import type { Theme } from '../types/Theme';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type {
+  TextStyleProp,
+  ViewStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 type Props = {
   theme: Theme,
@@ -14,8 +17,8 @@ type Props = {
   value: string,
   clearButton?: boolean,
   onValueChange?: (text: string) => void,
-  containerStyle?: StyleObj,
-  inputStyle?: StyleObj,
+  containerStyle?: ViewStyleProp,
+  inputStyle?: TextStyleProp,
 };
 
 class TextField extends React.Component<Props> {

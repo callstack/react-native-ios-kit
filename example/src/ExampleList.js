@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import { ListView } from 'react-native';
 import { withTheme, NavigationRow } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
@@ -111,7 +111,7 @@ type Props = {
   theme: Theme,
 };
 
-class ExampleList extends Component<Props> {
+class ExampleList extends React.Component<Props> {
   _onPressRow = (route: Route) => {
     this.props.navigator.push(route);
   };

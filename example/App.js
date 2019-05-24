@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, NavigatorIOS, StatusBar } from 'react-native';
 import { ThemeProvider, DefaultTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
@@ -51,7 +51,9 @@ export default class App extends React.Component<Props, State> {
     return (
       <ThemeProvider theme={selectedTheme}>
         <NavigatorIOS
-          ref={ref => (this._nav = ref)}
+          ref={ref => {
+            this._nav = ref;
+          }}
           initialRoute={{
             component: ExampleList,
             title: 'Example',

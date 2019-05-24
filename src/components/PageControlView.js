@@ -3,16 +3,17 @@ import * as React from 'react';
 import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 
 import PageControl from './PageControl';
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
-import type { StyleObj } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import type { ScrollEvent } from 'react-native/Libraries/Types/CoreEventTypes';
 
 const { width } = Dimensions.get('window');
 
 type Props = {
   theme: Theme,
   children: React.Node,
-  containerStyle: StyleObj,
+  containerStyle?: ViewStyleProp,
   startPage?: number,
   onPageChange?: number => void,
   currentPageIndicatorTintColor?: string,
@@ -35,13 +36,13 @@ class PageControlView extends React.Component<Props, State> {
 
   scrollView = undefined;
 
-  handleScroll = event => {
+  handleScroll = (event: ScrollEvent) => {
     const xOffset = event.nativeEvent.contentOffset.x + 10;
     const currentPage = Math.floor(xOffset / width);
     this.setState({ currentPage });
   };
 
-  handleScrollEnd = event => {
+  handleScrollEnd = (event: ScrollEvent) => {
     const { onPageChange } = this.props;
     const xOffset = event.nativeEvent.contentOffset.x + 10;
     const currentPage = Math.floor(xOffset / width);

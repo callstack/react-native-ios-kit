@@ -61,7 +61,7 @@ type Props = {
 };
 
 class Button extends React.Component<Props> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.styles = getStyles(this.props.theme);
   }
@@ -110,7 +110,7 @@ class Button extends React.Component<Props> {
         flexDirection: 'row',
       };
       if (this.props.centered) {
-        //$FlowFixMe
+        // $FlowFixMe
         wrapperStyle.justifyContent = 'center';
       }
       return <View style={wrapperStyle}>{markup}</View>;

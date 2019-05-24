@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { SegmentedControlIOS } from 'react-native';
 
-import withTheme from '../core/withTheme';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
@@ -26,6 +26,7 @@ type Props = {
 };
 
 class SegmentedControl extends React.Component<Props> {
+  // $FlowFixMe
   onValueChange = e =>
     this.props.onValueChange &&
     this.props.onValueChange(

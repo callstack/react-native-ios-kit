@@ -57,6 +57,7 @@ class TabBar extends PureComponent<Props> {
       <View style={[styles.wrapper, tabBarStyle]}>
         {tabs.map((tab, idx) => (
           <TouchableWithoutFeedback
+            // eslint-disable-next-line
             key={`tabItem_${idx}`}
             onPress={() => tab.onPress(idx)}
             disabled={tab.disabled || tab.isActive}
@@ -68,14 +69,18 @@ class TabBar extends PureComponent<Props> {
                 color={
                   tab.isActive
                     ? primaryColor
-                    : tab.disabled ? disabledColor : primaryLightColor
+                    : tab.disabled
+                    ? disabledColor
+                    : primaryLightColor
                 }
               />
               <Caption2
                 style={{
                   color: tab.isActive
                     ? primaryColor
-                    : tab.disabled ? disabledColor : primaryLightColor,
+                    : tab.disabled
+                    ? disabledColor
+                    : primaryLightColor,
                 }}
               >
                 {tab.title}
