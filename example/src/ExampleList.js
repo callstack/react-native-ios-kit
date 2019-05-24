@@ -7,6 +7,7 @@ import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from './withSafeArea';
 import Buttons from './scenes/Buttons';
+import Cards from './scenes/Cards';
 import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
@@ -39,6 +40,10 @@ const dataSource = ds.cloneWithRows([
   {
     component: Buttons,
     title: 'Buttons',
+  },
+  {
+    component: Cards,
+    title: 'Cards',
   },
   {
     component: GroupedList,
