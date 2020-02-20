@@ -29,6 +29,10 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/callstack/react-native-ios-kit',
   ogImage: 'img/ios-kit.svg',
+  algolia: {
+    apiKey: '3fc3f7484d62d6435dfb39ab39ed8b24',
+    indexName: 'react-native-ios-kit', 
+  },
 };
 
 module.exports = siteConfig;
