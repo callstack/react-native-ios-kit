@@ -7,7 +7,6 @@ import type { Theme } from 'react-native-ios-kit/types';
 
 import withSafeArea from './withSafeArea';
 import Buttons from './scenes/Buttons';
-import Cards from './scenes/Cards';
 import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
 import TabBar from './scenes/TabBar';
@@ -25,6 +24,7 @@ import Icons from './scenes/Icons';
 import GroupedList from './scenes/GroupedList';
 import Collection from './scenes/Collection';
 import Spinners from './scenes/Spinners';
+import Widgets from './scenes/Widgets';
 
 type Route = {
   component: any,
@@ -42,8 +42,8 @@ const dataSource = ds.cloneWithRows([
     title: 'Buttons',
   },
   {
-    component: Cards,
-    title: 'Cards',
+    component: Widgets,
+    title: 'Widgets',
   },
   {
     component: GroupedList,

@@ -39,7 +39,7 @@ type State = {
 };
 // TODO: implement blur view
 
-class Card extends React.Component<Props, State> {
+class Widget extends React.Component<Props, State> {
   state = {
     expandedContentVisible: false,
   };
@@ -56,13 +56,13 @@ class Card extends React.Component<Props, State> {
     const { expandedContentVisible } = this.state;
     return (
       <View>
-        <View style={[styles.cardHead, styles.cardSection]}>
+        <View style={[styles.widgetHead, styles.widgetSection]}>
           {icon ? (
             <Icon style={styles.icon} size={22} name={icon} />
           ) : (
             <View style={styles.iconPlaceholder} />
           )}
-          <Subhead style={styles.cardTitle}>{title.toUpperCase()}</Subhead>
+          <Subhead style={styles.widgetTitle}>{title.toUpperCase()}</Subhead>
           {expandedContent ? (
             <TouchableWithoutFeedback onPress={this.toggleExpandedConent}>
               <Subhead>
@@ -75,16 +75,16 @@ class Card extends React.Component<Props, State> {
         </View>
         <TouchableWithoutFeedback onPress={onPress}>
           {expandedContentVisible ? (
-            <View style={[styles.cardBody, styles.cardSection]}>
+            <View style={[styles.widgetBody, styles.widgetSection]}>
               <View style={styles.separator} />
               {expandedContent}
             </View>
           ) : (
             <View
               style={[
-                styles.cardBody,
-                styles.cardSection,
-                styles.defaultCardBody,
+                styles.widgetBody,
+                styles.widgetSection,
+                styles.defaultWidgetBody,
               ]}
             >
               {content}
@@ -96,33 +96,33 @@ class Card extends React.Component<Props, State> {
   }
 }
 
-export default withTheme(Card);
+export default withTheme(Widget);
 
 const styles = StyleSheet.create({
-  cardSection: {
+  widgetSection: {
     paddingVertical: 10,
     paddingHorizontal: 15,
     overflow: 'hidden',
   },
-  cardHead: {
+  widgetHead: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#ffffff99',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
-  cardTitle: {
+  widgetTitle: {
     flex: 1,
     color: colors.greyD2,
   },
-  cardBody: {
+  widgetBody: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ffffff55',
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
-  defaultCardBody: {
+  defaultWidgetBody: {
     height: 120,
   },
   icon: {

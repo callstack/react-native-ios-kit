@@ -6,7 +6,6 @@ export { default as DarkTheme } from './styles/DarkTheme';
 
 export { default as Avatar } from './components/Avatar';
 export { default as Button } from './components/Button';
-export { default as Card } from './components/Card';
 export { default as Collection } from './components/Collection';
 export { default as CheckboxRow } from './components/CheckboxRow';
 export { default as GroupedList } from './components/GroupedList';
@@ -29,5 +28,6 @@ export { default as TableView } from './components/TableView';
 export { default as TextField } from './components/TextField';
 export { default as TextFieldRow } from './components/TextFieldRow';
 export { default as Toolbar } from './components/Toolbar';
+export { default as Widget } from './components/Widget';
 
 export * from './components/Typography';

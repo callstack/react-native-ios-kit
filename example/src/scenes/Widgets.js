@@ -1,5 +1,4 @@
 /* @flow */
-
 import React, { Component } from 'react';
 import {
   Alert,
@@ -8,33 +7,31 @@ import {
   ImageBackground,
   View,
 } from 'react-native';
-
-import { Card, Subhead, withTheme } from 'react-native-ios-kit';
+import { Widget, Subhead, withTheme } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
-import withSafeArea from '../withSafeArea';
+
+const overlay = require('../../assets/wallpaper.jpg');
 
 type Props = {
   theme: Theme,
 };
 
-class Cards extends Component<Props> {
+class Widgets extends Component<Props> {
   handleCardPress = () => {
     Alert.alert('handleCardPress');
   };
 
   render() {
-    const overlay = require('../../assets/wallpaper.jpg');
-
     return (
       <ImageBackground
         style={{ width: '100%', height: '100%' }}
         source={overlay}
       >
         <ScrollView style={styles.container}>
-          <Card
+          <Widget
             icon="ios-map"
             title="maps nearby"
-            content={<Subhead>Content of the card</Subhead>}
+            content={<Subhead>Content of the Widget</Subhead>}
             expandedContent={<ExpandedContent />}
             onPress={this.handleCardPress}
           />
@@ -44,7 +41,7 @@ class Cards extends Component<Props> {
   }
 }
 
-export default withTheme(withSafeArea(Cards));
+export default withTheme(Widgets);
 
 const styles = StyleSheet.create({
   container: {
@@ -56,7 +53,7 @@ const styles = StyleSheet.create({
 
 const ExpandedContent = () => (
   <View>
-    <Subhead>Content of the card</Subhead>
+    <Subhead>Content of the Widget</Subhead>
     <Subhead>Expaned Content</Subhead>
     <Subhead>Expaned Content</Subhead>
     <Subhead>Expaned Content</Subhead>
