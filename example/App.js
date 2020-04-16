@@ -1,82 +1,72 @@
-/* @flow */
-import * as React from 'react';
-import { StyleSheet, NavigatorIOS, StatusBar } from 'react-native';
-import { ThemeProvider, DefaultTheme } from 'react-native-ios-kit';
+// @flow
+import React, { useState, useEffect } from 'react';
+import { StatusBar } from 'react-native';
+import { ThemeProvider, DefaultTheme, Button } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
-
-import ExampleList from './src/ExampleList';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import ExampleList, { examples } from './src/ExampleList';
 import ThemeSelector from './src/ThemeSelector';
 
-type Props = {
-  navigator: Object,
-};
+const Stack = createStackNavigator();
 
-type State = {
-  selectedTheme: Theme,
-};
+export default function App() {
+  const [theme, setTheme] = useState<Theme>(DefaultTheme);
 
-export default class App extends React.Component<Props, State> {
-  state = {
-    selectedTheme: DefaultTheme,
-  };
-  _nav: ?Object;
-  openThemesScreen = () => {
-    if (this._nav) {
-      this._nav.push({
-        component: ThemeSelector,
-        title: 'Select Theme',
-        passProps: {
-          selectTheme: this.selectTheme,
-          selectedTheme: this.state.selectedTheme,
-        },
-      });
-    }
+  const selectTheme = (selectedTheme: Theme) => {
+    setTheme(selectedTheme);
   };
 
-  selectTheme = (theme: Theme) => {
-    this.setState({ selectedTheme: theme });
+  const openThemesScreen = navigation => {
+    navigation.navigate('ThemeSelector', {
+      selectTheme,
+      selectedTheme: theme,
+    });
+  };
+
+  useEffect(() => {
     StatusBar.setBarStyle(
       theme === DefaultTheme ? 'dark-content' : 'light-content'
     );
-  };
+  }, [theme]);
 
-  render() {
-    const { selectedTheme } = this.state;
-    const {
-      barColor,
-      primaryColor,
-      textColor,
-      backgroundColor,
-    } = selectedTheme;
-    return (
-      <ThemeProvider theme={selectedTheme}>
-        <NavigatorIOS
-          ref={ref => {
-            this._nav = ref;
-          }}
-          initialRoute={{
-            component: ExampleList,
-            title: 'Example',
-            rightButtonTitle: 'Theme',
-            onRightButtonPress: this.openThemesScreen,
-            passProps: { theme: selectedTheme },
-          }}
-          style={styles.container}
-          itemWrapperStyle={[styles.scene, { backgroundColor }]}
-          barTintColor={barColor}
-          tintColor={primaryColor}
-          titleTextColor={textColor}
-        />
-      </ThemeProvider>
-    );
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: {
+                backgroundColor: theme.barColor,
+              },
+              headerTitleStyle: {
+                color: theme.textColor,
+              },
+            }}
+          >
+            <Stack.Screen
+              name="React Native iOS Kit"
+              component={ExampleList}
+              options={({ navigation }) => ({
+                headerRight: () => (
+                  <Button onPress={() => openThemesScreen(navigation)}>
+                    Theme
+                  </Button>
+                ),
+              })}
+            />
+            <Stack.Screen name="ThemeSelector" component={ThemeSelector} />
+            {examples.map(example => (
+              <Stack.Screen
+                key={example.title}
+                name={example.title}
+                component={example.component}
+              />
+            ))}
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </ThemeProvider>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  scene: {
-    paddingTop: 64,
-  },
-});

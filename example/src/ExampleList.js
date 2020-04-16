@@ -1,11 +1,11 @@
 /* @flow */
 
 import * as React from 'react';
-import { ListView } from 'react-native';
-import { withTheme, NavigationRow } from 'react-native-ios-kit';
-import type { Theme } from 'react-native-ios-kit/types';
+import { FlatList } from 'react-native';
+import { useTheme, NavigationRow } from 'react-native-ios-kit';
+import { useSafeArea } from 'react-native-safe-area-context';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-import withSafeArea from './withSafeArea';
 import Buttons from './scenes/Buttons';
 import Avatars from './scenes/Avatars';
 import Typography from './scenes/Typography';
@@ -30,8 +30,7 @@ type Route = {
   title: string,
 };
 
-const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-const dataSource = ds.cloneWithRows([
+export const examples = [
   {
     component: Avatars,
     title: 'Avatars',
@@ -104,32 +103,31 @@ const dataSource = ds.cloneWithRows([
     component: Typography,
     title: 'Typography',
   },
-]);
+];
 
 type Props = {
-  navigator: Object,
-  theme: Theme,
+  navigation: StackNavigationProp<{}>,
 };
 
-class ExampleList extends React.Component<Props> {
-  _onPressRow = (route: Route) => {
-    this.props.navigator.push(route);
+export default function ExampleList({ navigation }: Props) {
+  const theme = useTheme();
+  const safeArea = useSafeArea();
+
+  const _onPressRow = (route: Route) => {
+    navigation.navigate(route.title);
   };
 
-  render() {
-    return (
-      <ListView
-        automaticallyAdjustContentInsets={false}
-        dataSource={dataSource}
-        renderRow={rowData => (
-          <NavigationRow
-            title={rowData.title}
-            onPress={() => this._onPressRow(rowData)}
-          />
-        )}
-      />
-    );
-  }
+  return (
+    <FlatList
+      data={examples}
+      renderItem={({ item }) => (
+        <NavigationRow title={item.title} onPress={() => _onPressRow(item)} />
+      )}
+      keyExtractor={item => item.title}
+      contentContainerStyle={{
+        paddingBottom: safeArea.bottom,
+        backgroundColor: theme?.backgroundColor,
+      }}
+    />
+  );
 }
-
-export default withTheme(withSafeArea(ExampleList));
