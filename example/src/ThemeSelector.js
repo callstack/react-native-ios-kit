@@ -1,44 +1,43 @@
 /* @flow */
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Button, DarkTheme, DefaultTheme } from 'react-native-ios-kit';
+import { Button, DarkTheme, useTheme } from 'react-native-ios-kit';
 import { StackNavigationProp } from '@react-navigation/stack';
-
-import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
   navigation: StackNavigationProp<*>,
   route: {
     params: {
-      selectTheme: (theme: Object) => void,
-      selectedTheme: Theme,
+      selectTheme: (theme: 'dark' | 'light') => void,
     },
   },
 };
 
 export default function ThemeSelector({ route, navigation }: Props) {
-  const { selectTheme, selectedTheme } = route.params;
+  const { selectTheme } = route.params;
 
-  const setTheme = (theme: Theme): void => {
-    selectTheme(theme);
-    navigation.goBack();
-  };
+  const theme = useTheme();
 
-  const darkSelected = selectedTheme === DarkTheme;
+  const setTheme = useCallback(
+    (selectedTheme: 'dark' | 'light'): void => {
+      selectTheme(selectedTheme);
+      navigation.goBack();
+    },
+    [navigation, selectTheme]
+  );
+
+  const darkSelected = theme === DarkTheme;
 
   return (
     <View
-      style={[
-        styles.container,
-        { backgroundColor: selectedTheme.backgroundColor },
-      ]}
+      style={[styles.container, { backgroundColor: theme.backgroundColor }]}
     >
       <Button
         disabled={!darkSelected}
-        color={selectedTheme.textColor}
+        color={theme.textColor}
         inline
         style={styles.button}
-        onPress={() => setTheme(DefaultTheme)}
+        onPress={() => setTheme('light')}
       >
         {`LightTheme ${!darkSelected ? '(Selected)' : ''}`}
       </Button>
@@ -46,7 +45,7 @@ export default function ThemeSelector({ route, navigation }: Props) {
         disabled={darkSelected}
         inline
         style={styles.button}
-        onPress={() => setTheme(DarkTheme)}
+        onPress={() => setTheme('dark')}
       >
         {`DarkTheme ${darkSelected ? '(Selected)' : ''}`}
       </Button>

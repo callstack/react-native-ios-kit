@@ -126,7 +126,7 @@ export default function ExampleList({ navigation }: Props) {
       keyExtractor={item => item.title}
       contentContainerStyle={{
         paddingBottom: safeArea.bottom,
-        backgroundColor: theme?.backgroundColor,
+        backgroundColor: theme.backgroundColor,
       }}
     />
   );

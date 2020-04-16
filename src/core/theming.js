@@ -12,4 +12,4 @@ export const {
   ThemeProvider,
   withTheme,
   useTheme,
-}: ThemingType<?Theme> = createTheming(DefaultTheme);
+}: ThemingType<Theme> = createTheming(DefaultTheme);
