@@ -1,24 +1,32 @@
 {
   "name": "react-native-ios-kit-example",
   "version": "0.0.1",
-  "description": "react-native-ios-kit example!",
+  "description": "Example for React Native iOS Kit",
   "author": "",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start -c",
     "android": "expo android",
     "ios": "expo ios"
   },
   "dependencies": {
-    "@callstack/react-theme-provider": "^2.0.1",
+    "@callstack/react-theme-provider": "^3.0.2",
+    "@react-native-community/masked-view": "0.1.6",
+    "@react-navigation/native": "^5.0.0",
+    "@react-navigation/stack": "^5.0.0",
     "color": "^2.0.1",
     "exp": "^47.3.17",
-    "expo": "^32.0.0",
+    "expo": "^37.0.0",
     "glob-to-regexp": "^0.3.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-safe-area-view": "^0.2.0"
+    "react": "16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.0.tar.gz",
+    "react-native-gesture-handler": "~1.6.0",
+    "react-native-reanimated": "~1.7.0",
+    "react-native-safe-area-context": "0.7.3",
+    "react-native-safe-area-view": "^0.14.6",
+    "react-native-screens": "~2.2.0",
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",
@@ -26,13 +34,14 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-module-resolver": "^3.1.1",
-    "babel-preset-expo": "^5.0.0",
-    "expo-cli": "^2.3.8"
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.9.2",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-preset-expo": "^8.1.0",
+    "expo-cli": "^3.4.1"
   },
   "resolutions": {
-    "**/react": "16.5.0",
+    "**/react": "16.9.0",
     "**/color": "2.0.1",
     "**/lodash": "^4.17.4"
   }

@@ -29,6 +29,7 @@
 
 [untyped]
 <PROJECT_ROOT>/node_modules/react-native-safe-area-view
+<PROJECT_ROOT>/node_modules/@callstack/react-theme-provider
 <PROJECT_ROOT>/example/node_modules/react-native
 
 [include]

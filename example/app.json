@@ -1,10 +1,9 @@
 {
   "expo": {
-    "name": "react-native-ios-kit",
-    "description": "An empty new project",
-    "slug": "react-native-ios-kit",
+    "name": "React Native iOS Kit Example",
+    "description": "Example app for React Native iOS: https://callstack.github.io/react-native-ios-kit/",
+    "slug": "react-native-ios-kit-example",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
@@ -14,7 +13,10 @@
       "hideExponentText": false
     },
     "packagerOpts": {
-      "assetExts": ["ttf", "mp4"],
+      "assetExts": [
+        "ttf",
+        "mp4"
+      ],
       "config": "./metro.config.js",
       "projectRoots": ""
     },
