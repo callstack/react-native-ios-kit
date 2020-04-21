@@ -36,7 +36,6 @@ class IconsExample extends Component<Props> {
           <Icon name="ios-checkmark-circle" color={positiveColor} />
         </View>
         <TableView header="Ionicons">
-          {/* $FlowFixMe */}
           <InfoRow icon="ios-appstore" info="Default" />
           <InfoRow
             title=""
@@ -60,13 +59,7 @@ class IconsExample extends Component<Props> {
             title=""
             icon={
               <View
-                style={{
-                  width: 22,
-                  height: 22,
-                  borderRadius: 22,
-                  borderColor: primaryColor,
-                  borderWidth: 1,
-                }}
+                style={[styles.iconComponent, { borderColor: primaryColor }]}
               />
             }
             info="<View />"
@@ -93,5 +86,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     paddingVertical: 10,
+  },
+  iconComponent: {
+    width: 22,
+    height: 22,
+    borderRadius: 22,
+    borderWidth: 1,
   },
 });

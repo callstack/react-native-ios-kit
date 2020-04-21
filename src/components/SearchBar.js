@@ -97,7 +97,6 @@ class SearchBar extends React.Component<Props, State> {
     if (typeof this.props.onBlur === 'function') this.props.onBlur();
   };
 
-  // $FlowFixMe
   handleLayout = ({
     nativeEvent: {
       layout: { width },
@@ -107,6 +106,7 @@ class SearchBar extends React.Component<Props, State> {
   };
 
   animateTo = (toValue: 1 | 0): void => {
+    // $FlowFixMe Can't use useNativeDriver when animating width
     Animated.timing(this.state.anim, {
       toValue,
       easing: Easing.linear,
@@ -190,6 +190,7 @@ class SearchBar extends React.Component<Props, State> {
               <Animated.Text
                 style={[
                   styles.cancelText,
+                  // eslint-disable-next-line react-native/no-inline-styles
                   {
                     color: primaryColor,
                     opacity: animated ? anim : 1,
@@ -226,11 +227,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  // eslint-disable-next-line react-native/no-color-literals
   searchIcon: {
     paddingLeft: 9,
     backgroundColor: 'transparent',
     marginTop: 2,
   },
+  // eslint-disable-next-line react-native/no-color-literals
   clearIcon: {
     paddingRight: 9,
     backgroundColor: 'transparent',
@@ -250,6 +253,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     overflow: 'hidden',
   },
+  // eslint-disable-next-line react-native/no-color-literals
   input: {
     backgroundColor: 'transparent',
     paddingHorizontal: 7,

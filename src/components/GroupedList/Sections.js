@@ -18,10 +18,10 @@ const SECTION_HEIGHT = 18;
 
 type Props = {
   theme: Theme,
-  onSectionPress: Function,
+  onSectionPress: (id: number) => void,
   items: Array<string>,
   sectionPrimaryColor: ?string,
-  style: ?any,
+  style: ?*,
 };
 
 type State = {
@@ -33,7 +33,7 @@ class Sections extends PureComponent<Props, State> {
     sections: [],
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -50,7 +50,6 @@ class Sections extends PureComponent<Props, State> {
   sections: ?any;
   currentSectionIdx: ?number;
 
-  // $FlowFixMe
   handleContainerLayout = ({
     nativeEvent: {
       layout: { height },
@@ -68,7 +67,7 @@ class Sections extends PureComponent<Props, State> {
       }
     );
   };
-  // $FlowFixMe
+
   handleMove = ({ nativeEvent: { pageY } }) => {
     if (!this.sectionsHeight || !this.sectionsY) {
       return;
@@ -112,7 +111,7 @@ class Sections extends PureComponent<Props, State> {
       visibleSections.push(items[visibleSectionIdx], null);
     }
     visibleSections.push(items[items.length - 1]); // make last item visible
-    // Each null in vsibleSections array is a dot
+    // Each null in visbleSections array is a dot
     return visibleSections;
   }
 
@@ -183,6 +182,7 @@ const styles = StyleSheet.create({
   sections: {
     width: 45,
   },
+  // eslint-disable-next-line react-native/no-color-literals
   section: {
     fontSize: 14,
     height: SECTION_HEIGHT,

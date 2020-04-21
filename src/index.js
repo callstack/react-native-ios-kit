@@ -1,4 +1,5 @@
 /* @flow */
+import * as Colors from './styles/colors';
 
 export { withTheme, ThemeProvider, useTheme } from './core/theming';
 export { default as DefaultTheme } from './styles/DefaultTheme';
@@ -28,5 +29,6 @@ export { default as TableView } from './components/TableView';
 export { default as TextField } from './components/TextField';
 export { default as TextFieldRow } from './components/TextFieldRow';
 export { default as Toolbar } from './components/Toolbar';
+export { Colors };
 
 export * from './components/Typography';

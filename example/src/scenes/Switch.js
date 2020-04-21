@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { withTheme, Subhead, Switch } from 'react-native-ios-kit';
+import { withTheme, Subhead, Switch, Colors } from 'react-native-ios-kit';
 import type { Theme } from 'react-native-ios-kit/types';
 import withSafeArea from '../withSafeArea';
 
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomColor: '#666',
+    borderBottomColor: Colors.greyL1,
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
