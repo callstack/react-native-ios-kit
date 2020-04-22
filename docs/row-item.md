@@ -36,9 +36,9 @@ Uses following theme properties:
 ## Props
 
 ### `icon` (optional)
-**type:** `IconSource`
+**type:** `ImageSource`
 
-IconSource. See ['Icon`](icon.html#name)
+ImageSource. See ['Icon`](icon.html#name)
 
 ### `onPress` (optional)
 **type:** `() => void`

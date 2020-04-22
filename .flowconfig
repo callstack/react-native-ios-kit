@@ -12,9 +12,7 @@
 ; For RN Apps installed via npm, "Libraries" folder is inside
 ; "node_modules/react-native" but in the source repo it is in the root
 .*/Libraries/react-native/React.js
-
-; Ignore polyfills
-.*/Libraries/polyfills/.*
+.*/node_modules/react-native/Libraries/Utilities/LoadingView.js
 
 ; Ignore metro
 .*/node_modules/metro/.*
@@ -24,16 +22,24 @@
 .*/node_modules/@expo/traveling-fastlane-linux/.*
 .*/node_modules/@expo/traveling-fastlane-darwin/.*
 
+; Ignore reqwest
+.*/example/node_modules/reqwest/.*
+
 [untyped]
 <PROJECT_ROOT>/node_modules/react-native-safe-area-view
-<PROJECT_ROOT>/example/node_modules/react-native
 <PROJECT_ROOT>/node_modules/@callstack/react-theme-provider
+<PROJECT_ROOT>/node_modules/react-native/Libraries/Lists
+<PROJECT_ROOT>/example/node_modules/react-native
 
 [include]
 
 [libs]
 node_modules/react-native/Libraries/react-native/react-native-interface.js
 node_modules/react-native/flow/
+
+[strict]
+unclear-type
+unsafe-getters-setters
 
 [options]
 emoji=true

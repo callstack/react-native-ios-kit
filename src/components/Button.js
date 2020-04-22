@@ -139,8 +139,7 @@ class Button extends React.Component<Props> {
         onPressIn={this.props.onPressIn}
         onPressOut={this.props.onPressOut}
         onLongPress={this.props.onLongPress}
-        accessibilityTraits="button"
-        accessibilityComponentType="button"
+        accessibilityRole="button"
         style={[
           this.styles.default.container,
           ...container,

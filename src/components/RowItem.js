@@ -1,12 +1,12 @@
 /* @flow */
 import * as React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
+import type {ImageSource} from 'react-native/Libraries/Image/ImageSource';
 
 import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
 import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
-import type { IconSource } from './Icon';
 
 export type Props = {
   /**
@@ -16,7 +16,7 @@ export type Props = {
   /**
    * Icon name
    */
-  icon?: IconSource,
+  icon?: ImageSource,
   /**
    * Title string to be displayed
    */
