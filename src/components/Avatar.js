@@ -27,11 +27,15 @@ class Avatar extends React.Component<Props> {
     initials: '',
     size: 50,
   };
+  avatarStyles = {
+    width: this.props.size,
+    height: this.props.size,
+    borderRadius: this.props.size / 2,
+  };
 
   renderTouchableAvatar = () => {
-    const styles = getStyles(this.props.size);
     return (
-      <TouchableOpacity style={styles.avatar} onPress={this.props.onPress}>
+      <TouchableOpacity style={this.avatarStyles} onPress={this.props.onPress}>
         {this.renderAvatar()}
       </TouchableOpacity>
     );
@@ -39,20 +43,30 @@ class Avatar extends React.Component<Props> {
 
   renderAvatar = () => {
     const { url, style, initials, size } = this.props;
-    const styles = getStyles(size);
 
     if (url) {
-      return <Image style={[styles.avatar, style]} source={{ uri: url }} />;
+      return <Image style={this.avatarStyles} source={{ uri: url }} />;
     }
     const overlay = require('../assets/avatartGradient.png');
     return (
       <ImageBackground
-        imageStyle={[styles.avatar]}
-        style={[styles.avatar, style]}
+        imageStyle={this.avatarStyles}
+        style={[this.avatarStyles, style]}
         source={overlay}
       >
-        <View style={styles.letterWrapper}>
-          <Text style={styles.letters}>{initials.slice(0, 2)}</Text>
+        <View
+          style={[
+            styles.letterWrapper,
+            {
+              height: size,
+              width: size,
+              borderRadius: size / 2,
+            },
+          ]}
+        >
+          <Text style={[styles.letters, { fontSize: size / 2.4 }]}>
+            {initials.slice(0, 2)}
+          </Text>
         </View>
       </ImageBackground>
     );
@@ -67,25 +81,15 @@ class Avatar extends React.Component<Props> {
 
 export default withTheme(Avatar);
 
-const getStyles = (avatarSize: number) =>
-  StyleSheet.create({
-    letterWrapper: {
-      height: avatarSize,
-      width: avatarSize,
-      borderRadius: avatarSize / 2,
-      justifyContent: 'center',
-      backgroundColor: 'transparent',
-    },
-    letters: {
-      fontSize: avatarSize / 2.4,
-      fontFamily: 'ArialRoundedMTBold',
-      textAlign: 'center',
-      backgroundColor: 'transparent',
-      color: 'white',
-    },
-    avatar: {
-      width: avatarSize,
-      height: avatarSize,
-      borderRadius: avatarSize / 2,
-    },
-  });
+const styles = StyleSheet.create({
+  letterWrapper: {
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  letters: {
+    fontFamily: 'ArialRoundedMTBold',
+    textAlign: 'center',
+    backgroundColor: 'transparent',
+    color: 'white',
+  },
+});

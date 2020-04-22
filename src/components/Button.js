@@ -202,6 +202,7 @@ const getStyles = (theme: Theme) => {
       },
     }),
     invertedDisabled: StyleSheet.create({
+      // eslint-disable-next-line react-native/no-unused-styles
       container: {
         backgroundColor: disabledColor,
         borderColor: disabledColor,

@@ -41,24 +41,24 @@ class Collection extends React.Component<Props> {
     numberOfColumns: 4,
     refreshing: false,
   };
-  constructor(props: Props) {
-    super(props);
-    this.styles = getStyles(props);
-  }
-
-  styles: Object;
+  itemStyle = {
+    height:
+      width / (this.props.numberOfColumns || this.defaultProps.numberOfColumns),
+    width:
+      width / (this.props.numberOfColumns || this.defaultProps.numberOfColumns),
+  };
 
   renderCell = ({ item }: { item: * }) => {
     const child = this.props.renderItem(item);
     if (!child) return null;
     return React.cloneElement(child, {
-      style: StyleSheet.flatten([child.props.style, this.styles.item]),
+      style: StyleSheet.flatten([child.props.style, this.itemStyle]),
     });
   };
 
   renderRow = ({ item }: { item: * }) => (
     <FlatList
-      style={this.styles.wrapper}
+      style={styles.wrapper}
       numColumns={this.props.numberOfColumns}
       renderItem={this.renderCell}
       data={item}
@@ -114,16 +114,9 @@ class Collection extends React.Component<Props> {
 
 export default withTheme(Collection);
 
-const getStyles = (props: Props): Object => {
-  const { numberOfColumns = 4 } = props;
-  return StyleSheet.create({
-    wrapper: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    },
-    item: {
-      height: width / numberOfColumns,
-      width: width / numberOfColumns,
-    },
-  });
-};
+const styles = StyleSheet.create({
+  wrapper: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+});

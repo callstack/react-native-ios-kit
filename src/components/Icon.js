@@ -1,7 +1,7 @@
 /* @flow */
 import * as React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
-import type {ImageSource} from 'react-native/Libraries/Image/ImageSource';
+import type { ImageSource } from 'react-native/Libraries/Image/ImageSource';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';

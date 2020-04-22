@@ -56,9 +56,7 @@ class PageControlExample extends React.Component<Props, State> {
             theme={{
               ...DefaultTheme,
               barColor: '#007aff',
-              dividerColor: color('#007aff')
-                .lighten(0.5)
-                .toString(),
+              dividerColor: color('#007aff').lighten(0.5).toString(),
             }}
           />
         </View>

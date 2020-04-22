@@ -1,7 +1,7 @@
 /* @flow */
 import * as React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
-import type {ImageSource} from 'react-native/Libraries/Image/ImageSource';
+import type { ImageSource } from 'react-native/Libraries/Image/ImageSource';
 
 import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
