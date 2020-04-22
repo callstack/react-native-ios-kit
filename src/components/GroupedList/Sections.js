@@ -182,7 +182,6 @@ const styles = StyleSheet.create({
   sections: {
     width: 45,
   },
-  // eslint-disable-next-line react-native/no-color-literals
   section: {
     fontSize: 14,
     height: SECTION_HEIGHT,

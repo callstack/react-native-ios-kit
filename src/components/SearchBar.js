@@ -227,13 +227,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  // eslint-disable-next-line react-native/no-color-literals
   searchIcon: {
     paddingLeft: 9,
     backgroundColor: 'transparent',
     marginTop: 2,
   },
-  // eslint-disable-next-line react-native/no-color-literals
   clearIcon: {
     paddingRight: 9,
     backgroundColor: 'transparent',
@@ -253,7 +251,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     overflow: 'hidden',
   },
-  // eslint-disable-next-line react-native/no-color-literals
   input: {
     backgroundColor: 'transparent',
     paddingHorizontal: 7,

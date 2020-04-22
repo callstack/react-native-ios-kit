@@ -17,7 +17,9 @@
     "import/first": "off",
     "react-native/no-unused-styles": "error",
     "react-native/split-platform-components": "off",
-    "react-native/no-raw-text": "off"
+    "react-native/no-raw-text": "off",
+    "react-native/no-color-literals": "off",
+    "react-native/no-inline-styles": "off"
   },
   "settings": {
     "import/extensions": [

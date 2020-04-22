@@ -36,7 +36,7 @@ export type Props = {
   /**
    * RowItem's onPress handler
    */
-  onPress?: Function,
+  onPress?: () => void,
   /**
    * Internal props
    */

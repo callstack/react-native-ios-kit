@@ -117,7 +117,7 @@ class Stepper extends React.Component<Props, State> {
     });
   };
 
-  startInterval = (callback: Function, speed: number = 300) => {
+  startInterval = (callback: () => void, speed: number = 300) => {
     let i = 0;
     this._interval = setInterval(() => {
       callback();

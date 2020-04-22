@@ -1,7 +1,15 @@
 /* @flow */
 
 import * as React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+  StyleProp,
+  TouchableOpacityStyle,
+  TextStyle,
+} from 'react-native';
 
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
@@ -37,10 +45,10 @@ type Props = {
   /**
    * Function to call when the touch is released
    */
-  onPress?: Function,
-  onPressIn?: Function,
-  onPressOut?: Function,
-  onLongPress?: Function,
+  onPress?: () => void,
+  onPressIn?: () => void,
+  onPressOut?: () => void,
+  onLongPress?: () => void,
   /**
    * Global theme to use
    */
@@ -48,15 +56,15 @@ type Props = {
   /**
    * Custom styles to apply to the button
    */
-  style?: any,
+  style?: StyleProp<TouchableOpacityStyle>,
   /**
    * Custom styles to apply to text inside the button
    */
-  innerStyle?: any,
+  innerStyle?: StyleProp<TextStyle>,
   /**
    * Custom styles to apply to the button
    */
-  disabledStyle?: any,
+  disabledStyle?: StyleProp<TouchableOpacityStyle>,
   children: React.Element<*> | React.Element<*>[] | string,
 };
 

@@ -1,7 +1,7 @@
 /* @flow */
 
 import * as React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, StyleProp, TextStyle } from 'react-native';
 
 import { withTheme } from '../../';
 import type { Theme } from '../../types/Theme';
@@ -29,8 +29,8 @@ const resolveFontSizeFromStyle = (style?: TextStyleProp) => {
 };
 
 type Props = {
-  style?: any,
-  children?: any,
+  style?: StyleProp<TextStyle>,
+  children?: React.ReactNode,
   config: Object,
   theme: Theme,
 };
