@@ -43,6 +43,7 @@ unsafe-getters-setters
 
 [options]
 emoji=true
+server.max_workers=1
 
 esproposal.optional_chaining=enable
 esproposal.nullish_coalescing=enable
