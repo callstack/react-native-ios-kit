@@ -73,9 +73,6 @@ jobs:
           at: ~/react-native-ios-kit
       - run: yarn run lint
       - run: yarn flow check
-      - run: yarn test --coverage -i
-      - store_artifacts:
-          path: coverage
   deploy-website:
     <<: *defaults
     steps:
