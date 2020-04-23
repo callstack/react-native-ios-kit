@@ -42,10 +42,8 @@ class Collection extends React.Component<Props> {
     refreshing: false,
   };
   itemStyle = {
-    height:
-      width / (this.props.numberOfColumns || this.defaultProps.numberOfColumns),
-    width:
-      width / (this.props.numberOfColumns || this.defaultProps.numberOfColumns),
+    height: width / (this.props.numberOfColumns || 4),
+    width: width / (this.props.numberOfColumns || 4),
   };
 
   renderCell = ({ item }: { item: * }) => {

@@ -20,9 +20,9 @@ const DEFAULT_SIZE = 8;
 
 class PageControl extends React.Component<Props> {
   dot = {
-    width: this.props.size,
-    height: this.props.size,
-    borderRadius: this.props.size,
+    width: this.props.size || DEFAULT_SIZE,
+    height: this.props.size || DEFAULT_SIZE,
+    borderRadius: this.props.size || DEFAULT_SIZE,
     margin: (this.props.size || DEFAULT_SIZE) / 2,
   };
   activeDot = {
@@ -34,8 +34,8 @@ class PageControl extends React.Component<Props> {
       this.props.pageIndicatorTintColor || this.props.theme.dividerColor,
   };
   dotWrapper = {
-    width: this.props.size * 2,
-    height: this.props.size * 2,
+    width: (this.props.size || DEFAULT_SIZE) * 2,
+    height: (this.props.size || DEFAULT_SIZE) * 2,
   };
 
   updateCurrentPage = (idx: number) => {

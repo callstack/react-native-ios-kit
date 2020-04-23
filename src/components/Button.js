@@ -1,17 +1,13 @@
 /* @flow */
 
 import * as React from 'react';
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  Text,
-  StyleProp,
-  TouchableOpacityStyle,
-  TextStyle,
-} from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 import type { Theme } from '../types/Theme';
+import type {
+  TextStyleProp,
+  ViewStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet';
 import { withTheme } from '../';
 
 type Props = {
@@ -56,15 +52,15 @@ type Props = {
   /**
    * Custom styles to apply to the button
    */
-  style?: StyleProp<TouchableOpacityStyle>,
+  style?: ViewStyleProp,
   /**
    * Custom styles to apply to text inside the button
    */
-  innerStyle?: StyleProp<TextStyle>,
+  innerStyle?: TextStyleProp,
   /**
    * Custom styles to apply to the button
    */
-  disabledStyle?: StyleProp<TouchableOpacityStyle>,
+  disabledStyle?: ViewStyleProp,
   children: React.Element<*> | React.Element<*>[] | string,
 };
 

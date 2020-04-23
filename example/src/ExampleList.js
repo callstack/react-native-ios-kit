@@ -26,7 +26,7 @@ import Collection from './scenes/Collection';
 import Spinners from './scenes/Spinners';
 
 type Route = {
-  component: React.ReactNode,
+  component: React.Node,
   title: string,
 };
 
