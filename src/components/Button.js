@@ -4,6 +4,10 @@ import * as React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 import type { Theme } from '../types/Theme';
+import type {
+  TextStyleProp,
+  ViewStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet';
 import { withTheme } from '../';
 
 type Props = {
@@ -37,10 +41,10 @@ type Props = {
   /**
    * Function to call when the touch is released
    */
-  onPress?: Function,
-  onPressIn?: Function,
-  onPressOut?: Function,
-  onLongPress?: Function,
+  onPress?: () => void,
+  onPressIn?: () => void,
+  onPressOut?: () => void,
+  onLongPress?: () => void,
   /**
    * Global theme to use
    */
@@ -48,15 +52,15 @@ type Props = {
   /**
    * Custom styles to apply to the button
    */
-  style?: any,
+  style?: ViewStyleProp,
   /**
    * Custom styles to apply to text inside the button
    */
-  innerStyle?: any,
+  innerStyle?: TextStyleProp,
   /**
    * Custom styles to apply to the button
    */
-  disabledStyle?: any,
+  disabledStyle?: ViewStyleProp,
   children: React.Element<*> | React.Element<*>[] | string,
 };
 
@@ -139,8 +143,7 @@ class Button extends React.Component<Props> {
         onPressIn={this.props.onPressIn}
         onPressOut={this.props.onPressOut}
         onLongPress={this.props.onLongPress}
-        accessibilityTraits="button"
-        accessibilityComponentType="button"
+        accessibilityRole="button"
         style={[
           this.styles.default.container,
           ...container,
@@ -203,6 +206,7 @@ const getStyles = (theme: Theme) => {
       },
     }),
     invertedDisabled: StyleSheet.create({
+      // eslint-disable-next-line react-native/no-unused-styles
       container: {
         backgroundColor: disabledColor,
         borderColor: disabledColor,

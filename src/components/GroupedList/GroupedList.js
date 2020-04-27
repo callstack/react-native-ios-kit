@@ -41,13 +41,6 @@ type State = {
 };
 
 class GroupedList extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.styles = getStyles(this.props.theme);
-  }
-
-  styles: Object;
   sectionList: ?Object = undefined;
   sectionHeadersHeights: { [key: string]: number } = {};
 
@@ -109,7 +102,7 @@ class GroupedList extends React.PureComponent<Props, State> {
 
     return (
       <View
-        style={this.styles.header}
+        style={[styles.header, { backgroundColor: this.props.theme.barColor }]}
         onLayout={({
           nativeEvent: {
             layout: { height },
@@ -146,10 +139,17 @@ class GroupedList extends React.PureComponent<Props, State> {
 
     const deafultKeyExtractor = item => item.key || item.id;
 
-    const Separator = () => <View style={this.styles.separator} />;
+    const Separator = () => (
+      <View
+        style={[
+          styles.separator,
+          { backgroundColor: this.props.theme.barColor },
+        ]}
+      />
+    );
 
     return (
-      <View style={this.styles.container}>
+      <View style={styles.container}>
         <SectionList
           initialNumToRender={getItemLayout ? 30 : Number.MAX_SAFE_INTEGER}
           ref={sectionList => {
@@ -177,25 +177,19 @@ class GroupedList extends React.PureComponent<Props, State> {
   }
 }
 
-const getStyles = theme =>
-  StyleSheet.create({
-    container: {
-      flexDirection: 'row',
-      flexGrow: 1,
-    },
-    header: {
-      paddingVertical: 5,
-      paddingHorizontal: 15,
-      backgroundColor: theme.barColor,
-    },
-    headerText: {
-      fontWeight: 'bold',
-    },
-    separator: {
-      backgroundColor: theme.barColor,
-      height: 1,
-      marginLeft: 15,
-    },
-  });
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    flexGrow: 1,
+  },
+  header: {
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+  },
+  separator: {
+    height: 1,
+    marginLeft: 15,
+  },
+});
 
 export default withTheme(GroupedList);

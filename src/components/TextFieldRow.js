@@ -30,15 +30,12 @@ class TextFieldRow extends React.Component<Props> {
       placeholder,
       onValueChange,
       theme: { placeholderColor, primaryColor, textColor },
-      title,
-      ...rest
     } = this.props;
     return (
       <TextInput
         ref={ref => {
           this.input = ref;
         }}
-        {...rest}
         value={value}
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}

@@ -72,10 +72,7 @@ jobs:
       - attach_workspace:
           at: ~/react-native-ios-kit
       - run: yarn run lint
-      - run: yarn run flow
-      - run: yarn test --coverage -i
-      - store_artifacts:
-          path: coverage
+      - run: yarn flow check
   deploy-website:
     <<: *defaults
     steps:

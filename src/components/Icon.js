@@ -1,18 +1,17 @@
 /* @flow */
 import * as React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
+import type { ImageSource } from 'react-native/Libraries/Image/ImageSource';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
 
-export type IconSource = string | { uri: string } | number | React.Node;
-
 type Props = {
   /**
-   * IconSource name. Can be one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json or source of ReactNative's `image` or any valid React Component
+   * ImageSource name. Can be one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json or source of ReactNative's `image` or any valid React Component
    */
-  name?: IconSource,
+  name?: ImageSource,
   /**
    * Custom color for icon, default to primary
    */

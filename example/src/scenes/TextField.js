@@ -12,11 +12,13 @@ type Props = {
 type State = {
   phone: string,
   email: string,
+  password: string,
 };
 class TextFieldExample extends React.Component<Props, State> {
   state = {
     phone: '',
     email: '',
+    password: '',
   };
   render() {
     return (
@@ -24,12 +26,18 @@ class TextFieldExample extends React.Component<Props, State> {
         <TextField
           placeholder={'Phone number'}
           value={this.state.phone}
-          onValueChange={text => this.setState({ phone: text })}
+          onValueChange={phone => this.setState({ phone })}
         />
         <TextField
           placeholder={'Email'}
           value={this.state.email}
-          onValueChange={text => this.setState({ email: text })}
+          onValueChange={email => this.setState({ email })}
+        />
+        <TextField
+          placeholder={'Password'}
+          value={this.state.password}
+          onValueChange={password => this.setState({ password })}
+          secureTextEntry
         />
       </View>
     );

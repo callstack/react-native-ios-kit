@@ -29,8 +29,8 @@ const resolveFontSizeFromStyle = (style?: TextStyleProp) => {
 };
 
 type Props = {
-  style?: any,
-  children?: any,
+  style?: TextStyleProp,
+  children?: React.Node,
   config: Object,
   theme: Theme,
 };

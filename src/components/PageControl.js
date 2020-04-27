@@ -19,32 +19,23 @@ type Props = {
 const DEFAULT_SIZE = 8;
 
 class PageControl extends React.Component<Props> {
-  makeDotStyles = () => {
-    const { theme, size = DEFAULT_SIZE } = this.props;
-    const currentPageIndicatorTintColor =
-      this.props.currentPageIndicatorTintColor || theme.barColor;
-    const pageIndicatorTintColor =
-      this.props.pageIndicatorTintColor || theme.dividerColor;
-    return StyleSheet.create({
-      dot: {
-        width: size,
-        height: size,
-        borderRadius: size,
-        margin: size / 2,
-      },
-      activeDot: {
-        backgroundColor: currentPageIndicatorTintColor,
-      },
-      inactiveDot: {
-        backgroundColor: pageIndicatorTintColor,
-      },
-      dotWrapper: {
-        width: size * 2,
-        height: size * 2,
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-    });
+  dot = {
+    width: this.props.size || DEFAULT_SIZE,
+    height: this.props.size || DEFAULT_SIZE,
+    borderRadius: this.props.size || DEFAULT_SIZE,
+    margin: (this.props.size || DEFAULT_SIZE) / 2,
+  };
+  activeDot = {
+    backgroundColor:
+      this.props.currentPageIndicatorTintColor || this.props.theme.barColor,
+  };
+  inactiveDot = {
+    backgroundColor:
+      this.props.pageIndicatorTintColor || this.props.theme.dividerColor,
+  };
+  dotWrapper = {
+    width: (this.props.size || DEFAULT_SIZE) * 2,
+    height: (this.props.size || DEFAULT_SIZE) * 2,
   };
 
   updateCurrentPage = (idx: number) => {
@@ -63,7 +54,7 @@ class PageControl extends React.Component<Props> {
   render() {
     const { numberOfPages, currentPage, hidesForSinglePage } = this.props;
     if (hidesForSinglePage && numberOfPages === 1) return null;
-    const { dot, activeDot, inactiveDot, dotWrapper } = this.makeDotStyles();
+
     return (
       <View style={styles.row}>
         {[...Array(numberOfPages).keys()].map(idx => (
@@ -71,11 +62,12 @@ class PageControl extends React.Component<Props> {
             key={`pageControlDot_${idx}`}
             onPress={() => this.updateCurrentPage(idx)}
           >
-            <View style={dotWrapper}>
+            <View style={[styles.dotWrapper, this.dotWrapper]}>
               <View
-                style={
-                  idx === currentPage ? [dot, activeDot] : [dot, inactiveDot]
-                }
+                style={[
+                  this.dot,
+                  idx === currentPage ? this.activeDot : this.inactiveDot,
+                ]}
               />
             </View>
           </TouchableWithoutFeedback>
@@ -92,5 +84,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     paddingVertical: 5,
+  },
+  dotWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
