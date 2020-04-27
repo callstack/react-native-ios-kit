@@ -1,6 +1,10 @@
 const users = [{}];
 
 const siteConfig = {
+  algolia: {
+    apiKey: '3fc3f7484d62d6435dfb39ab39ed8b24',
+    indexName: 'react-native-ios-kit',
+  },
   companyName: 'Callstack',
   title: 'react-native-ios-kit',
   tagline: 'The missing React Native UI Kit for iOS.',
