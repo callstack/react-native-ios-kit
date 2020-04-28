@@ -98,3 +98,8 @@ Custom styles to apply to the button.
 **type:** [`Theme`](theme.html)
 
 Custom theme for component. By default provided by the ThemeProvider.
+
+### `testID` (optional)
+**type:** `string`  
+
+Used to locate the item in end-to-end tests.
