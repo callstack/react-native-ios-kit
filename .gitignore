@@ -53,3 +53,5 @@ android/keystores/debug.keystore
 # vscode
 #
 jsconfig.json
+
+example/yarn-error.log
