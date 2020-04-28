@@ -62,6 +62,10 @@ type Props = {
    */
   disabledStyle?: ViewStyleProp,
   children: React.Element<*> | React.Element<*>[] | string,
+  /**
+   * Used to locate the item for end to end tests
+   */
+  testID?: string
 };
 
 class Button extends React.Component<Props> {
@@ -144,6 +148,7 @@ class Button extends React.Component<Props> {
         onPressOut={this.props.onPressOut}
         onLongPress={this.props.onLongPress}
         accessibilityRole="button"
+        testID={this.props.testID}
         style={[
           this.styles.default.container,
           ...container,
