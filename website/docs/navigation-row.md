@@ -3,11 +3,13 @@ id: navigation-row
 title: NavigationRow
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 RowItem with information and RightArrow Icon on right side.
 
-![NavigationRow component](assets/navigation-row.png)
+<img alt="NavigationRow component " src={useBaseUrl('img/navigation-row.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { NavigationRow } from 'react-native-ios-kit';
 

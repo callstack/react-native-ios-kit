@@ -2,12 +2,13 @@
 id: progress-bar
 title: ProgressBar
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Displays horizontal progress bar.
 
-![ProgressBar component](assets/progress-bar.gif)
+<img alt="ProgressBar component " src={useBaseUrl('img/progress-bar.gif')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { ProgressBar } from 'react-native-ios-kit';
 

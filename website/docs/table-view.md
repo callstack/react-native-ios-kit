@@ -2,14 +2,15 @@
 id: table-view
 title: TableView
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A basic TableView component that can render iOS table view.
 It renders header, footer and children which can be [`RowItem`](row-item.html) components.  
 
 
-![TableView component](assets/table-view.png)
+<img alt="TableView component " src={useBaseUrl('img/table-view.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { ScrollView, TableView } from 'react-native-ios-kit';
 

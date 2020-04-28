@@ -2,12 +2,13 @@
 id: typography
 title: Typography
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Basic typography components.
 
-![Typography components](assets/typography.png)
+<img alt="Typography component " src={useBaseUrl('img/typography.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 <Title1>Title 1</Title1>
 <Title2>Title2</Title2>

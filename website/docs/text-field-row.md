@@ -2,13 +2,14 @@
 id: text-field-row
 title: TextFieldRow
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 RowItem with TextInput on right side. Useful for inputing small amounts of information.
 TextInput focuses on Row press.
 
-![TextFieldRow component](assets/text-field-row.png)
+<img alt="TextFieldRow component " src={useBaseUrl('img/text-field-row.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { TextFieldRow } from 'react-native-ios-kit';
 

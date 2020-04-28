@@ -3,11 +3,13 @@ id: page-control-view
 title: PageControlView
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 PageControlView swipeable view with PageControls at the bottom of the screen.
 
-![PageControl component](assets/page-control-view.gif)
+<img alt="PageControl component " src={useBaseUrl('img/page-control-view.gif')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { PageControlView } from 'react-native-ios-kit';
 

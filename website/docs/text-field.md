@@ -2,13 +2,14 @@
 id: text-field
 title: TextField
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Single-line, fixed-height field, that automatically brings up a keyboard when the user taps it.
 Used to request a small amount of information, such as an email address.
 
-![TextField component](assets/text-field.png)
+<img alt="TextField component " src={useBaseUrl('img/text-field.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { TextField } from 'react-native-ios-kit';
 

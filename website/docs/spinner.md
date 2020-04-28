@@ -2,12 +2,13 @@
 id: spinner
 title: Spinner
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Displays a circular loading indicator.
 
-![Spinner component](assets/spinner.gif)
+<img alt="Spinner component " src={useBaseUrl('img/spinner.gif')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Spinner } from 'react-native-ios-kit';
 

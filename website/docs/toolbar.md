@@ -2,12 +2,13 @@
 id: toolbar
 title: Toolbar
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Just like TabBar, the Toolbar component appears on the bottom of the application screen. Instead of switching between different views, it allows you to perform actions within the current view, e.g. share or refresh. The Toolbar displays a list of icons or text buttons.
 
-![Toolbar component](assets/toolbar.png)
+<img alt="Toolbar component " src={useBaseUrl('img/toolbar.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Toolbar } from 'react-native-ios-kit';
 

@@ -2,10 +2,11 @@
 id: search-bar
 title: SearchBar
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![SearchBar component](assets/search-bar.gif)
+<img alt="SearchBar component " src={useBaseUrl('img/search-bar.gif')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { SearchBar } from 'react-native-ios-kit';
 

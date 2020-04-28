@@ -3,12 +3,14 @@ id: grouped-list
 title: GroupedList
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Simple GroupedList component with customizable section list on the right.
 It simulates iOS contact list.
 
-![GroupedList component](assets/grouped-list.png)
+<img alt="GroupedList component " src={useBaseUrl('img/grouped-list.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { GroupedList } from 'react-native-ios-kit';
 

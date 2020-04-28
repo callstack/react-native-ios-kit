@@ -3,11 +3,13 @@ id: collection
 title: Collection
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 A Collection manages an ordered set of content, such as a set of photos, and presents it in a customizable and highly visual layout.
 
-![Collection component](assets/collection.gif)
+<img alt="Collection component " src={useBaseUrl('img/collection.gif')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Collection } from 'react-native-ios-kit';
 

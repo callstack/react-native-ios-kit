@@ -2,12 +2,13 @@
 id: slider
 title: Slider
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Slider component.
 
-![Slider component](assets/slider.png)
+<img alt="Slider component " src={useBaseUrl('img/slider.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Slider } from 'react-native-ios-kit';
 

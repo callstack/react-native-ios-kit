@@ -2,12 +2,13 @@
 id: row-item
 title: RowItem
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A component you can use as a children for [`TableView`](table-view.html).
+A component you can use as a children for [`TableView`](table-view).
 
-![RowItem component](assets/row-item.png)
+<img alt="RowItem component " src={useBaseUrl('img/row-item.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { RowItem } from 'react-native-ios-kit';
 

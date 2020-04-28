@@ -3,11 +3,13 @@ id: checkbox-row
 title: CheckboxRow
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 RowItem with Checkmark Icon on right side.
 
-![CheckboxRow component](assets/checkbox-row.png)
+<img alt="CheckboxRow component " src={useBaseUrl('img/checkbox-row.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { CheckboxRow } from 'react-native-ios-kit';
 

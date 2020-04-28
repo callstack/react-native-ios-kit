@@ -3,11 +3,13 @@ id: page-control
 title: PageControl
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 PageControl component shows the position of the current page in a flat list of pages.
 
-![PageControl component](assets/page-control.png)
+<img alt="PageControl component " src={useBaseUrl('img/page-control.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { PageControl } from 'react-native-ios-kit';
 

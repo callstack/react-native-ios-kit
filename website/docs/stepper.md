@@ -2,12 +2,13 @@
 id: stepper
 title: Stepper
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Two-segment control used to increase or decrease an incremental value.
 
-![Stepper](assets/stepper.png)
+<img alt="Stepper component " src={useBaseUrl('img/stepper.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Stepper } from 'react-native-ios-kit';
 

@@ -2,12 +2,13 @@
 id: segmented-control
 title: SegmentedControl
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Linear set of two or more segments, each of which functions as a mutually exclusive button.
 
-![Segmented Control](assets/segmented-control.png)
+<img alt="Segmented component " src={useBaseUrl('img/segmented-control.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { SegmentedControl } from 'react-native-ios-kit';
 

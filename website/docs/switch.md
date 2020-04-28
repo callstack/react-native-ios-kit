@@ -2,12 +2,13 @@
 id: switch
 title: Switch
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A basic Switch component that should render native iOS switch.
 
-![Switch component](assets/toggle-button.png)
+<img alt="Switch component " src={useBaseUrl('img/toggle-button.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Switch } from 'react-native-ios-kit';
 

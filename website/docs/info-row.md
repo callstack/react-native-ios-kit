@@ -3,12 +3,14 @@ id: info-row
 title: InfoRow
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Basic Row to display additional information on right side.
 
-![InfoRow component](assets/info-row.png)
+<img alt="InfoRow component " src={useBaseUrl('img/info-row.png')} />
 
 
-Example usage:
+### Example usage:
 ```jsx
 import { InfoRow } from 'react-native-ios-kit';
 

@@ -2,10 +2,11 @@
 id: tab-bar
 title: TabBar
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![TabBar component](assets/tab-bar.png)
+<img alt="TabBar component " src={useBaseUrl('img/tab-bar.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { TabBar } from 'react-native-ios-kit';
 

@@ -3,11 +3,13 @@ id: button
 title: Button
 ---
 
-A basic Button component.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![Button component](assets/buttons.png)
+## A basic Button component.
 
-Example usage:
+<img alt="Button component " src={useBaseUrl('img/buttons.png')} />
+
+### Example usage:
 ```jsx
 import { Button } from 'react-native-ios-kit';
 

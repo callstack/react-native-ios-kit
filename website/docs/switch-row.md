@@ -2,13 +2,13 @@
 id: switch-row
 title: SwitchRow
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 RowItem with Switch button as RightComponent.
 
-![SwitchRow component](assets/switch-row.png)
+<img alt="SwitchRow component " src={useBaseUrl('img/switch-row.png')} />
 
-
-Example usage:
+### Example usage:
 ```jsx
 import { SwitchRow } from 'react-native-ios-kit';
 

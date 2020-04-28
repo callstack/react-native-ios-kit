@@ -3,7 +3,7 @@ id: usage
 title: Usage
 ---
 
-Wrap your root component in [`ThemeProvider`](customization.html#main-theme-for-application) from **react-native-ios-kit**.
+Wrap your root component in [`ThemeProvider`](customization#main-theme-for-application) from **react-native-ios-kit**.
 
 It's a good idea to wrap the component which is passed to `AppRegistry.registerComponent`.
 

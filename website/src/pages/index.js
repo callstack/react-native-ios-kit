@@ -44,7 +44,7 @@ function Home() {
       <main>
         <div className={styles.hero}>
           <div className={styles.heroInner}>
-            <h1 className={styles.heroProjectTagline}>
+            <h1 className={classnames(styles.heroProjectTagline, styles.heroProjectKeywords)}>
               <img
                 alt="react-native-ios-kit-logo"
                 className={styles.heroLogo}

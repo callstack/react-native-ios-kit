@@ -3,11 +3,13 @@ id: icon
 title: Icon
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Icon component.
 
-![Icon component](assets/icon.png)
+<img alt="Icon component " src={useBaseUrl('img/icon.png')} />
 
-Example usage:
+### Example usage:
 ```jsx
 import { Icon } from 'react-native-ios-kit';
 
