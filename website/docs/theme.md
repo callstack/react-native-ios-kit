@@ -23,4 +23,4 @@ export type Theme = {
 
 Each key of Theme can be overridden and that theme injected into `ThemeProvider` component.
 
-For usage examples see [Customization](customization.html).
+For usage examples see [Customization](customization).

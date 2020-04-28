@@ -3,11 +3,14 @@ id: avatar
 title: Avatar
 ---
 
-Avatar component.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![Avatar component](assets/avatar.png)
 
-Example usage:
+## Avatar component.
+
+<img alt="Avatar component " src={useBaseUrl('img/avatar.png')} />
+
+### Example usage:
 ```jsx
 import { Avatar } from 'react-native-ios-kit';
 

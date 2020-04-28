@@ -6,7 +6,7 @@ title: Customization
 ## Main theme for application
 
 You can provide a custom theme to customize the colors, fonts etc. with the `ThemeProvider` component.
-Check the [Theme Type](theme.html) to see what customization options are supported.
+Check the [Theme Type](theme) to see what customization options are supported.
 
 Example:
 
