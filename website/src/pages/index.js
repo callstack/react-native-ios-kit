@@ -35,6 +35,7 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig } = context;
   const {siteConfig: {customFields = {}, tagline } = {}} = context;
+
   return (
     <Layout
       permalink="/"
@@ -56,18 +57,18 @@ function Home() {
               <div className={styles.indexCtas}>
                 <Link
                   className={styles.indexCtasGetStartedButton}
-                  to={useBaseUrl('docs/installation')}>
+                  to={useBaseUrl('/docs/installation')}>
                   Get Started
                 </Link>
               </div>
-              <div className={styles.indexCtas}>
-                <Link
-                  className={styles.indexCtasGetStartedButton}
-                  to='https://github.com/callstack/react-native-ios-kit'
-                  target="blank" rel="noopener noreferrer"
-                  >
-                  GitHub
-                </Link>
+              <div className={classnames('button button--link', styles.indexGhButton)}>
+                <iframe
+                  src="https://ghbtns.com/github-btn.html?user=callstack&repo=react-native-ios-kit&type=star&count=true&size=large"
+                  frameBorder="0"
+                  scrolling="0"
+                  width="160px"
+                  height="30px"
+                />
               </div>
             </div>
           </div>
