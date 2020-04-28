@@ -65,7 +65,7 @@ type Props = {
   /**
    * Used to locate the item for end to end tests
    */
-  testID?: string
+  testID?: string,
 };
 
 class Button extends React.Component<Props> {
