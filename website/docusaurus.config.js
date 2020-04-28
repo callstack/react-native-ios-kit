@@ -15,9 +15,9 @@ const siteConfig = {
       {
           docs: {
             // docs folder path relative to website dir.
-            path: '../docs',
+            path: 'docs',
             // sidebars file relative to website dir.
-            sidebarPath: require.resolve('./sidebars.json'),
+            // sidebarPath: require.resolve('./sidebars.json'),
           },
           theme: {
             customCss: require.resolve('./custom.css'),
@@ -26,6 +26,10 @@ const siteConfig = {
     ],
   ],
   themeConfig: {
+    // prism: {
+    //   theme: require('prism-react-renderer/themes/github'),
+    //   darkTheme: require('prism-react-renderer/themes/dracula'),
+    // },
     navbar: {
       title: 'react-native-ios-kit',
       logo: {
@@ -33,8 +37,8 @@ const siteConfig = {
         alt: 'react-native-ios-kit logo'
       },
       links: [
-        { to: 'installation', label: 'Docs', position: 'right' },
-        { to: 'avatar', label: 'API', position: 'right' },
+        { to: 'docs/installation', label: 'Docs', position: 'right' },
+        { to: 'docs/installation', label: 'API', position: 'right' },
         { to: 'help', label: 'Help', position: 'right'  },
         {
           href: 'https://github.com/callstack/react-native-ios-kit',
@@ -45,47 +49,50 @@ const siteConfig = {
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: 'docs/installation',
+            },
+            {
+              label: 'API Reference',
+              to: 'docs/avatar',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Twitter',
+              to: 'https://twitter.com/callstackio'
+            },
+            {
+              label: 'Discord',
+              to: 'https://discord.gg/aUzGqu'
+            },
+          ]
+        }
+      ],
       logo: {
-        alt: 'Facebook Open Source Logo',
-        src: 'img/ios-kit.svg',
-        href: 'https://opensource.facebook.com/',
+        alt: 'ios kit Logo',
+        src: 'img/callstack-logo.svg',
+        href: 'https://callstack.com/open-source/',
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Callstack`,
+      copyright: `Copyright © ${new Date().getFullYear()} Callstack. Built with Docusaurus`,
     },
-    // algolia: {
-    //   apiKey: '47ecd3b21be71c5822571b9f59e52544',
-    //   indexName: 'docusaurus-2',
-    //   algoliaOptions: { ... },
-    // },
+    algolia: {
+      apiKey: '3fc3f7484d62d6435dfb39ab39ed8b24',
+      indexName: 'react-native-ios-kit',
+    },
     image: 'img/docusaurus.png',
     // Equivalent to `docsSideNavCollapsible`
     sidebarCollapsible: false,
 
   },
-  // companyName: 'Callstack',
-  // title: 'react-native-ios-kit',
-  // tagline: 'The missing React Native UI Kit for iOS.',
-  // url: 'https://callstack.github.io',
-  // baseUrl: '/react-native-ios-kit/',
-  // headerLinks: [
-  //   { doc: 'installation', label: 'Docs' },
-  //   { doc: 'avatar', label: 'API' },
-  //   { page: 'help', label: 'Help' },
-  // ],
-  // users,
-  // headerIcon: 'img/ios-kit-white.svg',
-  // footerIcon: 'img/ios-kit.svg',
-  // favicon: 'img/favicon.png',
-  // colors: {
-  //   primaryColor: '#416BAF',
-  //   secondaryColor: '#416BAF',
-  // },
-  // copyright: 'Copyright © 2018 Callstack',
-  // organizationName: 'callstack', // or set an env variable ORGANIZATION_NAME
-  // projectName: 'react-native-ios-kit',
-  // highlight: {
-  //   theme: 'solarized-dark',
-  // },
   // scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
   // repoUrl: 'https://github.com/callstack/react-native-ios-kit',
