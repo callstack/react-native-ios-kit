@@ -8,7 +8,7 @@ const siteConfig = {
   projectName: 'react-native-ios-kit',
   organizationName: 'callstack', // or set an env variable ORGANIZATION_NAME
   favicon: 'img/favicon.png',
-  themes: ['@docusaurus/theme-classic', '@docusaurus/theme-live-codeblock'],
+  themes: ['@docusaurus/theme-classic'],
   presets: [
     [
         '@docusaurus/preset-classic',
@@ -17,7 +17,10 @@ const siteConfig = {
             // docs folder path relative to website dir.
             path: 'docs',
             // sidebars file relative to website dir.
-            // sidebarPath: require.resolve('./sidebars.json'),
+            sidebarPath: require.resolve('./sidebars.json'),
+            editUrl:
+            'https://github.com/callstack/react-native-ios-kit/edit/master/website/',
+
           },
           theme: {
             customCss: require.resolve('./custom.css'),
@@ -26,10 +29,10 @@ const siteConfig = {
     ],
   ],
   themeConfig: {
-    // prism: {
-    //   theme: require('prism-react-renderer/themes/github'),
-    //   darkTheme: require('prism-react-renderer/themes/dracula'),
-    // },
+    prism: {
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/dracula'),
+    },
     navbar: {
       title: 'react-native-ios-kit',
       logo: {
@@ -38,7 +41,7 @@ const siteConfig = {
       },
       links: [
         { to: 'docs/installation', label: 'Docs', position: 'right' },
-        { to: 'docs/installation', label: 'API', position: 'right' },
+        { to: 'docs/avatar', label: 'API', position: 'right' },
         { to: 'help', label: 'Help', position: 'right'  },
         {
           href: 'https://github.com/callstack/react-native-ios-kit',
@@ -91,12 +94,7 @@ const siteConfig = {
     image: 'img/docusaurus.png',
     // Equivalent to `docsSideNavCollapsible`
     sidebarCollapsible: false,
-
   },
-  // scripts: ['https://buttons.github.io/buttons.js'],
-  // You may provide arbitrary config keys to be used as needed by your template.
-  // repoUrl: 'https://github.com/callstack/react-native-ios-kit',
-  // ogImage: 'img/ios-kit.svg',
 };
 
 module.exports = siteConfig;
