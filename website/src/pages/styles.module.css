@@ -7,10 +7,6 @@
   background-color: var(--ifm-color-emphasis-inverse-alpha-30);
 }
 
-.sectionInner {
-  margin: 0 auto;
-}
-
 .featureWrapper {
   align-self: center;
 }
@@ -22,24 +18,6 @@
 
 .featureHeading {
   align-self: center;
-}
-
-.announcement {
-  font-weight: bold;
-  font-size: 24px;
-  padding: 48px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.announcementDark {
-  background-color: #20232a;
-  color: #fff;
-}
-
-.announcementInner {
-  margin: 0 auto;
-  max-width: 768px;
 }
 
 .hero {
@@ -123,16 +101,6 @@
   align-self: center;
 }
 
-.indexCtasGitHubButtonWrapper {
-  display: flex;
-}
-
-.indexCtasGitHubButton {
-  border: none;
-  margin-left: 24px;
-  overflow: hidden;
-}
-
 @media only screen and (max-width: 768px) {
   .hero {
     padding-left: 20px;
@@ -158,7 +126,4 @@
     justify-content: center;
   }
 
-  .indexCtasGitHubButton {
-    display: none;
-  }
 }
