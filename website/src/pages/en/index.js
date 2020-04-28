@@ -6,10 +6,14 @@
  */
 
 const React = require('react');
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
 
-const CompLibrary = require('../../core/CompLibrary.js');
-const { Container, GridBlock, MarkdownBlock } = CompLibrary;
-const siteConfig = require(process.cwd() + '/siteConfig.js');
+// const CompLibrary = require('../../core/CompLibrary.js');
+// const { Container, GridBlock, MarkdownBlock } = CompLibrary;
+// const siteConfig = require(process.cwd() + '/siteConfig.js');
+  const context = useDocusaurusContext();
+  const { siteConfig = {} } = context;
 
 class Button extends React.Component {
   render() {
@@ -122,17 +126,37 @@ class HomeSplash extends React.Component {
   }
 }
 
+function Hello() {
+  return (
+    <Layout title="Hello">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '50vh',
+          fontSize: '20px',
+        }}>
+        <p>
+          Edit <code>pages/hello.js</code> and save to reload.
+        </p>
+      </div>
+    </Layout>
+  );
+}
+
 class Index extends React.Component {
   render() {
     let language = this.props.language || '';
 
     return (
       <div>
-        <HomeSplash language={language} />
-        <div className="mainContainer" />
+        {/* <HomeSplash language={language} /> */}
+        {/* <div className="mainContainer" />
         <PreviewSection />
         <EasySetupSection />
-        <ExampleAppSection />
+        <ExampleAppSection /> */}
+        <Hello />
       </div>
     );
   }

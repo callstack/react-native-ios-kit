@@ -55,3 +55,5 @@ android/keystores/debug.keystore
 jsconfig.json
 
 example/yarn-error.log
+
+.docosaurus
