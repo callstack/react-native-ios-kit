@@ -43,6 +43,9 @@ local.properties
 node_modules/
 npm-debug.log
 
+# eslint
+.eslintcache
+
 # BUCK
 #
 buck-out/
