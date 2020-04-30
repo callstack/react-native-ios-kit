@@ -43,6 +43,9 @@ local.properties
 node_modules/
 npm-debug.log
 
+# eslint
+.eslintcache
+
 # BUCK
 #
 buck-out/
@@ -55,3 +58,5 @@ android/keystores/debug.keystore
 jsconfig.json
 
 example/yarn-error.log
+
+.docosaurus
