@@ -64,9 +64,6 @@
     "release-it": "^13.5.7",
     "svgexport": "^0.4.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
