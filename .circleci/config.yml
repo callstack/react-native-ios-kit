@@ -26,9 +26,9 @@ aliases:
     key: dependencies-website-{{ checksum "website/package.json" }}
     paths: website/node_modules
 
-  - &filter-only-master
-    branches:
-      only: master
+  # - &filter-only-master
+  #   branches:
+  #     only: master
 
   - &filter-ignore-gh-pages
     branches:
@@ -96,14 +96,14 @@ jobs:
           cd example
           yarn exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
           yarn exp publish --non-interactive
-  deploy:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/react-native-ios-kit
-      - run: |
-          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          npm publish
+  # deploy:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/react-native-ios-kit
+  #     - run: |
+  #         npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+  #         npm publish
 
 workflows:
   version: 2
@@ -115,13 +115,13 @@ workflows:
           requires:
             - install-dependencies
           filters: *filter-ignore-gh-pages
-      - deploy:
-          filters: *filter-tag
+      # - deploy:
+      #     filters: *filter-tag
       - deploy-website:
-          requires:
-            - deploy
-          filters: *filter-only-master
+          # requires:
+          #   - deploy
+          filters: *filter-tag
       - publish-expo:
-          requires:
-            - deploy
-          filters: *filter-only-master
+          # requires:
+          #   - deploy
+          filters: *filter-tag
