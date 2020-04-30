@@ -32,7 +32,7 @@ aliases:
 
   - &filter-tag
     tags:
-      only: /Release \d+\.\d+\.\d+.*/
+      only: /v\d+\.\d+\.\d+.*/
     branches:
       ignore: /.*/
 
