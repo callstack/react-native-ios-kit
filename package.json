@@ -10,7 +10,8 @@
     "test": "jest",
     "build-assets": "./bin/build_assets.sh",
     "docs:build": "cd website && yarn run build",
-    "docs:watch": "cd website && yarn run start"
+    "docs:watch": "cd website && yarn run start",
+    "release": "release-it"
   },
   "files": [
     "src/",
@@ -41,6 +42,7 @@
     "@callstack/eslint-config": "^9.0.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@release-it/conventional-changelog": "^1.1.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.3.1",
@@ -59,7 +61,11 @@
     "react-native": "^0.61.4",
     "react-native-vector-icons": "~6.3.0",
     "react-test-renderer": "16.13.1",
+    "release-it": "^13.5.7",
     "svgexport": "^0.4.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "husky": {
     "hooks": {
