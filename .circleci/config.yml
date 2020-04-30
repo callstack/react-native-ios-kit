@@ -26,10 +26,6 @@ aliases:
     key: dependencies-website-{{ checksum "website/package.json" }}
     paths: website/node_modules
 
-  # - &filter-only-master
-  #   branches:
-  #     only: master
-
   - &filter-ignore-gh-pages
     branches:
       ignore: gh-pages
