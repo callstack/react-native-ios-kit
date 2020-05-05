@@ -37,8 +37,8 @@ aliases:
   - &filter-tag
     tags:
       only: /v\d+\.\d+\.\d+.*/
-    branches:
-      ignore: /.*/
+    # branches:
+    #   ignore: /.*/
 
 defaults: &defaults
   working_directory: ~/react-native-ios-kit
