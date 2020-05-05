@@ -101,14 +101,14 @@ jobs:
           yarn exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
           yarn exp publish --non-interactive
 
-  deploy:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/react-native-ios-kit
-      - run: |
-          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          npm publish
+  # deploy:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/react-native-ios-kit
+  #     - run: |
+  #         npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+  #         npm publish
 
 workflows:
   version: 2
@@ -118,15 +118,15 @@ workflows:
       - build:
       - tests:
           requires:
-            - build
+            - c
           filters: *filter-ignore-gh-pages
-      - deploy:
-          filters: *filter-tag
+      # - deploy:
+      #     filters: *filter-tag
       - deploy-website:
           requires:
-            - deploy
+            - build
           filters: *filter-only-master
       - publish-expo:
           requires:
-            - deploy
+            - build
           filters: *filter-only-master
