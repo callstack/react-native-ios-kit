@@ -101,14 +101,14 @@ jobs:
           yarn exp login -u "$EXP_USERNAME" -p "$EXP_PASSWORD"
           yarn exp publish --non-interactive
 
-  # deploy:
-  #   <<: *defaults
-  #   steps:
-  #     - attach_workspace:
-  #         at: ~/react-native-ios-kit
-  #     - run: |
-  #         npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-  #         npm publish
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/react-native-ios-kit
+      - run: |
+          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          npm publish
 
 workflows:
   version: 2
@@ -116,24 +116,17 @@ workflows:
   build-and-test:
     jobs:
       - build:
-          filters:  # required since `deploy-website` amd `publish-expo` has tag filters AND requires `build`
-            tags:
-              only: /.*/
-      # - deploy:
-      #     filters: *filter-tag
       - tests:
           requires:
             - build
           filters: *filter-ignore-gh-pages
-  deploy:
-    jobs:
-      - build:
+      - deploy:
           filters: *filter-tag
       - deploy-website:
           requires:
-            - build
-          filters: *filter-tag
+            - deploy
+          filters: *filter-only-master
       - publish-expo:
           requires:
-            - build
-          filters: *filter-tag
+            - deploy
+          filters: *filter-only-master
