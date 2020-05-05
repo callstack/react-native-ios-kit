@@ -47,7 +47,7 @@ defaults: &defaults
 
 version: 2
 jobs:
-  install-dependencies:
+  build:
     <<: *defaults
     steps:
       - checkout
@@ -105,16 +105,19 @@ workflows:
 
   build-and-test:
     jobs:
-      - install-dependencies
+      - build
+          filters:  # required since `deploy-website` amd `publish-expo` has tag filters AND requires `build`
+            tags:
+              only: /.*/
       - tests:
           requires:
-            - install-dependencies
+            - build
           filters: *filter-ignore-gh-pages
       - deploy-website:
           requires:
-            - install-dependencies
+            - build
           filters: *filter-tag
       - publish-expo:
           requires:
-            - install-dependencies
+            - build
           filters: *filter-tag
