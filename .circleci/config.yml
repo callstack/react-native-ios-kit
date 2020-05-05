@@ -128,9 +128,7 @@ workflows:
   deploy:
     jobs:
       - build:
-          filters:
-            tags:
-              only: /.*/
+          filters: *filter-tag
       - deploy-website:
           requires:
             - build
