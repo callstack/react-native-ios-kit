@@ -105,7 +105,7 @@ workflows:
 
   build-and-test:
     jobs:
-      - build
+      - build:
           filters:  # required since `deploy-website` amd `publish-expo` has tag filters AND requires `build`
             tags:
               only: /.*/
