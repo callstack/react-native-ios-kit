@@ -26,6 +26,10 @@ aliases:
     key: dependencies-website-{{ checksum "website/package.json" }}
     paths: website/node_modules
 
+  - &filter-only-master
+    branches:
+      only: master
+
   - &filter-ignore-gh-pages
     branches:
       ignore: gh-pages
@@ -62,6 +66,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
+
   tests:
     <<: *defaults
     steps:
@@ -69,6 +74,7 @@ jobs:
           at: ~/react-native-ios-kit
       - run: yarn run lint
       - run: yarn flow
+
   deploy-website:
     <<: *defaults
     steps:
@@ -83,6 +89,7 @@ jobs:
           git config --global user.name "$CIRCLE_USERNAME"
           git config --global user.email "oss@callstack.com"
           cd website && GIT_USER="$CIRCLE_USERNAME" USE_SSH=true yarn run deploy
+
   publish-expo:
     <<: *defaults
     steps:
@@ -104,6 +111,10 @@ workflows:
             - install-dependencies
           filters: *filter-ignore-gh-pages
       - deploy-website:
+          requires:
+            - install-dependencies
           filters: *filter-tag
       - publish-expo:
+          requires:
+            - install-dependencies
           filters: *filter-tag
