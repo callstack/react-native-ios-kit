@@ -1,24 +1,20 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { withTheme } from '../';
 import Icon from './Icon';
 
-import type { Theme } from '../types/Theme';
-import type {
-  TextStyleProp,
-  ViewStyleProp,
-} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../types/Theme';
+import { TextStyle, ViewStyle } from 'react-native';
 
 type Props = {
-  theme: Theme,
-  placeholder?: string,
-  value: string,
-  clearButton?: boolean,
-  onValueChange?: (text: string) => void,
-  containerStyle?: ViewStyleProp,
-  inputStyle?: TextStyleProp,
+  theme: Theme;
+  placeholder?: string;
+  value: string;
+  clearButton?: boolean;
+  onValueChange?: (text: string) => void;
+  containerStyle?: ViewStyle;
+  inputStyle?: TextStyle;
 };
 
 class TextField extends React.Component<Props> {

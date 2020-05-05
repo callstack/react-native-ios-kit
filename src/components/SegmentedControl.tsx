@@ -1,32 +1,34 @@
-/* @flow */
-import * as React from 'react';
-import { SegmentedControlIOS } from 'react-native';
+import React from 'react';
+import {
+  SegmentedControlIOS,
+  NativeSegmentedControlIOSChangeEvent,
+} from 'react-native';
 
 import { withTheme } from '../core/theming';
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 
 type Props = {
-  theme: Theme,
+  theme: Theme;
   /**
    * Provided by the ThemeProvider
    */
-  values: Array<string>,
+  values: Array<string>;
   /**
    * onValueChange event handler
    */
-  onValueChange?: (value: string, index: number) => void,
+  onValueChange?: (value: string, index: number) => void;
   /**
    * Index of selected value
    */
-  selectedIndex: number,
+  selectedIndex: number;
   /**
    * Optional color of selected control. Defaults to theme's primary color
    */
-  tintColor?: string,
+  tintColor?: string;
 };
 
 class SegmentedControl extends React.Component<Props> {
-  onValueChange = e =>
+  onValueChange = (e: { nativeEvent: NativeSegmentedControlIOSChangeEvent }) =>
     this.props.onValueChange &&
     this.props.onValueChange(
       e.nativeEvent.value,

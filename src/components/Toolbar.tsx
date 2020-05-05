@@ -1,4 +1,3 @@
-/* @flow */
 import React, { PureComponent } from 'react';
 import {
   View,
@@ -13,10 +12,10 @@ import { withTheme } from '../';
 import type { Theme } from '../types/Theme';
 
 type ToolbarItem = {
-  icon?: string,
-  title?: string,
-  onPress: (itemIndex: number) => void,
-  disabled?: boolean,
+  icon?: string;
+  title?: string;
+  onPress: (itemIndex: number) => void;
+  disabled?: boolean;
 };
 
 type Props = {
@@ -27,11 +26,11 @@ type Props = {
    * onPress: function to be called when Item is tapped
    * disabled?: boolean, (optional), diasables an Item
    */
-  items: Array<ToolbarItem>,
+  items: Array<ToolbarItem>;
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
 };
 
 class Toolbar extends PureComponent<Props> {

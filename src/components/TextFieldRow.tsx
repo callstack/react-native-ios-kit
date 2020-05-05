@@ -18,10 +18,10 @@ class TextFieldRow extends React.Component<Props> {
   static defaultProps = {
     placeholder: '',
   };
-  input = undefined;
+  input = React.createRef<TextInput>();
 
   focusInput = () => {
-    if (this.input) this.input.focus();
+    if (this.input.current) this.input.current.focus();
   };
 
   renderRightComponent = () => {
@@ -33,9 +33,7 @@ class TextFieldRow extends React.Component<Props> {
     } = this.props;
     return (
       <TextInput
-        ref={ref => {
-          this.input = ref;
-        }}
+        ref={this.input}
         value={value}
         placeholder={placeholder}
         placeholderTextColor={placeholderColor}

@@ -1,7 +1,5 @@
-/* @flow */
-import * as React from 'react';
-import { Image, View, StyleSheet } from 'react-native';
-import type { ImageSource } from 'react-native/Libraries/Image/ImageSource';
+import React from 'react';
+import { Image, View, StyleSheet, ImageSourcePropType } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';
@@ -11,23 +9,23 @@ type Props = {
   /**
    * ImageSource name. Can be one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json or source of ReactNative's `image` or any valid React Component
    */
-  name?: ImageSource,
+  name?: ImageSourcePropType | string;
   /**
    * Custom color for icon, default to primary
    */
-  color?: string,
+  color?: string;
   /**
    * Optional icon size, defaults to 50
    */
-  size?: number,
+  size?: number;
   /**
    * Custom styles to apply to the Icon
    */
-  style?: any,
+  style?: any;
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
 };
 
 class Icon extends React.Component<Props> {
@@ -78,7 +76,7 @@ class Icon extends React.Component<Props> {
           style,
         ]}
       >
-        {(name: any)}
+        {name}
       </View>
     );
   }

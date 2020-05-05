@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 
 import RowItem from './RowItem';
 import Switch from './Switch';
@@ -7,9 +6,9 @@ import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
-  theme: Theme,
-  value: boolean,
-  onValueChange?: (value: boolean) => *,
+  theme: Theme;
+  value: boolean;
+  onValueChange?: (value: boolean) => void;
 };
 
 class SwitchRow extends React.Component<Props> {

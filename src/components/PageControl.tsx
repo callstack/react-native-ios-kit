@@ -1,19 +1,18 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
 import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
-  theme: Theme,
-  currentPage: number,
-  numberOfPages: number,
-  hidesForSinglePage?: boolean,
-  pageIndicatorTintColor?: string,
-  currentPageIndicatorTintColor?: string,
-  updateCurrentPageDisplay?: number => void,
-  size?: number,
+  theme: Theme;
+  currentPage: number;
+  numberOfPages: number;
+  hidesForSinglePage?: boolean;
+  pageIndicatorTintColor?: string;
+  currentPageIndicatorTintColor?: string;
+  updateCurrentPageDisplay?: (number: number) => void;
+  size?: number;
 };
 
 const DEFAULT_SIZE = 8;

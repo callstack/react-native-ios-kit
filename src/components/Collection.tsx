@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import {
   Dimensions,
   SectionList,
@@ -15,24 +14,28 @@ import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet
 const { width } = Dimensions.get('window');
 
 type Data = Array<{
-  data: Array<*>,
-  title: string,
+  data: Array<any>;
+  title: string;
 }>;
 type Props = {
-  theme: Theme,
-  numberOfColumns?: number,
-  data: Data,
-  renderItem: (item: *) => ?React.Element<*>,
-  renderSectionHeader?: (info: { section: * }) => ?React.Element<*>,
-  renderSectionFooter?: (info: { section: * }) => ?React.Element<*>,
-  keyExtractor?: (item: *, index: number) => string,
-  onEndReached?: (info: { distanceFromEnd: number }) => void,
-  onEndReachedThreshold?: number,
-  onRefresh?: () => void,
-  refreshing: boolean,
-  stickySectionHeadersEnabled?: boolean,
-  listStyle?: ViewStyleProp,
-  contentContainerStyle?: ViewStyleProp,
+  theme: Theme;
+  numberOfColumns?: number;
+  data: Data;
+  renderItem: (item: any) => React.ReactElement<any> | null;
+  renderSectionHeader?: (info: {
+    section: any;
+  }) => React.ReactElement<any> | null;
+  renderSectionFooter?: (info: {
+    section: any;
+  }) => React.ReactElement<any> | null;
+  keyExtractor?: (item: any, index: number) => string;
+  onEndReached?: (info: { distanceFromEnd: number }) => void;
+  onEndReachedThreshold?: number;
+  onRefresh?: () => void;
+  refreshing: boolean;
+  stickySectionHeadersEnabled?: boolean;
+  listStyle?: ViewStyleProp;
+  contentContainerStyle?: ViewStyleProp;
 };
 
 class Collection extends React.Component<Props> {

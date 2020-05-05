@@ -1,17 +1,16 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
 
 import { withTheme } from '../../core/theming';
 import { Footnote } from '../Typography';
-import type { Theme } from '../../types/Theme';
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../../types/Theme';
+import { ViewStyle } from 'react-native';
 
 type Props = {
-  footer: string,
-  theme: Theme,
-  style?: ViewStyleProp,
-  onPress?: Function,
+  footer: string;
+  theme: Theme;
+  style?: ViewStyle;
+  onPress?: () => void;
 };
 
 class TableViewFooter extends React.Component<Props> {

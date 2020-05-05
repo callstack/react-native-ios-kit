@@ -1,26 +1,23 @@
-/* @flow */
-
 import React, { Component } from 'react';
-import { Switch as ReactNativeSwitch } from 'react-native';
-
+import { Switch as ReactNativeSwitch, SwitchProps } from 'react-native';
 import { withTheme } from '../core/theming';
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 
 type Props = {
   // Disable switch
-  disabled?: boolean,
+  disabled?: boolean;
   // Switch value
-  value?: boolean,
+  value?: boolean;
   // Switch style
-  style?: Object,
+  style?: Object;
   // Provided by the ThemeProvider
-  theme: Theme,
+  theme: Theme;
   // onChange prop
-  onValueChange?: (value: boolean) => *,
+  onValueChange?: (value: boolean) => void;
   // Border color when the switch is turned on
-  trackColor?: string,
+  trackColor?: SwitchProps['trackColor'];
   // Color of the foreground switch grip
-  thumbColor?: string,
+  thumbColor?: string;
 };
 
 class Switch extends Component<Props> {
@@ -30,8 +27,8 @@ class Switch extends Component<Props> {
       <ReactNativeSwitch
         {...rest}
         onValueChange={onValueChange}
-        // $FlowFixMe
-        trackColor={trackColor || theme.positiveColor}
+        // ts-ignore
+        trackColor={trackColor}
       />
     );
   }

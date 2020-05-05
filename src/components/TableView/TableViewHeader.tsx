@@ -1,16 +1,15 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import { withTheme } from '../../core/theming';
 import { Footnote } from '../Typography';
-import type { Theme } from '../../types/Theme';
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../../types/Theme';
+import { ViewStyle } from 'react-native';
 
 type Props = {
-  header: string,
-  theme: Theme,
-  style?: ViewStyleProp,
+  header: string;
+  theme: Theme;
+  style?: ViewStyle;
 };
 
 class TableViewHeader extends React.Component<Props> {

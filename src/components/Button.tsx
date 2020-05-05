@@ -1,67 +1,70 @@
-/* @flow */
+import React from 'react';
+import {
+  StyleProp,
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  ViewStyle,
+  TextStyle,
+} from 'react-native';
 
-import * as React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
-
-import type { Theme } from '../types/Theme';
-import type {
-  TextStyleProp,
-  ViewStyleProp,
-} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../types/Theme';
 import { withTheme } from '../';
 
-type Props = {
+export type Props = {
   /**
    * Set custom font color
    */
-  color?: string,
+  color?: string;
   /**
    * Disable the button
    */
-  disabled?: boolean,
+  disabled?: boolean;
   /**
    * Disable automatic horizontal resize
    * The button will only occupy width it needs, instead of 100%
    */
-  inline?: boolean,
+  inline?: boolean;
   /**
    * Center text inside the button
    * Applies only if rounded prop is not true
    */
-  centered?: boolean,
+  centered?: boolean;
   /**
    * Set rounded border corners
    */
-  rounded?: boolean,
+  rounded?: boolean;
   /**
    * Invert font color with background color
    * Applies only if rounded prop is true
    */
-  inverted?: boolean,
+  inverted?: boolean;
   /**
    * Function to call when the touch is released
    */
-  onPress?: () => void,
-  onPressIn?: () => void,
-  onPressOut?: () => void,
-  onLongPress?: () => void,
+  onPress?: () => void;
+  onPressIn?: () => void;
+  onPressOut?: () => void;
+  onLongPress?: () => void;
   /**
    * Global theme to use
    */
-  theme: Theme,
+  theme: Theme;
   /**
    * Custom styles to apply to the button
    */
-  style?: ViewStyleProp,
+  style?: StyleProp<ViewStyle>;
   /**
    * Custom styles to apply to text inside the button
    */
-  innerStyle?: TextStyleProp,
+  innerStyle?: StyleProp<ViewStyle>;
   /**
    * Custom styles to apply to the button
    */
-  disabledStyle?: ViewStyleProp,
-  children: React.Element<*> | React.Element<*>[] | string,
+  disabledStyle?: StyleProp<ViewStyle>;
+  children: React.ReactNode;
+  testID?: string;
 };
 
 class Button extends React.Component<Props> {
@@ -70,11 +73,11 @@ class Button extends React.Component<Props> {
     this.styles = getStyles(this.props.theme);
   }
 
-  styles: Object;
+  styles: GetStyleProp;
 
   _styleFromProps() {
     const { centered, rounded, inverted, color, disabled } = this.props;
-    const styleFromProps: Object[] = [];
+    const styleFromProps: StyleObject[] = [];
 
     const appliedStyleProps = {
       centered,
@@ -108,13 +111,14 @@ class Button extends React.Component<Props> {
     };
   }
 
-  _renderButton(markup) {
+  _renderButton(markup: React.ReactNode) {
     if (this.props.inline) {
-      const wrapperStyle = {
+      const wrapperStyle: ViewStyle = {
         flexDirection: 'row',
+        justifyContent: 'flex-start',
       };
       if (this.props.centered) {
-        // $FlowFixMe
+        //$FlowFixMe
         wrapperStyle.justifyContent = 'center';
       }
       return <View style={wrapperStyle}>{markup}</View>;
@@ -143,7 +147,9 @@ class Button extends React.Component<Props> {
         onPressIn={this.props.onPressIn}
         onPressOut={this.props.onPressOut}
         onLongPress={this.props.onLongPress}
-        accessibilityRole="button"
+        accessibilityTraits="button"
+        accessibilityComponentType="button"
+        testID={this.props.testID}
         style={[
           this.styles.default.container,
           ...container,
@@ -156,8 +162,22 @@ class Button extends React.Component<Props> {
     );
   }
 }
+type StyleObject = {
+  inner?: TextStyle;
+  container?: ViewStyle;
+};
 
-const getStyles = (theme: Theme) => {
+type GetStyleProp = {
+  default: StyleObject;
+  disabled: StyleObject;
+  centered: StyleObject;
+  rounded: StyleObject;
+  roundedDisabled: StyleObject;
+  inverted: StyleObject;
+  invertedDisabled: StyleObject;
+};
+
+const getStyles = (theme: Theme): GetStyleProp => {
   const { primaryColor, disabledColor } = theme;
 
   return {
@@ -206,7 +226,6 @@ const getStyles = (theme: Theme) => {
       },
     }),
     invertedDisabled: StyleSheet.create({
-      // eslint-disable-next-line react-native/no-unused-styles
       container: {
         backgroundColor: disabledColor,
         borderColor: disabledColor,

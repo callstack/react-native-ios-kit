@@ -1,4 +1,3 @@
-/* @flow */
 import color from 'color';
 import * as colors from './colors';
 import type { Theme } from '../types/Theme';

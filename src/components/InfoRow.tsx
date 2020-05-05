@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 
 import RowItem from './RowItem';
 import { Body } from './Typography';
@@ -7,7 +6,7 @@ import { withTheme } from '../core/theming';
 import type { Props as RowProps } from './RowItem';
 
 type Props = RowProps & {
-  info: string,
+  info: string;
 };
 
 class InfoRow extends React.Component<Props> {

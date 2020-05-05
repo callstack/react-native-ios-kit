@@ -1,28 +1,26 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 
 import PageControl from './PageControl';
 import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import type { ScrollEvent } from 'react-native/Libraries/Types/CoreEventTypes';
+import { ViewStyle, NativeScrollEvent } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
 type Props = {
-  theme: Theme,
-  children: React.Node,
-  containerStyle?: ViewStyleProp,
-  startPage?: number,
-  onPageChange?: number => void,
-  currentPageIndicatorTintColor?: string,
-  pageIndicatorTintColor?: string,
-  pageIndicatorSize?: number,
+  theme: Theme;
+  children: React.ReactNode;
+  containerStyle?: ViewStyle;
+  startPage?: number;
+  onPageChange?: (number: number) => void;
+  currentPageIndicatorTintColor?: string;
+  pageIndicatorTintColor?: string;
+  pageIndicatorSize?: number;
 };
 
 type State = {
-  currentPage: number,
+  currentPage: number;
 };
 
 class PageControlView extends React.Component<Props, State> {
@@ -34,15 +32,15 @@ class PageControlView extends React.Component<Props, State> {
     if (this.props.startPage) this.scrollToPage(this.props.startPage);
   }
 
-  scrollView = undefined;
+  private scrollView = React.createRef<ScrollView>();
 
-  handleScroll = (event: ScrollEvent) => {
+  handleScroll = (event: { nativeEvent: NativeScrollEvent }): void => {
     const xOffset = event.nativeEvent.contentOffset.x + 10;
     const currentPage = Math.floor(xOffset / width);
     this.setState({ currentPage });
   };
 
-  handleScrollEnd = (event: ScrollEvent) => {
+  handleScrollEnd = (event: { nativeEvent: NativeScrollEvent }): void => {
     const { onPageChange } = this.props;
     const xOffset = event.nativeEvent.contentOffset.x + 10;
     const currentPage = Math.floor(xOffset / width);
@@ -53,10 +51,12 @@ class PageControlView extends React.Component<Props, State> {
   };
 
   scrollToPage = (pageNumber: number): void => {
-    if (this.scrollView) this.scrollView.scrollTo({ x: width * pageNumber });
+    if (this.scrollView.current) {
+      this.scrollView.current.scrollTo({ x: width * pageNumber });
+    }
   };
 
-  render() {
+  render(): JSX.Element {
     const {
       containerStyle,
       children,
@@ -68,9 +68,7 @@ class PageControlView extends React.Component<Props, State> {
     return (
       <View style={[styles.container, containerStyle]}>
         <ScrollView
-          ref={ref => {
-            this.scrollView = ref;
-          }}
+          ref={this.scrollView}
           automaticallyAdjustContentInsets={false}
           horizontal
           snapToInterval={width}

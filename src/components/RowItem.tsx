@@ -1,47 +1,46 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
-import type { ImageSource } from 'react-native/Libraries/Image/ImageSource';
+import { ImageSourcePropType } from 'react-native';
 
 import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
 import { withTheme } from '../core/theming';
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 
 export type Props = {
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
   /**
    * Icon name
    */
-  icon?: ImageSource,
+  icon?: ImageSourcePropType;
   /**
    * Title string to be displayed
    */
-  title: string,
+  title: string;
   /**
    * Optional subtitle string
    */
-  subtitle?: string,
+  subtitle?: string;
   /**
    * Right Component
    */
-  rightComponent?: React.ComponentType<*>,
+  rightComponent?: React.ComponentType<React.ReactNode>;
   /**
    * Function which should return Element to be rendered on the right side of row
    */
-  renderRight?: () => ?React.Element<*>,
+  renderRight?: () => React.ReactNode;
   /**
    * RowItem's onPress handler
    */
-  onPress?: () => void,
+  onPress?: () => void;
   /**
    * Internal props
    */
-  first?: boolean,
-  last?: boolean,
+  first?: boolean;
+  last?: boolean;
 };
 
 class RowItem extends React.Component<Props> {

@@ -1,50 +1,49 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { View } from 'react-native';
 
 import TableViewHeader from './TableViewHeader';
 import TableViewFooter from './TableViewFooter';
 import { withTheme } from '../../';
-import type { Theme } from '../../types/Theme';
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../../types/Theme';
+import { ViewStyle } from 'react-native';
 
 type Props = {
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
   /**
    * Header of TableView
    */
-  header?: string,
+  header?: string;
   /**
    * Indicates whether render empty header or not
    */
-  withoutHeader?: boolean,
+  withoutHeader?: boolean;
   /**
    * Optional styles of header
    */
-  headerStyle?: ViewStyleProp,
+  headerStyle?: ViewStyle;
   /**
    * Footer of TableView
    */
-  footer?: string,
+  footer?: string;
   /**
    * Whether render empty footer or not
    */
-  withoutFooter?: boolean,
+  withoutFooter?: boolean;
   /**
    * Footer style
    */
-  footerStyle?: ViewStyleProp,
+  footerStyle?: ViewStyle;
   /**
    * onPress handler of Footer component
    */
-  onFooterPress?: Function,
+  onFooterPress?: () => void;
   /**
    * Children of TableView to render, e.g. RowItem's
    */
-  children: React.ChildrenArray<*>,
+  children?: React.ReactNode;
 };
 
 class TableView extends React.Component<Props> {
@@ -70,7 +69,7 @@ class TableView extends React.Component<Props> {
           <TableViewHeader header={header} style={headerStyle} />
         )}
         {React.Children.map(children, (child, idx) =>
-          React.cloneElement(child, {
+          React.cloneElement(child as React.ReactChild, {
             first: idx === 0,
             last: idx === React.Children.count(children) - 1,
           })

@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Image,
@@ -9,17 +8,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 import { withTheme } from '../';
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { ViewStyle } from 'react-native';
 
 type Props = {
-  theme: Theme,
-  initials: string,
-  url?: string,
-  size: number,
-  style?: ViewStyleProp,
-  onPress?: (e: *) => void,
+  theme: Theme;
+  initials: string;
+  url?: string;
+  size: number;
+  style?: ViewStyle;
+  // @TODO
+  onPress?: (e: any) => void;
 };
 
 class Avatar extends React.Component<Props> {

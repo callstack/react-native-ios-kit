@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
 
 import Icon from './Icon';
@@ -10,35 +9,35 @@ type Props = {
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
   /**
    * Callback function on changing counter result
    */
-  onValueChange: (counter: number) => void,
+  onValueChange: (counter: number) => void;
   /**
    * The lowest possible numeric value for the stepper.
    * Default value is 0.
    */
-  minValue: number,
+  minValue: number;
   /**
    * The highest possible numeric value for the stepper.
    * The default value of this property is 100.
    */
-  maxValue: number,
+  maxValue: number;
   /**
    * The numeric value of the stepper.
    */
-  value: number,
+  value: number;
   /**
    * The step, or increment, value for the stepper.
    * The default value for this property is 1.
    */
-  stepValue: number,
+  stepValue: number;
 };
 
 type State = {
-  isDecrementing: boolean,
-  isIncrementing: boolean,
+  isDecrementing: boolean;
+  isIncrementing: boolean;
 };
 /**
  * Stepper component

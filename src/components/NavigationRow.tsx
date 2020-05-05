@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import RowItem from './RowItem';
@@ -10,9 +9,9 @@ import type { Theme } from '../types/Theme';
 import type { Props as RowProps } from './RowItem';
 
 type Props = RowProps & {
-  theme: Theme,
-  onPress: void => void,
-  info?: string,
+  theme: Theme;
+  onPress: () => void;
+  info?: string;
 };
 
 class NavigationRow extends React.Component<Props> {

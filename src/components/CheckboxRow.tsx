@@ -8,9 +8,9 @@ import type { Theme } from '../types/Theme';
 import type { Props as RowProps } from './RowItem';
 
 type Props = RowProps & {
-  theme: Theme,
-  selected: boolean,
-  onPress: void => void,
+  theme: Theme;
+  selected: boolean;
+  onPress: () => void;
 };
 
 class CheckboxRow extends React.Component<Props> {

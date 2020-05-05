@@ -1,13 +1,12 @@
-/* @flow */
 import React, { Component } from 'react';
 import { ProgressViewIOS } from 'react-native';
 
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 import { withTheme } from '../';
 
 type Props = {
-  theme: Theme,
-  progress: number,
+  theme: Theme;
+  progress: number;
 };
 
 class ProgressBar extends Component<Props> {

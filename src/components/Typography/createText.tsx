@@ -2,16 +2,20 @@
  * @flow
  */
 import React from 'react';
+import { TextStyle } from 'react-native';
 import StyledText from './StyledText';
 
-type Config = {
-  fontSize: number,
-  tracking: number,
-  leading: number,
-  fontWeight: string,
+export type Config = {
+  fontSize: number;
+  tracking: number;
+  fontWeight: TextStyle['fontWeight'];
+  leading: TextStyle['lineHeight'];
 };
-
-const createText = (config: Config) => (props: Object) => (
+type Props = {
+  children?: React.ReactNode;
+  style?:  TextStyle;
+}
+const createText = (config: Config) => (props: Props) => (
   <StyledText {...props} config={config} />
 );
 

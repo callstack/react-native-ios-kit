@@ -1,47 +1,48 @@
-/* @flow */
-
-import * as React from 'react';
+import React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 
 import Sections from './Sections';
 import { withTheme } from '../../core/theming';
 import { Headline } from '../Typography';
 
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import type { Theme } from '../../types/Theme';
+import { ViewStyle } from 'react-native';
+import { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
 
 type Props = {
-  theme: Theme,
-  items: Array<any>,
-  groupBy: (item: any) => string,
-  renderItem: (data: { item: *, index: number }) => ?React.Element<*>,
+  theme: Theme;
+  items: Array<any>;
+  groupBy: (item: any) => string;
+  renderItem: (data: {
+    item: any;
+    index: number;
+  }) => React.ReactElement<any> | null;
   renderSectionHeader?: (data: {
-    section: any,
-  }) => ?React.Element<*>,
+    section: any;
+  }) => React.ReactElement<any> | null;
   renderSectionFooter?: (data: {
-    section: any,
-  }) => ?React.Element<*>,
-  ItemSeparatorComponent?: React.ComponentType<*>,
-  SectionSeparatorComponent: *,
-  sections?: Array<string>,
-  sectionsStyle?: ViewStyleProp,
-  sectionPrimaryColor?: string,
+    section: any;
+  }) => React.ReactElement<any> | null;
+  ItemSeparatorComponent?: React.ComponentType<any>;
+  SectionSeparatorComponent: any;
+  sections?: Array<string>;
+  sectionsStyle?: ViewStyle;
+  sectionPrimaryColor?: string;
   getItemLayout?: (
     data: any,
     index: number
-  ) => { length: number, offset: number, index: number },
-  stickySectionHeadersEnabled?: boolean,
-  keyExtractor?: (item: *) => string,
+  ) => { length: number; offset: number; index: number };
+  stickySectionHeadersEnabled?: boolean;
+  keyExtractor?: (item: any) => string;
 };
 
 type State = {
-  dataSource?: Object,
+  dataSource?: Object;
 };
 
 class GroupedList extends React.PureComponent<Props, State> {
-  sectionList: ?Object = undefined;
+  sectionList = React.createRef<SectionList>();
   sectionHeadersHeights: { [key: string]: number } = {};
 
   groupItems(items: Array<Object>): any {
@@ -72,8 +73,8 @@ class GroupedList extends React.PureComponent<Props, State> {
       { delta: sections.length, index: 0 }
     );
 
-    if (this.sectionList) {
-      this.sectionList.scrollToLocation({
+    if (this.sectionList.current) {
+      this.sectionList.current.scrollToLocation({
         viewOffset:
           this.props.stickySectionHeadersEnabled !== false
             ? this.sectionHeadersHeights[sections[index]]
@@ -152,9 +153,7 @@ class GroupedList extends React.PureComponent<Props, State> {
       <View style={styles.container}>
         <SectionList
           initialNumToRender={getItemLayout ? 30 : Number.MAX_SAFE_INTEGER}
-          ref={sectionList => {
-            this.sectionList = sectionList;
-          }}
+          ref={this.sectionList}
           renderItem={renderItem}
           renderSectionFooter={renderSectionFooter}
           renderSectionHeader={this.renderSectionHeader}

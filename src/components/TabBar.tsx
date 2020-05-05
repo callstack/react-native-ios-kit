@@ -1,4 +1,3 @@
-/* @flow */
 import React, { PureComponent } from 'react';
 import {
   View,
@@ -10,14 +9,14 @@ import {
 import Icon from './Icon';
 import { Caption2 } from './Typography';
 import { withTheme } from '../';
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 
 type TabItem = {
-  icon?: string,
-  title?: string,
-  onPress: (tabIndex: number) => void,
-  isActive?: boolean,
-  disabled?: boolean,
+  icon?: string;
+  title?: string;
+  onPress: (tabIndex: number) => void;
+  isActive?: boolean;
+  disabled?: boolean;
 };
 
 type Props = {
@@ -29,11 +28,11 @@ type Props = {
    * isActive: boolean, indicating wheter Tab is active
    * disabled?: boolean, (optional), diasables a Tab
    */
-  tabs: Array<TabItem>,
+  tabs: Array<TabItem>;
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
 };
 
 class TabBar extends PureComponent<Props> {

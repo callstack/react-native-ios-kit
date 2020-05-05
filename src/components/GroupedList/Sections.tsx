@@ -1,5 +1,3 @@
-/* @flow */
-
 import React, { PureComponent } from 'react';
 import {
   StyleSheet,
@@ -8,24 +6,25 @@ import {
   PanResponder,
   findNodeHandle,
   NativeModules,
+  ViewStyle,
 } from 'react-native';
 
 import { withTheme } from '../../core/theming';
 
-import type { Theme } from '../../types/Theme';
+import { Theme } from '../../types/Theme';
 
 const SECTION_HEIGHT = 18;
 
 type Props = {
-  theme: Theme,
-  onSectionPress: (id: number) => void,
-  items: Array<string>,
-  sectionPrimaryColor: ?string,
-  style: ?*,
+  theme: Theme;
+  onSectionPress: (id: number) => void;
+  items: Array<string>;
+  sectionPrimaryColor: string | null;
+  style?: ViewStyle;
 };
 
 type State = {
-  sections: Array<?string>,
+  sections: Array<string | null>;
 };
 
 class Sections extends PureComponent<Props, State> {
@@ -44,23 +43,24 @@ class Sections extends PureComponent<Props, State> {
     });
   }
 
-  sectionsHeight: ?number;
-  sectionsY: ?number;
-  panResponder: Object;
-  sections: ?any;
-  currentSectionIdx: ?number;
+  sectionsHeight: number | null = null;
+  sectionsY: number | null = null;
+  panResponder: any;
+  sections = React.createRef<View>();
+  currentSectionIdx: number | null = null;
 
   handleContainerLayout = ({
     nativeEvent: {
       layout: { height },
     },
-  }) => {
+  }: any) => {
     this.setState({ sections: this.prepareSections(height) });
   };
 
   handleLayout = () => {
     NativeModules.UIManager.measure(
-      findNodeHandle(this.sections),
+      findNodeHandle(this.sections.current),
+      // @ts-ignore
       (x, y, width, height, pageX, pageY) => {
         this.sectionsHeight = height;
         this.sectionsY = pageY;
@@ -68,7 +68,7 @@ class Sections extends PureComponent<Props, State> {
     );
   };
 
-  handleMove = ({ nativeEvent: { pageY } }) => {
+  handleMove = ({ nativeEvent: { pageY } }: any) => {
     if (!this.sectionsHeight || !this.sectionsY) {
       return;
     }
@@ -86,7 +86,7 @@ class Sections extends PureComponent<Props, State> {
     }
   };
 
-  prepareSections(parentHeight: number): Array<?string> {
+  prepareSections(parentHeight: number): Array<string | null> {
     const { items } = this.props;
 
     let slots = (parentHeight - 50) / SECTION_HEIGHT;
@@ -159,9 +159,7 @@ class Sections extends PureComponent<Props, State> {
           style={styles.sections}
           {...this.panResponder.panHandlers}
           onLayout={this.handleLayout}
-          ref={view => {
-            this.sections = view;
-          }}
+          ref={this.sections}
         >
           {sections.map(this.renderSection)}
         </View>

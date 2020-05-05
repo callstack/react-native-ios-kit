@@ -1,5 +1,4 @@
-/* @flow */
-import * as React from 'react';
+import React from 'react';
 import {
   Animated,
   Dimensions,
@@ -14,54 +13,55 @@ import {
 import Icon from './Icon';
 
 import { withTheme } from '../core/theming';
-import type { Theme } from '../types/Theme';
+import { Theme } from '../types/Theme';
 
 type Props = {
   /**
    * Provided by the ThemeProvider
    */
-  theme: Theme,
+  theme: Theme;
   /**
    * Callback that is called when the text input's text changes
    */
-  onValueChange?: (text: string) => void,
+  onValueChange?: (text: string) => void;
   /**
    * Placeholder of text input. Defaults to "Search"
    */
-  placeholder?: string,
+  placeholder?: string;
   /**
    * Value of text input
    */
-  value: string,
+  value: string;
   /**
    * Indicates presence of Cancel button. Defaults to false
    */
-  withCancel?: boolean,
+  withCancel?: boolean;
   /**
    * Text of Cancel Button. Defaults to "Cancel"
    */
-  cancelText?: string,
+  cancelText?: string;
   /**
    * Indicates if Cancel button and TextInput should animate on focus/blur. Defaults to false
    */
-  animated?: boolean,
+  animated?: boolean;
   /**
    * Animation duration. Default 200ms
    */
-  animationTime?: number,
+  animationTime?: number;
   /**
    * Callback invoked on text input focus
    */
-  onFocus?: () => void,
+  onFocus?: () => void;
   /**
    * Callback invoked on text input blur
    */
-  onBlur?: () => void,
+  onBlur?: () => void;
 };
 
 type State = {
-  anim: *,
-  cancelWidth: number,
+  // @TODO
+  anim: any;
+  cancelWidth: number;
 };
 
 class SearchBar extends React.Component<Props, State> {
@@ -77,16 +77,16 @@ class SearchBar extends React.Component<Props, State> {
     cancelWidth: 0,
   };
 
-  _input = undefined;
+  _input = React.createRef<TextInput>();
 
   clearInput = (): void =>
     this.props.onValueChange && this.props.onValueChange('');
   cancelInput = (): void => {
     this.props.onValueChange && this.props.onValueChange('');
-    if (this._input) this._input.blur();
+    if (this._input.current) this._input.current.blur();
   };
   focusInput = (): void => {
-    if (this._input) this._input.focus();
+    if (this._input.current) this._input.current.focus();
   };
   handleInputFocus = (): void => {
     this.animateTo(1);
@@ -160,9 +160,7 @@ class SearchBar extends React.Component<Props, State> {
               size={18}
             />
             <TextInput
-              ref={ref => {
-                this._input = ref;
-              }}
+              ref={this._input}
               style={[{ color: textColor }, styles.input]}
               value={value}
               onChangeText={onValueChange}

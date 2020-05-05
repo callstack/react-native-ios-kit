@@ -1,16 +1,15 @@
-/* @flow */
-
-import * as React from 'react';
+import React from 'react';
 import { Text, StyleSheet } from 'react-native';
+import { Config } from './createText';
 
 import { withTheme } from '../../';
-import type { Theme } from '../../types/Theme';
-import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../../types/Theme';
+import { TextStyle } from 'react-native';
 
 const trackingToSpacing = (fontSize: number, tracking: number): number =>
   (fontSize * tracking) / 1000;
 
-const resolveFontSizeFromStyle = (style?: TextStyleProp) => {
+const resolveFontSizeFromStyle = (style?: TextStyle): any => {
   if (!style) {
     return 0;
   }
@@ -29,10 +28,10 @@ const resolveFontSizeFromStyle = (style?: TextStyleProp) => {
 };
 
 type Props = {
-  style?: TextStyleProp,
-  children?: React.Node,
-  config: Object,
-  theme: Theme,
+  style?: TextStyle;
+  children?: React.ReactNode;
+  config: Config;
+  theme: Theme;
 };
 
 class StyledText extends React.Component<Props> {
@@ -41,7 +40,7 @@ class StyledText extends React.Component<Props> {
     const fontSize = resolveFontSizeFromStyle(style) || config.fontSize;
     const letterSpacing = trackingToSpacing(fontSize, config.tracking);
 
-    const calculatedStyle = {
+    const calculatedStyle: TextStyle = {
       fontSize,
       fontWeight: config.fontWeight,
       letterSpacing,

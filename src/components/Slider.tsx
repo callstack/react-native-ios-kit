@@ -1,27 +1,26 @@
-/* @flow */
 import React, { Component } from 'react';
-import { Slider, View, StyleSheet } from 'react-native';
+import { Slider, View, StyleSheet, ViewStyle } from 'react-native';
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../';
 import Icon from './Icon';
 
 type Props = {
-  value: number,
-  stepValue: number,
-  minValue?: number,
-  maxValue?: number,
-  minIconName?: string,
-  maxIconName?: string,
-  minIconColor?: string,
-  maxIconColor?: string,
-  minIconSize?: number,
-  maxIconSize?: number,
-  style?: any,
-  theme: Theme,
-  onValueChange: (value: number) => void,
-  onSlidingComplete?: (value: number) => void,
-  minTrackTintColor?: string,
-  maxTrackTintColor?: string,
+  value: number;
+  stepValue: number;
+  minValue?: number;
+  maxValue?: number;
+  minIconName?: string;
+  maxIconName?: string;
+  minIconColor?: string;
+  maxIconColor?: string;
+  minIconSize?: number;
+  maxIconSize?: number;
+  style?: ViewStyle;
+  theme: Theme;
+  onValueChange: (value: number) => void;
+  onSlidingComplete?: (value: number) => void;
+  minTrackTintColor?: string;
+  maxTrackTintColor?: string;
 };
 
 class IosSlider extends Component<Props> {
