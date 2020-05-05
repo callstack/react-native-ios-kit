@@ -37,8 +37,8 @@ aliases:
   - &filter-tag
     tags:
       only: /v\d+\.\d+\.\d+.*/
-    # branches:
-    #   ignore: /.*/
+    branches:
+      ignore: /.*/
 
 defaults: &defaults
   working_directory: ~/react-native-ios-kit
@@ -115,7 +115,10 @@ workflows:
 
   build-and-test:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /.*/
       - tests:
           requires:
             - build
@@ -125,8 +128,8 @@ workflows:
       - deploy-website:
           requires:
             - build
-          filters: *filter-only-master
+          filters: *filter-tag
       - publish-expo:
           requires:
             - build
-          filters: *filter-only-master
+          filters: *filter-tag
