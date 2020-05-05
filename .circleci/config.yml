@@ -115,18 +115,18 @@ workflows:
 
   build-and-test:
     jobs:
-      - build:
+      - build
       - tests:
           requires:
-            - c
+            - build
           filters: *filter-ignore-gh-pages
       # - deploy:
       #     filters: *filter-tag
       - deploy-website:
           requires:
             - build
-          filters: *filter-tag
+          filters: *filter-only-master
       - publish-expo:
           requires:
             - build
-          filters: *filter-tag
+          filters: *filter-only-master
