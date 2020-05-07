@@ -1,6 +1,6 @@
 {
   "name": "react-native-ios-kit",
-  "version": "0.0.10",
+  "version": "0.0.16",
   "description": "The missing React Native UI Kit for iOS.",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,6 @@
     "flow": "flow check",
     "lint": "eslint . --cache",
     "test": "jest",
-    "build-assets": "./bin/build_assets.sh",
     "docs:build": "cd website && yarn run build",
     "docs:watch": "cd website && yarn run start",
     "release": "release-it"
@@ -63,6 +62,10 @@
     "react-test-renderer": "16.13.1",
     "release-it": "^13.5.7",
     "svgexport": "^0.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "husky": {
     "hooks": {
