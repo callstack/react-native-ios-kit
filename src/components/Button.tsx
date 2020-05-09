@@ -63,9 +63,13 @@ export type Props = {
    * Custom styles to apply to the button
    */
   disabledStyle?: StyleProp<ViewStyle>;
-  children: React.ReactNode;
+  children: React.ReactElement<any> | React.ReactElement<any>[] | string,
+  /**
+   * Used to locate the item for end to end tests
+   */
   testID?: string;
 };
+
 type appliedStyleProps = {
   centered?: boolean | null;
   rounded?: boolean | null;
@@ -156,6 +160,7 @@ class Button extends React.Component<Props> {
         onLongPress={this.props.onLongPress}
         accessibilityTraits="button"
         accessibilityComponentType="button"
+        accessibilityRole="button"
         testID={this.props.testID}
         style={[
           this.styles.default.container,
