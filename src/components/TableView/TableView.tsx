@@ -68,12 +68,14 @@ class TableView extends React.Component<Props> {
         {!withoutHeader && !!header && (
           <TableViewHeader header={header} style={headerStyle} />
         )}
-        {React.Children.map(children, (child, idx) =>
-          React.cloneElement(child as React.ReactChild, {
-            first: idx === 0,
-            last: idx === React.Children.count(children) - 1,
-          })
-        )}
+        {React.Children.map(children, (child, idx) => {
+          if (React.isValidElement(child)) {
+            React.cloneElement(child, {
+              first: idx === 0,
+              last: idx === React.Children.count(children) - 1,
+            });
+          }
+        })}
         {!withoutFooter && !!footer && (
           <TableViewFooter
             footer={footer}

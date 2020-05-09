@@ -1,4 +1,3 @@
-/* @flow */
 import * as React from 'react';
 import { ThemeProvider } from './theming';
 import { Theme } from '../types/Theme';

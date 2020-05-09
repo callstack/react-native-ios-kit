@@ -1,5 +1,3 @@
-/* @flow */
-
 export {
   Title1,
   Title2,

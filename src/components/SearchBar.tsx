@@ -106,7 +106,7 @@ class SearchBar extends React.Component<Props, State> {
   };
 
   animateTo = (toValue: 1 | 0): void => {
-    // $FlowFixMe Can't use useNativeDriver when animating width
+    // @ts-ignore  Can't use useNativeDriver when animating width
     Animated.timing(this.state.anim, {
       toValue,
       easing: Easing.linear,

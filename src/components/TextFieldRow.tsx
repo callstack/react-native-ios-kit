@@ -1,4 +1,3 @@
-/* @flow */
 import * as React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
@@ -7,11 +6,11 @@ import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type Props = {
-  theme: Theme,
-  title: string,
-  value: string,
-  placeholder?: string,
-  onValueChange: (text: string) => void,
+  theme: Theme;
+  title: string;
+  value: string;
+  placeholder?: string;
+  onValueChange: (text: string) => void;
 };
 
 class TextFieldRow extends React.Component<Props> {

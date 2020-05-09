@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
-import { ImageSourcePropType } from 'react-native';
+import { ImageURISource } from 'react-native';
 
 import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
@@ -15,7 +15,7 @@ export type Props = {
   /**
    * Icon name
    */
-  icon?: ImageSourcePropType;
+  icon?: ImageURISource;
   /**
    * Title string to be displayed
    */

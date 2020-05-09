@@ -1,5 +1,3 @@
-/* @flow */
-
 export type Theme = {
   primaryColor: string,
   primaryLightColor: string,

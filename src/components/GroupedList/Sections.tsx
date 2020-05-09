@@ -19,7 +19,7 @@ type Props = {
   theme: Theme;
   onSectionPress: (id: number) => void;
   items: Array<string>;
-  sectionPrimaryColor: string | null;
+  sectionPrimaryColor?: string | null;
   style?: ViewStyle;
 };
 

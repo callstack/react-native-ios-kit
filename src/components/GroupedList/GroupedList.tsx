@@ -10,10 +10,16 @@ import { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
 
+type Item = {
+  key: number;
+  name: string;
+  group: string;
+};
+
 type Props = {
   theme: Theme;
-  items: Array<any>;
-  groupBy: (item: any) => string;
+  items: Array<Item>;
+  groupBy: (item: Item) => string;
   renderItem: (data: {
     item: any;
     index: number;
@@ -34,7 +40,7 @@ type Props = {
     index: number
   ) => { length: number; offset: number; index: number };
   stickySectionHeadersEnabled?: boolean;
-  keyExtractor?: (item: any) => string;
+  keyExtractor?: (item: Item) => string;
 };
 
 type State = {
@@ -45,7 +51,7 @@ class GroupedList extends React.PureComponent<Props, State> {
   sectionList = React.createRef<SectionList>();
   sectionHeadersHeights: { [key: string]: number } = {};
 
-  groupItems(items: Array<Object>): any {
+  groupItems(items: Array<Item>): any {
     const grouped = items.reduce((acc, item) => {
       const groupId = this.props.groupBy(item);
       if (Object.prototype.hasOwnProperty.call(acc, groupId)) {
@@ -63,6 +69,7 @@ class GroupedList extends React.PureComponent<Props, State> {
     const sections = this.props.sections || alphabet;
 
     const { index } = sections.reduce(
+      // @ts-ignore
       (acc, item, currendIndex) => {
         const newDelta = Math.abs(sectionIdx - currendIndex);
         if (newDelta < acc.delta) {
@@ -119,7 +126,7 @@ class GroupedList extends React.PureComponent<Props, State> {
     );
   };
 
-  handleSectionHeaderLayout = (height: number, data: Object) => {
+  handleSectionHeaderLayout = (height: number, data: any) => {
     this.sectionHeadersHeights[data.section.title] = height;
   };
 
@@ -138,7 +145,7 @@ class GroupedList extends React.PureComponent<Props, State> {
       keyExtractor,
     } = this.props;
 
-    const deafultKeyExtractor = item => item.key || item.id;
+    const deafultKeyExtractor = (item: any) => item.key || item.id;
 
     const Separator = () => (
       <View

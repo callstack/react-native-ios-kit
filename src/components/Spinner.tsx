@@ -7,12 +7,12 @@ import { withTheme } from '../';
 type Props = {
   theme: Theme;
   animating: boolean;
-  size: 'small' | 'large';
+  size?: 'small' | 'large' | number;
   hidesWhenStopped: boolean;
 };
 
 class Spinner extends Component<Props> {
-  static defaultProps = {
+  static defaultProps: Partial<Props> = {
     animating: true,
     size: 'small',
     hidesWhenStopped: true,

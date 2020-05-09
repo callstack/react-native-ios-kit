@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 import { withTheme } from '../core/theming';
-import type { Theme } from '../types/Theme';
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
+import { Theme } from '../types/Theme';
+import { ViewStyle } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -34,13 +34,13 @@ type Props = {
   onRefresh?: () => void;
   refreshing: boolean;
   stickySectionHeadersEnabled?: boolean;
-  listStyle?: ViewStyleProp;
-  contentContainerStyle?: ViewStyleProp;
+  listStyle?: ViewStyle;
+  contentContainerStyle?: ViewStyle;
 };
 
 class Collection extends React.Component<Props> {
   static defaultProps = {
-    keyExtractor: (item: *, index: number) => `${item.key}` || `${index}`,
+    keyExtractor: (item: any, index: number) => `${item.key}` || `${index}`,
     numberOfColumns: 4,
     refreshing: false,
   };
@@ -49,7 +49,7 @@ class Collection extends React.Component<Props> {
     width: width / (this.props.numberOfColumns || 4),
   };
 
-  renderCell = ({ item }: { item: * }) => {
+  renderCell = ({ item }: { item: any }) => {
     const child = this.props.renderItem(item);
     if (!child) return null;
     return React.cloneElement(child, {
@@ -57,7 +57,7 @@ class Collection extends React.Component<Props> {
     });
   };
 
-  renderRow = ({ item }: { item: * }) => (
+  renderRow = ({ item }: { item: any }) => (
     <FlatList
       style={styles.wrapper}
       numColumns={this.props.numberOfColumns}
@@ -96,17 +96,15 @@ class Collection extends React.Component<Props> {
         onEndReached={onEndReached}
         onEndReachedThreshold={onEndReachedThreshold}
         stickySectionHeadersEnabled={stickySectionHeadersEnabled}
-        listStyle={listStyle}
+        style={listStyle}
         contentContainerStyle={contentContainerStyle}
         showsVerticalScrollIndicator={false}
         refreshControl={
-          onRefresh ? (
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={onRefresh}
-              tintColor={theme.footnoteColor}
-            />
-          ) : null
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor={theme.footnoteColor}
+          />
         }
       />
     );

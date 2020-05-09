@@ -66,7 +66,12 @@ export type Props = {
   children: React.ReactNode;
   testID?: string;
 };
-
+type appliedStyleProps = {
+  centered?: boolean | null;
+  rounded?: boolean | null;
+  disabled?: boolean | null;
+  inverted?: boolean | null;
+};
 class Button extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
@@ -85,13 +90,15 @@ class Button extends React.Component<Props> {
       disabled,
       inverted,
     };
+    const mapKeys = Object.keys(appliedStyleProps);
 
-    Object.keys(appliedStyleProps).forEach(key => {
+    for (var i = 0, len = mapKeys.length; i < len; i++) {
+      const key = mapKeys[i] as keyof appliedStyleProps;
       const value = appliedStyleProps[key];
       if (value) {
         styleFromProps[styleFromProps.length] = this.styles[key];
       }
-    });
+    }
 
     if (disabled && rounded) {
       styleFromProps[styleFromProps.length] = inverted

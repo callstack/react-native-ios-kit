@@ -1,4 +1,3 @@
-/* @flow */
 import * as Colors from './styles/colors';
 
 export { withTheme, ThemeProvider, useTheme } from './core/theming';

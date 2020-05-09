@@ -69,8 +69,9 @@ class Stepper extends React.Component<Props, State> {
     clearTimeout(this._timeout);
     clearInterval(this._interval);
   }
-
+  // @ts-ignore
   _interval: IntervalID;
+  // @ts-ignore
   _timeout: TimeoutID;
 
   decrementOnCounter = () => {

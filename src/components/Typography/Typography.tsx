@@ -1,5 +1,3 @@
-/* @flow */
-
 import createText from './createText';
 
 export const Title1 = createText({

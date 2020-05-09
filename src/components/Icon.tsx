@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, StyleSheet, ImageSourcePropType } from 'react-native';
+import { Image, View, StyleSheet, ImageURISource } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';
@@ -9,7 +9,7 @@ type Props = {
   /**
    * ImageSource name. Can be one of https://github.com/oblador/react-native-vector-icons/blob/master/glyphmaps/Ionicons.json or source of ReactNative's `image` or any valid React Component
    */
-  name?: ImageSourcePropType | string;
+  name?: ImageURISource | string;
   /**
    * Custom color for icon, default to primary
    */
