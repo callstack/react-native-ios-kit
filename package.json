@@ -44,6 +44,7 @@
     "@babel/runtime": "^7.9.0",
     "@callstack/eslint-config": "^9.0.0",
     "@types/color": "^3.0.1",
+    "@types/node": "^13.13.5",
     "@types/react-dom": "^16.9.7",
     "@types/react-native": "^0.62.7",
     "babel-cli": "^6.26.0",
