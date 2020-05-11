@@ -1,4 +1,4 @@
-name: Main
+name: Build and test
 
 on:
   push:
@@ -7,49 +7,42 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
-
     steps:
     - name: checkout
       uses: actions/checkout@v2
-
     - name: Cache node modules
-      steps:
-      - name: "@ core"
-        uses: actions/cache@v1
-        id: cache
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: "@ website"
-        uses: actions/cache@v1
-        id: cache-website
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('**/yarn.lock') }}
-      - name: "@ example"
-        uses: actions/cache@v1
-        id: cache-example
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('**/yarn.lock') }}
-
-
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('**/yarn.lock') }}
+    - name: Cache node modules @ website
+      uses: actions/cache@v1
+      id: cache-website
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('**/website/yarn.lock') }}
+    - name: Cache node modules @ example
+      uses: actions/cache@v1
+      id: cache-example
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('**/example/yarn.lock') }}
     - name: Instal dependencies
-      steps:
-      - name: "@ core"
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-      - name: "@ website"
-        if: steps.cache-website.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile --cwd ./website
-      - name: "@ example"
-        if: steps.cache-example.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile --cwd ./example
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile
+    - name: Instal dependencies @ website
+      if: steps.cache-website.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile --cwd ./website
+    - name: Instal dependencies @ example
+      if: steps.cache-example.outputs.cache-hit != 'true'
+      run: yarn install --frozen-lockfile --cwd ./example
 
-    - name: Run tests
-      needs: Instal dependencies
-      run: |
-        yarn run lint
-        yarn run flow
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    run: |
+      yarn run lint
+      yarn run flow
