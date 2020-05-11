@@ -38,8 +38,12 @@ jobs:
     - name: Instal dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile
+
+    - name: Instal dependencies @ example
       if: steps.cache-example.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --cwd ./example
+
+    - name: Instal dependencies @ website
       if: steps.cache-website.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --cwd ./website
 
