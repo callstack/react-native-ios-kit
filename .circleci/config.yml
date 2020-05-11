@@ -113,16 +113,16 @@ workflows:
       - build:
           filters:
             tags:
-              only: /v\d+\.\d+\.\d+.*/
+              only: /v.*/
       - deploy-website:
           requires:
             - build
           filters:
             tags:
-              only: /v\d+\.\d+\.\d+.*/
+              only: /v.*/
       - publish-expo:
           requires:
             - build
           filters:
             tags:
-              only: /v\d+\.\d+\.\d+.*/
+              only: /v.*/
