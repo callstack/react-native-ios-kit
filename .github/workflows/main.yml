@@ -1,0 +1,34 @@
+name: Build and test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+#     - name: Cache node modules
+#       uses: actions/cache@v1
+#       id: cache
+#       with:
+#         path: node_modules
+#         key: node-modules-${{ hashFiles('**/yarn.lock') }}
+
+    - name: Instal dependencies
+#       if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        yarn install --frozen-lockfile 
+        yarn install --frozen-lockfile --cwd ./website
+        yarn install --frozen-lockfile --cwd ./example
+
+    - name: Run tests
+      run: |
+        yarn run lint
+        yarn run flow
