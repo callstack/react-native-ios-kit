@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
@@ -39,18 +39,6 @@ jobs:
     - name: Instal dependencies @ example
       if: steps.cache-example.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --cwd ./example
-
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    - name: load node_modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: node-modules-${{ hashFiles('**/yarn.lock') }}
     - name: run tests
       run: |
         yarn run lint
