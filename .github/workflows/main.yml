@@ -1,4 +1,4 @@
-name: Build and test
+name: Main
 
 on:
   push:
@@ -23,14 +23,14 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('**/yarn.lock') }}
       - name: "@ website"
-        id: cache-website
         uses: actions/cache@v1
+        id: cache-website
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('**/yarn.lock') }}
       - name: "@ example"
-        id: cache-example
         uses: actions/cache@v1
+        id: cache-example
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('**/yarn.lock') }}
