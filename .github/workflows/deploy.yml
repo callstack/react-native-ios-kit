@@ -2,18 +2,18 @@ name: Deploy
 
 on:
   push:
-    tags: 
+    tags:
       - '*'
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-        
+
       - name: Cache node modules
         uses: actions/cache@v1
         id: cache
@@ -46,15 +46,15 @@ jobs:
       - name: Instal dependencies @ website
         if: steps.cache-website.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --cwd ./website
-      
+
   webiste:
     name: Deploy website
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout  
+      - name: Checkout
         uses: actions/checkout@v2
- 
+
       - name: Cache node modules
         uses: actions/cache@v1
         id: cache
@@ -75,7 +75,7 @@ jobs:
         with:
           path: ./example/node_modules
           key: node-modules-example--${{ hashFiles('example/yarn.lock') }}
-          
+
       - name: Deploy to GH Pages
         run: |
             git config --global user.name "adamtrz@users.noreply.github.com"
@@ -83,4 +83,42 @@ jobs:
             echo "machine github.com login adamtrz password ${{ secrets.GH_TOKEN }}" > ~/.netrc
             GIT_USER=adamtrz yarn run deploy
 
-    
+  expo:
+    name: Deploy Expo App
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('yarn.lock') }
+
+      - name: Cache node modules @ website
+        uses: actions/cache@v1
+        id: cache-website
+        with:
+          path: ./website/node_modules
+          key: node-modules-website-${{ hashFiles('website/yarn.lock') }}
+
+      - name: Cache node modules @ example
+        uses: actions/cache@v1
+        id: cache-example
+        with:
+          path: ./example/node_modules
+          key: node-modules-example--${{ hashFiles('example/yarn.lock') }}
+
+      - name: Deploy Example App
+        uses: expo/expo-github-action@v5
+        with:
+          expo-version: 3.x
+          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
+          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+          expo-cache: true
+          run: |
+            expo doctor
+            expo publish
