@@ -48,11 +48,6 @@ jobs:
       if: steps.cache-website.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --cwd ./website
 
-    # - name: Run tests
-    #   run: |
-    #     yarn run lint
-    #     yarn run flow
-
   test:
     needs: build
     name: Run tests
