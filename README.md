@@ -134,7 +134,6 @@ Read the [contribution guidelines](/CONTRIBUTING.md) before contributing.
 
 <!-- badges -->
 
-[build-badge]: (https://github.com/callstack/react-native-ios-kit/workflows/Build%20and%20test/badge.svg)
 [version-badge]: https://img.shields.io/npm/v/react-native-ios-kit.svg?style=flat-square
 [package]: https://www.npmjs.com/package/react-native-ios-kit
 [license-badge]: https://img.shields.io/npm/l/react-native-ios-kit.svg?style=flat-square
