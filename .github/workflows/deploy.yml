@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -78,8 +78,8 @@ jobs:
 
       - name: Deploy to GH Pages
         run: |
-            git config --global user.name "adamtrz@users.noreply.github.com"
-            git config --global user.email "trzcinski.adam@gmail.com"
+            git config --global user.name ${{ secrets.GH_DEPLOY_USERNAME }}
+            git config --global user.email ${{ secretsa.GH_DEPLOY_EMAIL }}
             echo "machine github.com login adamtrz password ${{ secrets.GH_TOKEN }}" > ~/.netrc
             GIT_USER=adamtrz yarn run deploy
 
