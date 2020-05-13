@@ -81,6 +81,7 @@ jobs:
             git config --global user.name "adamtrz@users.noreply.github.com"
             git config --global user.email "trzcinski.adam@gmail.com"
             echo "machine github.com login adamtrz password ${{ secrets.GH_TOKEN }}" > ~/.netrc
-            GIT_USER=adamtrz yarn run deploy
+            GIT_USER=adamtrz 
+            yarn run deploy
 
     
