@@ -32,7 +32,7 @@ jobs:
           path: ./example/node_modules
           key: node-modules-example--${{ hashFiles('example/yarn.lock') }}
 
-      - name: Instal dependencies @ example
+      - name: Install dependencies @ example
         if: steps.cache-example.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --cwd ./example
 
