@@ -21,7 +21,7 @@ jobs:
           path: node_modules
           key: node-modules-${{ hashFiles('yarn.lock') }}
 
-      - name: Instal dependencies
+      - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
@@ -32,7 +32,7 @@ jobs:
           path: ./example/node_modules
           key: node-modules-example--${{ hashFiles('example/yarn.lock') }}
 
-      - name: Instal dependencies @ example
+      - name: Install dependencies @ example
         if: steps.cache-example.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --cwd ./example
 
@@ -43,7 +43,7 @@ jobs:
           path: ./website/node_modules
           key: node-modules-website-${{ hashFiles('website/yarn.lock') }}
 
-      - name: Instal dependencies @ website
+      - name: Install dependencies @ website
         if: steps.cache-website.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --cwd ./website
 
@@ -81,7 +81,8 @@ jobs:
             git config --global user.name ${{ secrets.GH_DEPLOY_USERNAME }}
             git config --global user.email ${{ secretsa.GH_DEPLOY_EMAIL }}
             echo "machine github.com login adamtrz password ${{ secrets.GH_TOKEN }}" > ~/.netrc
-            GIT_USER=adamtrz yarn run deploy
+            GIT_USER=adamtrz 
+            yarn run deploy
 
   expo:
     name: Deploy Expo App
