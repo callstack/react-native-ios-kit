@@ -101,6 +101,8 @@ class SearchBar extends React.Component<Props, State> {
     nativeEvent: {
       layout: { width },
     },
+  }: {
+    nativeEvent: { layout: { width: number } };
   }) => {
     this.setState({ cancelWidth: width });
   };

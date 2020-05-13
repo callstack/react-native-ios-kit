@@ -55,8 +55,10 @@ class GroupedList extends React.PureComponent<Props, State> {
     const grouped = items.reduce((acc, item) => {
       const groupId = this.props.groupBy(item);
       if (Object.prototype.hasOwnProperty.call(acc, groupId)) {
+        // @ts-ignore
         acc[groupId].data.push(item);
       } else {
+        // @ts-ignore
         acc[groupId] = { title: groupId, data: [item] };
       }
       return acc;

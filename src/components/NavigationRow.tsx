@@ -5,8 +5,8 @@ import RowItem from './RowItem';
 import Icon from './Icon';
 import { withTheme } from '../core/theming';
 import { Body } from './Typography';
-import type { Theme } from '../types/Theme';
-import type { Props as RowProps } from './RowItem';
+import { Theme } from '../types/Theme';
+import { Props as RowProps } from './RowItem';
 
 type Props = RowProps & {
   theme: Theme;
@@ -32,14 +32,7 @@ class NavigationRow extends React.Component<Props> {
     );
   };
   render() {
-    const { onPress } = this.props;
-    return (
-      <RowItem
-        onPress={onPress}
-        renderRight={this.renderRightComponent}
-        {...this.props}
-      />
-    );
+    return <RowItem renderRight={this.renderRightComponent} {...this.props} />;
   }
 }
 

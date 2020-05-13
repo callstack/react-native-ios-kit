@@ -63,7 +63,7 @@ export type Props = {
    * Custom styles to apply to the button
    */
   disabledStyle?: StyleProp<ViewStyle>;
-  children: React.ReactElement<any> | React.ReactElement<any>[] | string,
+  children: React.ReactNode;
   /**
    * Used to locate the item for end to end tests
    */

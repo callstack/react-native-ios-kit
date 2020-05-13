@@ -51,10 +51,10 @@ class RowItem extends React.Component<Props> {
       return <View style={styles.rightComponent}>{renderRight()}</View>;
     }
 
-    if (rightComponent) {
+    if (rightComponent && React.isValidElement(rightComponent)) {
       return (
         <View style={styles.rightComponent}>
-          {React.createElement(rightComponent)}
+          {React.cloneElement(rightComponent)}
         </View>
       );
     }
