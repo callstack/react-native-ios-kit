@@ -1,6 +1,6 @@
 {
   "name": "react-native-ios-kit",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "The missing React Native UI Kit for iOS.",
   "main": "src/index.js",
   "scripts": {
