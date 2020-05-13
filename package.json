@@ -8,8 +8,6 @@
     "flow": "flow check",
     "lint": "eslint . --cache",
     "test": "jest",
-    "docs:build": "cd website && yarn run build",
-    "docs:watch": "cd website && yarn run start",
     "release": "release-it"
   },
   "files": [

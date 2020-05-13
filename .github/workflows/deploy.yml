@@ -77,6 +77,7 @@ jobs:
           key: node-modules-example--${{ hashFiles('example/yarn.lock') }}
 
       - name: Deploy to GH Pages
+        working-directory: ./website
         run: |
             git config --global user.name ${{ secrets.GH_DEPLOY_USERNAME }}
             git config --global user.email ${{ secrets.GH_DEPLOY_EMAIL }}
@@ -120,6 +121,7 @@ jobs:
           expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
           expo-cache: true
+          working-directory: ./example
           run: |
             expo doctor
             expo publish
