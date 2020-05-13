@@ -8,7 +8,7 @@
 
 ---
 
-[![Build Status][build-badge]][build]
+![Build and test](https://github.com/callstack/react-native-ios-kit/workflows/Build%20and%20test/badge.svg)
 [![Version][version-badge]][package]
 [![MIT License][license-badge]][license]
 
@@ -134,8 +134,6 @@ Read the [contribution guidelines](/CONTRIBUTING.md) before contributing.
 
 <!-- badges -->
 
-[build-badge]: https://img.shields.io/circleci/project/github/callstack/react-native-ios-kit/master.svg?style=flat-square
-[build]: https://circleci.com/gh/callstack/react-native-ios-kit
 [version-badge]: https://img.shields.io/npm/v/react-native-ios-kit.svg?style=flat-square
 [package]: https://www.npmjs.com/package/react-native-ios-kit
 [license-badge]: https://img.shields.io/npm/l/react-native-ios-kit.svg?style=flat-square
