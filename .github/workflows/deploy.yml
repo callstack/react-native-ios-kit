@@ -43,7 +43,7 @@ jobs:
           path: ./website/node_modules
           key: node-modules-website-${{ hashFiles('website/yarn.lock') }}
 
-      - name: Instal dependencies @ website
+      - name: Install dependencies @ website
         if: steps.cache-website.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --cwd ./website
       
