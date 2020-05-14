@@ -41,7 +41,7 @@ Size of an Avatar.
 Custom styles to apply to Avatar.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

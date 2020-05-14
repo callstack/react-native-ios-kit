@@ -46,6 +46,6 @@ Uses following `theme` properties:
 Custom styles to apply to the typography component.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

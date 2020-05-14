@@ -40,6 +40,6 @@ Whether the indicator should hide when not animating.
 Size of the indicator.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

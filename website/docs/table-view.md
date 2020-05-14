@@ -5,7 +5,7 @@ title: TableView
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A basic TableView component that can render iOS table view.
-It renders header, footer and children which can be [`RowItem`](row-item.html) components.  
+It renders header, footer and children which can be [`RowItem`](row-item) components.  
 
 
 <img alt="TableView component " src={useBaseUrl('img/table-view.png')} />
@@ -33,12 +33,12 @@ import { ScrollView, TableView } from 'react-native-ios-kit';
 
 ## TableView rows
 There are few ready for use row components:
-- [`RowItem`](row-item.html) - basic row item
-- [`InfoRow`](info-row.html) - row with simple text
-- [`CheckboxRow`](checkbox-row.html) - row with checkbox
-- [`NavigationRow`](navigation-row.html) - row for navigation
-- [`SwitchRow`](switch-row.html) - row with switch
-- [`TextFieldRow`](text-field-row.html) - row with text field
+- [`RowItem`](row-item) - basic row item
+- [`InfoRow`](info-row) - row with simple text
+- [`CheckboxRow`](checkbox-row) - row with checkbox
+- [`NavigationRow`](navigation-row) - row for navigation
+- [`SwitchRow`](switch-row) - row with switch
+- [`TextFieldRow`](text-field-row) - row with text field
 
 
 ## Theme
@@ -52,7 +52,7 @@ Uses following theme properties:
 ### `children`
 **type:** `React.ChildrenArray<*>`
 
-Children of TableView. Could be [`RowItem`](row-item.html) components.
+Children of TableView. Could be [`RowItem`](row-item) components.
 
 ### `footer` (optional)
 **type:** `string`
@@ -80,7 +80,7 @@ Custom styles for header.
 Invoked on footer press.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

@@ -28,7 +28,7 @@ Uses following `theme` properties:
 
 ### `color` (optional)
 **type:** `string`  
-**default value:** `primaryColor` from [`theme`](theme.html)
+**default value:** `primaryColor` from [`theme`](theme)
 
 Custom color for icon.
 
@@ -53,6 +53,6 @@ Icon size.
 Custom styles to apply to the Icon.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
