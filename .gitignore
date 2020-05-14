@@ -53,10 +53,6 @@ buck-out/
 android/app/libs
 android/keystores/debug.keystore
 
-# vscode
-#
-jsconfig.json
-
 example/yarn-error.log
 
 .docosaurus
