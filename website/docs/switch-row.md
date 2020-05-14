@@ -35,7 +35,7 @@ Other props accepted by `RowItem` component.
 Invoked with the new value when the value changes.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

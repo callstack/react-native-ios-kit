@@ -11,7 +11,7 @@ function Help() {
         content:
           'Learn more using the documentation on this site.',
         title: 'Browse Docs',
-        link: 'react-native-ios-kit/docs/installation.html'
+        link: 'docs/installation'
       },
       {
         content: 'Ask questions about the documentation and project',

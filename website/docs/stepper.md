@@ -49,7 +49,7 @@ Callback function on changing counter result
 The step, or increment, value for the stepper.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

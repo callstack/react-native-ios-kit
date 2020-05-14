@@ -73,7 +73,7 @@ The **ThemeProvider** component provides the theme to all the components in the 
 #### Main theme for application
 
 You can provide a custom theme to customize the colors, fonts etc. with the **ThemeProvider** component.
-Check the [Theme Type](https://callstack.github.io/react-native-ios-kit/docs/theme.html) to see what customization options are supported.
+Check the [Theme Type](https://callstack.github.io/react-native-ios-kit/docs/theme) to see what customization options are supported.
 
 Example:
 

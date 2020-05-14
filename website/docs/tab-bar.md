@@ -52,7 +52,7 @@ Uses following `theme` properties:
 ## Props
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 
@@ -60,7 +60,7 @@ Custom theme for component. By default provided by the ThemeProvider.
 **type:** `Array<TabItem>`  
 
 Array of Tabs. Each `TabItem` needs to have below shape:
-* `icon`: [Icon name](icon.html#name) (optional)
+* `icon`: [Icon name](icon#name) (optional)
 * `title: string` (optional)
 * `onPress: function` - to be called when Tab is tapped
 * `isActive: boolean` (optional) - indicating whether Tab is active
