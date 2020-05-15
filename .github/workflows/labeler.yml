@@ -1,11 +1,19 @@
 name: "Pull Request Labeler"
 on:
-- pull_request
+  issues:
+    types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, edited, reopened, ready_for_review, synchronize]
 
 jobs:
   triage:
     runs-on: ubuntu-latest
+    name: Label issues and pull requests
     steps:
-    - uses: actions/labeler@v2
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: check out
+        uses: actions/checkout@v2
+
+      - name: labeler
+        uses: IvanFon/super-labeler-action@v1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"

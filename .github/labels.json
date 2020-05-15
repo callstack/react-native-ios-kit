@@ -1,0 +1,141 @@
+{
+  "labels": {
+    "example-app": {
+      "name": "🕹 Example App",
+      "colour": "#c2e0c6",
+      "description": "Update Examples"
+    },
+    "wip": {
+      "name": "🔨 WIP",
+      "colour": "#95fc7e",
+      "description": "Work in progress"
+    },
+    "bug": {
+      "name": "🐛 Bug",
+      "colour": "#ee0701",
+      "description": "Something isn't working"
+    },
+    "fix": {
+      "name": "🐞 Bugfix",
+      "colour": "#c41799",
+      "description": "PR with bugfix"
+    },
+    "feat": {
+      "name": "Enhancement",
+      "colour": "#84b6eb",
+      "description": "New feature or request"
+    },
+    "refactor": {
+      "name": "Refactor",
+      "colour": "#42d1c5",
+      "description": "Changes existing feature"
+    },
+    "docs": {
+      "name": "📖 Docs",
+      "colour": "#88c948",
+      "description": "Improvements or additions to documentation"
+    },
+    "automation": {
+      "name": "🤖 Automation",
+      "colour": "#23c4ff",
+      "description": "automation"
+    },
+    "core": {
+      "name": "🛸 Core",
+      "colour": "#e99695",
+      "description": "Updates to core package"
+    }
+  },
+  "issue": {
+    "bug": {
+      "requires": 2,
+      "conditions": [
+        {
+          "type": "titleMatches",
+          "pattern": "/^bug/i"
+        },
+        {
+          "type": "isOpen",
+          "value": true
+        }
+      ]
+    },
+    "wip": {
+      "requires": 2,
+      "conditions": [
+        {
+          "type": "titleMatches",
+          "pattern": "/^(wip|\\[wip)/i"
+        },
+        {
+          "type": "isOpen",
+          "value": true
+        }
+      ]
+    }
+  },
+  "pr": {
+    "wip": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "titleMatches",
+          "pattern": "/^(wip|\\[wip)/i"
+        },
+        {
+          "type": "isDraft",
+          "value": true
+        }
+      ]
+    },
+    "fix": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "branchMatches",
+          "pattern": "^fix\\/"
+        }
+      ]
+    },
+    "feat": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "branchMatches",
+          "pattern": "^feat\\/"
+        }
+      ]
+    },
+    "refactor": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "branchMatches",
+          "pattern": "^refactor\\/"
+        }
+      ]
+    },
+    "docs": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "branchMatches",
+          "pattern": "^docs\\/"
+        },
+        {
+          "type": "filesMatch",
+          "glob": "website/**/*"
+        }
+      ]
+    },
+    "automation": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "filesMatch",
+          "glob": ".github/**/*"
+        }
+      ]
+    }
+  }
+}
