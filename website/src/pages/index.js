@@ -135,7 +135,7 @@ function Home() {
                 <h2 className={styles.featureHeading}>
                   <Link
                     className={styles.featureHeading}
-                    to={'https://expo.io/@mobile-dev/react-native-ios-kit'}
+                    to={'https://snack.expo.io/@marchenkova/github.com-callstack-react-native-ios-kit:example'}
                     target="blank" rel="noopener noreferrer"
                     >
                     Example App
