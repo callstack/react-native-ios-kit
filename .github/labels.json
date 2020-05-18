@@ -136,6 +136,15 @@
           "glob": ".github/**/*"
         }
       ]
+    },
+    "core": {
+      "requires": 1,
+      "conditions": [
+        {
+          "type": "filesMatch",
+          "glob": "src/**/*"
+        }
+      ]
     }
   }
 }
