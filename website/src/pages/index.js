@@ -109,8 +109,8 @@ function Home() {
                   Just couple of lines to get you up and running.
                 </p>
               </div>
-              <div className="text--left">
-              <CodeSnippet snippet={snippet} language='jsx'/>
+              <div className={classnames('col', styles.featureWrapper, 'text--left')}>
+                <CodeSnippet snippet={snippet} language='jsx'/>
               </div>
             </div>
           </div>
