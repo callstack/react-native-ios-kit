@@ -36,7 +36,7 @@ Selected pages index.
 
 ### `currentPageIndicatorTintColor` (optional),
 **type:** `string`  
-**default value:** `barColor` from [`theme`](theme.html)
+**default value:** `barColor` from [`theme`](theme)
 
 ### `hidesForSinglePage` (optional)
 **type:** `boolean`  
@@ -51,7 +51,7 @@ The number of pages the receiver shows (as dots).
 
 ### `pageIndicatorTintColor` (optional)  
 **type:** `string`  
-**default value:** `dividerColor` from [`theme`](theme.html)
+**default value:** `dividerColor` from [`theme`](theme)
 
 ### `size` (optional)  
 **type:** `number`  
@@ -60,7 +60,7 @@ The number of pages the receiver shows (as dots).
 Size of the controls.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

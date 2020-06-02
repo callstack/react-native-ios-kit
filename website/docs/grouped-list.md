@@ -105,6 +105,6 @@ Rendered at the top and bottom of each section (note this is different from Item
 Styles to apply on section list.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

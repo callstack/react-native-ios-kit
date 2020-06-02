@@ -23,11 +23,9 @@ You can find documentation with all list of features and components [here](https
 
 ## Try it out
 
-```sh
-cd example && npm run ios
-```
+Run the [example app](https://snack.expo.io/@marchenkova/github.com-callstack-react-native-ios-kit:example) with [Expo](https://expo.io/) to see it in action.
 
-or run the [example app](https://expo.io/@mobile-dev/react-native-ios-kit) with [Expo](https://expo.io/) to see it in action.
+The source code for the examples are under the [/example](https://github.com/callstack/react-native-ios-kit/tree/master/example) folder.
 
 ## Getting Started
 
@@ -73,7 +71,7 @@ The **ThemeProvider** component provides the theme to all the components in the 
 #### Main theme for application
 
 You can provide a custom theme to customize the colors, fonts etc. with the **ThemeProvider** component.
-Check the [Theme Type](https://callstack.github.io/react-native-ios-kit/docs/theme.html) to see what customization options are supported.
+Check the [Theme Type](https://callstack.github.io/react-native-ios-kit/docs/theme) to see what customization options are supported.
 
 Example:
 

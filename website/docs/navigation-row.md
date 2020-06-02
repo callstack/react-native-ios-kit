@@ -26,7 +26,7 @@ Uses following theme properties:
 
 ## Props
 
-### [RowItem props...](row-item.html#props)
+### [RowItem props...](row-item#props)
 
 Other props accepted by `RowItem` component
 
@@ -41,6 +41,6 @@ Additional information to be displayed next to RightArrow Icon.
 `onPress` event fired when user presses Row.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

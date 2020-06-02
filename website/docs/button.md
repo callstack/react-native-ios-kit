@@ -97,7 +97,7 @@ If true, make border corners rounded.
 Custom styles to apply to the button.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

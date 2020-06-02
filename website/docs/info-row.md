@@ -23,7 +23,7 @@ Uses following `theme` properties:
 
 ## Props
 
-### [RowItem props...](row-item.html#props)
+### [RowItem props...](row-item#props)
 
 Other props accepted by `RowItem` component.
 
@@ -33,6 +33,6 @@ Other props accepted by `RowItem` component.
 Information to be displayed at right side of row.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

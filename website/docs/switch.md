@@ -36,7 +36,7 @@ Invoked with the new value when the value changes.
 
 ### `trackColor` (optional)
 **type:** `string`
-**default value:** `positiveColor` from [`theme`](theme.html)
+**default value:** `positiveColor` from [`theme`](theme)
 
 Background color when the switch is turned on.
 
@@ -46,7 +46,7 @@ Background color when the switch is turned on.
 Switch style.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

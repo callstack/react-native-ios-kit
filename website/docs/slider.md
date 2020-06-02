@@ -33,7 +33,7 @@ Uses following `theme` properties:
 
 ### `maxIconColor` (optional)
 **type:** `string`
-**default value:** `placeholderColor` from [theme](./theme.html)
+**default value:** `placeholderColor` from [theme](./theme)
 
 Color of the maximum track icon (on the right side).
 
@@ -50,7 +50,7 @@ Size of the maximum track icon (on the right side).
 
 ### `maxTrackTintColor` (optional)
 **type:** `string`
-**default value:** `dividerColor` from [theme](./theme.html)
+**default value:** `dividerColor` from [theme](./theme)
 
 The color used for the track to the right of the button.
 
@@ -62,7 +62,7 @@ Maximum value of the slider.
 
 ### `minIconColor` (optional)
 **type:** `string`
-**default value:** `placeholderColor` from [theme](./theme.html)
+**default value:** `placeholderColor` from [theme](./theme)
 
 Color of the minimum track icon (on the left side).
 
@@ -79,7 +79,7 @@ Size of the minimum track icon (on the left side).
 
 ### `minTrackTintColor` (optional)
 **type:** `string`
-**default value:** `primaryColor` from [theme](./theme.html)
+**default value:** `primaryColor` from [theme](./theme)
 
 The color used for the track to the left of the button.
 
@@ -112,7 +112,7 @@ Step value of the slider. The value should be between 0 and (maximumValue - mini
 Custom styles to apply to the Icon.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 
