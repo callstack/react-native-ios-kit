@@ -14,7 +14,7 @@ type Props = {
 class Spinner extends Component<Props> {
   static defaultProps: Partial<Props> = {
     animating: true,
-    size: 'small',
+    size: 'small' as const,
     hidesWhenStopped: true,
   };
   render() {

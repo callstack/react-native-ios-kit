@@ -7,6 +7,7 @@ import {
   findNodeHandle,
   NativeModules,
   ViewStyle,
+  StyleProp,
 } from 'react-native';
 
 import { withTheme } from '../../core/theming';
@@ -20,7 +21,7 @@ type Props = {
   onSectionPress: (id: number) => void;
   items: Array<string>;
   sectionPrimaryColor?: string | null;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 };
 
 type State = {

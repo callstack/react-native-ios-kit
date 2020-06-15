@@ -22,7 +22,7 @@ type Props = {
 
 class Switch extends Component<Props> {
   render() {
-    const { theme, onValueChange, trackColor, ...rest } = this.props;
+    const { onValueChange, trackColor, ...rest } = this.props;
     return (
       <ReactNativeSwitch
         {...rest}

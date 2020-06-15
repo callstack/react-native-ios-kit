@@ -237,12 +237,7 @@ const getStyles = (theme: Theme): GetStyleProp => {
         backgroundColor: primaryColor,
       },
     }),
-    invertedDisabled: StyleSheet.create({
-      container: {
-        backgroundColor: disabledColor,
-        borderColor: disabledColor,
-      },
-    }),
+    invertedDisabled: StyleSheet.create({}),
   };
 };
 

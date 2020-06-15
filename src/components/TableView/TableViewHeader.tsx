@@ -4,12 +4,12 @@ import { View, StyleSheet } from 'react-native';
 import { withTheme } from '../../core/theming';
 import { Footnote } from '../Typography';
 import { Theme } from '../../types/Theme';
-import { ViewStyle } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
 
 type Props = {
   header: string;
   theme: Theme;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 };
 
 class TableViewHeader extends React.Component<Props> {

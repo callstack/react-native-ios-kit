@@ -9,6 +9,7 @@ import type { Theme } from 'react-native-ios-kit/types';
 
 type Props = {
   theme: Theme,
+  //eslint-disable-next-line
   navigator: Object,
 };
 

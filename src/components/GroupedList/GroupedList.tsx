@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
 
 import Sections from './Sections';
 import { withTheme } from '../../core/theming';
 import { Headline } from '../Typography';
 
-import { ViewStyle } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
 import { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
@@ -20,20 +20,13 @@ type Props = {
   theme: Theme;
   items: Array<Item>;
   groupBy: (item: Item) => string;
-  renderItem: (data: {
-    item: any;
-    index: number;
-  }) => React.ReactElement<any> | null;
-  renderSectionHeader?: (data: {
-    section: any;
-  }) => React.ReactElement<any> | null;
-  renderSectionFooter?: (data: {
-    section: any;
-  }) => React.ReactElement<any> | null;
+  renderItem: (data: { item: any; index: number }) => React.ReactElement | null;
+  renderSectionHeader?: (data: { section: any }) => React.ReactElement | null;
+  renderSectionFooter?: (data: { section: any }) => React.ReactElement | null;
   ItemSeparatorComponent?: React.ComponentType<any>;
   SectionSeparatorComponent: any;
   sections?: Array<string>;
-  sectionsStyle?: ViewStyle;
+  sectionsStyle?: StyleProp<ViewStyle>;
   sectionPrimaryColor?: string;
   getItemLayout?: (
     data: any,

@@ -5,7 +5,7 @@ import TableViewHeader from './TableViewHeader';
 import TableViewFooter from './TableViewFooter';
 import { withTheme } from '../../';
 import { Theme } from '../../types/Theme';
-import { ViewStyle } from 'react-native';
+import { ViewStyle, StyleProp } from 'react-native';
 
 type Props = {
   /**
@@ -23,7 +23,7 @@ type Props = {
   /**
    * Optional styles of header
    */
-  headerStyle?: ViewStyle;
+  headerStyle?: StyleProp<ViewStyle>;
   /**
    * Footer of TableView
    */
@@ -70,11 +70,12 @@ class TableView extends React.Component<Props> {
         )}
         {React.Children.map(children, (child, idx) => {
           if (React.isValidElement(child)) {
-            React.cloneElement(child, {
+            return React.cloneElement(child, {
               first: idx === 0,
               last: idx === React.Children.count(children) - 1,
             });
           }
+          return null;
         })}
         {!withoutFooter && !!footer && (
           <TableViewFooter
