@@ -28,7 +28,7 @@ Uses following `theme` properties:
 
 ## Props
 
-### [RowItem props...](row-item.html#props)
+### [RowItem props...](row-item#props)
 
 Other props accepted by `RowItem` component.
 
@@ -43,7 +43,7 @@ Invoked with the new value when the value of text input changes.
 Placeholder value.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

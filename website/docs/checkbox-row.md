@@ -32,7 +32,7 @@ Uses following `theme` properties:
 
 ## Props
 
-### [RowItem props...](row-item.html#props)
+### [RowItem props...](row-item#props)
 
 Other props accepted by `RowItem` component.
 
@@ -47,6 +47,6 @@ Event fired when Row is pressed in.
 Indicates whether checkbox is selected or not.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

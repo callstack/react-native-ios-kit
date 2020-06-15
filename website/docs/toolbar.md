@@ -45,7 +45,7 @@ Uses following `theme` properties:
 ## Props
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 
@@ -53,7 +53,7 @@ Custom theme for component. By default provided by the ThemeProvider.
 **type:** `Array<ToolbarItem>`  
 
 Array of Items. Each `ToolbarItem` needs to have below shape:
-* `icon`: [Icon name](icon.html#name) (optional)
+* `icon`: [Icon name](icon#name) (optional)
 * `title: string` (optional)
 * `onPress: function` - to be called when Item is tapped
 * `disabled?: boolean` (optional) - disables an Item

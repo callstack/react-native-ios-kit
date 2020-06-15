@@ -45,7 +45,7 @@ Style of wrapper container.
 
 ### `currentPageIndicatorTintColor` (optional),
 **type:** `string`  
-**default value:** `barColor` from [`theme`](theme.html)
+**default value:** `barColor` from [`theme`](theme)
 
 ### `onPageChange` (optional)  
 **type:** `number => void`  
@@ -55,7 +55,7 @@ Event handler called when current page changes
 
 ### `pageIndicatorTintColor` (optional)  
 **type:** `string`  
-**default value:** `dividerColor` from [`theme`](theme.html)
+**default value:** `dividerColor` from [`theme`](theme)
 
 ### `pageIndicatorSize` (optional)  
 **type:** `number`  
@@ -68,6 +68,6 @@ Size of the controls.
 **default value:** `0`  
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

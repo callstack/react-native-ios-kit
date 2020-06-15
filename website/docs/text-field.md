@@ -55,7 +55,7 @@ Invoked with the new value when the value of text input changes.
 Placeholder value
 
 ### `theme`  
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

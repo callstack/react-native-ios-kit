@@ -39,7 +39,7 @@ Uses following theme properties:
 ### `icon` (optional)
 **type:** `ImageSource`
 
-ImageSource. See ['Icon`](icon.html#name)
+ImageSource. See ['Icon`](icon#name)
 
 ### `onPress` (optional)
 **type:** `() => void`
@@ -63,7 +63,7 @@ Component to be displayed on the right side of row. It can be use interchangeabl
 Subtitle text to be displayed.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

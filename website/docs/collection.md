@@ -100,6 +100,6 @@ Function rendering footer of each section.
 Makes section headers stick to the top of the screen until the next one pushes it off.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.

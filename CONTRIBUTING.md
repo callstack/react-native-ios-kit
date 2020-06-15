@@ -40,7 +40,7 @@ After you're done, you can run `yarn && yarn start` in the `example/` folder and
 
 ## Working on documentation
 
-We use [docusaurus](https://docusaurus.io). If you want to make changes in documentation feel free to add/edit files inside `/docs` directory. For more information about creating docs with docusaurus see it's [documentation](https://docusaurus.io/docs/en/installation.html).
+We use [docusaurus](https://docusaurus.io). If you want to make changes in documentation feel free to add/edit files inside `/docs` directory. For more information about creating docs with docusaurus see it's [documentation](https://docusaurus.io/docs/en/installation).
 
 ## Reporting New Issues
 

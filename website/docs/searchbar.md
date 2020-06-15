@@ -69,7 +69,7 @@ Callback invoked on text input focus
 Placeholder of text input. Defaults to "Search".
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 

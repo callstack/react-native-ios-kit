@@ -43,13 +43,13 @@ Passes the segment's value and index as arguments.
 Index of currently selected `value`.
 
 ### `theme` (optional)
-**type:** [`Theme`](theme.html)
+**type:** [`Theme`](theme)
 
 Custom theme for component. By default provided by the ThemeProvider.
 
 ### `tintColor` (optional)
 **type:** `string`  
-**default value:** `primaryColor` from [`theme`](theme.html)
+**default value:** `primaryColor` from [`theme`](theme)
 
 Accent color of SegmentedControl.
 
