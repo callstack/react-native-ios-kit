@@ -29,6 +29,10 @@ const siteConfig = {
     ],
   ],
   themeConfig: {
+    algolia: {
+      apiKey: '3fc3f7484d62d6435dfb39ab39ed8b24',
+      indexName: 'react-native-ios-kit',
+    },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
@@ -86,10 +90,6 @@ const siteConfig = {
         href: 'https://callstack.com/open-source/',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Callstack. Built with Docusaurus`,
-    },
-    algolia: {
-      apiKey: '3fc3f7484d62d6435dfb39ab39ed8b24',
-      indexName: 'react-native-ios-kit',
     },
     image: 'img/docusaurus.png',
     // Equivalent to `docsSideNavCollapsible`
