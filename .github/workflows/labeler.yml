@@ -7,6 +7,7 @@ on:
 
 jobs:
   triage:
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     name: Label issues and pull requests
     steps:
