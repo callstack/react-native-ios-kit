@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Slider, View, StyleSheet } from 'react-native';
 import type { Theme } from '../types/Theme';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 import Icon from './Icon';
 
 type Props = {

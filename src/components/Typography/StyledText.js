@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-import { withTheme } from '../../';
+import { withTheme } from '../../core/theming';
 import type { Theme } from '../../types/Theme';
 import type { TextStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 

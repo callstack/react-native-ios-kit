@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { ActivityIndicator } from 'react-native';
 
 import type { Theme } from '../types/Theme';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 
 type Props = {
   theme: Theme,

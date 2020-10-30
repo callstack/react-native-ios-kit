@@ -9,7 +9,7 @@ import {
 
 import Icon from './Icon';
 import { Caption2 } from './Typography';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
 
 type ToolbarItem = {

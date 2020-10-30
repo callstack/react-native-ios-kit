@@ -4,7 +4,7 @@ import { View } from 'react-native';
 
 import TableViewHeader from './TableViewHeader';
 import TableViewFooter from './TableViewFooter';
-import { withTheme } from '../../';
+import { withTheme } from '../../core/theming';
 import type { Theme } from '../../types/Theme';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 

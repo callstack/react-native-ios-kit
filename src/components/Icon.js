@@ -5,7 +5,7 @@ import type { ImageSource } from 'react-native/Libraries/Image/ImageSource';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 
 type Props = {
   /**

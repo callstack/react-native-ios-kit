@@ -8,7 +8,7 @@ import type {
   TextStyleProp,
   ViewStyleProp,
 } from 'react-native/Libraries/StyleSheet/StyleSheet';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 
 type Props = {
   /**
