@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 import Icon from './Icon';
 
 import type { Theme } from '../types/Theme';

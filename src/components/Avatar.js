@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import type { Theme } from '../types/Theme';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 type Props = {
