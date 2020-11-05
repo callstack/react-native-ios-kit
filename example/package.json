@@ -38,7 +38,7 @@
     "@babel/runtime": "^7.9.2",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-expo": "^8.1.0",
-    "expo-cli": "^3.4.1"
+    "expo-cli": "^3.28.5"
   },
   "resolutions": {
     "**/react": "16.9.0",
