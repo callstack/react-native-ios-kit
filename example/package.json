@@ -6,43 +6,29 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start -c",
-    "android": "expo android",
-    "ios": "expo ios"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.2",
-    "@react-native-community/masked-view": "0.1.6",
-    "@react-navigation/native": "^5.0.0",
-    "@react-navigation/stack": "^5.0.0",
-    "color": "^2.0.1",
-    "exp": "^47.3.17",
-    "expo": "^37.0.0",
-    "glob-to-regexp": "^0.3.0",
-    "react": "16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.0.tar.gz",
-    "react-native-gesture-handler": "~1.6.0",
-    "react-native-reanimated": "~1.7.0",
-    "react-native-safe-area-context": "0.7.3",
-    "react-native-safe-area-view": "^0.14.6",
-    "react-native-screens": "~2.2.0",
-    "react-native-vector-icons": "^6.6.0"
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/native": "^5.8.6",
+    "@react-navigation/stack": "^5.12.3",
+    "color": "^3.1.3",
+    "expo": "^39.0.0",
+    "react": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
+    "react-native-gesture-handler": "~1.7.0",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.4",
+    "react-native-screens": "~2.10.1",
+    "react-native-vector-icons": "^7.1.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-flow": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
-    "@babel/runtime": "^7.9.2",
+    "@babel/core": "^7.12.3",
     "babel-plugin-module-resolver": "^4.0.0",
-    "babel-preset-expo": "^8.1.0",
-    "expo-cli": "^3.4.1"
-  },
-  "resolutions": {
-    "**/react": "16.9.0",
-    "**/color": "2.0.1",
-    "**/lodash": "^4.17.4"
+    "babel-preset-expo": "^8.3.0",
+    "expo-cli": "^3.28.5"
   }
 }
