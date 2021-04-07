@@ -3,7 +3,7 @@ import { Image, View, StyleSheet, ImageURISource } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import type { Theme } from '../types/Theme';
-import { withTheme } from '../';
+import { withTheme } from '../core/theming';
 
 type Props = {
   /**

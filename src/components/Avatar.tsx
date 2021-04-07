@@ -5,19 +5,18 @@ import {
   ImageBackground,
   View,
   Text,
-  TouchableOpacity,
+  TouchableOpacity, StyleProp, ViewStyle
 } from 'react-native';
 
 import type { Theme } from '../types/Theme';
-import { withTheme } from '../';
-import { ViewStyle } from 'react-native';
+import { withTheme } from '../core/theming';
 
 type Props = {
   theme: Theme;
   initials: string;
   url?: string;
   size: number;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   // @TODO
   onPress?: (e: any) => void;
 };

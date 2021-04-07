@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { ProgressViewIOS } from 'react-native';
-
-import { Theme } from '../types/Theme';
-import { withTheme } from '../';
+import type { Theme } from '../types/Theme';
+import { withTheme } from '../core/theming';
 
 type Props = {
   theme: Theme;

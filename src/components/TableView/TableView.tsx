@@ -1,11 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ViewStyle, StyleProp } from 'react-native';
 
 import TableViewHeader from './TableViewHeader';
 import TableViewFooter from './TableViewFooter';
-import { withTheme } from '../../';
-import { Theme } from '../../types/Theme';
-import { ViewStyle, StyleProp } from 'react-native';
+import type { Theme } from '../../types/Theme';
+import { withTheme } from '../../core/theming';
 
 type Props = {
   /**

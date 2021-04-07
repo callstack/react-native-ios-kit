@@ -1,15 +1,14 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TextStyle, StyleProp } from 'react-native';
 import { Config } from './createText';
 
-import { withTheme } from '../../';
-import { Theme } from '../../types/Theme';
-import { TextStyle } from 'react-native';
+import { withTheme } from '../../core/theming';
+import type { Theme } from '../../types/Theme';
 
 const trackingToSpacing = (fontSize: number, tracking: number): number =>
   (fontSize * tracking) / 1000;
 
-const resolveFontSizeFromStyle = (style?: TextStyle): any => {
+const resolveFontSizeFromStyle = (style?: any): any => {
   if (!style) {
     return 0;
   }
@@ -28,7 +27,7 @@ const resolveFontSizeFromStyle = (style?: TextStyle): any => {
 };
 
 type Props = {
-  style?: TextStyle;
+  style?: StyleProp<TextStyle>;
   children?: React.ReactNode;
   config: Config;
   theme: Theme;
