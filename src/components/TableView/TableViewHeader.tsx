@@ -3,8 +3,8 @@ import { View, StyleSheet } from 'react-native';
 
 import { withTheme } from '../../core/theming';
 import { Footnote } from '../Typography';
-import { Theme } from '../../types/Theme';
-import { ViewStyle, StyleProp } from 'react-native';
+import type { Theme } from '../../types/Theme';
+import type { ViewStyle, StyleProp } from 'react-native';
 
 type Props = {
   header: string;

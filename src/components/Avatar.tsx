@@ -5,7 +5,9 @@ import {
   ImageBackground,
   View,
   Text,
-  TouchableOpacity, StyleProp, ViewStyle
+  TouchableOpacity,
+  StyleProp,
+  ViewStyle,
 } from 'react-native';
 
 import type { Theme } from '../types/Theme';

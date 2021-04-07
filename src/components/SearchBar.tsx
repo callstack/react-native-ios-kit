@@ -13,7 +13,7 @@ import {
 import Icon from './Icon';
 
 import { withTheme } from '../core/theming';
-import { Theme } from '../types/Theme';
+import type { Theme } from '../types/Theme';
 
 type Props = {
   /**

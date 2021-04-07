@@ -34,7 +34,7 @@ type Props = {
   /**
    * Footer style
    */
-  footerStyle?: ViewStyle;
+  footerStyle?: StyleProp<ViewStyle>;
   /**
    * onPress handler of Footer component
    */

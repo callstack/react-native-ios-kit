@@ -9,7 +9,7 @@ import {
   TextStyle,
 } from 'react-native';
 
-import { Theme } from '../types/Theme';
+import type { Theme } from '../types/Theme';
 import { withTheme } from '../core/theming';
 
 export type Props = {

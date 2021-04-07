@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { Switch as ReactNativeSwitch, SwitchProps } from 'react-native';
+import {
+  Switch as ReactNativeSwitch,
+  SwitchProps,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { withTheme } from '../core/theming';
-import { Theme } from '../types/Theme';
+import type { Theme } from '../types/Theme';
 
 type Props = {
   // Disable switch
@@ -9,7 +14,7 @@ type Props = {
   // Switch value
   value?: boolean;
   // Switch style
-  style?: Object;
+  style?: StyleProp<ViewStyle>;
   // Provided by the ThemeProvider
   theme: Theme;
   // onChange prop

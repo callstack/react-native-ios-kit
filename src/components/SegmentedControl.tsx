@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 import { withTheme } from '../core/theming';
-import { Theme } from '../types/Theme';
+import type { Theme } from '../types/Theme';
 
 type Props = {
   theme: Theme;

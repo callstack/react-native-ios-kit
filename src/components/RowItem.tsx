@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
-import { ImageURISource } from 'react-native';
+import type { ImageURISource } from 'react-native';
 
 import Icon from './Icon';
 import { Body, Caption1 } from './Typography/Typography';
 import { withTheme } from '../core/theming';
-import { Theme } from '../types/Theme';
+import type { Theme } from '../types/Theme';
 
 export type Props = {
   /**

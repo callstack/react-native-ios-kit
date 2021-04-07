@@ -1,6 +1,6 @@
 import color from 'color';
 import * as colors from './colors';
-import { Theme } from '../types/Theme';
+import type { Theme } from '../types/Theme';
 
 const DarkTheme: Theme = {
   primaryColor: colors.orange,

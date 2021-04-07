@@ -5,8 +5,8 @@ import Sections from './Sections';
 import { withTheme } from '../../core/theming';
 import { Headline } from '../Typography';
 
-import { ViewStyle, StyleProp } from 'react-native';
-import { Theme } from '../../types/Theme';
+import type { ViewStyle, StyleProp } from 'react-native';
+import type { Theme } from '../../types/Theme';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('');
 

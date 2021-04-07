@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Slider, View, StyleSheet, ViewStyle } from 'react-native';
+import { Slider, View, StyleSheet, ViewStyle, StyleProp } from 'react-native';
 import type { Theme } from '../types/Theme';
 import { withTheme } from '../core/theming';
 import Icon from './Icon';
@@ -15,7 +15,7 @@ type Props = {
   maxIconColor?: string;
   minIconSize?: number;
   maxIconSize?: number;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   theme: Theme;
   onValueChange: (value: number) => void;
   onSlidingComplete?: (value: number) => void;

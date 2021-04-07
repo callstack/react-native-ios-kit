@@ -1,11 +1,9 @@
 import React from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-
 import { withTheme } from '../core/theming';
 import Icon from './Icon';
-
-import { Theme } from '../types/Theme';
-import { TextStyle, ViewStyle } from 'react-native';
+import type { Theme } from '../types/Theme';
+import type { TextStyle, ViewStyle, StyleProp } from 'react-native';
 
 type Props = {
   theme: Theme;
@@ -13,8 +11,8 @@ type Props = {
   value: string;
   clearButton?: boolean;
   onValueChange?: (text: string) => void;
-  containerStyle?: ViewStyle;
-  inputStyle?: TextStyle;
+  containerStyle?: StyleProp<ViewStyle>;
+  inputStyle?: StyleProp<TextStyle>;
 };
 
 class TextField extends React.Component<Props> {

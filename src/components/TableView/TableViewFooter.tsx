@@ -1,15 +1,20 @@
 import React from 'react';
-import { View, StyleSheet, TouchableHighlight } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TouchableHighlight,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
 import { withTheme } from '../../core/theming';
 import { Footnote } from '../Typography';
-import { Theme } from '../../types/Theme';
-import { ViewStyle } from 'react-native';
+import type { Theme } from '../../types/Theme';
 
 type Props = {
   footer: string;
   theme: Theme;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   onPress?: () => void;
 };
 

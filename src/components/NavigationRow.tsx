@@ -5,8 +5,8 @@ import RowItem from './RowItem';
 import Icon from './Icon';
 import { withTheme } from '../core/theming';
 import { Body } from './Typography';
-import { Theme } from '../types/Theme';
-import { Props as RowProps } from './RowItem';
+import type { Theme } from '../types/Theme';
+import type { Props as RowProps } from './RowItem';
 
 type Props = RowProps & {
   theme: Theme;

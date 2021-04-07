@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 import { withTheme } from '../core/theming';
-import { Theme } from '../types/Theme';
-import { ViewStyle } from 'react-native';
+import type { Theme } from '../types/Theme';
+import type { ViewStyle, StyleProp } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -34,8 +34,8 @@ type Props = {
   onRefresh?: () => void;
   refreshing: boolean;
   stickySectionHeadersEnabled?: boolean;
-  listStyle?: ViewStyle;
-  contentContainerStyle?: ViewStyle;
+  listStyle?: StyleProp<ViewStyle>;
+  contentContainerStyle?: StyleProp<ViewStyle>;
 };
 
 class Collection extends React.Component<Props> {

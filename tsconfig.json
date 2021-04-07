@@ -4,6 +4,7 @@
     "paths": {
       "react-native-ios-kit": ["./src/index"]
     },
+    "importsNotUsedAsValues": "error",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,

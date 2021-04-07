@@ -4,14 +4,14 @@ import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import PageControl from './PageControl';
 import { withTheme } from '../core/theming';
 import type { Theme } from '../types/Theme';
-import { ViewStyle, NativeScrollEvent } from 'react-native';
+import type { ViewStyle, StyleProp, NativeScrollEvent } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
 type Props = {
   theme: Theme;
   children: React.ReactNode;
-  containerStyle?: ViewStyle;
+  containerStyle?: StyleProp<ViewStyle>;
   startPage?: number;
   onPageChange?: (number: number) => void;
   currentPageIndicatorTintColor?: string;
