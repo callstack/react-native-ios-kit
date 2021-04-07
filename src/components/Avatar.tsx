@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   StyleProp,
   ViewStyle,
+  GestureResponderEvent,
 } from 'react-native';
 
 import type { Theme } from '../types/Theme';
@@ -19,8 +20,7 @@ type Props = {
   url?: string;
   size: number;
   style?: StyleProp<ViewStyle>;
-  // @TODO
-  onPress?: (e: any) => void;
+  onPress?: (e: GestureResponderEvent) => void;
 };
 
 class Avatar extends React.Component<Props> {

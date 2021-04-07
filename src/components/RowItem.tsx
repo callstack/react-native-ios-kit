@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
 import type { ImageURISource } from 'react-native';
 

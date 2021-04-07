@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { withTheme } from '../core/theming';
 import Icon from './Icon';

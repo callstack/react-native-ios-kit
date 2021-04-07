@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
 
 import Icon from './Icon';

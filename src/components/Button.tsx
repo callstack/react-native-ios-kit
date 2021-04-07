@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   StyleProp,
   View,
@@ -129,7 +129,6 @@ class Button extends React.Component<Props> {
         justifyContent: 'flex-start',
       };
       if (this.props.centered) {
-        //$FlowFixMe
         wrapperStyle.justifyContent = 'center';
       }
       return <View style={wrapperStyle}>{markup}</View>;
@@ -158,9 +157,6 @@ class Button extends React.Component<Props> {
         onPressIn={this.props.onPressIn}
         onPressOut={this.props.onPressOut}
         onLongPress={this.props.onLongPress}
-        accessibilityTraits="button"
-        accessibilityComponentType="button"
-        accessibilityRole="button"
         testID={this.props.testID}
         style={[
           this.styles.default.container,
