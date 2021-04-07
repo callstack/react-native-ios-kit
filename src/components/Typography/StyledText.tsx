@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, TextStyle, StyleProp } from 'react-native';
 import type { Config } from './createText';
-
 import { withTheme } from '../../core/theming';
 import type { Theme } from '../../types/Theme';
 
