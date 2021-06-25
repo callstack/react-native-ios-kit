@@ -28,7 +28,7 @@ class NavigationRow extends React.Component<Props> {
             {info}
           </Body>
         ) : null}
-        <Icon name="ios-arrow-forward" size={22} color={placeholderColor} />
+        <Icon name="ios-arrow-forward" size={20} color={placeholderColor} style={{ marginTop: 4 }}/>
       </View>
     );
   };
@@ -49,5 +49,6 @@ export default withTheme(NavigationRow);
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
 });
