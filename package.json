@@ -55,7 +55,7 @@
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "2.0.5",
     "react": "16.13.1",
-    "react-native": "^0.61.4",
+    "react-native": "^0.62.3",
     "react-native-vector-icons": "~6.3.0",
     "react-test-renderer": "16.13.1",
     "release-it": "^13.5.7",
