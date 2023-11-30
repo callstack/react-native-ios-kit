@@ -29,6 +29,10 @@ Uses following `theme` properties:
 - `primaryColor` - minimum track tint color
 - `dividerColor` - maximum track tint color
 
+### Deprecation Notice
+This component has been removed from **react-native core**.
+Instead install it from **@react-native-community/slider** by following the instructions in the new [repository](https://github.com/callstack/react-native-slider).
+
 ## Props
 
 ### `maxIconColor` (optional)
