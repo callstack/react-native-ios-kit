@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Cache node modules
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache
       with:
         path: node_modules
@@ -27,7 +27,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: Cache node modules @ example
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache-example
       with:
         path: ./example/node_modules
@@ -38,7 +38,7 @@ jobs:
       run: yarn install --frozen-lockfile --cwd ./example
 
     - name: Cache node modules @ website
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache-website
       with:
         path: ./website/node_modules
@@ -55,10 +55,10 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Cache node modules
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache
       with:
         path: node_modules
@@ -69,7 +69,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: Cache node modules @ website
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache-website
       with:
         path: ./website/node_modules
@@ -80,7 +80,7 @@ jobs:
       run: yarn install --frozen-lockfile --cwd ./website
 
     - name: Cache node modules @ example
-      uses: actions/cache@v1
+      uses: actions/cache@v4
       id: cache-example
       with:
         path: ./example/node_modules
